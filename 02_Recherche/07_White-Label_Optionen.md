@@ -83,3 +83,10 @@
 2. **Back to Basics** (Vejle): IFS und BRC, Private Label, MOQ pro Projekt. Koffein nicht genannt. Anfrage: 05_Vorlagen/Mail_Back_to_Basics.md
 3. **Wachmeister** (Schweiz): fertiger Koffein-Gum mit 30 mg, aus Schweizer IFS-Produktion. Kleinste Mengen möglich, weil Ware schon da ist. White Label anfragen. Die einzige Kaugummifabrik der Schweiz ist Delica in Buchs, also vermutlich auch Hersteller von Guming und Wachmeister (nicht belegt). Delica direkt: MOQ 20 Tonnen
 - roelli roelli: keine Mindestmenge genannt, Generalunternehmer ohne eigene Fabrik
+
+**9. Bei nur 200 Dosen (Stand 09.10.2026)**
+- 200 Dosen mal 8 Stück sind 1.600 Stück, ca. 4 kg. Dafür macht kein Hersteller eine eigene Rezeptur. Indaco, Back to Basics und Delica fallen raus
+- Bleiben nur fertige Produkte:
+  1. Guming Werbemittel-Dose: ab 250 Stück, 2,44 € netto plus 150 € Einrichtung, ca. 760 €. Schweizer IFS-Produktion, 52 bis 60 mg, kein Xylit
+  2. Wachmeister: 30 mg, Beutel mit 8 Stück, enthält auch Xylit (nicht nur). Endkundenpreis 20 Beutel CHF 42. Kein White-Label-Angebot bekannt, anfragen: info@wachmeister.com
+- Nicht: lose Ware kaufen und selbst in Dosen füllen. Dann sind wir Hersteller und Verpacker
