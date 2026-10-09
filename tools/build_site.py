@@ -181,7 +181,7 @@ REVIEWS_EMPTY = '''<div class="reviews-empty card">
 </div>'''
 
 PHOTOS = f'''<div class="gallery-ph">
-  {img_slot("community-hackathon", "Hackathon")}
+  {img_slot("community-meetup", "Meetup")}
   {img_slot("community-demoday", "Demo Day")}
   {img_slot("community-coworking", "Coworking")}
   {img_slot("community-tasche", "Dein Pack")}
@@ -190,7 +190,7 @@ PHOTOS = f'''<div class="gallery-ph">
 SERVICE = f'''<section class="band service-band">
   <div class="wrap service">
     <div>{I_TRUCK}<h3>Versand aus Berlin</h3><p>Nach Deutschland, Österreich und in die Schweiz.</p></div>
-    <div>{I_CHAT}<h3>Echte Menschen</h3><p>Fragen landen direkt bei Daniel.</p></div>
+    <div>{I_CHAT}<h3>Echte Menschen</h3><p>Fragen beantworten wir selbst. Kein Bot.</p></div>
     <div>{I_CLOCK}<h3>Erst reservieren</h3><p>Keine Zahlung, bis die erste Charge rausgeht.</p></div>
     <div>{I_SHIELD}<h3>Ehrliche Dosis</h3><p>mg vorne, höchstens 3 am Tag.</p></div>
   </div>
@@ -261,9 +261,9 @@ MISSION_BAND = f'''<section class="mission-band" id="mission">
   <div class="wrap">
     <p class="sec-label light"><span>06</span>Mission</p>
     <h2>Projekt <em>Erster Commit</em></h2>
-    <p class="lead">Mit jedem Pack bringst du GUMMIT zu Berliner Buildern, die gerade erst anfangen. Gratis auf Uni-Hackathons, Einsteiger-Meetups und Community-Events ohne Budget.</p>
+    <p class="lead">Mit jedem Pack bringst du GUMMIT zu Berliner Buildern, die gerade erst anfangen. Gratis für Lerngruppen, Einsteiger-Meetups und Community-Events ohne Budget.</p>
     <div class="hero-cta"><a class="btn ghost" href="/mission">Mehr erfahren</a><a class="btn white-ghost" href="/teams#anfrage">Event vorschlagen</a></div>
-    {img_slot("mission-event", "Einsteiger-Event", "mission-img", "Studierende auf einem Berliner Hackathon")}
+    {img_slot("mission-event", "Einsteiger-Event", "mission-img", "Studentin lernt in der Bibliothek")}
     <p class="mission-stamp" aria-hidden="true">chew good,<br>ship good.</p>
   </div>
 </section>
@@ -291,8 +291,8 @@ FAQ = {
     ],
     "Teams und Events": [
         ("Gibt es GUMMIT für Firmen?", "Ja. Team-Boxen mit Rechnung, auf Wunsch mit eurem Logo, und ein Display für Coworkings. Mehr unter Für Teams."),
-        ("Bringt ihr GUMMIT zu unserem Event?", "Für ausgewählte Hackathons und Meetups in Berlin gibt es Host-Boxen. Schreib uns über die Teams-Seite."),
-        ("Was ist Projekt Erster Commit?", "Wir bringen GUMMIT gratis zu Berliner Events für Leute, die gerade anfangen zu bauen: Uni-Hackathons, Einsteiger-Meetups, Community-Events ohne Budget. Nur Events ab 18. Jedes unterstützte Event listen wir auf der Mission-Seite."),
+        ("Bringt ihr GUMMIT zu unserem Event?", "Für ausgewählte Meetups und Community-Events in Berlin gibt es Host-Boxen. Schreib uns über die Teams-Seite."),
+        ("Was ist Projekt Erster Commit?", "Wir bringen GUMMIT gratis zu Berliner Events für Leute, die gerade anfangen zu bauen: Lerngruppen, Einsteiger-Meetups, Community-Events ohne Budget. Nur Events ab 18. Jedes unterstützte Event listen wir auf der Mission-Seite."),
     ],
 }
 
@@ -350,12 +350,11 @@ def home():
   <div class="wrap">
     {section_label("01", "Für wen")}
     <h2>Für alle, die <em>dranbleiben.</em></h2>
-    <p class="lead">Nicht für alle. Für Leute, die abends noch einen Prototyp fertig machen, für die Prüfung die dritte Runde drehen, am Wochenende auf Hackathons sitzen und Montag pitchen.</p>
+    <p class="lead">Nicht für alle. Für Leute, die abends noch einen Prototyp fertig machen, für die Prüfung die dritte Runde drehen und Montag pitchen.</p>
     <div class="personas">
       <article class="card persona">{img_slot("persona-vibecoder", "Vibe Coder", "persona-img")}<span class="num">A</span><h3>Vibe Coder</h3><p>Du baust mit Cursor, Claude und Kaffee. Der Kaffee ist kalt, der Build läuft noch. Das Pack liegt neben dem Ladekabel.</p></article>
       <article class="card persona">{img_slot("persona-gruender", "Gründer", "persona-img")}<span class="num">B</span><h3>Gründer</h3><p>Pitch-Deck Version 14, Probelauf um 23 Uhr. Kein Zucker vor dem Auftritt, keine Dose Energy auf dem Tisch.</p></article>
       <article class="card persona">{img_slot("persona-student", "Studenten", "persona-img")}<span class="num">C</span><h3>Studenten</h3><p>Klausurphase. Bib bis zur Schließung, Karteikarten, dritter Durchgang. Ein Stick statt dem vierten Automatenkaffee.</p></article>
-      <article class="card persona">{img_slot("persona-hackathon", "Hackathon-Team", "persona-img")}<span class="num">D</span><h3>Hackathon-Teams</h3><p>48 Stunden, ein Tisch, zu viel Pizza. Ein Pack in die Mitte, alle sehen, wie viel drin ist.</p></article>
     </div>
   </div>
 </section>
@@ -408,26 +407,13 @@ def home():
   </div>
 </section>
 
-<section class="band" id="story-teaser">
-  <div class="wrap teaser">
-    {img_slot("daniel", "Daniel", "teaser-photo", "Daniel, Gründer von GUMMIT")}
-    <div>
-      {section_label("09", "Story")}
-      <h2>Gebaut von einem, der <em>auch</em> nachts baut</h2>
-      <p class="lead">Tagsüber Tech-Job, abends Side Projects und 3D-Drucker. Der Kaffee war kalt, der Automat hatte nur Zucker. Also hat Daniel GUMMIT gestartet.</p>
-      <a class="btn ghost" href="/story">Ganze Story lesen</a>
-    </div>
-  </div>
-</section>
-
-{crew_html()}
 
 <section class="band blue-soft" id="teams-teaser">
   <div class="wrap teams-teaser">
     <div>
-      {section_label("10", "Für Teams")}
+      {section_label("09", "Für Teams")}
       <h2>Für Teams, Hosts <em>&amp;</em> Coworkings</h2>
-      <p class="lead">Team-Boxen mit Rechnung, Host-Boxen für Hackathons und ein Display für eure Theke.</p>
+      <p class="lead">Team-Boxen mit Rechnung, Host-Boxen für Meetups und ein Display für eure Theke.</p>
     </div>
     <a class="btn" href="/teams">Angebote ansehen</a>
   </div>
@@ -435,7 +421,7 @@ def home():
 
 <section class="band" id="faq-teaser">
   <div class="wrap">
-    {section_label("11", "FAQ")}
+    {section_label("10", "FAQ")}
     <h2>Kurz gefragt</h2>
     {faq_html(["Produkt", "Koffein und Sicherheit"], limit=2)}
     <p class="more-link"><a href="/faq">Alle Fragen ansehen →</a></p>
@@ -446,7 +432,7 @@ def home():
 {SERVICE}
 '''
     return page("/", "GUMMIT – Koffein-Kaugummi für Berliner Builder",
-                "Zuckerfreier Kaugummi mit 52 bis 60 mg Koffein pro Stick. Für alle, die in Berlin Dinge bauen: Hackathons, Demo Days, lange Abende im Coworking.",
+                "Zuckerfreier Kaugummi mit 52 bis 60 mg Koffein pro Stick. Für alle, die dranbleiben: Lernphasen, Launches, lange Abende im Coworking.",
                 "/", body)
 
 
@@ -486,7 +472,7 @@ def product():
     <p class="warn">Enthält Koffein (<span id="shop-mg100">–</span> mg/100 g). Für Kinder und schwangere Frauen nicht empfohlen.</p>
 
     <div class="acc">
-      <details open><summary>Beschreibung</summary><p>GUMMIT ist Kaugummi mit Koffein und ohne Zucker, gesüßt mit Xylit. Jeder Stick hat eine feste Menge Koffein, die groß vorne auf dem Pack steht. Gemacht für lange Build-Tage, Hackathons und Demo Days. Kein Wirkversprechen, nur Kaugummi mit einer ehrlichen Zahl.</p></details>
+      <details open><summary>Beschreibung</summary><p>GUMMIT ist Kaugummi mit Koffein und ohne Zucker, gesüßt mit Xylit. Jeder Stick hat eine feste Menge Koffein, die groß vorne auf dem Pack steht. Gemacht für lange Lern- und Build-Tage. Kein Wirkversprechen, nur Kaugummi mit einer ehrlichen Zahl.</p></details>
       <details><summary>Zutaten und Allergene</summary><p><span class="ph">Vollständige Zutatenliste folgt vom Hersteller.</span> Bekannt: Süßungsmittel Xylit, Kaumasse, Koffein, Aromen. Allergene werden hier hervorgehoben, sobald die Spezifikation vorliegt.</p></details>
       <details><summary>Nährwerte</summary><div class="table-scroll"><table class="table"><thead><tr><th></th><th>pro 100 g</th><th>pro Stick</th></tr></thead><tbody>
         <tr><td>Energie</td><td class="ph">folgt</td><td class="ph">folgt</td></tr>
@@ -560,7 +546,7 @@ def teams():
 <section class="band">
   <div class="wrap offers">
     <article class="card offer" id="team"><span class="num">1</span><h3>Team-Box</h3><p>Gemischte Box mit allen drei Sorten für Büro, Meetingraum oder Offsite.</p><ul class="ticks"><li>ab 10 Packs</li><li>Rechnung und Staffelpreise</li><li>Logo-Option auf Anfrage</li><li>Als Onboarding-Geschenk</li></ul><a class="btn small" href="#anfrage" data-type="team">Team-Box anfragen</a></article>
-    <article class="card offer" id="host"><span class="num">2</span><h3>Host-Box</h3><p>Für Hackathons, Meetups und Demo Days in Berlin. Ihr organisiert, wir bringen das Packn.</p><ul class="ticks"><li>Packs für eure Gäste</li><li>Display für den Check-in</li><li>Für ausgewählte Events kostenlos in der Beta</li><li>Wir wollen nur ein Foto und eine Erwähnung</li></ul><a class="btn small" href="#anfrage" data-type="host">Host-Box anfragen</a></article>
+    <article class="card offer" id="host"><span class="num">2</span><h3>Host-Box</h3><p>Für Meetups, Lern-Events und Demo Days in Berlin. Ihr organisiert, wir bringen das Packn.</p><ul class="ticks"><li>Packs für eure Gäste</li><li>Display für den Check-in</li><li>Für ausgewählte Events kostenlos in der Beta</li><li>Wir wollen nur ein Foto und eine Erwähnung</li></ul><a class="btn small" href="#anfrage" data-type="host">Host-Box anfragen</a></article>
     <article class="card offer" id="coworking"><span class="num">3</span><h3>Coworking-Display</h3><p>Ein kleines Display für eure Theke. Kein Automat, kein Vertrag.</p><ul class="ticks"><li>Wir füllen nach</li><li>Provision pro Pack, keine Miete</li><li>Jederzeit beendbar</li><li>Probier-Nachmittag um 14 Uhr</li></ul><a class="btn small" href="#anfrage" data-type="coworking">Display anfragen</a></article>
   </div>
 </section>
@@ -600,7 +586,7 @@ def teams():
         </div>
         <div class="field"><label for="b-qty">Menge oder Gäste</label><input id="b-qty" name="qty" type="text" placeholder="z. B. 20 Packs, 80 Gäste"></div>
       </div>
-      <div class="field"><label for="b-date">Termin (optional)</label><input id="b-date" name="date" type="text" placeholder="z. B. Hackathon am 14.11."></div>
+      <div class="field"><label for="b-date">Termin (optional)</label><input id="b-date" name="date" type="text" placeholder="z. B. Meetup am 14.11."></div>
       <div class="field"><label for="b-msg">Nachricht</label><textarea id="b-msg" name="message" rows="3"></textarea></div>
       <label class="check"><input type="checkbox" name="ok" required> <span>Ihr dürft mich zu dieser Anfrage kontaktieren. Mehr in der <a href="/datenschutz">Datenschutzerklärung</a>.</span></label>
       <button class="btn" type="submit">Anfrage senden</button>
@@ -610,7 +596,7 @@ def teams():
 </section>
 '''
     return page("/teams", "GUMMIT für Teams, Events und Coworkings",
-                "Team-Boxen mit Rechnung, Host-Boxen für Hackathons und Meetups, Displays für Coworkings. Zuckerfreier Koffein-Kaugummi aus Berlin.",
+                "Team-Boxen mit Rechnung, Host-Boxen für Meetups und Events, Displays für Coworkings. Zuckerfreier Koffein-Kaugummi aus Berlin.",
                 "/teams", body)
 
 
@@ -624,17 +610,16 @@ def story():
 </section>
 <section class="band">
   <div class="wrap founder">
-    {img_slot("daniel", "Daniel", "founder-photo", "Daniel, Gründer von GUMMIT")}
+    <div class="stage founder-photo" style="--stage:{FLAVORS[2]["color"]}">{pack(FLAVORS[2], "front", "story-pack")}</div>
     <div class="prose">
-      <p>Ich bin Daniel. Tagsüber habe ich einen Job in der Tech-Branche, abends baue ich Side Projects und drucke Dinge mit meinem 3D-Drucker. Die meisten guten Ideen kommen bei mir nach 21 Uhr.</p>
-      <p>Und genau da war das Problem: Der Kaffee in der Küche ist kalt, der Automat im Coworking hat nur Zuckerdosen, und Energy Drinks fühlen sich nach Abiparty an. Ich wollte etwas Kleines, das in die Laptoptasche passt, keinen Zucker hat und ehrlich sagt, wie viel Koffein drin ist.</p>
-      <p>Also habe ich angefangen, Koffein-Kaugummis zu testen. Die meisten schmecken nach Apotheke oder verstecken die Dosis im Kleingedruckten. Daraus wurde GUMMIT: Kaugummi mit Koffein, null Zucker, die Zahl groß vorne drauf.</p>
-      <p>Die erste Charge bringe ich selbst zu den Events, auf denen ich eh bin: Hackathons, Luma-Meetups, Demo Days. Wenn du mich dort siehst, sag Hallo.</p>
-      <p class="sig">– Daniel</p>
+      <p>Gute Ideen kommen selten um neun Uhr morgens. Sie kommen in der Lernphase, kurz vor dem Launch oder abends im Coworking.</p>
+      <p>Genau da war das Problem: Der Kaffee ist kalt, der Automat hat nur Zuckerdosen, und Energy Drinks passen nicht in die Laptoptasche. Wir wollten etwas Kleines, ohne Zucker, das ehrlich sagt, wie viel Koffein drin ist.</p>
+      <p>Die meisten Koffein-Kaugummis schmecken nach Apotheke oder verstecken die Dosis im Kleingedruckten. Daraus wurde GUMMIT: Kaugummi mit Koffein, null Zucker, die Zahl groß vorne drauf.</p>
+      <p>Wir sitzen in Berlin. Die erste Charge geht an Leute aus der Szene: Coworkings, Meetups, Lerngruppen.</p>
+      <p class="sig">– Team GUMMIT</p>
     </div>
   </div>
 </section>
-{crew_html()}
 <section class="band paper-2">
   <div class="wrap">
     <h2>Woran wir <em>glauben</em></h2>
@@ -658,7 +643,7 @@ a1c3f02 erste Charge shippen
     <div>
       <h2>Was als <em>Nächstes</em> kommt</h2>
       <ol class="steps">
-        <li><b>Erste Charge</b> auf Berliner Hackathons und Meetups.</li>
+        <li><b>Erste Charge</b> für Berliner Meetups und Lerngruppen.</li>
         <li><b>Coworkings</b> mit Display an der Theke.</li>
         <li><b>Eigene Rezeptur,</b> wenn genug Leute mitmachen.</li>
       </ol>
@@ -667,23 +652,6 @@ a1c3f02 erste Charge shippen
 </section>
 '''
     return page("/story", "Story – GUMMIT", "Wie GUMMIT entstanden ist: kalter Kaffee, Zucker im Automaten und ein Kaugummi mit der Zahl vorne drauf.", "/story", body)
-
-
-CREW = [
-    ("team-daniel", "Daniel", "Gründer. Baut nachts Side Projects und druckt Dinge in 3D."),
-    ("team-2", "[Name]", "Mitgründer. [Rolle, ein Satz]"),
-    ("team-3", "[Name]", "Events und Community. [Ein Satz]"),
-]
-
-
-def crew_html():
-    cards = "".join(f'<figure class="crew-card">{img_slot(k, n, "crew-img")}<figcaption><b>{n}</b><span>{t}</span></figcaption></figure>' for k, n, t in CREW)
-    cards += '<figure class="crew-card join"><div class="slot crew-img join-img"><span>?</span></div><figcaption><b>Du?</b><span>Du machst Events in Berlin und willst mit anpacken? <a href="/kontakt">Schreib uns.</a></span></figcaption></figure>'
-    return f'''<section class="band crew-band" id="crew">
-  <div class="marquee" aria-hidden="true"><div class="marquee-track">{"<span>Contributors</span>" * 12}</div></div>
-  <div class="wrap"><div class="crew">{cards}</div></div>
-</section>
-'''
 
 
 def mission():
@@ -698,12 +666,12 @@ def mission():
 <section class="band">
   <div class="wrap split2">
     <div class="prose">
-      <p>Die besten Projekte in Berlin starten selten im Büro. Sie starten auf Uni-Hackathons, in Einsteiger-Meetups und auf Community-Events, die mit null Budget laufen. Dort gibt es Pizza, Mate und Leute, die ihren ersten Prototyp bauen.</p>
+      <p>Die besten Projekte in Berlin starten selten im Büro. Sie starten in Lerngruppen, in Einsteiger-Meetups und auf Community-Events, die mit null Budget laufen. Dort gibt es Pizza, Mate und Leute, die ihren ersten Prototyp bauen.</p>
       <p>Genau da wollen wir sein. Mit jedem Pack, das du kaufst, finanzierst du Packs für diese Events. Wir bringen sie gratis vorbei und fragen nur nach einem Foto.</p>
       <p>Wir halten es ehrlich: Jedes Event, das wir unterstützen, steht unten mit Datum und Menge. Keine Prozent-Versprechen, die keiner prüfen kann.</p>
     </div>
     <div class="values one">
-      <div class="card"><span class="num">1</span><h3>Gratis für Einsteiger-Events</h3><p>Uni-Hackathons, Coding-Meetups, Community-Events ohne Sponsor.</p></div>
+      <div class="card"><span class="num">1</span><h3>Gratis für Einsteiger-Events</h3><p>Lerngruppen, Coding-Meetups, Community-Events ohne Sponsor.</p></div>
       <div class="card"><span class="num">2</span><h3>Nur ab 18</h3><p>GUMMIT enthält Koffein. Deshalb unterstützen wir nur Events für Erwachsene.</p></div>
       <div class="card"><span class="num">3</span><h3>Offen gezählt</h3><p>Jedes Event steht hier. Du siehst, wohin das Packn gehen.</p></div>
     </div>
@@ -727,7 +695,7 @@ def mission():
 </section>
 '''
     return page("/mission", "Mission – Projekt Erster Commit – GUMMIT",
-                "Mit jedem Pack GUMMIT unterstützt du Berliner Einsteiger-Events: Uni-Hackathons, Coding-Meetups, Community-Events ohne Budget.",
+                "Mit jedem Pack GUMMIT unterstützt du Berliner Einsteiger-Events: Lerngruppen, Coding-Meetups, Community-Events ohne Budget.",
                 "/mission", body)
 
 
@@ -745,7 +713,7 @@ def contact():
 <section class="band">
   <div class="wrap split2">
     <div class="contact-ways">
-      <div class="card"><h3>WhatsApp</h3><p>Am schnellsten. Direkt bei Daniel.</p><a class="btn small" href="#" data-chat>Chat starten</a></div>
+      <div class="card"><h3>WhatsApp</h3><p>Am schnellsten. Wir antworten selbst.</p><a class="btn small" href="#" data-chat>Chat starten</a></div>
       <div class="card"><h3>E-Mail</h3><p><a href="#" data-mail><span class="ph">[E-Mail-Adresse]</span></a></p></div>
       <div class="card"><h3>Anschrift</h3><p><span class="ph">[Firmenname GbR, Straße, PLZ Berlin]</span></p></div>
     </div>

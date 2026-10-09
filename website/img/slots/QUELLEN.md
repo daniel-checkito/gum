@@ -8,9 +8,8 @@ Sie sind Platzhalter für den Prototyp. Vor dem Launch durch eigene Fotos ersetz
 |---|---|---|
 | persona-vibecoder.jpg, poster-code.jpg | 1749 | Entwickler mit Kaffee am Laptop |
 | persona-gruender.jpg | 42620 | Junger Mann im Anzug am Laptop |
-| persona-hackathon.jpg | 4809 | Team am Tisch von oben |
 | persona-student.jpg | 4761 | Student lernt zu Hause |
-| community-hackathon.jpg | 914 | Großraumbüro von oben |
+| community-meetup.jpg | 914 | Großraumbüro von oben |
 | community-demoday.jpg | 4872 | Zwei Leute am Laptop |
 | community-coworking.jpg | 42639 | Hände am Laptop |
 | community-tasche.jpg | 1746 | Laptop im Café |
