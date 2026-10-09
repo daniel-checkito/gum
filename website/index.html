@@ -43,9 +43,13 @@
           <ul class="assure"><li id="shop-note">No payment now</li><li>Email before it ships</li><li>Ships from Berlin</li></ul>
         </div>
       </div>
-      <div class="pdp-media" aria-hidden="true">
+      <div class="pdp-media">
         <div class="stage">
-          <div class="sun"></div>
+          <picture class="photo" id="shop-photo" hidden>
+            <source id="shop-photo-webp" type="image/webp" srcset="">
+            <img id="shop-photo-img" src="" alt="" width="1200" height="1200" fetchpriority="high">
+          </picture>
+          <div class="sun" id="shop-sun"></div>
           <div class="tin" id="shop-tin">
             <svg class="mascot" viewBox="0 0 160 160" aria-hidden="true"><path d="M26 31Q26 40 35 40Q26 40 26 49Q26 40 17 40Q26 40 26 31Z" fill="#111"/><path d="M134 29Q134 36 141 36Q134 36 134 43Q134 36 127 36Q134 36 134 29Z" fill="#111"/><path d="M132 112Q132 120 140 120Q132 120 132 128Q132 120 124 120Q132 120 132 112Z" fill="#111"/>
 <path d="M36 82q-14-2-18-16M124 82q14-2 18-16M66 112v14h-8M94 112v14h8" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -62,6 +66,7 @@
           <div class="stack-badge" id="shop-stack" hidden>×1</div>
           <div class="sticker">no sugar, no cap</div>
         </div>
+        <p class="render-note" id="render-note" hidden>Product render. Final tin may differ slightly.</p>
       </div>
     </section>
   </div>

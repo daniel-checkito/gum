@@ -3,7 +3,7 @@
 
   // Shop
   var flavors = [
-    { name: "Hotfix", taste: "mint", mg: 60, color: "#A8E6A1" },
+    { name: "Hotfix", taste: "mint", mg: 60, color: "#A8E6A1", img: "img/tin-hotfix" },
     { name: "Ship It", taste: "cherry", mg: 52, color: "#F07A86" },
     { name: "Demo Day", taste: "berry", mg: 52, color: "#B7A8EA" }
   ];
@@ -36,6 +36,16 @@
     fChips.forEach(function (c, i) { c.setAttribute("aria-pressed", flavors[i] === f ? "true" : "false"); });
     pChips.forEach(function (c, i) { c.setAttribute("aria-pressed", packs[i] === p ? "true" : "false"); });
     $("shop-tin").style.background = f.color;
+    var hasPhoto = !!f.img;
+    $("shop-photo").hidden = !hasPhoto;
+    $("render-note").hidden = !hasPhoto;
+    $("shop-tin").hidden = hasPhoto;
+    $("shop-sun").hidden = hasPhoto;
+    if (hasPhoto) {
+      $("shop-photo-webp").srcset = "/" + f.img + ".webp";
+      $("shop-photo-img").src = "/" + f.img + ".jpg";
+      $("shop-photo-img").alt = "GUMMIT " + f.name + " tin, " + f.mg + " mg caffeine per piece";
+    }
     $("shop-mg").textContent = f.mg + " mg";
     $("shop-tinname").textContent = f.name;
     $("shop-tintaste").textContent = f.taste + " · 8 pcs";
