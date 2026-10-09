@@ -15,13 +15,16 @@
 </head>
 <body>
 
+<div class="announce"><span>First batch: <b>reserve now, pay later</b> · Shipping from Berlin to DE, AT, CH</span></div>
+
 <header class="wrap nav">
   <a class="logo" href="#top">GUMMIT<span class="cursor" aria-hidden="true"></span></a>
   <nav class="nav-links" aria-label="Main">
+    <a href="#shop">Shop</a>
     <a href="#flavors">Flavors</a>
-    <a href="#events">For hosts</a>
-    <a href="#teams">For teams</a>
-    <a class="btn" href="#waitlist">Join the waitlist</a>
+    <a href="#events">Hosts &amp; teams</a>
+    <a href="#faq">FAQ</a>
+    <a class="btn" href="#shop">Get the tins</a>
   </nav>
 </header>
 
@@ -32,7 +35,7 @@
       <h1>Caffeine gum for people who <span class="hl">ship.</span></h1>
       <p class="sub">Sugar-free, sweetened with xylitol, 52–60 mg caffeine per piece. Built for hackathons, demo days and the 47th tab of your Cursor session.</p>
       <div class="hero-cta">
-        <a class="btn" href="#waitlist">git gummit</a>
+        <a class="btn" href="#shop">Shop the tins</a>
         <a class="btn ghost" href="#events">Hosting an event? →</a>
       </div>
     </div>
@@ -52,25 +55,52 @@
     <div class="marquee-track" id="marquee"></div>
   </div>
 
-  <section class="wrap" id="numbers">
-    <p class="prompt">cat nutrition.md</p>
-    <h2>The numbers. No marketing fog.</h2>
-    <div class="cards">
-      <div class="card">
-        <div class="big">52–60 mg</div>
-        <div class="label">caffeine per piece</div>
-        <p class="small">Printed on the front, not hidden in a footnote. You decide the dose, one piece at a time. Max 3 a day, even during a hackathon.</p>
+  <section class="wrap" id="shop">
+    <div class="shop">
+      <div class="shop-gallery" aria-hidden="true">
+        <div class="shop-stage" id="shop-stage">
+          <div class="tin big-tin" id="shop-tin">
+            <div class="t-term">~/berlin $ ./chew</div>
+            <div class="t-brand">GUMMIT</div>
+            <div class="t-mg" id="shop-mg">60 mg</div>
+            <div class="t-sub">caffeine / piece · 0 g sugar</div>
+            <div class="t-flavor" id="shop-tinflavor"><b id="shop-tinname">Hotfix</b><span id="shop-tintaste">mint · 8 pieces</span></div>
+          </div>
+          <div class="stack-badge" id="shop-stack">×1</div>
+        </div>
       </div>
-      <div class="card">
-        <div class="big">0 g</div>
-        <div class="label">sugar</div>
-        <p class="small">Sweetened with xylitol. Your dentist will finally glaze you back.</p>
+      <div class="shop-buy">
+        <p class="prompt">npm i gummit</p>
+        <h2 class="shop-title">GUMMIT caffeine gum</h2>
+        <div class="price-row"><span class="price" id="shop-price">€4.99</span><span class="per" id="shop-per">€4.99 / tin</span><span class="save" id="shop-save" hidden></span></div>
+        <p class="tax">Incl. VAT. Shipping calculated at checkout. Launch prices for the first batch.</p>
+
+        <fieldset class="opt">
+          <legend>Flavor</legend>
+          <div class="chips" id="shop-flavors"></div>
+        </fieldset>
+        <fieldset class="opt">
+          <legend>Pack</legend>
+          <div class="packs" id="shop-packs"></div>
+        </fieldset>
+
+        <button class="btn buy" type="button" id="shop-buy">Reserve my tins</button>
+        <p class="buy-note" id="shop-note">No payment yet. We email you when the first batch ships.</p>
+
+        <ul class="facts">
+          <li><b>52–60 mg</b> caffeine per piece</li>
+          <li><b>0 g</b> sugar, xylitol</li>
+          <li><b>8</b> pieces per metal tin</li>
+          <li><b>Max 3</b> pieces a day</li>
+        </ul>
       </div>
-      <div class="card">
-        <div class="big">8 pcs</div>
-        <div class="label">in a metal tin</div>
-        <p class="small">Fits next to your MacBook charger. Metal tin, stickers encouraged.</p>
-      </div>
+    </div>
+
+    <div class="trust">
+      <div><span class="ti">mg</span><b>Number on the front</b><small>Caffeine per piece, no fine print</small></div>
+      <div><span class="ti">0g</span><b>Sugar-free</b><small>Sweetened with xylitol</small></div>
+      <div><span class="ti">BER</span><b>Ships from Berlin</b><small>Germany, Austria, Switzerland</small></div>
+      <div><span class="ti">B2B</span><b>Teams &amp; events</b><small>Invoice, host boxes, display</small></div>
     </div>
   </section>
 
@@ -161,6 +191,19 @@
     </div>
   </section>
 
+  <section class="wrap" id="faq">
+    <p class="prompt">man gummit</p>
+    <h2>FAQ</h2>
+    <div class="faq">
+      <details><summary>How much caffeine is in one piece?</summary><p>52 to 60 mg depending on the flavor: Hotfix 60 mg, Ship It and Demo Day 52 mg. The number is on the front of every tin.</p></details>
+      <details><summary>How many can I have per day?</summary><p>Max 3 pieces a day. Count your coffee, mate and energy drinks too. Not recommended for children and pregnant women.</p></details>
+      <details><summary>Is it really sugar-free?</summary><p>Yes. It is sweetened with xylitol. Like all xylitol products, too much can have a laxative effect, and xylitol is toxic to dogs.</p></details>
+      <details><summary>When does it ship?</summary><p>With the first batch. Reserve now and we email you once before it ships. No payment until then.</p></details>
+      <details><summary>Can I get it for my event or team?</summary><p>Yes. Event hosts get a host box, teams get a team box with invoice. Pick your type in the form below.</p></details>
+      <details><summary>Will it make me 10x?</summary><p>No. It's gum with caffeine. We don't promise flow states, we promise the number on the front.</p></details>
+    </div>
+  </section>
+
   <section class="wrap" id="waitlist">
     <div class="cta">
       <div>
@@ -172,6 +215,7 @@
         </div>
       </div>
       <form id="lead-form" novalidate>
+        <p class="picked" id="f-picked" hidden></p>
         <div class="field">
           <label for="f-email">email</label>
           <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@startup.xyz" required>
