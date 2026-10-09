@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GUMMIT – Koffein-Kaugummi für Berliner Builder</title>
-<meta name="description" content="Zuckerfreier Kaugummi mit 52 bis 60 mg Koffein pro Stück. Für alle, die in Berlin Dinge bauen: Hackathons, Demo Days, lange Abende im Coworking.">
-<meta property="og:title" content="GUMMIT – Koffein-Kaugummi für Berliner Builder">
-<meta property="og:description" content="Zuckerfreier Kaugummi mit 52 bis 60 mg Koffein pro Stück. Für alle, die in Berlin Dinge bauen: Hackathons, Demo Days, lange Abende im Coworking.">
+<title>GUMMIT Koffein-Kaugummi – Hotfix, Ship It, Demo Day</title>
+<meta name="description" content="Zuckerfreier Kaugummi mit 52 bis 60 mg Koffein pro Stück, 8 Stück in der Metalldose. Drei Sorten, ab 3,99 € pro Dose. Jetzt unverbindlich reservieren.">
+<meta property="og:title" content="GUMMIT Koffein-Kaugummi – Hotfix, Ship It, Demo Day">
+<meta property="og:description" content="Zuckerfreier Kaugummi mit 52 bis 60 mg Koffein pro Stück, 8 Stück in der Metalldose. Drei Sorten, ab 3,99 € pro Dose. Jetzt unverbindlich reservieren.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="/img/tin-hotfix.jpg">
 <meta name="theme-color" content="#F4F0E8">
-<link rel="canonical" href="https://gum-prototype.vercel.app/">
+<link rel="canonical" href="https://gum-prototype.vercel.app/produkt">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="/img/tin-hotfix.webp" type="image/webp">
@@ -22,61 +22,80 @@
 <header class="site-head">
   <div class="wrap nav">
     <a class="logo" href="/" aria-label="GUMMIT Startseite"><span>GUMMIT</span></a>
-    <nav class="nav-links" aria-label="Hauptmenü"><a href="/produkt">Produkt</a><a href="/teams">Für Teams</a><a href="/story">Story</a><a href="/faq">FAQ</a></nav>
+    <nav class="nav-links" aria-label="Hauptmenü"><a href="/produkt" aria-current=page>Produkt</a><a href="/teams">Für Teams</a><a href="/story">Story</a><a href="/faq">FAQ</a></nav>
     <a class="btn small" href="/produkt#kaufen">Reservieren</a>
   </div>
 </header>
 <main id="inhalt">
 
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <span class="sticker">Neu aus Berlin</span>
-      <h1 class="riso">Kau rein.<br>Ship raus.</h1>
-      <p class="lede">Zuckerfreier Kaugummi mit <b>52–60 mg Koffein</b> pro Stück. In der Metalldose, für <em>lange Build-Tage</em>, Hackathons und Demo Days.</p>
-      <div class="hero-cta">
-        <a class="btn" href="/produkt">Zum Produkt · ab <span data-from-price>3,99 €</span></a>
-        <a class="btn ghost" href="/teams">Für Teams &amp; Events</a>
-      </div>
-      <ul class="hero-facts"><li><b>0 g</b> Zucker</li><li><b>8</b> Stück pro Dose</li><li><b>3</b> Sorten</li></ul>
-    </div>
-    <div class="hero-media">
-      <figure class="polaroid">
-        <picture>
-          <source type="image/webp" srcset="/img/tin-hotfix.webp">
-          <img src="/img/tin-hotfix.jpg" alt="GUMMIT-Dose Hotfix mit 60 mg Koffein pro Stück, daneben Kaugummistücke" width="1200" height="1200" fetchpriority="high">
-        </picture>
-        <figcaption>Hotfix · Minze · 60 mg</figcaption>
-      </figure>
-      <p class="note"><svg class="arrow" viewBox="0 0 80 40" aria-hidden="true"><path d="M4 30C20 8 46 4 70 14M60 6l10 8-12 4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>die Zahl steht vorne drauf</span></p>
-      <p class="render-note">Produkt-Rendering. Die echte Dose kann leicht abweichen.</p>
-    </div>
-  </div>
-</section>
-
-<div class="ticker" aria-hidden="true"><div class="ticker-track">
-  <span>0 g Zucker</span><span>52–60 mg Koffein pro Stück</span><span>Metall-Klappdose</span><span>Versand aus Berlin</span><span>Keine Wirkversprechen. Nur Kaugummi.</span>
-  <span>0 g Zucker</span><span>52–60 mg Koffein pro Stück</span><span>Metall-Klappdose</span><span>Versand aus Berlin</span><span>Keine Wirkversprechen. Nur Kaugummi.</span>
+<div class="wrap crumbs"><a href="/">Start</a> / <span>Koffein-Kaugummi</span></div>
+<section class="pdp wrap" id="kaufen">
+  <div class="pdp-media">
+    <div class="pdp-main card" id="pdp-main">
+      <picture class="pdp-photo" id="shop-photo">
+        <source id="shop-photo-webp" type="image/webp" srcset="/img/tin-hotfix.webp">
+        <img id="shop-photo-img" src="/img/tin-hotfix.jpg" alt="GUMMIT-Dose Hotfix" width="1200" height="1200" fetchpriority="high">
+      </picture>
+      <div class="pdp-drawn" id="shop-drawn" hidden><div class="tin" id="shop-tin" style="background:#A8DCC6">
+  <div class="t-brand">GUMMIT</div>
+  <div class="t-mg"><span id="shop-mg">60</span> mg</div>
+  <div class="t-sub">Koffein pro Stück · 0 g Zucker</div>
+  <div class="t-flavor"><b id="shop-tinname">Hotfix</b><span id="shop-tintaste">Minze · 8 Stk.</span></div>
 </div></div>
+      <div class="pdp-ph ph-tile" id="shop-ph" hidden><span>Foto folgt</span><b id="shop-ph-label">Dose offen</b></div>
+      <span class="stack-badge" id="shop-stack" hidden>×1</span>
+    </div>
+    <div class="thumbs" id="thumbs" role="tablist" aria-label="Produktbilder">
+      <button type="button" data-view="photo" aria-pressed="true">Foto</button>
+      <button type="button" data-view="drawn" aria-pressed="false">Etikett</button>
+      <button type="button" data-view="ph" data-label="Dose offen" aria-pressed="false">Dose offen</button>
+      <button type="button" data-view="ph" data-label="In der Hand" aria-pressed="false">Größe</button>
+      <button type="button" data-view="ph" data-label="Rückseite" aria-pressed="false">Rückseite</button>
+    </div>
+    <p class="render-note" id="render-note">Produkt-Rendering. Die echte Dose kann leicht abweichen.</p>
+  </div>
 
-<section class="band" id="fuer-wen">
-  <div class="wrap">
-    <p class="sec-label"><span>01</span>Für wen</p>
-    <h2>Gemacht für Berlins <em>Builder</em></h2>
-    <p class="lead">Nicht für alle. Für Leute, die abends noch einen Prototyp fertig machen, am Wochenende auf Hackathons sitzen und Montag pitchen.</p>
-    <div class="personas">
-      <article class="card persona"><span class="num">A</span><h3>Vibe Coder</h3><p>Du baust mit Cursor, Claude und Kaffee. Der Kaffee ist kalt, der Build läuft noch. Die Dose liegt neben dem Ladekabel.</p></article>
-      <article class="card persona"><span class="num">B</span><h3>Gründer:innen</h3><p>Pitch-Deck Version 14, Probelauf um 23 Uhr. Kein Zucker vor dem Auftritt, keine Dose Energy auf dem Tisch.</p></article>
-      <article class="card persona"><span class="num">C</span><h3>Hackathon-Teams</h3><p>48 Stunden, ein Tisch, zu viel Pizza. Eine Dose in die Mitte, alle sehen, wie viel drin ist.</p></article>
+  <div class="pdp-info">
+    <p class="kicker">Kaugummi mit Koffein, mit Süßungsmitteln</p>
+    <h1>GUMMIT <span id="pdp-flavor">Hotfix</span></h1>
+    <p class="lede">Zuckerfreier Kaugummi mit <b><span id="lede-mg">60</span> mg Koffein</b> pro Stück. 8 Stück in der Metall-Klappdose.</p>
+    <div class="price-row"><span class="price" id="shop-price">4,99 €</span><span class="save" id="shop-save" hidden></span></div>
+    <p class="price-meta"><span id="shop-per">4,99 € / Dose</span> · inkl. MwSt., zzgl. <a href="/versand">Versand</a> · <span id="shop-unit">Grundpreis folgt</span></p>
+
+    <fieldset class="opt"><legend>Sorte</legend><div class="chips" id="shop-flavors" role="radiogroup"></div></fieldset>
+    <fieldset class="opt"><legend>Menge</legend><div class="packs" id="shop-packs" role="radiogroup"></div></fieldset>
+
+    <button class="btn buy" type="button" id="shop-buy">Unverbindlich reservieren</button>
+    <p class="buy-note" id="shop-note">Unverbindlich, kein Kaufvertrag. Zahlung erst nach separater Bestellung.</p>
+    <ul class="assure"><li>Erste Charge: <span data-launch>Termin folgt</span></li><li>Versand aus Berlin</li><li>14 Tage Widerruf bei Bestellung</li></ul>
+
+    <p class="warn">Enthält Koffein (<span id="shop-mg100">–</span> mg/100 g). Für Kinder und schwangere Frauen nicht empfohlen.</p>
+
+    <div class="acc">
+      <details open><summary>Beschreibung</summary><p>GUMMIT ist Kaugummi mit Koffein und ohne Zucker, gesüßt mit Xylit. Jedes Stück hat eine feste Menge Koffein, die groß vorne auf der Dose steht. Gemacht für lange Build-Tage, Hackathons und Demo Days. Kein Wirkversprechen, nur Kaugummi mit einer ehrlichen Zahl.</p></details>
+      <details><summary>Zutaten und Allergene</summary><p><span class="ph">Vollständige Zutatenliste folgt vom Hersteller.</span> Bekannt: Süßungsmittel Xylit, Kaumasse, Koffein, Aromen. Allergene werden hier hervorgehoben, sobald die Spezifikation vorliegt.</p></details>
+      <details><summary>Nährwerte</summary><div class="table-scroll"><table class="table"><thead><tr><th></th><th>pro 100 g</th><th>pro Stück</th></tr></thead><tbody>
+        <tr><td>Energie</td><td class="ph">folgt</td><td class="ph">folgt</td></tr>
+        <tr><td>Fett</td><td class="ph">folgt</td><td class="ph">folgt</td></tr>
+        <tr><td>Kohlenhydrate</td><td class="ph">folgt</td><td class="ph">folgt</td></tr>
+        <tr><td>davon Zucker</td><td>0 g</td><td>0 g</td></tr>
+        <tr><td>davon mehrwertige Alkohole</td><td class="ph">folgt</td><td class="ph">folgt</td></tr>
+        <tr><td>Eiweiß</td><td class="ph">folgt</td><td class="ph">folgt</td></tr>
+        <tr><td>Salz</td><td class="ph">folgt</td><td class="ph">folgt</td></tr>
+        <tr><td>Koffein</td><td id="nut-mg100">–</td><td id="nut-mg">60 mg</td></tr>
+      </tbody></table></div></details>
+      <details><summary>Verzehrempfehlung</summary><p>Ein Stück kauen, wenn der nächste Arbeitsblock startet. Nicht mehr als 3 Stück pro Tag. Andere Koffeinquellen wie Kaffee, Mate oder Energy Drinks mitzählen.</p></details>
+      <details><summary>Warnhinweise</summary><p>Enthält Koffein. Für Kinder und schwangere Frauen nicht empfohlen. Kann bei übermäßigem Verzehr abführend wirken. Xylit ist für Hunde giftig.</p></details>
+      <details><summary>Füllmenge und Aufbewahrung</summary><p>8 Stück, Füllmenge <span id="net-weight">–</span> g (vorläufig). Trocken und unter 25 °C lagern. Mindesthaltbarkeit und Los stehen auf dem Dosenboden.</p></details>
+      <details><summary>Lebensmittelunternehmer</summary><p><span class="ph">[Firmenname GbR, Anschrift, Berlin]</span></p></details>
+      <details><summary>Versand und Rückgabe</summary><p>Versand aus Berlin nach Deutschland, Österreich und in die Schweiz. Kosten und Laufzeiten unter <a href="/versand">Versand &amp; Zahlung</a>. Bei Bestellungen gilt das <a href="/widerruf">Widerrufsrecht</a>.</p></details>
     </div>
   </div>
 </section>
 
-<section class="band paper-2" id="warum">
+<section class="band paper-2">
   <div class="wrap">
-    <p class="sec-label"><span>02</span>Warum GUMMIT</p>
-    <h2>Koffein ohne <em>Theater</em></h2>
-    <p class="lead">Kein Zucker, kein Becher, kein Anstehen. Klein genug für die Hosentasche, ehrlich genug, um die Dosis groß aufs Etikett zu drucken.</p>
+    <h2>Warum GUMMIT</h2>
     <div class="mascots">
   <div><svg viewBox="0 0 160 160" aria-hidden="true"><path d="M26 31Q26 40 35 40Q26 40 26 49Q26 40 17 40Q26 40 26 31Z" fill="#1D1D1B"/><path d="M134 29Q134 36 141 36Q134 36 134 43Q134 36 127 36Q134 36 134 29Z" fill="#1D1D1B"/><path d="M132 112Q132 120 140 120Q132 120 132 128Q132 120 124 120Q132 120 132 112Z" fill="#1D1D1B"/>
 <path d="M36 82q-14-2-18-16M124 82q14-2 18-16M66 112v14h-8M94 112v14h8" fill="none" stroke="#1D1D1B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -114,36 +133,9 @@
   </div>
 </section>
 
-<section class="band" id="sorten">
-  <div class="wrap">
-    <p class="sec-label"><span>03</span>Sorten</p>
-    <h2>Drei Sorten, <em>eine</em> Dose</h2>
-    <div class="flavors">
-      <a class="flavor card" href="/produkt?sorte=hotfix"><div class="tin" style="background:#A8DCC6">
-  <div class="t-brand">GUMMIT</div>
-  <div class="t-mg"><span>60</span> mg</div>
-  <div class="t-sub">Koffein pro Stück · 0 g Zucker</div>
-  <div class="t-flavor"><b>Hotfix</b><span>Minze · 8 Stk.</span></div>
-</div><h3>Hotfix</h3><p>Minze · 60 mg pro Stück. Für den Bug, den du um 23:58 in Prod findest.</p><span class="more">Ansehen →</span></a>
-      <a class="flavor card" href="/produkt?sorte=shipit"><div class="tin" style="background:#F7A8B8">
-  <div class="t-brand">GUMMIT</div>
-  <div class="t-mg"><span>52</span> mg</div>
-  <div class="t-sub">Koffein pro Stück · 0 g Zucker</div>
-  <div class="t-flavor"><b>Ship It</b><span>Kirsche · 8 Stk.</span></div>
-</div><h3>Ship It</h3><p>Kirsche · 52 mg pro Stück. LGTM, nicht gelesen, gemergt.</p><span class="more">Ansehen →</span></a>
-      <a class="flavor card" href="/produkt?sorte=demoday"><div class="tin" style="background:#C3B8EE">
-  <div class="t-brand">GUMMIT</div>
-  <div class="t-mg"><span>52</span> mg</div>
-  <div class="t-sub">Koffein pro Stück · 0 g Zucker</div>
-  <div class="t-flavor"><b>Demo Day</b><span>Beere · 8 Stk.</span></div>
-</div><h3>Demo Day</h3><p>Beere · 52 mg pro Stück. pitch_deck_v14_FINAL_final2.pdf</p><span class="more">Ansehen →</span></a>
-    </div>
-  </div>
-</section>
-
 <section class="band" id="vergleich">
   <div class="wrap">
-    <p class="sec-label"><span>04</span>Rechnen wir mal</p>
+    
     <h2>Koffein pro <em>Euro</em></h2>
     <p class="lead">Was kosten 100 mg Koffein, wenn du sie unterwegs kaufst? GUMMIT liegt unter Coffee to go und Energy Drinks. Nur Kaffee zu Hause ist günstiger, das sagen wir ehrlich.</p>
     <div class="cmp-grid">
@@ -169,60 +161,32 @@
 </section>
 
 
-<section class="band paper-2" id="so-gehts">
+<section class="band paper-2" id="bewertungen">
   <div class="wrap split2">
     <div>
-      <p class="sec-label"><span>05</span>So geht's</p>
-      <h2>Pop. Kau. <em>Ship.</em></h2>
-      <ol class="steps">
-        <li><b>Ein Stück nehmen,</b> wenn der nächste Arbeitsblock startet.</li>
-        <li><b>Kauen</b> wie normalen Kaugummi. Der Geschmack hält.</li>
-        <li><b>Mitzählen.</b> Höchstens 3 Stück am Tag, Kaffee mitgerechnet.</li>
-      </ol>
-    </div>
-    <div>
-      <p class="sec-label"><span>06</span>Community</p>
-      <h2>Bald hier: <em>ihr</em></h2>
-      <p class="lead">Die erste Charge geht auf Berliner Events. Danach kommen hier eure Fotos hin.</p>
-      <div class="gallery-ph">
-  <div class="ph-tile tape"><span>Foto folgt</span><b>Hackathon</b></div>
-  <div class="ph-tile tape"><span>Foto folgt</span><b>Demo Day</b></div>
-  <div class="ph-tile tape"><span>Foto folgt</span><b>Coworking</b></div>
-  <div class="ph-tile tape"><span>Foto folgt</span><b>Deine Dose</b></div>
+      <h2>Bewertungen</h2>
+      <div class="reviews-empty card">
+  <p class="stamp">Neu</p>
+  <h3>Noch keine Bewertungen</h3>
+  <p>GUMMIT startet gerade. Wir zeigen hier nur echte Stimmen von Leuten, die ihn probiert haben. Sei unter den Ersten und sag uns ehrlich, wie er schmeckt.</p>
+  <a class="btn ghost small" href="/kontakt">Feedback schicken</a>
 </div>
     </div>
-  </div>
-</section>
-
-<section class="band" id="story-teaser">
-  <div class="wrap teaser">
-    <div class="teaser-photo ph-tile tape"><span>Foto folgt</span><b>Daniel</b></div>
     <div>
-      <p class="sec-label"><span>07</span>Story</p>
-      <h2>Gebaut von einem, der <em>auch</em> nachts baut</h2>
-      <p class="lead">Tagsüber Tech-Job, abends Side Projects und 3D-Drucker. Der Kaffee war kalt, der Automat hatte nur Zucker. Also hat Daniel GUMMIT gestartet.</p>
-      <a class="btn ghost" href="/story">Ganze Story lesen</a>
+      <h2>Für Teams?</h2>
+      <div class="card cross">
+        <h3>Team-Box</h3>
+        <p>Gemischte Box für euer Büro oder Coworking. Mit Rechnung, auf Wunsch mit Logo.</p>
+        <a class="btn ghost small" href="/teams">Team-Box ansehen</a>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="band blue-soft" id="teams-teaser">
-  <div class="wrap teams-teaser">
-    <div>
-      <p class="sec-label"><span>08</span>Für Teams</p>
-      <h2>Für Teams, Hosts <em>&amp;</em> Coworkings</h2>
-      <p class="lead">Team-Boxen mit Rechnung, Host-Boxen für Hackathons und ein Display für eure Theke.</p>
-    </div>
-    <a class="btn" href="/teams">Angebote ansehen</a>
-  </div>
-</section>
-
-<section class="band" id="faq-teaser">
+<section class="band">
   <div class="wrap">
-    <p class="sec-label"><span>09</span>FAQ</p>
-    <h2>Kurz gefragt</h2>
-    <div class="faq"><div class="faq-group"><h3>Produkt</h3><details><summary>Was genau ist GUMMIT?</summary><p>Zuckerfreier Kaugummi mit Koffein. Jedes Stück hat je nach Sorte 52 bis 60 mg Koffein. 8 Stück stecken in einer Metall-Klappdose.</p></details><details><summary>Wie schmeckt es?</summary><p>Hotfix nach Minze, Ship It nach Kirsche, Demo Day nach Beere. Koffein schmeckt leicht bitter. Minze überdeckt das am besten, deshalb ist Hotfix unser Startpunkt.</p></details></div><div class="faq-group"><h3>Koffein und Sicherheit</h3><details><summary>Wie viel Koffein ist in einem Stück?</summary><p>Hotfix 60 mg, Ship It und Demo Day je 52 mg. Zum Vergleich: Ein Espresso hat laut BfR etwa 80 mg.</p></details><details><summary>Wie viele Stück pro Tag?</summary><p>Höchstens 3 Stück am Tag. Kaffee, Mate und Energy Drinks mitzählen. Das BfR nennt für gesunde Erwachsene bis zu 400 mg Koffein über den Tag verteilt als unbedenklich.</p></details></div></div>
-    <p class="more-link"><a href="/faq">Alle Fragen ansehen →</a></p>
+    <h2>Fragen zum Produkt</h2>
+    <div class="faq"><div class="faq-group"><h3>Koffein und Sicherheit</h3><details><summary>Wie viel Koffein ist in einem Stück?</summary><p>Hotfix 60 mg, Ship It und Demo Day je 52 mg. Zum Vergleich: Ein Espresso hat laut BfR etwa 80 mg.</p></details><details><summary>Wie viele Stück pro Tag?</summary><p>Höchstens 3 Stück am Tag. Kaffee, Mate und Energy Drinks mitzählen. Das BfR nennt für gesunde Erwachsene bis zu 400 mg Koffein über den Tag verteilt als unbedenklich.</p></details><details><summary>Wer sollte GUMMIT nicht kauen?</summary><p>Kinder und schwangere Frauen. Wenn du empfindlich auf Koffein reagierst, frag lieber vorher deine Ärztin oder deinen Arzt.</p></details><details><summary>Worauf muss ich noch achten?</summary><p>Xylit kann bei übermäßigem Verzehr abführend wirken und ist für Hunde giftig. Dose also nicht in Reichweite vom Bürohund lassen.</p></details><details><summary>Macht mich das 10x produktiver?</summary><p>Nein. Es ist Kaugummi mit Koffein. Die Zahl vorne drauf ist der ganze Pitch.</p></details></div><div class="faq-group"><h3>Reservieren, Versand, Zahlung</h3><details><summary>Wie funktioniert das Reservieren?</summary><p>Sorte und Menge wählen, Mail-Adresse eintragen. Das ist unverbindlich und kein Kaufvertrag. Wir schreiben dir einmal, bevor die erste Charge verschickt wird. Bestellen und zahlen kannst du dann separat.</p></details><details><summary>Wohin liefert ihr?</summary><p>Aus Berlin nach Deutschland, Österreich und in die Schweiz. Kosten und Laufzeiten stehen unter Versand & Zahlung.</p></details><details><summary>Welche Zahlungsarten gibt es?</summary><p>Sobald der Shop live ist: Karte, Apple Pay, Google Pay und weitere über Stripe. Aktuell zahlst du nichts.</p></details><details><summary>Kann ich zurückgeben?</summary><p>Ja, bei Bestellungen gilt das gesetzliche Widerrufsrecht. Details stehen unter Widerruf.</p></details></div></div>
   </div>
 </section>
 
@@ -252,15 +216,6 @@
       <button class="btn" type="submit">Unverbindlich reservieren</button>
       <p class="form-msg" role="status" aria-live="polite"></p>
     </form>
-  </div>
-</section>
-
-<section class="band service-band">
-  <div class="wrap service">
-    <div><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M6 18h32v24H6zM38 26h10l8 8v8H38z" fill="none" stroke="#1D1D1B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18" cy="46" r="5" fill="#fff" stroke="#1D1D1B" stroke-width="3.5"/><circle cx="46" cy="46" r="5" fill="#fff" stroke="#1D1D1B" stroke-width="3.5"/></svg><h3>Versand aus Berlin</h3><p>Nach Deutschland, Österreich und in die Schweiz.</p></div>
-    <div><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 12h40a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4H28l-10 8v-8h-6a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4Z" fill="none" stroke="#1D1D1B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 28h.1M32 28h.1M42 28h.1" fill="none" stroke="#1D1D1B" stroke-width="5" stroke-linecap="round"/></svg><h3>Echte Menschen</h3><p>Fragen landen direkt bei Daniel.</p></div>
-    <div><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="22" fill="none" stroke="#1D1D1B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 18v14l9 6" fill="none" stroke="#1D1D1B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Erst reservieren</h3><p>Keine Zahlung, bis die erste Charge rausgeht.</p></div>
-    <div><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6l22 8v16c0 14-10 22-22 28C20 52 10 44 10 30V14Z" fill="none" stroke="#1D1D1B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 32l7 7 13-14" fill="none" stroke="#1D1D1B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Ehrliche Dosis</h3><p>mg vorne, höchstens 3 am Tag.</p></div>
   </div>
 </section>
 

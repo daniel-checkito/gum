@@ -80,3 +80,5 @@ Alle Ideen aus dem Gespräch vom 08.10.2026, in der Reihenfolge, wie sie kamen, 
 | Sorten Hotfix, Ship It, Demo Day, Touch Grass | ersetzen Deadline, Standup, Kundencall, Feierabend | Passen zur Dev-Zielgruppe |
 | Website auf Englisch | übernommen | Berliner Tech-Szene ist international. Pflichtangaben deutsch und englisch |
 | Website live auf gum-prototype.vercel.app | erledigt | Ordner website/, jeder Push auf main geht live |
+| Neubau Website „Berlin Zine“ mit Unterseiten | übernommen | Orange zu viel. Papier, Tinte, Riso-Blau, Pink nur als Akzent. Produktseite, Teams, Story, FAQ, Kontakt, Rechtsseiten. Recherche in 02_Recherche/20 |
+| Platzhalter-Bewertungen | verworfen | Rechtlich heikel (UWG). Stattdessen „Noch keine Bewertungen“ und Foto-Platzhalter |
