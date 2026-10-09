@@ -92,3 +92,6 @@ Alle Ideen aus dem Gespräch vom 08.10.2026, in der Reihenfolge, wie sie kamen, 
 | Markenrichtung "Erster Commit", Farben "Cobalt Rush" | übernommen | Creme, Kobalt, Lime. Recherche in 02_Recherche/22 |
 | Team-Karussell "Contributors" | übernommen | Vorbild "The Chew Crew" von Forest Gum. Nur echte Fotos |
 | Bild-Slots mit KI-Prompts | übernommen | 05_Vorlagen/Bild-Prompts.md, Bilder nach website/img/slots/ |
+| Stick-Pack im Five-Gum-Stil statt Metalldose | übernommen | Schwarzes Pack, Chrom-Zahl = mg Koffein, Farbgrafik pro Sorte. Format beim Hersteller klären |
+| Website im Keynote-Stil | übernommen | Hell, Geist, Bento, Farbflächen mit Linienmuster. Ersetzt "Cobalt Rush". Recherche in 02_Recherche/23 |
+| Biohacking und Fokus als Versprechen | verworfen | Rechtlich nicht drin (unter 75 mg, HCVO). Stattdessen Koffein-Timeline mit Daten |

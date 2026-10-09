@@ -6,67 +6,16 @@ Danach liegen alle .html-Dateien in website/. Inhalte hier ändern, nicht in den
 """
 from pathlib import Path
 
-from tin_art import FLAVORS, front, opened, back
+from pack_art import FLAVORS, PIECES, front, opened, back
 
 OUT = Path(__file__).resolve().parent.parent / "website"
 
 # ---------- Icons und Figuren (eigene Zeichnungen) ----------
-S = 'stroke="#15172B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"'
-
-
-def star(x, y, r):
-    return f'<path d="M{x} {y-r}Q{x} {y} {x+r} {y}Q{x} {y} {x} {y+r}Q{x} {y} {x-r} {y}Q{x} {y} {x} {y-r}Z" fill="#15172B"/>'
-
-
-def heart(x, y, s=1.6):
-    return (f'<path transform="translate({x} {y}) scale({s})" d="M5 9C1 6 0 4 0 2.5 0 .5 2-.5 3.5.2 4.3.6 5 1.5 5 1.5S5.7.6 6.5.2C8-.5 10 .5 10 2.5 10 4 9 6 5 9Z" '
-            'fill="#FF48B0" stroke="#15172B" stroke-width="1.6" stroke-linejoin="round"/>')
-
-
-CHEEK = "#FFB3D9"
-
-M_GUM = f'''<svg viewBox="0 0 160 160" aria-hidden="true">{star(26,40,9)}{star(134,36,7)}{star(132,120,8)}
-<path d="M36 82q-14-2-18-16M124 82q14-2 18-16M66 112v14h-8M94 112v14h8" fill="none" {S}/>
-<rect x="36" y="46" width="88" height="66" rx="30" fill="#fff" {S}/>
-<path d="M58 74q7-9 14 0M88 74q7-9 14 0" fill="none" {S}/>
-<path d="M66 86q14 16 28 0Z" fill="#15172B" {S}/>
-<ellipse cx="53" cy="89" rx="7" ry="4.5" fill="{CHEEK}"/><ellipse cx="107" cy="89" rx="7" ry="4.5" fill="{CHEEK}"/>
-</svg>'''
-
-M_CUBE = f'''<svg viewBox="0 0 160 160" aria-hidden="true">
-<path d="M12 72h18M8 88h22M14 104h14" fill="none" {S}/>
-<path d="M60 104l-6 16h-8M98 110l8 14h8" fill="none" {S}/>
-<path d="M44 56 80 40 116 56 80 72Z" fill="#fff" {S}/>
-<path d="M44 56 80 72v44L44 100Z" fill="#F2F2F2" {S}/>
-<path d="M80 72 116 56v44l-36 16Z" fill="#E2E2E2" {S}/>
-<circle cx="56" cy="83" r="4.5" fill="#15172B"/><circle cx="70" cy="89" r="4.5" fill="#15172B"/>
-<path d="M50 74l9 3M65 80l9 4M53 101q4-4 8 0t8 0" fill="none" stroke="#15172B" stroke-width="3.5" stroke-linecap="round"/>
-<path d="M126 32c-4 8-6 12 0 14 6-2 4-6 0-14Z" fill="#9EA5FF" stroke="#15172B" stroke-width="3" stroke-linejoin="round"/>
-<rect x="6" y="18" width="70" height="26" rx="13" fill="#fff" {S}/><text x="41" y="36" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="700" font-size="14" fill="#15172B">tschüss!</text>
-</svg>'''
-
-M_TIN = f'''<svg viewBox="0 0 160 160" aria-hidden="true">{star(28,42,8)}{star(136,54,9)}{star(128,132,6)}
-<rect x="40" y="38" width="80" height="92" rx="18" fill="#E4E2FF" {S}/>
-<path d="M40 60h80" fill="none" {S}/>
-<circle cx="66" cy="78" r="4.5" fill="#15172B"/><path d="M87 78q6-6 12 0M70 88q10 9 20 0" fill="none" {S}/>
-<ellipse cx="58" cy="90" rx="6" ry="4" fill="{CHEEK}"/><ellipse cx="102" cy="90" rx="6" ry="4" fill="{CHEEK}"/>
-<text x="80" y="120" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="18" fill="#15172B">60 MG</text>
-</svg>'''
-
-M_LAPTOP = f'''<svg viewBox="0 0 160 160" aria-hidden="true">{heart(20,30)}{heart(122,22,1.9)}{star(140,74,8)}{star(18,86,7)}
-<rect x="40" y="40" width="80" height="58" rx="10" fill="#D7F94A" {S}/>
-<path d="M60 58l9 6-9 6M100 58l-9 6 9 6" fill="none" {S}/>
-<path d="M68 78q12 13 24 0Z" fill="#15172B" {S}/>
-<ellipse cx="56" cy="80" rx="6" ry="4" fill="{CHEEK}"/><ellipse cx="104" cy="80" rx="6" ry="4" fill="{CHEEK}"/>
-<path d="M26 104h108l-10 16H36Z" fill="#fff" {S}/>
-</svg>'''
-
-L = 'fill="none" stroke="#15172B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"'
-I_TRUCK = f'<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M6 18h32v24H6zM38 26h10l8 8v8H38z" {L}/><circle cx="18" cy="46" r="5" fill="#fff" stroke="#15172B" stroke-width="3.5"/><circle cx="46" cy="46" r="5" fill="#fff" stroke="#15172B" stroke-width="3.5"/></svg>'
-I_CHAT = f'<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 12h40a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4H28l-10 8v-8h-6a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4Z" {L}/><path d="M22 28h.1M32 28h.1M42 28h.1" fill="none" stroke="#15172B" stroke-width="5" stroke-linecap="round"/></svg>'
+L = 'fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"'
+I_TRUCK = f'<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M6 18h32v24H6zM38 26h10l8 8v8H38z" {L}/><circle cx="18" cy="46" r="5" fill="none" stroke="currentColor" stroke-width="2.6"/><circle cx="46" cy="46" r="5" fill="none" stroke="currentColor" stroke-width="2.6"/></svg>'
+I_CHAT = f'<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 12h40a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4H28l-10 8v-8h-6a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4Z" {L}/><path d="M22 28h.1M32 28h.1M42 28h.1" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>'
 I_CLOCK = f'<svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="22" {L}/><path d="M32 18v14l9 6" {L}/></svg>'
 I_SHIELD = f'<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6l22 8v16c0 14-10 22-22 28C20 52 10 44 10 30V14Z" {L}/><path d="M22 32l7 7 13-14" {L}/></svg>'
-ARROW = '<svg class="arrow" viewBox="0 0 80 40" aria-hidden="true"><path d="M4 30C20 8 46 4 70 14M60 6l10 8-12 4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
 
 
 def pack(f, view="front", uid=None):
@@ -89,7 +38,7 @@ def img_slot(key, label, cls="", alt=None, eager=False):
 NAV = [("/produkt", "Produkt"), ("/mission", "Mission"), ("/teams", "Für Teams"), ("/story", "Story"), ("/faq", "FAQ")]
 
 WARNING = ("Kaugummi mit Koffein, mit Süßungsmitteln. Enthält Koffein. Für Kinder und schwangere Frauen nicht empfohlen. "
-           "Nicht mehr als 3 Stück pro Tag. Andere Koffeinquellen beachten. Kann bei übermäßigem Verzehr abführend wirken. "
+           "Nicht mehr als 3 Sticks pro Tag. Andere Koffeinquellen beachten. Kann bei übermäßigem Verzehr abführend wirken. "
            "Xylit ist für Hunde giftig.")
 
 
@@ -105,10 +54,10 @@ def head(title, desc, path):
 <meta property="og:description" content="{desc}">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://gum-prototype.vercel.app/img/og.png">
-<meta name="theme-color" content="#F3EFE6">
+<meta name="theme-color" content="#F5F5F7">
 <link rel="canonical" href="https://gum-prototype.vercel.app{path}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -147,7 +96,7 @@ def footer():
   </div>
 </footer>
 <div class="sticky-buy" id="sticky-buy" hidden>
-  <div><span id="sticky-name">Mint Condition · 1 Dose</span><b id="sticky-price">4,99 €</b></div>
+  <div><span id="sticky-name">Mint Condition · 1 Pack</span><b id="sticky-price">4,99 €</b></div>
   <a class="btn small" href="#kaufen">Reservieren</a>
 </div>
 <script src="/config.js"></script>
@@ -196,13 +145,6 @@ RESERVE_FORM = '''<section class="band blue" id="reservieren">
 </section>
 '''
 
-MASCOTS = f'''<div class="mascots">
-  <div>{M_GUM}<h3>Schmeckt nach Kaugummi</h3><p>Minze, Kirsche oder Beere. Nicht nach Apotheke.</p></div>
-  <div>{M_CUBE}<h3>Null Zucker</h3><p>Gesüßt mit Xylit. Der Zucker ist schon weg.</p></div>
-  <div>{M_TIN}<h3>Dosis vorne drauf</h3><p>52–60 mg pro Stück, groß gedruckt. Kein Rätselraten.</p></div>
-  <div>{M_LAPTOP}<h3>Für Builder gemacht</h3><p>Hackathons, Demo Days, der 47. Tab in Cursor.</p></div>
-</div>'''
-
 COMPARE = '''<section class="band" id="vergleich">
   <div class="wrap">
     {label}
@@ -242,7 +184,7 @@ PHOTOS = f'''<div class="gallery-ph">
   {img_slot("community-hackathon", "Hackathon")}
   {img_slot("community-demoday", "Demo Day")}
   {img_slot("community-coworking", "Coworking")}
-  {img_slot("community-tasche", "Deine Dose")}
+  {img_slot("community-tasche", "Dein Pack")}
 </div>'''
 
 SERVICE = f'''<section class="band service-band">
@@ -256,9 +198,50 @@ SERVICE = f'''<section class="band service-band">
 '''
 
 FLAVOR_CARDS = "".join(
-    f'<a class="flavor card" href="/produkt?sorte={f["id"]}"><div class="flavor-pack">{pack(f, "front", "card-" + f["id"])}</div>'
-    f'<h3>{f["name"]}</h3><p>{f["taste"]} · {f["mg"]} mg pro Stück. {f["line"]}</p><span class="more">Ansehen →</span></a>'
+    f'<a class="flavor" href="/produkt?sorte={f["id"]}" style="--stage:{f["color"]}"><div class="stage">{pack(f, "front", "card-" + f["id"])}</div>'
+    f'<p class="eyebrow">{f["taste"]} · {f["mg"]} mg</p><h3>{f["name"]}</h3><p>{f["line"]}</p><span class="more">Ansehen →</span></a>'
     for f in FLAVORS)
+
+HERO_PACKS = "".join(
+    f'<div class="pack-view" data-f="{f["id"]}" data-v="front"{"" if i == 0 else " hidden"}>{pack(f, "front", "hero-" + f["id"])}</div>'
+    for i, f in enumerate(FLAVORS))
+
+BENTO = f'''<div class="bento">
+  <div class="tile t-big dark">
+    <p class="eyebrow">Präzision</p>
+    <h3>Die Zahl ist das Produkt.</h3>
+    <p>60 mg bei Minze, 52 mg bei Kirsche und Beere. Jeder Stick gleich. Groß in Chrom vorne aufs Pack gedruckt.</p>
+    <div class="tile-pack">{pack(FLAVORS[0], "front", "bento-m")}</div>
+  </div>
+  <div class="tile"><b class="big">0 g</b><h3>Zucker</h3><p>Gesüßt mit Xylit. Schmeckt trotzdem.</p></div>
+  <div class="tile"><b class="big">8</b><h3>Sticks, flach verpackt</h3><p>Passt neben Laptop, Ladekabel und Event-Badge.</p></div>
+  <div class="tile grad"><h3>Du promptest.<br>Claude coded.<br>Du kaust.</h3></div>
+  <div class="tile"><h3>Koffein-Timeline</h3><p>Sieh als Kurve, wie viel Koffein über den Tag im Körper ist.</p><a class="more" href="/#timeline">Ausprobieren →</a></div>
+  <div class="tile t-wide"><p class="eyebrow">Berlin × San Francisco</p><h3>Gebaut in Kreuzberg. Im Tempo der Bay Area.</h3><p>Klare Zahlen, klares Design, kein Zucker. Für Leute, die heute launchen statt nächstes Quartal.</p></div>
+</div>'''
+
+TIMELINE = '''<section class="band" id="timeline">
+  <div class="wrap">
+    <p class="sec-label"><span>04</span>Für Datenfans</p>
+    <h2>Dein Koffein-Tag. <em>Als Kurve.</em></h2>
+    <p class="lead">Wähle, wann du Kaffee trinkst und wann du einen Stick kaust. Die Kurve zeigt grob, wie viel Koffein über den Tag im Körper ist.</p>
+    <div class="tl card">
+      <div class="tl-controls">
+        <div><p class="tl-label">Stick (60 mg) um</p><div class="tl-chips" data-kind="stick" data-mg="60" data-hours="8,10,12,14,16,18,20" data-on="10,14"></div></div>
+        <div><p class="tl-label">Kaffee (80 mg) um</p><div class="tl-chips" data-kind="coffee" data-mg="80" data-hours="7,9,11,13,15,17" data-on="7"></div></div>
+      </div>
+      <svg id="tl-chart" class="tl-chart" viewBox="0 0 720 260" role="img" aria-label="Kurve: Koffein im Körper über den Tag"></svg>
+      <div class="tl-stats">
+        <div><b id="tl-total">0</b><span>mg über den Tag</span></div>
+        <div><b id="tl-peak">0</b><span>mg zur Spitze</span></div>
+        <div><b id="tl-night">0</b><span>mg um 23 Uhr noch da</span></div>
+      </div>
+      <p class="fine" id="tl-note"></p>
+      <p class="fine">Vereinfachtes Modell mit 5 Stunden Halbwertszeit. Die echte Halbwertszeit ist von Mensch zu Mensch sehr verschieden. Keine medizinische Beratung. Laut EFSA gelten für gesunde Erwachsene bis 400 mg über den Tag und bis 200 mg auf einmal als unbedenklich (<a href="https://www.efsa.europa.eu/de/topics/topic/caffeine" rel="noopener">EFSA</a>).</p>
+    </div>
+  </div>
+</section>
+'''
 
 PDP_VIEWS = "".join(
     f'<div class="pack-view" data-f="{f["id"]}" data-v="{v}"{"" if (f["id"], v) == ("minze", "front") else " hidden"}>{pack(f, v, "pdp-" + f["id"] + "-" + v)}</div>'
@@ -266,9 +249,9 @@ PDP_VIEWS = "".join(
 
 MISSION_BAND = f'''<section class="mission-band" id="mission">
   <div class="wrap">
-    <p class="sec-label light"><span>05</span>Mission</p>
+    <p class="sec-label light"><span>06</span>Mission</p>
     <h2>Projekt <em>Erster Commit</em></h2>
-    <p class="lead">Mit jeder Dose bringst du GUMMIT zu Berliner Buildern, die gerade erst anfangen. Gratis auf Uni-Hackathons, Einsteiger-Meetups und Community-Events ohne Budget.</p>
+    <p class="lead">Mit jedem Pack bringst du GUMMIT zu Berliner Buildern, die gerade erst anfangen. Gratis auf Uni-Hackathons, Einsteiger-Meetups und Community-Events ohne Budget.</p>
     <div class="hero-cta"><a class="btn ghost" href="/mission">Mehr erfahren</a><a class="btn white-ghost" href="/teams#anfrage">Event vorschlagen</a></div>
     {img_slot("mission-event", "Einsteiger-Event", "mission-img", "Studierende auf einem Berliner Hackathon")}
     <p class="mission-stamp" aria-hidden="true">chew good,<br>ship good.</p>
@@ -278,16 +261,16 @@ MISSION_BAND = f'''<section class="mission-band" id="mission">
 
 FAQ = {
     "Produkt": [
-        ("Was genau ist GUMMIT?", "Zuckerfreier Kaugummi mit Koffein. Jedes Stück hat je nach Sorte 52 bis 60 mg Koffein. 8 Stück stecken in einer Metall-Klappdose."),
+        ("Was genau ist GUMMIT?", "Zuckerfreier Kaugummi mit Koffein. Jeder Stick hat je nach Sorte 52 bis 60 mg Koffein. 8 Sticks stecken in einem flachen Pack."),
         ("Wie schmeckt es?", "Mint Condition nach Minze, Cherry Pick nach Kirsche, Berry Important nach Beere. Koffein schmeckt leicht bitter. Minze überdeckt das am besten, deshalb ist Mint Condition unser Startpunkt."),
-        ("Was ist drin?", "Kaugummi, Koffein und Xylit als Süße, dazu Aromen. Die vollständige Zutatenliste und die Nährwerte stehen auf der Produktseite, sobald der Hersteller sie final bestätigt hat, und immer auf der Dose."),
-        ("Ist die Dose nachfüllbar?", "Ja, die Metall-Klappdose kannst du behalten und wiederverwenden. Ein Nachfüllpack ist geplant."),
+        ("Was ist drin?", "Kaugummi, Koffein und Xylit als Süße, dazu Aromen. Die vollständige Zutatenliste und die Nährwerte stehen auf der Produktseite, sobald der Hersteller sie final bestätigt hat, und immer auf dem Pack."),
+        ("Wie ist GUMMIT verpackt?", "8 einzeln eingewickelte Sticks in einem flachen Faltpack. Passt in jede Hosentasche und neben jedes Ladekabel."),
     ],
     "Koffein und Sicherheit": [
-        ("Wie viel Koffein ist in einem Stück?", "Mint Condition 60 mg, Cherry Pick und Berry Important je 52 mg. Zum Vergleich: Ein Espresso hat laut BfR etwa 80 mg."),
-        ("Wie viele Stück pro Tag?", "Höchstens 3 Stück am Tag. Kaffee, Mate und Energy Drinks mitzählen. Das BfR nennt für gesunde Erwachsene bis zu 400 mg Koffein über den Tag verteilt als unbedenklich."),
+        ("Wie viel Koffein ist in einem Stick?", "Mint Condition 60 mg, Cherry Pick und Berry Important je 52 mg. Zum Vergleich: Ein Espresso hat laut BfR etwa 80 mg."),
+        ("Wie viele Stück pro Tag?", "Höchstens 3 Sticks am Tag. Kaffee, Mate und Energy Drinks mitzählen. Das BfR nennt für gesunde Erwachsene bis zu 400 mg Koffein über den Tag verteilt als unbedenklich."),
         ("Wer sollte GUMMIT nicht kauen?", "Kinder und schwangere Frauen. Wenn du empfindlich auf Koffein reagierst, frag lieber vorher deinen Arzt."),
-        ("Worauf muss ich noch achten?", "Xylit kann bei übermäßigem Verzehr abführend wirken und ist für Hunde giftig. Dose also nicht in Reichweite vom Bürohund lassen."),
+        ("Worauf muss ich noch achten?", "Xylit kann bei übermäßigem Verzehr abführend wirken und ist für Hunde giftig. Pack also nicht in Reichweite vom Bürohund lassen."),
         ("Macht mich das 10x produktiver?", "Nein. Es ist Kaugummi mit Koffein. Die Zahl vorne drauf ist der ganze Pitch."),
     ],
     "Reservieren, Versand, Zahlung": [
@@ -321,24 +304,21 @@ def home():
 <section class="hero" id="kaufen">
   <div class="wrap hero-grid">
     <div class="hero-media">
-      <div class="tin-fan" id="tin-fan">
-        <a class="fan-l" data-f="kirsche" href="/produkt?sorte=kirsche" aria-label="Cherry Pick ansehen">{pack(FLAVORS[1], "front", "hero-k")}</a>
-        <a class="fan-r" data-f="beere" href="/produkt?sorte=beere" aria-label="Berry Important ansehen">{pack(FLAVORS[2], "front", "hero-b")}</a>
-        <a class="fan-c" data-f="minze" href="/produkt?sorte=minze" aria-label="Mint Condition ansehen">{pack(FLAVORS[0], "front", "hero-m")}</a>
+      <div class="stage" id="stage" style="--stage:{FLAVORS[0]["color"]}">
+        {HERO_PACKS}
         <span class="stack-badge" id="shop-stack" hidden>×1</span>
       </div>
-      <p class="note">{ARROW}<span>die Zahl steht vorne drauf</span></p>
-      <p class="render-note">Entwurf der Dose. Die echte Verpackung kann leicht abweichen.</p>
+      <p class="render-note">Entwurf des Packs. Die echte Verpackung kann abweichen.</p>
     </div>
     <div class="hero-copy">
-      <span class="sticker">Neu aus Berlin</span>
-      <h1 class="riso">Gummit. Push. Repeat.</h1>
-      <p class="lede">Zuckerfreier Kaugummi mit <b>52–60 mg Koffein</b> pro Stück. 8 Stück in der Metalldose, für lange Build-Tage, Hackathons und Demo Days.</p>
+      <p class="eyebrow">GUMMIT · Koffein-Kaugummi</p>
+      <h1>Präzise dosiert.<br><em>Voll im Geschmack.</em></h1>
+      <p class="lede">Zuckerfreier Kaugummi mit 52 bis 60 mg Koffein pro Stick. Die Zahl steht groß vorne drauf. Gebaut in Berlin für Builder im KI-Zeitalter.</p>
       <div class="buybox card">
         <fieldset class="opt"><legend>Sorte</legend><div class="chips" id="shop-flavors" role="radiogroup"></div></fieldset>
         <fieldset class="opt"><legend>Menge</legend><div class="packs" id="shop-packs" role="radiogroup"></div></fieldset>
         <div class="price-row"><span class="price" id="shop-price">4,99 €</span><span class="save" id="shop-save" hidden></span></div>
-        <p class="price-meta"><span id="shop-per">4,99 € / Dose</span> · inkl. MwSt. · <span id="shop-unit">Grundpreis folgt</span></p>
+        <p class="price-meta"><span id="shop-per">4,99 € / Pack</span> · inkl. MwSt. · <span id="shop-unit">Grundpreis folgt</span></p>
         <button class="btn buy" type="button" id="shop-buy">Unverbindlich reservieren</button>
         <p class="buy-note" id="shop-note">Unverbindlich, kein Kaufvertrag. Zahlung erst nach separater Bestellung.</p>
         <p class="warn small">Enthält Koffein (<span id="shop-mg100">–</span> mg/100 g). Für Kinder und schwangere Frauen nicht empfohlen. <a href="/produkt">Alle Produktinfos</a></p>
@@ -347,10 +327,14 @@ def home():
   </div>
 </section>
 
-<div class="ticker" aria-hidden="true"><div class="ticker-track">
-  <span>0 g Zucker</span><span>52–60 mg Koffein pro Stück</span><span>Metall-Klappdose</span><span>Versand aus Berlin</span><span>Keine Wirkversprechen. Nur Kaugummi.</span><span>Projekt Erster Commit: 0 Dosen verschickt. Noch.</span>
-  <span>0 g Zucker</span><span>52–60 mg Koffein pro Stück</span><span>Metall-Klappdose</span><span>Versand aus Berlin</span><span>Keine Wirkversprechen. Nur Kaugummi.</span><span>Projekt Erster Commit: 0 Dosen verschickt. Noch.</span>
-</div></div>
+<section class="specs-band" aria-label="Eckdaten">
+  <div class="wrap specs">
+    <div><b>60<small> mg</small></b><span>Koffein pro Stick, Minze</span></div>
+    <div><b>0<small> g</small></b><span>Zucker, gesüßt mit Xylit</span></div>
+    <div><b>8</b><span>Sticks pro Pack</span></div>
+    <div><b>3</b><span>Sorten</span></div>
+  </div>
+</section>
 
 <section class="band" id="fuer-wen">
   <div class="wrap">
@@ -358,49 +342,52 @@ def home():
     <h2>Gemacht für Berlins <em>Builder</em></h2>
     <p class="lead">Nicht für alle. Für Leute, die abends noch einen Prototyp fertig machen, am Wochenende auf Hackathons sitzen und Montag pitchen.</p>
     <div class="personas">
-      <article class="card persona">{img_slot("persona-vibecoder", "Vibe Coder", "persona-img")}<span class="num">A</span><h3>Vibe Coder</h3><p>Du baust mit Cursor, Claude und Kaffee. Der Kaffee ist kalt, der Build läuft noch. Die Dose liegt neben dem Ladekabel.</p></article>
+      <article class="card persona">{img_slot("persona-vibecoder", "Vibe Coder", "persona-img")}<span class="num">A</span><h3>Vibe Coder</h3><p>Du baust mit Cursor, Claude und Kaffee. Der Kaffee ist kalt, der Build läuft noch. Das Pack liegt neben dem Ladekabel.</p></article>
       <article class="card persona">{img_slot("persona-gruender", "Gründer", "persona-img")}<span class="num">B</span><h3>Gründer</h3><p>Pitch-Deck Version 14, Probelauf um 23 Uhr. Kein Zucker vor dem Auftritt, keine Dose Energy auf dem Tisch.</p></article>
-      <article class="card persona">{img_slot("persona-hackathon", "Hackathon-Team", "persona-img")}<span class="num">C</span><h3>Hackathon-Teams</h3><p>48 Stunden, ein Tisch, zu viel Pizza. Eine Dose in die Mitte, alle sehen, wie viel drin ist.</p></article>
+      <article class="card persona">{img_slot("persona-hackathon", "Hackathon-Team", "persona-img")}<span class="num">C</span><h3>Hackathon-Teams</h3><p>48 Stunden, ein Tisch, zu viel Pizza. Ein Pack in die Mitte, alle sehen, wie viel drin ist.</p></article>
     </div>
   </div>
 </section>
 
-<section class="band paper-2" id="warum">
+<section class="band" id="warum">
   <div class="wrap">
     {section_label("02", "Warum GUMMIT")}
-    <h2>Koffein ohne <em>Theater</em></h2>
-    <p class="lead">Kein Zucker, kein Becher, kein Anstehen. Klein genug für die Hosentasche, ehrlich genug, um die Dosis groß aufs Etikett zu drucken.</p>
-    {MASCOTS}
+    <h2>Koffein, <em>neu gedacht.</em></h2>
+    <p class="lead">Kein Becher, kein Zucker, kein Anstehen. Ein Stick, eine klare Zahl.</p>
+    {BENTO}
   </div>
 </section>
 
-<section class="band" id="sorten">
+<section class="band senses" id="sorten">
   <div class="wrap">
     {section_label("03", "Sorten")}
-    <h2>Drei Sorten, <em>eine</em> Dose</h2>
+    <h2>Drei Sorten. <em>Alle Sinne.</em></h2>
+    <p class="lead">Jede Sorte hat ihre eigene Farbe, ihr eigenes Muster und ihre eigene Zahl.</p>
     <div class="flavors">
       {FLAVOR_CARDS}
     </div>
   </div>
 </section>
 
-{COMPARE.format(label=section_label("04", "Rechnen wir mal"))}
+{TIMELINE}
+
+{COMPARE.format(label=section_label("05", "Rechnen wir mal"))}
 
 {MISSION_BAND}
 
 <section class="band paper-2" id="so-gehts">
   <div class="wrap split2">
     <div>
-      {section_label("06", "So geht's")}
+      {section_label("07", "So geht's")}
       <h2>Pop. Kau. <em>Ship.</em></h2>
       <ol class="steps">
-        <li><b>Ein Stück nehmen,</b> wenn der nächste Arbeitsblock startet.</li>
+        <li><b>Einen Stick nehmen,</b> wenn der nächste Arbeitsblock startet.</li>
         <li><b>Kauen</b> wie normalen Kaugummi. Der Geschmack hält.</li>
-        <li><b>Mitzählen.</b> Höchstens 3 Stück am Tag, Kaffee mitgerechnet.</li>
+        <li><b>Mitzählen.</b> Höchstens 3 Sticks am Tag, Kaffee mitgerechnet.</li>
       </ol>
     </div>
     <div>
-      {section_label("07", "Community")}
+      {section_label("08", "Community")}
       <h2>Bald hier: <em>ihr</em></h2>
       <p class="lead">Die erste Charge geht auf Berliner Events. Danach kommen hier eure Fotos hin.</p>
       {PHOTOS}
@@ -412,7 +399,7 @@ def home():
   <div class="wrap teaser">
     {img_slot("daniel", "Daniel", "teaser-photo", "Daniel, Gründer von GUMMIT")}
     <div>
-      {section_label("08", "Story")}
+      {section_label("09", "Story")}
       <h2>Gebaut von einem, der <em>auch</em> nachts baut</h2>
       <p class="lead">Tagsüber Tech-Job, abends Side Projects und 3D-Drucker. Der Kaffee war kalt, der Automat hatte nur Zucker. Also hat Daniel GUMMIT gestartet.</p>
       <a class="btn ghost" href="/story">Ganze Story lesen</a>
@@ -425,7 +412,7 @@ def home():
 <section class="band blue-soft" id="teams-teaser">
   <div class="wrap teams-teaser">
     <div>
-      {section_label("09", "Für Teams")}
+      {section_label("10", "Für Teams")}
       <h2>Für Teams, Hosts <em>&amp;</em> Coworkings</h2>
       <p class="lead">Team-Boxen mit Rechnung, Host-Boxen für Hackathons und ein Display für eure Theke.</p>
     </div>
@@ -435,7 +422,7 @@ def home():
 
 <section class="band" id="faq-teaser">
   <div class="wrap">
-    {section_label("10", "FAQ")}
+    {section_label("11", "FAQ")}
     <h2>Kurz gefragt</h2>
     {faq_html(["Produkt", "Koffein und Sicherheit"], limit=2)}
     <p class="more-link"><a href="/faq">Alle Fragen ansehen →</a></p>
@@ -446,7 +433,7 @@ def home():
 {SERVICE}
 '''
     return page("/", "GUMMIT – Koffein-Kaugummi für Berliner Builder",
-                "Zuckerfreier Kaugummi mit 52 bis 60 mg Koffein pro Stück. Für alle, die in Berlin Dinge bauen: Hackathons, Demo Days, lange Abende im Coworking.",
+                "Zuckerfreier Kaugummi mit 52 bis 60 mg Koffein pro Stick. Für alle, die in Berlin Dinge bauen: Hackathons, Demo Days, lange Abende im Coworking.",
                 "/", body)
 
 
@@ -455,9 +442,9 @@ def product():
 <div class="wrap crumbs"><a href="/">Start</a> / <span>Koffein-Kaugummi</span></div>
 <section class="pdp wrap" id="kaufen">
   <div class="pdp-media">
-    <div class="pdp-main card" id="pdp-main">
+    <div class="pdp-main stage" id="stage" style="--stage:{FLAVORS[0]["color"]}">
       {PDP_VIEWS}
-      <div class="pdp-ph" id="shop-ph" hidden>{img_slot("produkt-hand", "In der Hand", "", "GUMMIT-Dose in der Hand, Größenvergleich")}</div>
+      <div class="pdp-ph" id="shop-ph" hidden>{img_slot("produkt-hand", "In der Hand", "", "GUMMIT-Pack in der Hand, Größenvergleich")}</div>
       <span class="stack-badge" id="shop-stack" hidden>×1</span>
     </div>
     <div class="thumbs" id="thumbs" role="group" aria-label="Ansichten">
@@ -466,15 +453,15 @@ def product():
       <button type="button" data-view="back" aria-pressed="false">Rückseite</button>
       <button type="button" data-view="ph" aria-pressed="false">Größe</button>
     </div>
-    <p class="render-note">Entwurf der Dose. Die echte Verpackung kann leicht abweichen.</p>
+    <p class="render-note">Entwurf des Packs. Die echte Verpackung kann leicht abweichen.</p>
   </div>
 
   <div class="pdp-info">
     <p class="kicker">Kaugummi mit Koffein, mit Süßungsmitteln</p>
     <h1>GUMMIT <span id="pdp-flavor">Mint Condition</span></h1>
-    <p class="lede">Zuckerfreier Kaugummi mit <b><span id="lede-mg">60</span> mg Koffein</b> pro Stück. 8 Stück in der Metall-Klappdose.</p>
+    <p class="lede">Zuckerfreier Kaugummi mit <b><span id="lede-mg">60</span> mg Koffein</b> pro Stick. 8 Sticks im flachen Pack.</p>
     <div class="price-row"><span class="price" id="shop-price">4,99 €</span><span class="save" id="shop-save" hidden></span></div>
-    <p class="price-meta"><span id="shop-per">4,99 € / Dose</span> · inkl. MwSt., zzgl. <a href="/versand">Versand</a> · <span id="shop-unit">Grundpreis folgt</span></p>
+    <p class="price-meta"><span id="shop-per">4,99 € / Pack</span> · inkl. MwSt., zzgl. <a href="/versand">Versand</a> · <span id="shop-unit">Grundpreis folgt</span></p>
 
     <fieldset class="opt"><legend>Sorte</legend><div class="chips" id="shop-flavors" role="radiogroup"></div></fieldset>
     <fieldset class="opt"><legend>Menge</legend><div class="packs" id="shop-packs" role="radiogroup"></div></fieldset>
@@ -486,9 +473,9 @@ def product():
     <p class="warn">Enthält Koffein (<span id="shop-mg100">–</span> mg/100 g). Für Kinder und schwangere Frauen nicht empfohlen.</p>
 
     <div class="acc">
-      <details open><summary>Beschreibung</summary><p>GUMMIT ist Kaugummi mit Koffein und ohne Zucker, gesüßt mit Xylit. Jedes Stück hat eine feste Menge Koffein, die groß vorne auf der Dose steht. Gemacht für lange Build-Tage, Hackathons und Demo Days. Kein Wirkversprechen, nur Kaugummi mit einer ehrlichen Zahl.</p></details>
+      <details open><summary>Beschreibung</summary><p>GUMMIT ist Kaugummi mit Koffein und ohne Zucker, gesüßt mit Xylit. Jeder Stick hat eine feste Menge Koffein, die groß vorne auf dem Pack steht. Gemacht für lange Build-Tage, Hackathons und Demo Days. Kein Wirkversprechen, nur Kaugummi mit einer ehrlichen Zahl.</p></details>
       <details><summary>Zutaten und Allergene</summary><p><span class="ph">Vollständige Zutatenliste folgt vom Hersteller.</span> Bekannt: Süßungsmittel Xylit, Kaumasse, Koffein, Aromen. Allergene werden hier hervorgehoben, sobald die Spezifikation vorliegt.</p></details>
-      <details><summary>Nährwerte</summary><div class="table-scroll"><table class="table"><thead><tr><th></th><th>pro 100 g</th><th>pro Stück</th></tr></thead><tbody>
+      <details><summary>Nährwerte</summary><div class="table-scroll"><table class="table"><thead><tr><th></th><th>pro 100 g</th><th>pro Stick</th></tr></thead><tbody>
         <tr><td>Energie</td><td class="ph">folgt</td><td class="ph">folgt</td></tr>
         <tr><td>Fett</td><td class="ph">folgt</td><td class="ph">folgt</td></tr>
         <tr><td>Kohlenhydrate</td><td class="ph">folgt</td><td class="ph">folgt</td></tr>
@@ -498,9 +485,9 @@ def product():
         <tr><td>Salz</td><td class="ph">folgt</td><td class="ph">folgt</td></tr>
         <tr><td>Koffein</td><td id="nut-mg100">–</td><td id="nut-mg">60 mg</td></tr>
       </tbody></table></div></details>
-      <details><summary>Verzehrempfehlung</summary><p>Ein Stück kauen, wenn der nächste Arbeitsblock startet. Nicht mehr als 3 Stück pro Tag. Andere Koffeinquellen wie Kaffee, Mate oder Energy Drinks mitzählen.</p></details>
+      <details><summary>Verzehrempfehlung</summary><p>Einen Stick kauen, wenn der nächste Arbeitsblock startet. Nicht mehr als 3 Sticks pro Tag. Andere Koffeinquellen wie Kaffee, Mate oder Energy Drinks mitzählen.</p></details>
       <details><summary>Warnhinweise</summary><p>Enthält Koffein. Für Kinder und schwangere Frauen nicht empfohlen. Kann bei übermäßigem Verzehr abführend wirken. Xylit ist für Hunde giftig.</p></details>
-      <details><summary>Füllmenge und Aufbewahrung</summary><p>8 Stück, Füllmenge <span id="net-weight">–</span> g (vorläufig). Trocken und unter 25 °C lagern. Mindesthaltbarkeit und Los stehen auf dem Dosenboden.</p></details>
+      <details><summary>Füllmenge und Aufbewahrung</summary><p>8 Sticks, Füllmenge <span id="net-weight">–</span> g (vorläufig). Trocken und unter 25 °C lagern. Mindesthaltbarkeit und Los stehen auf dem Lasche.</p></details>
       <details><summary>Lebensmittelunternehmer</summary><p><span class="ph">[Firmenname GbR, Anschrift, Berlin]</span></p></details>
       <details><summary>Versand und Rückgabe</summary><p>Versand aus Berlin nach Deutschland, Österreich und in die Schweiz. Kosten und Laufzeiten unter <a href="/versand">Versand &amp; Zahlung</a>. Bei Bestellungen gilt das <a href="/widerruf">Widerrufsrecht</a>.</p></details>
     </div>
@@ -509,8 +496,8 @@ def product():
 
 <section class="band paper-2">
   <div class="wrap">
-    <h2>Warum GUMMIT</h2>
-    {MASCOTS}
+    <h2>Warum <em>GUMMIT</em></h2>
+    {BENTO}
   </div>
 </section>
 
@@ -543,7 +530,7 @@ def product():
 {RESERVE_FORM}
 '''
     return page("/produkt", "GUMMIT Koffein-Kaugummi – Mint Condition, Cherry Pick, Berry Important",
-                "Zuckerfreier Kaugummi mit 52 bis 60 mg Koffein pro Stück, 8 Stück in der Metalldose. Drei Sorten, ab 3,99 € pro Dose. Jetzt unverbindlich reservieren.",
+                "Zuckerfreier Kaugummi mit 52 bis 60 mg Koffein pro Stick, 8 Sticks im flachen Pack. Drei Sorten, ab 3,99 € pro Pack. Jetzt unverbindlich reservieren.",
                 "/produkt", body)
 
 
@@ -559,9 +546,9 @@ def teams():
 
 <section class="band">
   <div class="wrap offers">
-    <article class="card offer" id="team"><span class="num">1</span><h3>Team-Box</h3><p>Gemischte Box mit allen drei Sorten für Büro, Meetingraum oder Offsite.</p><ul class="ticks"><li>ab 10 Dosen</li><li>Rechnung und Staffelpreise</li><li>Logo-Option auf Anfrage</li><li>Als Onboarding-Geschenk</li></ul><a class="btn small" href="#anfrage" data-type="team">Team-Box anfragen</a></article>
-    <article class="card offer" id="host"><span class="num">2</span><h3>Host-Box</h3><p>Für Hackathons, Meetups und Demo Days in Berlin. Ihr organisiert, wir bringen die Dosen.</p><ul class="ticks"><li>Dosen für eure Gäste</li><li>Display für den Check-in</li><li>Für ausgewählte Events kostenlos in der Beta</li><li>Wir wollen nur ein Foto und eine Erwähnung</li></ul><a class="btn small" href="#anfrage" data-type="host">Host-Box anfragen</a></article>
-    <article class="card offer" id="coworking"><span class="num">3</span><h3>Coworking-Display</h3><p>Ein kleines Display für eure Theke. Kein Automat, kein Vertrag.</p><ul class="ticks"><li>Wir füllen nach</li><li>Provision pro Dose, keine Miete</li><li>Jederzeit beendbar</li><li>Probier-Nachmittag um 14 Uhr</li></ul><a class="btn small" href="#anfrage" data-type="coworking">Display anfragen</a></article>
+    <article class="card offer" id="team"><span class="num">1</span><h3>Team-Box</h3><p>Gemischte Box mit allen drei Sorten für Büro, Meetingraum oder Offsite.</p><ul class="ticks"><li>ab 10 Packs</li><li>Rechnung und Staffelpreise</li><li>Logo-Option auf Anfrage</li><li>Als Onboarding-Geschenk</li></ul><a class="btn small" href="#anfrage" data-type="team">Team-Box anfragen</a></article>
+    <article class="card offer" id="host"><span class="num">2</span><h3>Host-Box</h3><p>Für Hackathons, Meetups und Demo Days in Berlin. Ihr organisiert, wir bringen das Packn.</p><ul class="ticks"><li>Packs für eure Gäste</li><li>Display für den Check-in</li><li>Für ausgewählte Events kostenlos in der Beta</li><li>Wir wollen nur ein Foto und eine Erwähnung</li></ul><a class="btn small" href="#anfrage" data-type="host">Host-Box anfragen</a></article>
+    <article class="card offer" id="coworking"><span class="num">3</span><h3>Coworking-Display</h3><p>Ein kleines Display für eure Theke. Kein Automat, kein Vertrag.</p><ul class="ticks"><li>Wir füllen nach</li><li>Provision pro Pack, keine Miete</li><li>Jederzeit beendbar</li><li>Probier-Nachmittag um 14 Uhr</li></ul><a class="btn small" href="#anfrage" data-type="coworking">Display anfragen</a></article>
   </div>
 </section>
 
@@ -598,7 +585,7 @@ def teams():
         <div class="field"><label for="b-type">Was braucht ihr?</label>
           <select id="b-type" name="type"><option value="team">Team-Box</option><option value="host">Host-Box</option><option value="coworking">Coworking-Display</option><option value="other">Etwas anderes</option></select>
         </div>
-        <div class="field"><label for="b-qty">Menge oder Gäste</label><input id="b-qty" name="qty" type="text" placeholder="z. B. 20 Dosen, 80 Gäste"></div>
+        <div class="field"><label for="b-qty">Menge oder Gäste</label><input id="b-qty" name="qty" type="text" placeholder="z. B. 20 Packs, 80 Gäste"></div>
       </div>
       <div class="field"><label for="b-date">Termin (optional)</label><input id="b-date" name="date" type="text" placeholder="z. B. Hackathon am 14.11."></div>
       <div class="field"><label for="b-msg">Nachricht</label><textarea id="b-msg" name="message" rows="3"></textarea></div>
@@ -639,7 +626,7 @@ def story():
   <div class="wrap">
     <h2>Woran wir <em>glauben</em></h2>
     <div class="values">
-      <div class="card"><h3>Die Zahl zuerst</h3><p>Koffein in mg steht vorne auf der Dose. Nicht im Kleingedruckten.</p></div>
+      <div class="card"><h3>Die Zahl zuerst</h3><p>Koffein in mg steht vorne auf dem Pack. Nicht im Kleingedruckten.</p></div>
       <div class="card"><h3>Kein Zucker, kein Theater</h3><p>Keine Wundersätze, keine Hustle-Sprüche. Lange Tage sind lang, das reicht.</p></div>
       <div class="card"><h3>Aus der Szene</h3><p>Wir wachsen auf den Events, auf denen wir selbst sind. Nicht über Werbung.</p></div>
     </div>
@@ -692,20 +679,20 @@ def mission():
   <div class="wrap">
     <span class="sticker">Mission</span>
     <h1 class="riso">Projekt <br>Erster Commit.</h1>
-    <p class="lede">Jede Dose GUMMIT hilft Berliner Buildern, die gerade erst anfangen.</p>
+    <p class="lede">Jedes Pack GUMMIT hilft Berliner Buildern, die gerade erst anfangen.</p>
   </div>
 </section>
 <section class="band">
   <div class="wrap split2">
     <div class="prose">
       <p>Die besten Projekte in Berlin starten selten im Büro. Sie starten auf Uni-Hackathons, in Einsteiger-Meetups und auf Community-Events, die mit null Budget laufen. Dort gibt es Pizza, Mate und Leute, die ihren ersten Prototyp bauen.</p>
-      <p>Genau da wollen wir sein. Mit jeder Dose, die du kaufst, finanzierst du Dosen für diese Events. Wir bringen sie gratis vorbei und fragen nur nach einem Foto.</p>
+      <p>Genau da wollen wir sein. Mit jedem Pack, das du kaufst, finanzierst du Packs für diese Events. Wir bringen sie gratis vorbei und fragen nur nach einem Foto.</p>
       <p>Wir halten es ehrlich: Jedes Event, das wir unterstützen, steht unten mit Datum und Menge. Keine Prozent-Versprechen, die keiner prüfen kann.</p>
     </div>
     <div class="values one">
       <div class="card"><span class="num">1</span><h3>Gratis für Einsteiger-Events</h3><p>Uni-Hackathons, Coding-Meetups, Community-Events ohne Sponsor.</p></div>
       <div class="card"><span class="num">2</span><h3>Nur ab 18</h3><p>GUMMIT enthält Koffein. Deshalb unterstützen wir nur Events für Erwachsene.</p></div>
-      <div class="card"><span class="num">3</span><h3>Offen gezählt</h3><p>Jedes Event steht hier. Du siehst, wohin die Dosen gehen.</p></div>
+      <div class="card"><span class="num">3</span><h3>Offen gezählt</h3><p>Jedes Event steht hier. Du siehst, wohin das Packn gehen.</p></div>
     </div>
   </div>
 </section>
@@ -713,7 +700,7 @@ def mission():
   <div class="wrap">
     <h2>Bisher <em>unterstützt</em></h2>
     <div class="table-scroll"><table class="table">
-      <thead><tr><th>Datum</th><th>Event</th><th>Dosen</th></tr></thead>
+      <thead><tr><th>Datum</th><th>Event</th><th>Packs</th></tr></thead>
       <tbody><tr><td colspan="3" class="empty">Noch keine Events. Das erste kommt mit der ersten Charge.</td></tr></tbody>
     </table></div>
   </div>
@@ -727,7 +714,7 @@ def mission():
 </section>
 '''
     return page("/mission", "Mission – Projekt Erster Commit – GUMMIT",
-                "Mit jeder Dose GUMMIT unterstützt du Berliner Einsteiger-Events: Uni-Hackathons, Coding-Meetups, Community-Events ohne Budget.",
+                "Mit jedem Pack GUMMIT unterstützt du Berliner Einsteiger-Events: Uni-Hackathons, Coding-Meetups, Community-Events ohne Budget.",
                 "/mission", body)
 
 

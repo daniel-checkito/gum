@@ -4,12 +4,12 @@
   var $$ = function (sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); };
   var eur = function (n) { return n.toFixed(2).replace(".", ",") + " €"; };
   var put = function (id, text) { var el = $(id); if (el) el.textContent = text; };
-  var tins = function (n) { return n + (n === 1 ? " Dose" : " Dosen"); };
+  var tins = function (n) { return n + (n === 1 ? " Pack" : " Packs"); };
 
   var flavors = [
-    { id: "minze", name: "Mint Condition", taste: "Minze", mg: 60, color: "#A8DCC6" },
-    { id: "kirsche", name: "Cherry Pick", taste: "Kirsche", mg: 52, color: "#F7A8B8" },
-    { id: "beere", name: "Berry Important", taste: "Beere", mg: 52, color: "#C3B8EE" }
+    { id: "minze", name: "Mint Condition", taste: "Minze", mg: 60, color: "#19B6E8" },
+    { id: "kirsche", name: "Cherry Pick", taste: "Kirsche", mg: 52, color: "#F0364A" },
+    { id: "beere", name: "Berry Important", taste: "Beere", mg: 52, color: "#8B5CFF" }
   ];
   var packs = cfg.packs || [{ tins: 1, price: 4.99, url: "" }];
   var netG = cfg.netWeightGrams || 12;
@@ -49,21 +49,12 @@
     var base = packs[0].price;
     var pChips = packs.map(function (p) {
       var save = Math.round((1 - p.price / (base * p.tins)) * 100);
-      return radio($("shop-packs"), "<span>" + tins(p.tins) + "</span><small>" + eur(p.price) + "</small><small>" + eur(p.price / p.tins) + " pro Dose</small>" + (save > 0 ? "<span class=\"tag\">−" + save + " %</span>" : ""),
+      return radio($("shop-packs"), "<span>" + tins(p.tins) + "</span><small>" + eur(p.price) + "</small><small>" + eur(p.price / p.tins) + " pro Pack</small>" + (save > 0 ? "<span class=\"tag\">−" + save + " %</span>" : ""),
         function () { sel.pack = p; render(); });
     });
     var thumbs = $$("#thumbs button");
     thumbs.forEach(function (t) {
       t.addEventListener("click", function () { sel.view = t.dataset.view; render(); });
-    });
-
-    $$("#tin-fan a").forEach(function (a) {
-      a.addEventListener("click", function (e) {
-        if (a.dataset.f === sel.flavor.id) return;
-        e.preventDefault();
-        flavors.forEach(function (f) { if (f.id === a.dataset.f) sel.flavor = f; });
-        render();
-      });
     });
 
     var render = function () {
@@ -73,10 +64,7 @@
       thumbs.forEach(function (t) { t.setAttribute("aria-pressed", t.dataset.view === sel.view ? "true" : "false"); });
       $$(".pack-view").forEach(function (v) { v.hidden = !(v.dataset.f === f.id && v.dataset.v === sel.view); });
       if ($("shop-ph")) $("shop-ph").hidden = sel.view !== "ph";
-      $$("#tin-fan a").forEach(function (a) {
-        var rest = flavors.filter(function (x) { return x !== f; });
-        a.className = a.dataset.f === f.id ? "fan-c" : a.dataset.f === rest[0].id ? "fan-l" : "fan-r";
-      });
+      if ($("stage")) $("stage").style.setProperty("--stage", f.color);
       put("pdp-flavor", f.name);
       put("lede-mg", f.mg);
       if ($("shop-stack")) { $("shop-stack").hidden = p.tins === 1; $("shop-stack").textContent = "×" + p.tins; }
@@ -88,7 +76,7 @@
       put("net-weight", netG.toString().replace(".", ","));
 
       put("shop-price", eur(p.price));
-      put("shop-per", eur(p.price / p.tins) + " / Dose");
+      put("shop-per", eur(p.price / p.tins) + " / Pack");
       put("shop-unit", "Grundpreis " + eur(p.price / (p.tins * netG) * 1000) + " / kg (vorläufig)");
       var save = Math.round((1 - p.price / (base * p.tins)) * 100);
       $("shop-save").hidden = save <= 0;
@@ -135,7 +123,7 @@
     var perPiece = best.price / best.tins / 8;
     var single = packs[0].price / 8;
     var rows = drinks.map(function (d) { return { name: d.name, label: eur(d.price), mg: d.mg, sugar: d.sugar, est: d.est, per100: d.price / d.mg * 100 }; });
-    rows.push({ name: "GUMMIT 60 mg, 1 Dose", label: eur(single) + " / Stück", mg: 60, sugar: "0 g", per100: single / 60 * 100, own: true });
+    rows.push({ name: "GUMMIT 60 mg, 1 Pack", label: eur(single) + " / Stück", mg: 60, sugar: "0 g", per100: single / 60 * 100, own: true });
     rows.push({ name: "GUMMIT 60 mg, " + tins(best.tins), label: eur(perPiece) + " / Stück", mg: 60, sugar: "0 g", per100: perPiece / 60 * 100, own: true });
     rows.sort(function (a, b) { return b.per100 - a.per100; });
     var max = rows[0].per100;
@@ -166,6 +154,57 @@
     $("calc-n").addEventListener("input", calc);
     what.addEventListener("change", calc);
     calc();
+  }
+
+  // ---------- Koffein-Timeline ----------
+  if ($("tl-chart")) {
+    var doses = [];
+    $$(".tl-chips").forEach(function (box) {
+      var on = box.dataset.on.split(",");
+      box.dataset.hours.split(",").forEach(function (h) {
+        var b = document.createElement("button");
+        b.type = "button"; b.textContent = (h.length < 2 ? "0" : "") + h + ":00";
+        var d = { h: +h, mg: +box.dataset.mg, kind: box.dataset.kind, on: on.indexOf(h) > -1 };
+        b.setAttribute("aria-pressed", d.on ? "true" : "false");
+        b.addEventListener("click", function () { d.on = !d.on; b.setAttribute("aria-pressed", d.on ? "true" : "false"); draw(); });
+        doses.push(d); box.appendChild(b);
+      });
+    });
+    // Bateman-Kurve: Aufnahme ca. 45 min, Halbwertszeit 5 h
+    var ka = 3, ke = Math.LN2 / 5;
+    var level = function (t) {
+      return doses.reduce(function (sum, d) {
+        var dt = t - d.h;
+        return !d.on || dt <= 0 ? sum : sum + d.mg * ka / (ka - ke) * (Math.exp(-ke * dt) - Math.exp(-ka * dt));
+      }, 0);
+    };
+    var W = 720, H = 260, L = 44, R = 26, T = 14, B = 34, t0 = 6, t1 = 24;
+    var x = function (t) { return L + (t - t0) / (t1 - t0) * (W - L - R); };
+    var draw = function () {
+      var pts = [], peak = 0;
+      for (var t = t0; t <= t1 + 1e-9; t += 0.1) { var v = level(t); peak = Math.max(peak, v); pts.push([t, v]); }
+      var top = Math.max(200, Math.ceil(peak / 50) * 50);
+      var y = function (v) { return T + (1 - v / top) * (H - T - B); };
+      var grid = "";
+      for (var g = 0; g <= top; g += 50) grid += "<line x1=\"" + L + "\" x2=\"" + (W - R) + "\" y1=\"" + y(g) + "\" y2=\"" + y(g) + "\" stroke=\"#E8E8ED\"/><text x=\"" + (L - 8) + "\" y=\"" + (y(g) + 4) + "\" text-anchor=\"end\" font-size=\"11\" fill=\"#6E6E73\">" + g + "</text>";
+      for (var h = t0; h <= t1; h += 3) grid += "<text x=\"" + x(h) + "\" y=\"" + (H - 10) + "\" text-anchor=\"middle\" font-size=\"11\" fill=\"#6E6E73\">" + (h % 24 < 10 ? "0" : "") + (h % 24) + ":00</text>";
+      var line = pts.map(function (p, i) { return (i ? "L" : "M") + x(p[0]).toFixed(1) + " " + y(p[1]).toFixed(1); }).join("");
+      var area = line + "L" + x(t1) + " " + y(0) + "L" + x(t0) + " " + y(0) + "Z";
+      var marks = doses.filter(function (d) { return d.on; }).map(function (d) {
+        return "<circle cx=\"" + x(d.h) + "\" cy=\"" + y(0) + "\" r=\"5\" fill=\"" + (d.kind === "stick" ? "#0A5CFF" : "#1D1D1F") + "\"/>";
+      }).join("");
+      $("tl-chart").innerHTML = "<defs><linearGradient id=\"tlg\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#0A5CFF\"/><stop offset=\".5\" stop-color=\"#8B5CFF\"/><stop offset=\"1\" stop-color=\"#F0364A\"/></linearGradient>" +
+        "<linearGradient id=\"tla\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#8B5CFF\" stop-opacity=\".22\"/><stop offset=\"1\" stop-color=\"#8B5CFF\" stop-opacity=\"0\"/></linearGradient></defs>" +
+        grid + "<path d=\"" + area + "\" fill=\"url(#tla)\"/><path d=\"" + line + "\" fill=\"none\" stroke=\"url(#tlg)\" stroke-width=\"3\" stroke-linejoin=\"round\"/>" + marks +
+        "<text x=\"" + (L + 4) + "\" y=\"" + (T + 10) + "\" font-size=\"11\" fill=\"#6E6E73\">mg im Körper</text>";
+      var total = doses.reduce(function (s, d) { return s + (d.on ? d.mg : 0); }, 0);
+      $("tl-total").textContent = total;
+      $("tl-peak").textContent = Math.round(peak);
+      $("tl-night").textContent = Math.round(level(23));
+      $("tl-total").parentNode.classList.toggle("tl-over", total > 400);
+      $("tl-note").textContent = total > 400 ? "Mehr als 400 mg am Tag. Das liegt über der EFSA-Empfehlung für gesunde Erwachsene." : "";
+    };
+    draw();
   }
 
   // ---------- Formulare ----------
