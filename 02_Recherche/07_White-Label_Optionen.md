@@ -77,3 +77,9 @@
 - **roelli roelli confectionery** (St. Gallen, Schweiz): Private und White Label für Gums, Drops, Toffees, kleine Marken (z. B. CBD-Gum). IFS nicht belegt, Zertifikat anfordern. https://roelliroelli.ch/en/offer/, contact@roelliroelli.ch
 - **Wachmeister** (Schweiz): eigene Marke mit 30 mg Koffein pro Kaugummi, „in einem Schweizer Labor mit IFS Food Zertifizierung“ hergestellt, verkauft eine Office Box. Kein White Label bekannt, aber fragen, ob sie liefern oder den Hersteller nennen. https://www.wachmeister.com, info@wachmeister.com
 - Raus: Delica (MOQ 20 Tonnen, https://www.delica.com/en/product/chewing-gum/private-label)
+
+**8. Top 3 für Koffein, IFS Food und kleine Mengen (Stand 09.10.2026)**
+1. **Indaco** (Neapel): IFS und BRC laut Katalog 2026, Funktions-Gum mit „Energy“ (Koffein), Private Label, wirbt mit „low MOQs“. Kaumasse 350 bis 450 kg pro Sorte, Blister ab 20.000 Stück. Kontakt giovanni.martufi@indacocandy.com. https://plmaamsterdam26.digital.ice.it/wp-content/uploads/2026/04/INDACO-EUROPE-Catalogue-2026-official.pdf
+2. **Back to Basics** (Vejle): IFS und BRC, Private Label, MOQ pro Projekt. Koffein nicht genannt. Anfrage: 05_Vorlagen/Mail_Back_to_Basics.md
+3. **Wachmeister** (Schweiz): fertiger Koffein-Gum mit 30 mg, aus Schweizer IFS-Produktion. Kleinste Mengen möglich, weil Ware schon da ist. White Label anfragen. Die einzige Kaugummifabrik der Schweiz ist Delica in Buchs, also vermutlich auch Hersteller von Guming und Wachmeister (nicht belegt). Delica direkt: MOQ 20 Tonnen
+- roelli roelli: keine Mindestmenge genannt, Generalunternehmer ohne eigene Fabrik
