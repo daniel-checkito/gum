@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Impressum – GUMMIT</title>
-<meta name="description" content="Impressum von GUMMIT.">
-<meta property="og:title" content="Impressum – GUMMIT">
-<meta property="og:description" content="Impressum von GUMMIT.">
+<title>Kontakt – GUMMIT</title>
+<meta name="description" content="Kontakt zu GUMMIT: WhatsApp, E-Mail und Formular.">
+<meta property="og:title" content="Kontakt – GUMMIT">
+<meta property="og:description" content="Kontakt zu GUMMIT: WhatsApp, E-Mail und Formular.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="/img/tin-hotfix.jpg">
 <meta name="theme-color" content="#F4F0E8">
-<link rel="canonical" href="https://gum-prototype.vercel.app/impressum">
+<link rel="canonical" href="https://gum-prototype.vercel.app/kontakt">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css">
@@ -26,18 +26,26 @@
   </div>
 </header>
 <main id="inhalt">
-<div class="page"><h1>Impressum</h1>
-<h2>Angaben gemäß § 5 DDG</h2>
-<p><span class="ph">[Name der GbR]</span><br><span class="ph">[Straße und Hausnummer]</span><br><span class="ph">[PLZ] Berlin</span></p>
-<p>Vertreten durch: <span class="ph">[Namen der Gesellschafter]</span></p>
-<h2>Kontakt</h2>
-<p>E-Mail: <span class="ph">[E-Mail-Adresse]</span><br>Telefon oder WhatsApp: <span class="ph">[Nummer]</span></p>
-<h2>Umsatzsteuer</h2>
-<p>Umsatzsteuer-ID gemäß § 27a UStG: <span class="ph">[falls vorhanden, sonst Zeile löschen]</span></p>
-<h2>Verantwortlich für den Inhalt</h2>
-<p><span class="ph">[Name, Anschrift wie oben]</span></p>
-<h2>Verbraucherstreitbeilegung</h2>
-<p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p></div></main>
+
+<section class="page-hero"><div class="wrap"><span class="sticker">Kontakt</span><h1 class="riso">Sag <br>Hallo.</h1><p class="lede">Fragen, Feedback, Events, Presse. Wir antworten in der Regel innerhalb von zwei Werktagen.</p></div></section>
+<section class="band">
+  <div class="wrap split2">
+    <div class="contact-ways">
+      <div class="card"><h3>WhatsApp</h3><p>Am schnellsten. Direkt bei Daniel.</p><a class="btn small" href="#" data-chat>Chat starten</a></div>
+      <div class="card"><h3>E-Mail</h3><p><a href="#" data-mail><span class="ph">[E-Mail-Adresse]</span></a></p></div>
+      <div class="card"><h3>Anschrift</h3><p><span class="ph">[Firmenname GbR, Straße, PLZ Berlin]</span></p></div>
+    </div>
+    <form class="card form" data-lead="contact" novalidate>
+      <div class="field"><label for="c-name">Name</label><input id="c-name" name="name" type="text" autocomplete="name"></div>
+      <div class="field"><label for="c-email">E-Mail</label><input id="c-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="c-msg">Nachricht</label><textarea id="c-msg" name="message" rows="5" required></textarea></div>
+      <label class="check"><input type="checkbox" name="ok" required> <span>Ihr dürft mich zu meiner Nachricht kontaktieren. Mehr in der <a href="/datenschutz">Datenschutzerklärung</a>.</span></label>
+      <button class="btn" type="submit">Nachricht senden</button>
+      <p class="form-msg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
 <footer class="site-foot">
   <div class="wrap">
     <div class="foot">

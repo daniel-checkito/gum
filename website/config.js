@@ -19,6 +19,13 @@ window.GUMMIT_CONFIG = {
     { tins: 10, price: 39.90, url: "" }
   ],
 
+  // Füllmenge einer Dose in Gramm (8 Stück). Vorläufig, vom Hersteller bestätigen lassen.
+  // Daraus rechnet die Produktseite Grundpreis pro kg und mg Koffein pro 100 g.
+  netWeightGrams: 12,
+
+  // Text für den Versandstart der ersten Charge, z. B. "voraussichtlich Dezember 2026"
+  launch: "",
+
   // Bezahlte Vorbestellung, z. B. ein Stripe Payment Link: "https://buy.stripe.com/..."
   preorderUrl: "",
   preorderLabel: "Jetzt vorbestellen",
