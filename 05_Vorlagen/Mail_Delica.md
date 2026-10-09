@@ -2,7 +2,7 @@
 
 Weg: Kontaktformular https://www.delica.com/de/unternehmen/kontakt, Betreff „Handelskunden-Anfrage International“, Standort Buchs AG. Alternativ Telefon +41 58 564 60 00.
 
-Achtung: Delica nennt auf der Website eine Mindestmenge von 20 Tonnen (https://www.delica.com/de/produkte/kaugummi/unsere-marken). Die Mail fragt deshalb gezielt nach einem kleinen Pilot.
+Achtung: Delica nennt auf der Website eine Mindestmenge von 20 Tonnen (https://www.delica.com/de/produkte/kaugummi/unsere-marken). Die Mail fragt deshalb nach einem kleinen Pilot und nach einem Partner für kleinere Mengen. Von einer Firmenadresse senden, nicht von Gmail. [X] mit einer echten Planzahl füllen.
 
 ---
 
@@ -10,9 +10,9 @@ Achtung: Delica nennt auf der Website eine Mindestmenge von 20 Tonnen (https://w
 
 Hey,
 
-wir sind ein kleines Startup aus Berlin und bauen eine Marke für zuckerfreien Kaugummi mit Koffein. Verkauft wird er auf Tech-Events und in Coworkings.
+wir bauen in Berlin GUMMIT auf, eine Marke für zuckerfreien Kaugummi mit Koffein für die Tech-Szene: https://gum-prototype.vercel.app. Start auf Tech-Events, in Coworkings und online, danach Handel.
 
-Wir suchen einen Hersteller mit fertiger Rezeptur, der unter unserer Marke produziert. Eine eigene Rezeptur brauchen wir erst später.
+Wir suchen einen Produktionspartner mit fertiger Rezeptur für Private Label. Fürs erste Jahr planen wir mit [X] Dosen, danach mehr. Eine eigene Rezeptur kommt später.
 
 Ein paar Fragen:
 
@@ -22,6 +22,8 @@ Ein paar Fragen:
 4. Was ist die kleinste Menge? Auf eurer Seite stehen 20 Tonnen. Geht für einen ersten Testlauf auch weniger?
 5. Was kostet das ungefähr pro Packung, und wie lange dauert die Lieferung?
 6. Bekommen wir Spezifikation, Analysenzertifikat pro Charge und Hilfe beim Etikett?
+
+Falls wir für euch noch zu klein sind: Kennt ihr einen Partner für kleinere Mengen?
 
 Wenn ein kurzer Call einfacher ist, gerne.
 
