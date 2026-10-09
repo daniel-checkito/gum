@@ -15,10 +15,10 @@ Urteil: 5 von 10, lohnt sich als gestufter Test, nicht als großer Sprung. Der P
 | Ordner | Was drin ist |
 | --- | --- |
 | 01_Plaene | Businessplan (Markt, Produkt, Wettbewerb, Zahlen, Recht), Launch-Plan (Name, White Label, Budget, Schritt für Schritt), Wachstum und Viral-Marketing, Plan v2 (aktueller Stand) |
-| 02_Recherche | Siebzehn Recherche-Berichte mit Quellen: Vending-Markt, Regulierung, Go-to-Market, Pro/Contra-Debatte, Markenname, White Label, Pflichten und Kosten, Wettbewerb, Zielgruppe Büro, Guming-Analyse, Varianten mit Kreatin, Arginin, Protein, Agenten-Feedback, Vitamine und Zusätze, SUPERPUBLIC, White Label Recht und Hindernisse, Guming-Tiefenanalyse |
+| 02_Recherche | Recherche-Berichte mit Quellen: Vending-Markt, Regulierung, Go-to-Market, Pro/Contra-Debatte, Markenname, White Label, Pflichten und Kosten, Wettbewerb, Zielgruppe Büro, Guming-Analyse, Varianten mit Kreatin, Arginin, Protein, Agenten-Feedback, Vitamine und Zusätze, SUPERPUBLIC, White Label bis 500 Stück, CogniGum, One-Product-Store, Weiterverkauf 30 mg (Fremdware), Koffein-Preisvergleich, Branding und Website, Marke Erster Commit, Keynote und Stick-Pack, White Label Recht und Hindernisse, Guming-Tiefenanalyse, 5 Gum Lektionen |
 | 03_Zahlen | Excel-Rechnung: Artikel, Margen, ein Automat im Vergleich, Zielgruppen. Gelbe Zellen sind Annahmen |
 | 04_Branding | 17 Bilder (Markenboard, Verpackung, Dosen, Website, Automaten-Designs und Kosten, Story, Sell-Sheet, Plakate, Ads, Sprüche), Markenbuch, Tonfall und Sprüche, Quelldateien |
-| 05_Vorlagen | Mails an Guming, Automatenbetreiber, Hersteller (Rezeptur v1) und SUPERPUBLIC, Creator-Briefing |
+| 05_Vorlagen | Mails an Guming, Wachmeister, Automatenbetreiber, Hersteller (Rezeptur v1) und SUPERPUBLIC, Creator-Briefing |
 | 06_Referenzbilder | Deine Inspirationsbilder (Blister, Metalldosen, Neuro, Focus Gum) |
 | 07_Ideen-Verlauf.md | Alle Ideen von Anfang an und warum sie raus- oder reingekommen sind |
 
@@ -47,7 +47,7 @@ Die Online-Versionen sind aktueller, wenn du dort weiter änderst. Dieser Ordner
 ## Was du als Nächstes tun musst
 
 1. Blindtest: Guming-Sorten mit 10 Leuten probieren lassen (Probier-Set bei Guming bestellen, ca. 20 €).
-2. Mail an Guming, Version 2 (05_Vorlagen/Mail_Guming.md): schriftliche Erlaubnis, Spezifikation mit Süßungsmitteln, NEM-Status, Boden, Charge, Rückruf. Ohne das kein eigenes Design bestellen. Details: 02_Recherche/16_White-Label_Recht_und_Hindernisse.md
+2. Mail an Guming, Version 2 (05_Vorlagen/Mail_Guming.md): schriftliche Erlaubnis, Spezifikation mit Süßungsmitteln, NEM-Status, Boden, Charge, Rückruf. Ohne das kein eigenes Design bestellen. Details: 02_Recherche/24_White-Label_Recht_und_Hindernisse.md
 3. Drei Coworkings fragen: 6 Wochen Thekendisplay auf Kommission, Probier-Nachmittag um 14 Uhr.
 4. Als Lebensmittelunternehmer beim Bezirksamt registrieren, Gewerbe der GbR erweitern, Produkthaftpflicht anfragen (Koffeinprodukt ausdrücklich nennen).
 5. Thekendisplay im 3D-Drucker drucken, Landingpage mit bezahlter Vorbestellung bauen.
@@ -57,6 +57,7 @@ Die Online-Versionen sind aktueller, wenn du dort weiter änderst. Dieser Ordner
 
 ## Offen
 
+- Wachmeister (30 mg, Schweiz): Vertrieb in Deutschland? Händlerpreis? Mail in 05_Vorlagen. Pflichten als Weiterverkäufer: 02_Recherche/19
 - Ob Guming White Label erlaubt
 - Geklärt: Guming hat kein Xylit (Sorbit, Isomalt, Maltit, Sucralose). Xylit im Pilot nicht erwähnen
 - Preis: Guming kostet bei EDEKA 0,25 € pro Stück, unsere Dose 0,62 €. Preis über Ort und Marke begründen

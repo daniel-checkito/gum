@@ -1,0 +1,830 @@
+#!/usr/bin/env python3
+"""Baut die statischen Seiten in website/ aus gemeinsamen Bausteinen.
+
+Aufruf: python3 tools/build_site.py
+Danach liegen alle .html-Dateien in website/. Inhalte hier ändern, nicht in den HTML-Dateien.
+"""
+from pathlib import Path
+
+from pack_art import FLAVORS, PIECES, front, opened, back
+
+OUT = Path(__file__).resolve().parent.parent / "website"
+
+# ---------- Icons und Figuren (eigene Zeichnungen) ----------
+L = 'fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"'
+I_TRUCK = f'<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M6 18h32v24H6zM38 26h10l8 8v8H38z" {L}/><circle cx="18" cy="46" r="5" fill="none" stroke="currentColor" stroke-width="2.6"/><circle cx="46" cy="46" r="5" fill="none" stroke="currentColor" stroke-width="2.6"/></svg>'
+I_CHAT = f'<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 12h40a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4H28l-10 8v-8h-6a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4Z" {L}/><path d="M22 28h.1M32 28h.1M42 28h.1" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>'
+I_CLOCK = f'<svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="22" {L}/><path d="M32 18v14l9 6" {L}/></svg>'
+I_SHIELD = f'<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6l22 8v16c0 14-10 22-22 28C20 52 10 44 10 30V14Z" {L}/><path d="M22 32l7 7 13-14" {L}/></svg>'
+
+
+def pack(f, view="front", uid=None):
+    fn = {"front": front, "open": opened, "back": back}[view]
+    return fn(f, uid or f"{f['id']}-{view}")
+
+
+# ---------- Bild-Slots ----------
+# Bilder liegen in website/img/slots/<key>.webp oder .jpg. Fehlt die Datei, steht ein Platzhalter da.
+# Prompts zu jedem Slot: 05_Vorlagen/Bild-Prompts.md
+def img_slot(key, label, cls="", alt=None, eager=False):
+    for ext in ("webp", "jpg", "png"):
+        if (OUT / "img" / "slots" / f"{key}.{ext}").exists():
+            load = "" if eager else ' loading="lazy"'
+            return f'<div class="slot {cls}"><img src="/img/slots/{key}.{ext}" alt="{alt or label}"{load}></div>'
+    return f'<div class="slot ph-tile tape {cls}"><span>Bild folgt · {key}</span><b>{label}</b></div>'
+
+
+# ---------- Layout ----------
+NAV = [("/produkt", "Produkt"), ("/mission", "Mission"), ("/teams", "Für Teams"), ("/story", "Story"), ("/faq", "FAQ")]
+
+WARNING = ("Kaugummi mit Koffein, mit Süßungsmitteln. Enthält Koffein. Für Kinder und schwangere Frauen nicht empfohlen. "
+           "Nicht mehr als 3 Sticks pro Tag. Andere Koffeinquellen beachten. Kann bei übermäßigem Verzehr abführend wirken. "
+           "Xylit ist für Hunde giftig.")
+
+
+def head(title, desc, path):
+    return f'''<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{title}</title>
+<meta name="description" content="{desc}">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="{desc}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://gum-prototype.vercel.app/img/og.png">
+<meta name="theme-color" content="#F5F5F7">
+<link rel="canonical" href="https://gum-prototype.vercel.app{path}">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+'''
+
+
+def header(active):
+    links = "".join(f'<a href="{h}"{" aria-current=page" if h == active else ""}>{t}</a>' for h, t in NAV)
+    return f'''<div class="announce">Erste Charge: jetzt <b>unverbindlich reservieren</b> · Versand aus Berlin</div>
+<header class="site-head">
+  <div class="wrap nav">
+    <a class="logo" href="/" aria-label="GUMMIT Startseite"><span>GUMMIT</span></a>
+    <nav class="nav-links" aria-label="Hauptmenü">{links}</nav>
+    <a class="btn small" href="/produkt#kaufen">Reservieren</a>
+  </div>
+</header>
+<main id="inhalt">
+'''
+
+
+def footer():
+    return f'''</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="/"><span>GUMMIT</span></a>
+        <p class="foot-claim"><b>Gummit. Push. Repeat.</b><br>Zuckerfreier Koffein-Kaugummi aus Berlin. Für alle, die Dinge bauen.</p>
+      </div>
+      <div><h4>Shop</h4><ul><li><a href="/produkt">Koffein-Kaugummi</a></li><li><a href="/teams">Team-Box</a></li><li><a href="/teams#host">Host-Box für Events</a></li><li><a href="/teams#coworking">Coworking-Display</a></li></ul></div>
+      <div><h4>GUMMIT</h4><ul><li><a href="/mission">Mission</a></li><li><a href="/story">Story</a></li><li><a href="/faq">FAQ</a></li><li><a href="/kontakt">Kontakt</a></li></ul></div>
+      <div><h4>Rechtliches</h4><ul><li><a href="/impressum">Impressum</a></li><li><a href="/datenschutz">Datenschutz</a></li><li><a href="/agb">AGB</a></li><li><a href="/widerruf">Widerruf</a></li><li><a href="/versand">Versand &amp; Zahlung</a></li></ul></div>
+    </div>
+    <p class="legal">{WARNING}</p>
+  </div>
+</footer>
+<div class="sticky-buy" id="sticky-buy" hidden>
+  <div><span id="sticky-name">Mint Condition · 1 Pack</span><b id="sticky-price">4,99 €</b></div>
+  <a class="btn small" href="#kaufen">Reservieren</a>
+</div>
+<script src="/config.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>
+'''
+
+
+def section_label(n, text):
+    return f'<p class="sec-label"><span>{n}</span>{text}</p>'
+
+
+def page(path, title, desc, active, body):
+    return head(title, desc, path) + header(active) + body + footer()
+
+
+# ---------- Bausteine ----------
+RESERVE_FORM = '''<section class="band blue" id="reservieren">
+  <div class="wrap reserve">
+    <div>
+      <h2>Sichere dir die <em>erste</em> Charge</h2>
+      <p class="lead">Unverbindlich und ohne Zahlung. Wir schreiben dir einmal, bevor die erste Charge verschickt wird. Dann entscheidest du, ob du bestellst.</p>
+      <ul class="ticks"><li>Kein Kaufvertrag, keine Zahlung</li><li>Eine Mail vor dem Versand, kein Spam</li><li>Abmelden mit einem Klick</li></ul>
+    </div>
+    <form class="card form" data-lead="reserve" novalidate>
+      <p class="picked" data-picked hidden></p>
+      <div class="field"><label for="r-email">E-Mail</label><input id="r-email" name="email" type="email" autocomplete="email" placeholder="du@startup.de" required></div>
+      <div class="row">
+        <div class="field"><label for="r-type">Ich bin</label>
+          <select id="r-type" name="type">
+            <option value="builder">Builder / Vibe Coder</option>
+            <option value="founder">Gründer</option>
+            <option value="host">Event-Host</option>
+            <option value="team">Startup-Team</option>
+            <option value="coworking">Coworking</option>
+          </select>
+        </div>
+        <div class="field"><label for="r-where">Wo baust du?</label><input id="r-where" name="where" type="text" placeholder="Factory, Zuhause, U8"></div>
+      </div>
+      <label class="check"><input type="checkbox" name="ok" required> <span>Ja, ihr dürft mir zu GUMMIT schreiben. Abmelden geht jederzeit. Mehr in der <a href="/datenschutz">Datenschutzerklärung</a>.</span></label>
+      <button class="btn" type="submit">Unverbindlich reservieren</button>
+      <p class="form-msg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+'''
+
+COMPARE = '''<section class="band" id="vergleich">
+  <div class="wrap">
+    {label}
+    <h2>Koffein pro <em>Euro</em></h2>
+    <p class="lead">Was kosten 100 mg Koffein, wenn du sie unterwegs kaufst? GUMMIT liegt unter Coffee to go und Energy Drinks. Nur Kaffee zu Hause ist günstiger, das sagen wir ehrlich.</p>
+    <div class="cmp-grid">
+      <div class="cmp" id="cmp" role="img" aria-label="Balkendiagramm: Preis pro 100 mg Koffein"></div>
+      <div class="calc card">
+        <label for="calc-n">Wie oft kaufst du unterwegs Koffein pro Woche?</label>
+        <div class="calc-row"><input type="range" id="calc-n" min="1" max="20" value="5"><output id="calc-n-out">5×</output></div>
+        <label for="calc-what">Meistens</label>
+        <select id="calc-what"></select>
+        <p class="calc-big" id="calc-save">–</p>
+        <p class="calc-detail" id="calc-detail">–</p>
+      </div>
+    </div>
+    <details class="cmp-table">
+      <summary>Zahlen, Annahmen und Quellen</summary>
+      <div class="table-scroll"><table class="table">
+        <thead><tr><th>Produkt</th><th>Preis</th><th>Koffein</th><th>Zucker</th><th>pro 100 mg</th></tr></thead>
+        <tbody id="cmp-rows"></tbody>
+      </table></div>
+      <p class="fine">Stand Oktober 2026, Preise ohne Pfand. Koffein laut BfR (Espresso-Basis 80 mg, Energy Drink 250 ml 80 mg) und Herstellerangaben (Monster 32 mg/100 ml, Club-Mate 20 mg/100 ml). Cappuccino: Durchschnitt deutscher Großstädte laut Coffeefriend-Auswertung. Red Bull: REWE. Monster: EDEKA. Club-Mate und Kaffee zu Hause sind Schätzungen. GUMMIT: Startpreise. Zucker laut Etikett, gerundet. Quellen: <a href="https://www.bfr.bund.de/veroeffentlichung/fragen-und-antworten-zu-koffein-und-koffeinhaltigen-lebensmitteln-einschliesslich-energy-drinks/" rel="noopener">BfR</a>, <a href="https://www.meininger.de/gastronomie/trends/kaffee-index-bremen-ist-spitzenreiter-beim-teuersten-cappuccino" rel="noopener">Meininger</a>, <a href="https://www.supermarktcheck.de/rewe/sortiment/energy-drinks/" rel="noopener">Supermarktcheck</a>, <a href="https://wolt.com/de/deu/berlin/venue/edeka-gerstmann/items/gemusesafte-272" rel="noopener">EDEKA via Wolt</a>, <a href="https://en.wikipedia.org/wiki/Club-Mate" rel="noopener">Club-Mate</a>.</p>
+    </details>
+  </div>
+</section>
+'''
+
+REVIEWS_EMPTY = '''<div class="reviews-empty card">
+  <p class="stamp">Neu</p>
+  <h3>Noch keine Bewertungen</h3>
+  <p>GUMMIT startet gerade. Wir zeigen hier nur echte Stimmen von Leuten, die ihn probiert haben. Sei unter den Ersten und sag uns ehrlich, wie er schmeckt.</p>
+  <a class="btn ghost small" href="/kontakt">Feedback schicken</a>
+</div>'''
+
+PHOTOS = f'''<div class="gallery-ph">
+  {img_slot("community-meetup", "Meetup")}
+  {img_slot("community-demoday", "Demo Day")}
+  {img_slot("community-coworking", "Coworking")}
+  {img_slot("community-tasche", "Dein Pack")}
+</div>'''
+
+SERVICE = f'''<section class="band service-band">
+  <div class="wrap service">
+    <div>{I_TRUCK}<h3>Versand aus Berlin</h3><p>Nach Deutschland, Österreich und in die Schweiz.</p></div>
+    <div>{I_CHAT}<h3>Echte Menschen</h3><p>Fragen beantworten wir selbst. Kein Bot.</p></div>
+    <div>{I_CLOCK}<h3>Erst reservieren</h3><p>Keine Zahlung, bis die erste Charge rausgeht.</p></div>
+    <div>{I_SHIELD}<h3>Ehrliche Dosis</h3><p>mg vorne, höchstens 3 am Tag.</p></div>
+  </div>
+</section>
+'''
+
+FLAVOR_CARDS = "".join(
+    f'<a class="flavor" href="/produkt?sorte={f["id"]}" style="--stage:{f["color"]}"><div class="stage">{pack(f, "front", "card-" + f["id"])}</div>'
+    f'<p class="eyebrow">{f["taste"]} · {f["mg"]} mg</p><h3>{f["name"]}</h3><p>{f["line"]}</p><span class="more">Ansehen →</span></a>'
+    for f in FLAVORS)
+
+HERO_PACKS = "".join(
+    f'<div class="pack-view" data-f="{f["id"]}" data-v="front"{"" if i == 0 else " hidden"}>{pack(f, "front", "hero-" + f["id"])}</div>'
+    for i, f in enumerate(FLAVORS))
+
+BENTO = f'''<div class="bento">
+  <div class="tile t-big dark">
+    <p class="eyebrow">Präzision</p>
+    <h3>Die Zahl ist das Produkt.</h3>
+    <p>60 mg bei Minze, 52 mg bei Kirsche und Beere. Jeder Stick gleich. Groß in Chrom vorne aufs Pack gedruckt.</p>
+    <div class="tile-pack">{pack(FLAVORS[0], "front", "bento-m")}</div>
+  </div>
+  <div class="tile"><b class="big">0 g</b><h3>Zucker</h3><p>Gesüßt mit Xylit. Schmeckt trotzdem.</p></div>
+  <div class="tile"><b class="big">8</b><h3>Sticks, flach verpackt</h3><p>Passt neben Laptop, Ladekabel und Event-Badge.</p></div>
+  <div class="tile grad"><h3>Du promptest.<br>Claude coded.<br>Du kaust.</h3></div>
+  <div class="tile"><h3>Koffein-Timeline</h3><p>Sieh als Kurve, wie viel Koffein über den Tag im Körper ist.</p><a class="more" href="/#timeline">Ausprobieren →</a></div>
+  <div class="tile t-wide"><p class="eyebrow">Aus Berlin</p><h3>Versand aus Berlin. Kein Abo.</h3><p>Reservieren ist unverbindlich. Bezahlt wird erst, wenn du wirklich bestellst.</p></div>
+</div>'''
+
+TIMELINE = '''<section class="band" id="timeline">
+  <div class="wrap">
+    <p class="sec-label"><span>04</span>Für Datenfans</p>
+    <h2>Dein Koffein-Tag. <em>Als Kurve.</em></h2>
+    <p class="lead">Wähle, wann du Kaffee trinkst und wann du einen Stick kaust. Die Kurve zeigt grob, wie viel Koffein über den Tag im Körper ist.</p>
+    <div class="tl card">
+      <div class="tl-controls">
+        <div><p class="tl-label">Stick (60 mg) um</p><div class="tl-chips" data-kind="stick" data-mg="60" data-hours="8,10,12,14,16,18,20" data-on="10,14"></div></div>
+        <div><p class="tl-label">Kaffee (80 mg) um</p><div class="tl-chips" data-kind="coffee" data-mg="80" data-hours="7,9,11,13,15,17" data-on="7"></div></div>
+      </div>
+      <svg id="tl-chart" class="tl-chart" viewBox="0 0 720 260" role="img" aria-label="Kurve: Koffein im Körper über den Tag"></svg>
+      <div class="tl-stats">
+        <div><b id="tl-total">0</b><span>mg über den Tag</span></div>
+        <div><b id="tl-peak">0</b><span>mg zur Spitze</span></div>
+        <div><b id="tl-night">0</b><span>mg um 23 Uhr noch da</span></div>
+      </div>
+      <p class="fine" id="tl-note"></p>
+      <p class="fine">Vereinfachtes Modell mit 5 Stunden Halbwertszeit. Die echte Halbwertszeit ist von Mensch zu Mensch sehr verschieden. Keine medizinische Beratung. Laut EFSA gelten für gesunde Erwachsene bis 400 mg über den Tag und bis 200 mg auf einmal als unbedenklich (<a href="https://www.efsa.europa.eu/de/topics/topic/caffeine" rel="noopener">EFSA</a>).</p>
+    </div>
+  </div>
+</section>
+'''
+
+MANIFEST_PANELS = [
+    ("14734", "poster-library", "22:41 · Bibliothek", "Seite 212 von 480.", "Der Automat im Erdgeschoss hat nur Cola."),
+    ("1746", "poster-cafe", "15:12 · Café", "Schlange bis zur Tür.", "Das Pack ist schon in der Jackentasche."),
+    ("1749", "poster-code", "01:07 · Zuhause", "Build läuft. Kaffee ist kalt.", "Ein Stick liegt neben dem Ladekabel."),
+]
+MANIFEST = '<section class="manifest" id="manifest">' + "".join(
+    f'<div class="panel"><video class="bg-video" muted loop playsinline preload="none" poster="/img/slots/{poster}.jpg" data-src="https://assets.mixkit.co/videos/{vid}/{vid}-720.mp4"></video><div class="shade"></div>'
+    f'<div class="wrap"><p class="eyebrow">{when}</p><h2 class="shout">{title}</h2><p class="lede">{sub}</p></div></div>'
+    for vid, poster, when, title, sub in MANIFEST_PANELS) + '</section>'
+
+PDP_VIEWS = "".join(
+    f'<div class="pack-view" data-f="{f["id"]}" data-v="{v}"{"" if (f["id"], v) == ("minze", "front") else " hidden"}>{pack(f, v, "pdp-" + f["id"] + "-" + v)}</div>'
+    for f in FLAVORS for v in ("front", "open", "back"))
+
+MISSION_BAND = f'''<section class="mission-band" id="mission">
+  <div class="wrap">
+    <p class="sec-label light"><span>06</span>Mission</p>
+    <h2>Projekt <em>Erster Commit</em></h2>
+    <p class="lead">Mit jedem Pack bringst du GUMMIT zu Berliner Buildern, die gerade erst anfangen. Gratis für Lerngruppen, Einsteiger-Meetups und Community-Events ohne Budget.</p>
+    <div class="hero-cta"><a class="btn ghost" href="/mission">Mehr erfahren</a><a class="btn white-ghost" href="/teams#anfrage">Event vorschlagen</a></div>
+    {img_slot("mission-event", "Einsteiger-Event", "mission-img", "Studentin lernt in der Bibliothek")}
+    <p class="mission-stamp" aria-hidden="true">chew good,<br>ship good.</p>
+  </div>
+</section>
+'''
+
+FAQ = {
+    "Produkt": [
+        ("Was genau ist GUMMIT?", "Zuckerfreier Kaugummi mit Koffein. Jeder Stick hat je nach Sorte 52 bis 60 mg Koffein. 8 Sticks stecken in einem flachen Pack."),
+        ("Wie schmeckt es?", "Mint Condition nach Minze, Cherry Pick nach Kirsche, Berry Important nach Beere. Koffein schmeckt leicht bitter. Minze überdeckt das am besten, deshalb ist Mint Condition unser Startpunkt."),
+        ("Was ist drin?", "Kaugummi, Koffein und Xylit als Süße, dazu Aromen. Die vollständige Zutatenliste und die Nährwerte stehen auf der Produktseite, sobald der Hersteller sie final bestätigt hat, und immer auf dem Pack."),
+        ("Wie ist GUMMIT verpackt?", "8 einzeln eingewickelte Sticks in einem flachen Faltpack. Passt in jede Hosentasche und neben jedes Ladekabel."),
+    ],
+    "Koffein und Sicherheit": [
+        ("Wie viel Koffein ist in einem Stick?", "Mint Condition 60 mg, Cherry Pick und Berry Important je 52 mg. Zum Vergleich: Ein Espresso hat laut BfR etwa 80 mg."),
+        ("Wie viele Stück pro Tag?", "Höchstens 3 Sticks am Tag. Kaffee, Mate und Energy Drinks mitzählen. Das BfR nennt für gesunde Erwachsene bis zu 400 mg Koffein über den Tag verteilt als unbedenklich."),
+        ("Wer sollte GUMMIT nicht kauen?", "Kinder und schwangere Frauen. Wenn du empfindlich auf Koffein reagierst, frag lieber vorher deinen Arzt."),
+        ("Worauf muss ich noch achten?", "Xylit kann bei übermäßigem Verzehr abführend wirken und ist für Hunde giftig. Pack also nicht in Reichweite vom Bürohund lassen."),
+        ("Macht mich das 10x produktiver?", "Nein. Es ist Kaugummi mit Koffein. Die Zahl vorne drauf ist der ganze Pitch."),
+    ],
+    "Reservieren, Versand, Zahlung": [
+        ("Wie funktioniert das Reservieren?", "Sorte und Menge wählen, Mail-Adresse eintragen. Das ist unverbindlich und kein Kaufvertrag. Wir schreiben dir einmal, bevor die erste Charge verschickt wird. Bestellen und zahlen kannst du dann separat."),
+        ("Wohin liefert ihr?", "Aus Berlin nach Deutschland, Österreich und in die Schweiz. Kosten und Laufzeiten stehen unter Versand & Zahlung."),
+        ("Welche Zahlungsarten gibt es?", "Sobald der Shop live ist: Karte, Apple Pay, Google Pay und weitere über Stripe. Aktuell zahlst du nichts."),
+        ("Kann ich zurückgeben?", "Ja, bei Bestellungen gilt das gesetzliche Widerrufsrecht. Details stehen unter Widerruf."),
+    ],
+    "Teams und Events": [
+        ("Gibt es GUMMIT für Firmen?", "Ja. Team-Boxen mit Rechnung, auf Wunsch mit eurem Logo, und ein Display für Coworkings. Mehr unter Für Teams."),
+        ("Bringt ihr GUMMIT zu unserem Event?", "Für ausgewählte Meetups und Community-Events in Berlin gibt es Host-Boxen. Schreib uns über die Teams-Seite."),
+        ("Was ist Projekt Erster Commit?", "Wir bringen GUMMIT gratis zu Berliner Events für Leute, die gerade anfangen zu bauen: Lerngruppen, Einsteiger-Meetups, Community-Events ohne Budget. Nur Events ab 18. Jedes unterstützte Event listen wir auf der Mission-Seite."),
+    ],
+}
+
+
+def faq_html(groups=None, limit=None):
+    out = []
+    for g, items in FAQ.items():
+        if groups and g not in groups:
+            continue
+        rows = items[:limit] if limit else items
+        out.append(f'<div class="faq-group"><h3>{g}</h3>' + "".join(
+            f'<details><summary>{q}</summary><p>{a}</p></details>' for q, a in rows) + "</div>")
+    return '<div class="faq">' + "".join(out) + "</div>"
+
+
+# ---------- Seiten ----------
+def home():
+    body = f'''
+<section class="hero hero-video" id="kaufen">
+  <video class="bg-video" muted loop playsinline poster="/img/slots/poster-hero.jpg" data-src="https://assets.mixkit.co/videos/48503/48503-720.mp4"></video>
+  <div class="shade"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">GUMMIT · Koffein-Kaugummi</p>
+      <h1 class="shout">60 mg.<br>Kein Becher.</h1>
+      <p class="lede">Zuckerfreier Kaugummi mit Koffein. Die Menge steht vorne drauf, der Rest passt in die Hosentasche.</p>
+      <div class="hero-cta"><a class="btn white" href="/produkt">Alle Produktinfos</a></div>
+    </div>
+    <div class="buybox card">
+      <div class="stage mini" id="stage" style="--stage:{FLAVORS[0]["color"]}">
+        {HERO_PACKS}
+        <span class="stack-badge" id="shop-stack" hidden>×1</span>
+      </div>
+      <fieldset class="opt"><legend>Sorte</legend><div class="chips" id="shop-flavors" role="radiogroup"></div></fieldset>
+      <fieldset class="opt"><legend>Menge</legend><div class="packs" id="shop-packs" role="radiogroup"></div></fieldset>
+      <div class="price-row"><span class="price" id="shop-price">4,99 €</span><span class="save" id="shop-save" hidden></span></div>
+      <p class="price-meta"><span id="shop-per">4,99 € / Pack</span> · inkl. MwSt. · <span id="shop-unit">Grundpreis folgt</span></p>
+      <button class="btn buy" type="button" id="shop-buy">Unverbindlich reservieren</button>
+      <p class="buy-note" id="shop-note">Unverbindlich, kein Kaufvertrag. Zahlung erst nach separater Bestellung.</p>
+      <p class="warn small">Enthält Koffein (<span id="shop-mg100">–</span> mg/100 g). Für Kinder und schwangere Frauen nicht empfohlen.</p>
+    </div>
+  </div>
+</section>
+
+<section class="specs-band" aria-label="Eckdaten">
+  <div class="wrap specs">
+    <div><b>60<small> mg</small></b><span>Koffein pro Stick, Minze</span></div>
+    <div><b>0<small> g</small></b><span>Zucker, gesüßt mit Xylit</span></div>
+    <div><b>8</b><span>Sticks pro Pack</span></div>
+    <div><b>3</b><span>Sorten</span></div>
+  </div>
+</section>
+
+<section class="band" id="fuer-wen">
+  <div class="wrap">
+    {section_label("01", "Für wen")}
+    <h2>Für lange Tage <em>mit Laptop.</em></h2>
+    <p class="lead">Für Leute, die abends noch einen Prototyp fertig machen, für die Prüfung die dritte Runde drehen und Montag pitchen.</p>
+    <div class="personas">
+      <article class="card persona">{img_slot("persona-vibecoder", "Vibe Coder", "persona-img")}<span class="num">A</span><h3>Vibe Coder</h3><p>Du baust mit Cursor, Claude und Kaffee. Der Kaffee ist kalt, der Build läuft noch. Das Pack liegt neben dem Ladekabel.</p></article>
+      <article class="card persona">{img_slot("persona-gruender", "Gründer", "persona-img")}<span class="num">B</span><h3>Gründer</h3><p>Pitch-Deck Version 14, Probelauf um 23 Uhr. Kein Zucker vor dem Auftritt, keine Dose Energy auf dem Tisch.</p></article>
+      <article class="card persona">{img_slot("persona-student", "Studenten", "persona-img")}<span class="num">C</span><h3>Studenten</h3><p>Klausurphase. Bib bis zur Schließung, Karteikarten, dritter Durchgang. Ein Stick statt dem vierten Automatenkaffee.</p></article>
+    </div>
+  </div>
+</section>
+
+{MANIFEST}
+
+<section class="band" id="warum">
+  <div class="wrap">
+    {section_label("02", "Warum GUMMIT")}
+    <h2>Was drin ist. <em>Was nicht.</em></h2>
+    <p class="lead">Kein Becher, kein Zucker, kein Anstehen. Ein Stick, eine klare Zahl.</p>
+    {BENTO}
+  </div>
+</section>
+
+<section class="band senses" id="sorten">
+  <div class="wrap">
+    {section_label("03", "Sorten")}
+    <h2>Drei Sorten. <em>Drei Farben.</em></h2>
+    <p class="lead">Jede Sorte hat ihre eigene Farbe, ihr eigenes Muster und ihre eigene Zahl.</p>
+    <div class="flavors">
+      {FLAVOR_CARDS}
+    </div>
+  </div>
+</section>
+
+{TIMELINE}
+
+{COMPARE.format(label=section_label("05", "Rechnen wir mal"))}
+
+{MISSION_BAND}
+
+<section class="band paper-2" id="so-gehts">
+  <div class="wrap split2">
+    <div>
+      {section_label("07", "So geht's")}
+      <h2>Pop. Kau. <em>Ship.</em></h2>
+      <ol class="steps">
+        <li><b>Einen Stick nehmen,</b> wenn der nächste Arbeitsblock startet.</li>
+        <li><b>Kauen</b> wie normalen Kaugummi. Der Geschmack hält.</li>
+        <li><b>Mitzählen.</b> Höchstens 3 Sticks am Tag, Kaffee mitgerechnet.</li>
+      </ol>
+    </div>
+    <div>
+      {section_label("08", "Community")}
+      <h2>Bald hier: <em>ihr</em></h2>
+      <p class="lead">Die erste Charge geht auf Berliner Events. Danach kommen hier eure Fotos hin.</p>
+      {PHOTOS}
+    </div>
+  </div>
+</section>
+
+
+<section class="band blue-soft" id="teams-teaser">
+  <div class="wrap teams-teaser">
+    <div>
+      {section_label("09", "Für Teams")}
+      <h2>Für Teams, Hosts <em>&amp;</em> Coworkings</h2>
+      <p class="lead">Team-Boxen mit Rechnung, Host-Boxen für Meetups und ein Display für eure Theke.</p>
+    </div>
+    <a class="btn" href="/teams">Angebote ansehen</a>
+  </div>
+</section>
+
+<section class="band" id="faq-teaser">
+  <div class="wrap">
+    {section_label("10", "FAQ")}
+    <h2>Kurz gefragt</h2>
+    {faq_html(["Produkt", "Koffein und Sicherheit"], limit=2)}
+    <p class="more-link"><a href="/faq">Alle Fragen ansehen →</a></p>
+  </div>
+</section>
+
+{RESERVE_FORM}
+{SERVICE}
+'''
+    return page("/", "GUMMIT – Koffein-Kaugummi für Berliner Builder",
+                "Zuckerfreier Kaugummi mit 52 bis 60 mg Koffein pro Stick. Für Lernphasen, Launches und lange Abende im Coworking.",
+                "/", body)
+
+
+def product():
+    body = f'''
+<div class="wrap crumbs"><a href="/">Start</a> / <span>Koffein-Kaugummi</span></div>
+<section class="pdp wrap" id="kaufen">
+  <div class="pdp-media">
+    <div class="pdp-main stage" id="stage" style="--stage:{FLAVORS[0]["color"]}">
+      {PDP_VIEWS}
+      <div class="pdp-ph" id="shop-ph" hidden>{img_slot("produkt-hand", "In der Hand", "", "GUMMIT-Pack in der Hand, Größenvergleich")}</div>
+      <span class="stack-badge" id="shop-stack" hidden>×1</span>
+    </div>
+    <div class="thumbs" id="thumbs" role="group" aria-label="Ansichten">
+      <button type="button" data-view="front" aria-pressed="true">Vorderseite</button>
+      <button type="button" data-view="open" aria-pressed="false">Offen</button>
+      <button type="button" data-view="back" aria-pressed="false">Rückseite</button>
+      <button type="button" data-view="ph" aria-pressed="false">Größe</button>
+    </div>
+    <p class="render-note">Entwurf des Packs. Die echte Verpackung kann leicht abweichen.</p>
+  </div>
+
+  <div class="pdp-info">
+    <p class="kicker">Kaugummi mit Koffein, mit Süßungsmitteln</p>
+    <h1>GUMMIT <span id="pdp-flavor">Mint Condition</span></h1>
+    <p class="lede">Zuckerfreier Kaugummi mit <b><span id="lede-mg">60</span> mg Koffein</b> pro Stick. 8 Sticks im flachen Pack.</p>
+    <div class="price-row"><span class="price" id="shop-price">4,99 €</span><span class="save" id="shop-save" hidden></span></div>
+    <p class="price-meta"><span id="shop-per">4,99 € / Pack</span> · inkl. MwSt., zzgl. <a href="/versand">Versand</a> · <span id="shop-unit">Grundpreis folgt</span></p>
+
+    <fieldset class="opt"><legend>Sorte</legend><div class="chips" id="shop-flavors" role="radiogroup"></div></fieldset>
+    <fieldset class="opt"><legend>Menge</legend><div class="packs" id="shop-packs" role="radiogroup"></div></fieldset>
+
+    <button class="btn buy" type="button" id="shop-buy">Unverbindlich reservieren</button>
+    <p class="buy-note" id="shop-note">Unverbindlich, kein Kaufvertrag. Zahlung erst nach separater Bestellung.</p>
+    <ul class="assure"><li>Erste Charge: <span data-launch>Termin folgt</span></li><li>Versand aus Berlin</li><li>14 Tage Widerruf bei Bestellung</li></ul>
+
+    <p class="warn">Enthält Koffein (<span id="shop-mg100">–</span> mg/100 g). Für Kinder und schwangere Frauen nicht empfohlen.</p>
+
+    <div class="acc">
+      <details open><summary>Beschreibung</summary><p>GUMMIT ist Kaugummi mit Koffein und ohne Zucker, gesüßt mit Xylit. Jeder Stick hat eine feste Menge Koffein, die groß vorne auf dem Pack steht. Gemacht für lange Lern- und Build-Tage. Kein Wirkversprechen, nur Kaugummi mit einer ehrlichen Zahl.</p></details>
+      <details><summary>Zutaten und Allergene</summary><p><span class="ph">Vollständige Zutatenliste folgt vom Hersteller.</span> Bekannt: Süßungsmittel Xylit, Kaumasse, Koffein, Aromen. Allergene werden hier hervorgehoben, sobald die Spezifikation vorliegt.</p></details>
+      <details><summary>Nährwerte</summary><div class="table-scroll"><table class="table"><thead><tr><th></th><th>pro 100 g</th><th>pro Stick</th></tr></thead><tbody>
+        <tr><td>Energie</td><td class="ph">folgt</td><td class="ph">folgt</td></tr>
+        <tr><td>Fett</td><td class="ph">folgt</td><td class="ph">folgt</td></tr>
+        <tr><td>Kohlenhydrate</td><td class="ph">folgt</td><td class="ph">folgt</td></tr>
+        <tr><td>davon Zucker</td><td>0 g</td><td>0 g</td></tr>
+        <tr><td>davon mehrwertige Alkohole</td><td class="ph">folgt</td><td class="ph">folgt</td></tr>
+        <tr><td>Eiweiß</td><td class="ph">folgt</td><td class="ph">folgt</td></tr>
+        <tr><td>Salz</td><td class="ph">folgt</td><td class="ph">folgt</td></tr>
+        <tr><td>Koffein</td><td id="nut-mg100">–</td><td id="nut-mg">60 mg</td></tr>
+      </tbody></table></div></details>
+      <details><summary>Verzehrempfehlung</summary><p>Einen Stick kauen, wenn der nächste Arbeitsblock startet. Nicht mehr als 3 Sticks pro Tag. Andere Koffeinquellen wie Kaffee, Mate oder Energy Drinks mitzählen.</p></details>
+      <details><summary>Warnhinweise</summary><p>Enthält Koffein. Für Kinder und schwangere Frauen nicht empfohlen. Kann bei übermäßigem Verzehr abführend wirken. Xylit ist für Hunde giftig.</p></details>
+      <details><summary>Füllmenge und Aufbewahrung</summary><p>8 Sticks, Füllmenge <span id="net-weight">–</span> g (vorläufig). Trocken und unter 25 °C lagern. Mindesthaltbarkeit und Los stehen auf dem Lasche.</p></details>
+      <details><summary>Lebensmittelunternehmer</summary><p><span class="ph">[Firmenname GbR, Anschrift, Berlin]</span></p></details>
+      <details><summary>Versand und Rückgabe</summary><p>Versand aus Berlin nach Deutschland, Österreich und in die Schweiz. Kosten und Laufzeiten unter <a href="/versand">Versand &amp; Zahlung</a>. Bei Bestellungen gilt das <a href="/widerruf">Widerrufsrecht</a>.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="band paper-2">
+  <div class="wrap">
+    <h2>Warum <em>GUMMIT</em></h2>
+    {BENTO}
+  </div>
+</section>
+
+{COMPARE.format(label="")}
+
+<section class="band paper-2" id="bewertungen">
+  <div class="wrap split2">
+    <div>
+      <h2>Bewertungen</h2>
+      {REVIEWS_EMPTY}
+    </div>
+    <div>
+      <h2>Für Teams?</h2>
+      <div class="card cross">
+        <h3>Team-Box</h3>
+        <p>Gemischte Box für euer Büro oder Coworking. Mit Rechnung, auf Wunsch mit Logo.</p>
+        <a class="btn ghost small" href="/teams">Team-Box ansehen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>Fragen zum Produkt</h2>
+    {faq_html(["Koffein und Sicherheit", "Reservieren, Versand, Zahlung"])}
+  </div>
+</section>
+
+{RESERVE_FORM}
+'''
+    return page("/produkt", "GUMMIT Koffein-Kaugummi – Mint Condition, Cherry Pick, Berry Important",
+                "Zuckerfreier Kaugummi mit 52 bis 60 mg Koffein pro Stick, 8 Sticks im flachen Pack. Drei Sorten, ab 3,99 € pro Pack. Jetzt unverbindlich reservieren.",
+                "/produkt", body)
+
+
+def teams():
+    body = f'''
+<section class="page-hero">
+  <div class="wrap">
+    <span class="sticker">Für Teams</span>
+    <h1 class="riso">Koffein für <br>euer Team.</h1>
+    <p class="lede">Für Startups, Agenturen, Coworkings und alle, die Events für Builder machen. Mit Rechnung, ohne Zucker.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap offers">
+    <article class="card offer" id="team"><span class="num">1</span><h3>Team-Box</h3><p>Gemischte Box mit allen drei Sorten für Büro, Meetingraum oder Offsite.</p><ul class="ticks"><li>ab 10 Packs</li><li>Rechnung und Staffelpreise</li><li>Logo-Option auf Anfrage</li><li>Als Onboarding-Geschenk</li></ul><a class="btn small" href="#anfrage" data-type="team">Team-Box anfragen</a></article>
+    <article class="card offer" id="host"><span class="num">2</span><h3>Host-Box</h3><p>Für Meetups, Lern-Events und Demo Days in Berlin. Ihr organisiert, wir bringen das Packn.</p><ul class="ticks"><li>Packs für eure Gäste</li><li>Display für den Check-in</li><li>Für ausgewählte Events kostenlos in der Beta</li><li>Wir wollen nur ein Foto und eine Erwähnung</li></ul><a class="btn small" href="#anfrage" data-type="host">Host-Box anfragen</a></article>
+    <article class="card offer" id="coworking"><span class="num">3</span><h3>Coworking-Display</h3><p>Ein kleines Display für eure Theke. Kein Automat, kein Vertrag.</p><ul class="ticks"><li>Wir füllen nach</li><li>Provision pro Pack, keine Miete</li><li>Jederzeit beendbar</li><li>Probier-Nachmittag um 14 Uhr</li></ul><a class="btn small" href="#anfrage" data-type="coworking">Display anfragen</a></article>
+  </div>
+</section>
+
+<section class="band paper-2">
+  <div class="wrap split2">
+    <div>
+      <h2>So läuft's</h2>
+      <ol class="steps">
+        <li><b>Anfrage schicken</b> mit Menge und Termin.</li>
+        <li><b>Angebot bekommen</b> innerhalb von zwei Werktagen, netto mit Staffelpreisen.</li>
+        <li><b>Lieferung</b> aus Berlin oder persönlich zum Event.</li>
+      </ol>
+    </div>
+    <div>
+      <h2>Fragen</h2>
+      {faq_html(["Teams und Events"])}
+    </div>
+  </div>
+</section>
+
+<section class="band blue" id="anfrage">
+  <div class="wrap reserve">
+    <div>
+      <h2>Anfrage <em>schicken</em></h2>
+      <p class="lead">Sag uns kurz, was ihr braucht. Wir melden uns mit einem Angebot.</p>
+    </div>
+    <form class="card form" data-lead="b2b" novalidate>
+      <div class="row">
+        <div class="field"><label for="b-company">Firma oder Event</label><input id="b-company" name="company" type="text" required></div>
+        <div class="field"><label for="b-name">Name</label><input id="b-name" name="name" type="text" autocomplete="name"></div>
+      </div>
+      <div class="field"><label for="b-email">E-Mail</label><input id="b-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="row">
+        <div class="field"><label for="b-type">Was braucht ihr?</label>
+          <select id="b-type" name="type"><option value="team">Team-Box</option><option value="host">Host-Box</option><option value="coworking">Coworking-Display</option><option value="other">Etwas anderes</option></select>
+        </div>
+        <div class="field"><label for="b-qty">Menge oder Gäste</label><input id="b-qty" name="qty" type="text" placeholder="z. B. 20 Packs, 80 Gäste"></div>
+      </div>
+      <div class="field"><label for="b-date">Termin (optional)</label><input id="b-date" name="date" type="text" placeholder="z. B. Meetup am 14.11."></div>
+      <div class="field"><label for="b-msg">Nachricht</label><textarea id="b-msg" name="message" rows="3"></textarea></div>
+      <label class="check"><input type="checkbox" name="ok" required> <span>Ihr dürft mich zu dieser Anfrage kontaktieren. Mehr in der <a href="/datenschutz">Datenschutzerklärung</a>.</span></label>
+      <button class="btn" type="submit">Anfrage senden</button>
+      <p class="form-msg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+'''
+    return page("/teams", "GUMMIT für Teams, Events und Coworkings",
+                "Team-Boxen mit Rechnung, Host-Boxen für Meetups und Events, Displays für Coworkings. Zuckerfreier Koffein-Kaugummi aus Berlin.",
+                "/teams", body)
+
+
+def story():
+    body = f'''
+<section class="page-hero">
+  <div class="wrap">
+    <span class="sticker">Story</span>
+    <h1 class="riso">Warum es <br>GUMMIT gibt.</h1>
+  </div>
+</section>
+<section class="band">
+  <div class="wrap founder">
+    <div class="stage founder-photo" style="--stage:{FLAVORS[2]["color"]}">{pack(FLAVORS[2], "front", "story-pack")}</div>
+    <div class="prose">
+      <p>Gute Ideen kommen selten um neun Uhr morgens. Sie kommen in der Lernphase, kurz vor dem Launch oder abends im Coworking.</p>
+      <p>Genau da war das Problem: Der Kaffee ist kalt, der Automat hat nur Zuckerdosen, und Energy Drinks passen nicht in die Laptoptasche. Wir wollten etwas Kleines, ohne Zucker, das ehrlich sagt, wie viel Koffein drin ist.</p>
+      <p>Die meisten Koffein-Kaugummis schmecken nach Apotheke oder verstecken die Dosis im Kleingedruckten. Daraus wurde GUMMIT: Kaugummi mit Koffein, null Zucker, die Zahl groß vorne drauf.</p>
+      <p>Wir sitzen in Berlin. Die erste Charge geht an Leute aus der Szene: Coworkings, Meetups, Lerngruppen.</p>
+      <p class="sig">– Team GUMMIT</p>
+    </div>
+  </div>
+</section>
+<section class="band paper-2">
+  <div class="wrap">
+    <h2>Woran wir <em>glauben</em></h2>
+    <div class="values">
+      <div class="card"><h3>Die Zahl zuerst</h3><p>Koffein in mg steht vorne auf dem Pack. Nicht im Kleingedruckten.</p></div>
+      <div class="card"><h3>Kein Zucker, kein Theater</h3><p>Keine Wundersätze, keine Hustle-Sprüche. Lange Tage sind lang, das reicht.</p></div>
+      <div class="card"><h3>Aus der Szene</h3><p>Wir wachsen auf den Events, auf denen wir selbst sind. Nicht über Werbung.</p></div>
+    </div>
+  </div>
+</section>
+<section class="band">
+  <div class="wrap split2">
+    <div>
+      <h2>Changelog</h2>
+      <pre class="log"><b>$</b> git log --oneline
+a1c3f02 erste Charge shippen
+9e7b210 Sorte Kirsche hinzugefügt
+4d2a8c1 Zucker entfernt
+0b5e9f3 initial commit: Kaugummi</pre>
+    </div>
+    <div>
+      <h2>Was als <em>Nächstes</em> kommt</h2>
+      <ol class="steps">
+        <li><b>Erste Charge</b> für Berliner Meetups und Lerngruppen.</li>
+        <li><b>Coworkings</b> mit Display an der Theke.</li>
+        <li><b>Eigene Rezeptur,</b> wenn genug Leute mitmachen.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+'''
+    return page("/story", "Story – GUMMIT", "Wie GUMMIT entstanden ist: kalter Kaffee, Zucker im Automaten und ein Kaugummi mit der Zahl vorne drauf.", "/story", body)
+
+
+def mission():
+    body = f'''
+<section class="page-hero mission-hero">
+  <div class="wrap">
+    <span class="sticker">Mission</span>
+    <h1 class="riso">Projekt <br>Erster Commit.</h1>
+    <p class="lede">Jedes Pack GUMMIT hilft Berliner Buildern, die gerade erst anfangen.</p>
+  </div>
+</section>
+<section class="band">
+  <div class="wrap split2">
+    <div class="prose">
+      <p>Die besten Projekte in Berlin starten selten im Büro. Sie starten in Lerngruppen, in Einsteiger-Meetups und auf Community-Events, die mit null Budget laufen. Dort gibt es Pizza, Mate und Leute, die ihren ersten Prototyp bauen.</p>
+      <p>Genau da wollen wir sein. Mit jedem Pack, das du kaufst, finanzierst du Packs für diese Events. Wir bringen sie gratis vorbei und fragen nur nach einem Foto.</p>
+      <p>Wir halten es ehrlich: Jedes Event, das wir unterstützen, steht unten mit Datum und Menge. Keine Prozent-Versprechen, die keiner prüfen kann.</p>
+    </div>
+    <div class="values one">
+      <div class="card"><span class="num">1</span><h3>Gratis für Einsteiger-Events</h3><p>Lerngruppen, Coding-Meetups, Community-Events ohne Sponsor.</p></div>
+      <div class="card"><span class="num">2</span><h3>Nur ab 18</h3><p>GUMMIT enthält Koffein. Deshalb unterstützen wir nur Events für Erwachsene.</p></div>
+      <div class="card"><span class="num">3</span><h3>Offen gezählt</h3><p>Jedes Event steht hier. Du siehst, wohin das Packn gehen.</p></div>
+    </div>
+  </div>
+</section>
+<section class="band paper-2">
+  <div class="wrap">
+    <h2>Bisher <em>unterstützt</em></h2>
+    <div class="table-scroll"><table class="table">
+      <thead><tr><th>Datum</th><th>Event</th><th>Packs</th></tr></thead>
+      <tbody><tr><td colspan="3" class="empty">Noch keine Events. Das erste kommt mit der ersten Charge.</td></tr></tbody>
+    </table></div>
+  </div>
+</section>
+<section class="mission-band">
+  <div class="wrap">
+    <h2>Du machst ein Event <em>für Einsteiger?</em></h2>
+    <p class="lead">Erzähl uns davon. Wenn es passt, bringen wir GUMMIT vorbei.</p>
+    <div class="hero-cta"><a class="btn ghost" href="/teams#anfrage">Event vorschlagen</a></div>
+  </div>
+</section>
+'''
+    return page("/mission", "Mission – Projekt Erster Commit – GUMMIT",
+                "Mit jedem Pack GUMMIT unterstützt du Berliner Einsteiger-Events: Lerngruppen, Coding-Meetups, Community-Events ohne Budget.",
+                "/mission", body)
+
+
+def faq_page():
+    body = f'''
+<section class="page-hero"><div class="wrap"><span class="sticker">FAQ</span><h1 class="riso">Häufige <br>Fragen.</h1></div></section>
+<section class="band"><div class="wrap">{faq_html()}<p class="more-link">Noch was offen? <a href="/kontakt">Schreib uns →</a></p></div></section>
+'''
+    return page("/faq", "FAQ – GUMMIT", "Antworten zu Koffein, Zutaten, Reservieren, Versand und Teams.", "/faq", body)
+
+
+def contact():
+    body = '''
+<section class="page-hero"><div class="wrap"><span class="sticker">Kontakt</span><h1 class="riso">Sag <br>Hallo.</h1><p class="lede">Fragen, Feedback, Events, Presse. Wir antworten in der Regel innerhalb von zwei Werktagen.</p></div></section>
+<section class="band">
+  <div class="wrap split2">
+    <div class="contact-ways">
+      <div class="card"><h3>WhatsApp</h3><p>Am schnellsten. Wir antworten selbst.</p><a class="btn small" href="#" data-chat>Chat starten</a></div>
+      <div class="card"><h3>E-Mail</h3><p><a href="#" data-mail><span class="ph">[E-Mail-Adresse]</span></a></p></div>
+      <div class="card"><h3>Anschrift</h3><p><span class="ph">[Firmenname GbR, Straße, PLZ Berlin]</span></p></div>
+    </div>
+    <form class="card form" data-lead="contact" novalidate>
+      <div class="field"><label for="c-name">Name</label><input id="c-name" name="name" type="text" autocomplete="name"></div>
+      <div class="field"><label for="c-email">E-Mail</label><input id="c-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="c-msg">Nachricht</label><textarea id="c-msg" name="message" rows="5" required></textarea></div>
+      <label class="check"><input type="checkbox" name="ok" required> <span>Ihr dürft mich zu meiner Nachricht kontaktieren. Mehr in der <a href="/datenschutz">Datenschutzerklärung</a>.</span></label>
+      <button class="btn" type="submit">Nachricht senden</button>
+      <p class="form-msg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+'''
+    return page("/kontakt", "Kontakt – GUMMIT", "Kontakt zu GUMMIT: WhatsApp, E-Mail und Formular.", "/kontakt", body)
+
+
+DRAFT = '<p class="draft">Entwurf. Vor dem Verkaufsstart durch geprüfte Rechtstexte ersetzen (z. B. IT-Recht Kanzlei, Händlerbund oder Anwalt).</p>'
+
+
+def legal(path, title, inner):
+    body = f'<div class="page">{inner}</div>'
+    return page(path, f"{title} – GUMMIT", f"{title} von GUMMIT.", "", body)
+
+
+def versand():
+    return legal("/versand", "Versand & Zahlung", f'''<h1>Versand &amp; Zahlung</h1>{DRAFT}
+<p>Aktuell kannst du GUMMIT nur unverbindlich reservieren. Es fallen keine Kosten an. Sobald der Shop live ist, gelten diese Bedingungen.</p>
+<h2>Liefergebiete und Versandkosten</h2>
+<div class="table-scroll"><table class="table"><thead><tr><th>Land</th><th>Versandkosten</th><th>Versandkostenfrei ab</th><th>Lieferzeit</th></tr></thead><tbody>
+<tr><td>Deutschland</td><td class="ph">[x,xx €]</td><td class="ph">[xx €]</td><td class="ph">[2–4 Werktage]</td></tr>
+<tr><td>Österreich</td><td class="ph">[x,xx €]</td><td class="ph">[xx €]</td><td class="ph">[3–6 Werktage]</td></tr>
+<tr><td>Schweiz</td><td class="ph">[x,xx CHF]</td><td class="ph">[–]</td><td class="ph">[4–8 Werktage]</td></tr>
+</tbody></table></div>
+<p>Bei Lieferungen in die Schweiz können Einfuhrumsatzsteuer und Zollgebühren anfallen. <span class="ph">[Wer zahlt sie?]</span></p>
+<h2>Zahlungsarten</h2>
+<p>Bezahlt wird über Stripe: <span class="ph">[Kreditkarte, Apple Pay, Google Pay, Klarna, SEPA]</span>. Alle Preise inklusive Mehrwertsteuer.</p>
+<h2>Versand</h2>
+<p>Wir verschicken aus Berlin mit <span class="ph">[Versanddienstleister]</span>. Du bekommst eine Mail mit Sendungsnummer.</p>''')
+
+
+def widerruf():
+    return legal("/widerruf", "Widerruf", f'''<h1>Widerrufsbelehrung</h1>{DRAFT}
+<p>Aktuell gibt es nur unverbindliche Reservierungen ohne Kaufvertrag. Ein Widerruf ist dafür nicht nötig. Für spätere Bestellungen gilt:</p>
+<h2>Widerrufsrecht</h2>
+<p>Du hast das Recht, binnen 14 Tagen ohne Angabe von Gründen deinen Vertrag zu widerrufen. Die Frist beginnt an dem Tag, an dem du oder ein von dir benannter Dritter die Ware in Besitz genommen hast.</p>
+<p>Um dein Widerrufsrecht auszuüben, schick uns eine eindeutige Erklärung, zum Beispiel per E-Mail an <span class="ph">[E-Mail]</span> oder per Brief an <span class="ph">[Anschrift]</span>. Die Mitteilung, dass du widerrufst, vor Ablauf der Frist reicht.</p>
+<h2>Folgen des Widerrufs</h2>
+<p>Wir erstatten alle Zahlungen inklusive der Standard-Lieferkosten spätestens binnen 14 Tagen nach Eingang deines Widerrufs, mit demselben Zahlungsmittel. Wir können die Rückzahlung verweigern, bis die Ware wieder bei uns ist oder du den Rückversand nachgewiesen hast. Die Kosten der Rücksendung trägst <span class="ph">[du / wir]</span>.</p>
+<h2>Muster-Widerrufsformular</h2>
+<p class="ph">[Muster-Widerrufsformular nach Anlage 2 zu Art. 246a EGBGB einfügen]</p>
+<h2>Vertrag widerrufen</h2>
+<p>Sobald der Shop live ist, findest du hier den Button „Vertrag widerrufen“.</p>''')
+
+
+def agb():
+    sections = ["Geltungsbereich", "Vertragspartner", "Reservierung und Vertragsschluss", "Preise und Versandkosten", "Lieferung", "Zahlung", "Eigentumsvorbehalt", "Widerrufsrecht", "Gewährleistung", "Streitbeilegung"]
+    inner = f'<h1>Allgemeine Geschäftsbedingungen</h1>{DRAFT}'
+    inner += '<h2>Reservierung</h2><p>Eine Reservierung auf dieser Website ist unverbindlich. Sie ist kein Angebot zum Abschluss eines Kaufvertrags und verpflichtet weder dich noch uns. Ein Kaufvertrag entsteht erst durch eine separate Bestellung.</p>'
+    inner += "".join(f'<h2>{s}</h2><p class="ph">[Text folgt]</p>' for s in sections)
+    return legal("/agb", "AGB", inner)
+
+
+def impressum():
+    return legal("/impressum", "Impressum", '''<h1>Impressum</h1>
+<h2>Angaben gemäß § 5 DDG</h2>
+<p><span class="ph">[Name der GbR]</span><br><span class="ph">[Straße und Hausnummer]</span><br><span class="ph">[PLZ] Berlin</span></p>
+<p>Vertreten durch: <span class="ph">[Namen der Gesellschafter]</span></p>
+<h2>Kontakt</h2>
+<p>E-Mail: <span class="ph">[E-Mail-Adresse]</span><br>Telefon oder WhatsApp: <span class="ph">[Nummer]</span></p>
+<h2>Umsatzsteuer</h2>
+<p>Umsatzsteuer-ID gemäß § 27a UStG: <span class="ph">[falls vorhanden, sonst Zeile löschen]</span></p>
+<h2>Verantwortlich für den Inhalt</h2>
+<p><span class="ph">[Name, Anschrift wie oben]</span></p>
+<h2>Verbraucherstreitbeilegung</h2>
+<p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>''')
+
+
+def datenschutz():
+    return legal("/datenschutz", "Datenschutz", '''<h1>Datenschutz</h1>
+<h2>Wer verantwortlich ist</h2>
+<p><span class="ph">[Name der GbR, Anschrift, E-Mail]</span> (siehe <a href="/impressum">Impressum</a>).</p>
+<h2>Hosting</h2>
+<p>Diese Website wird bei Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA gehostet. Beim Aufruf verarbeitet Vercel technisch nötige Daten wie IP-Adresse, Datum, Uhrzeit und aufgerufene Seite in Server-Logfiles. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (sicherer und stabiler Betrieb). Vercel ist unter dem EU-US Data Privacy Framework zertifiziert, zusätzlich gelten Standardvertragsklauseln.</p>
+<h2>Schriften</h2>
+<p>Die Schriften liegen auf unserem eigenen Server. Es werden keine Daten an Google oder andere Schriftanbieter übertragen.</p>
+<h2>Cookies und Tracking</h2>
+<p>Wir setzen keine Cookies und kein Tracking ein. Deine Auswahl im Shop wird nur im Browser verarbeitet.</p>
+<h2>Reservierung, Anfragen und Kontakt</h2>
+<p>Wenn du reservierst, eine Team-Anfrage schickst oder uns schreibst, verarbeiten wir deine Angaben (z. B. E-Mail, Name, Firma, Nachricht, gewählte Sorte und Menge), um dir zu antworten und dich vor dem Versand der ersten Charge zu informieren. Rechtsgrundlage ist deine Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) bzw. die Anbahnung eines Vertrags (lit. b). Du kannst die Einwilligung jederzeit per Mail widerrufen, dann löschen wir deine Daten. Für die Formulare nutzen wir <span class="ph">[Anbieter, z. B. Formspree Inc., USA]</span>.</p>
+<h2>WhatsApp</h2>
+<p>Wenn du uns über WhatsApp schreibst, verarbeitet WhatsApp Ireland Ltd. deine Daten nach deren Datenschutzhinweisen. Nutze lieber E-Mail oder das Formular, wenn du das nicht möchtest.</p>
+<h2>Bestellung und Zahlung</h2>
+<p>Für Bestellungen leiten wir dich zu <span class="ph">[Stripe Payments Europe Ltd., Irland]</span> weiter. Wir erhalten Name, E-Mail, Lieferadresse und Zahlungsstatus, um die Bestellung abzuwickeln (Art. 6 Abs. 1 lit. b DSGVO).</p>
+<h2>Deine Rechte</h2>
+<p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Außerdem kannst du dich bei einer Datenschutz-Aufsichtsbehörde beschweren, in Berlin bei der Berliner Beauftragten für Datenschutz und Informationsfreiheit.</p>
+<p class="fine">Stand: <span class="ph">[Datum]</span></p>''')
+
+
+def notfound():
+    body = '''<section class="page-hero err"><div class="wrap"><span class="sticker">404</span><h1 class="riso">Branch nicht <br>gefunden.</h1><p class="lede">Diese Seite gibt es nicht. Zurück zu main.</p><a class="btn" href="/">Zur Startseite</a></div></section>'''
+    return page("/404", "404 – GUMMIT", "Seite nicht gefunden.", "", body)
+
+
+PAGES = {
+    "index.html": home, "produkt.html": product, "mission.html": mission, "teams.html": teams, "story.html": story,
+    "faq.html": faq_page, "kontakt.html": contact, "versand.html": versand, "widerruf.html": widerruf,
+    "agb.html": agb, "impressum.html": impressum, "datenschutz.html": datenschutz, "404.html": notfound,
+}
+
+if __name__ == "__main__":
+    for name, fn in PAGES.items():
+        (OUT / name).write_text(fn(), encoding="utf-8")
+        print("wrote", name)

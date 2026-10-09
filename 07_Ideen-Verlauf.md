@@ -67,3 +67,38 @@ Alle Ideen aus dem Gespräch vom 08.10.2026, in der Reihenfolge, wie sie kamen, 
 | Story „nur von KI gesteuert, als Test“ | angepasst übernommen | Starker Aufhänger, aber ehrlich rahmen: KI entscheidet Sorten, Sprüche, Preise, Posts, Daniel macht Recht, Ware, Sicherheit. Als LinkedIn-Serie, nicht auf der Dose |
 | Sponsoring bei SUPERPUBLIC (Batch 001, Factory Berlin) | neu, Top-Chance | 4 Gründerteams, 6 Wochen gefilmt, Demo Day ca. Anfang November. 3D-gedruckter Automat statt teurem Gerät, Kontakt media@superpublic.space |
 | Verpackung premium oder farbig | Empfehlung Mischung | Premium-Dose (Kobalt, Prägung) als Basis, Farbe pro Sorte und wechselnder Spruch auf dem Deckel gegen „nur BISS“ |
+
+## Update 09.10.2026: Website und Rebrand
+
+| Idee | Ergebnis | Warum |
+| --- | --- | --- |
+| Name GUMMIT (gum + git commit) | neuer Arbeitstitel | BISS zu langweilig. Wortspiel für Vibe Coder, „git gummit“ als Claim. Register noch prüfen |
+| Zielgruppe Luma-Events Berlin, Vibe Coder, Hustler | übernommen für Website | Hackathons, Demo Days und AI-Meetups als erster Kanal, Host-Box für Veranstalter |
+| Look dunkel mit Neon (Lime, Pink, Violett), Terminal-Optik | ersetzt Kobalt/Weiß | Weißes Branding wirkte zu medizinisch |
+| Humor mit Glazing- und Dev-Memes | übernommen | „You're absolutely right!“, „Works on my machine“. Weiter keine Wirkversprechen (kein 10x, kein Fokus) |
+| Glaze-o-meter (Deckel-Generator) | wieder raus | Deckel lassen sich im Pilot nicht individuell bedrucken, also kein Versprechen auf der Website. Glazing-Humor bleibt im Laufband |
+| Sorten Hotfix, Ship It, Demo Day, Touch Grass | ersetzen Deadline, Standup, Kundencall, Feierabend | Passen zur Dev-Zielgruppe |
+| Website auf Englisch | übernommen | Berliner Tech-Szene ist international. Pflichtangaben deutsch und englisch |
+| Website live auf gum-prototype.vercel.app | erledigt | Ordner website/, jeder Push auf main geht live |
+| Neubau Website „Berlin Zine“ mit Unterseiten | übernommen | Orange zu viel. Papier, Tinte, Riso-Blau, Pink nur als Akzent. Produktseite, Teams, Story, FAQ, Kontakt, Rechtsseiten. Recherche in 02_Recherche/20 |
+| Platzhalter-Bewertungen | verworfen | Rechtlich heikel (UWG). Stattdessen „Noch keine Bewertungen“ und Foto-Platzhalter |
+| Sorten Mint Condition, Cherry Pick, Berry Important | übernommen | Hotfix, Ship It, Demo Day zu langweilig. Geschmack steht jetzt im Namen (Learning Forest Gum) |
+| Claim "Kau rein. Ship raus." | ersetzt durch "Gummit. Push. Repeat." | GUMMIT klingt wie commit |
+| Mission "Projekt Erster Commit" | übernommen | Gratis-Dosen für Einsteiger-Events ab 18, offen gezählt auf /mission. Vorbild Projekt Wildwuchs |
+| Chat-Block "Daniel fragen" | entfernt | Auf Wunsch |
+| Gezeichnete Dose statt KI-Foto | übernommen | Vorderseite, offen, Rückseite mit Pflichtangaben. KI-Foto zeigte noch "Hotfix" |
+| Kein Gendern auf der Website | übernommen | Builder, Gründer statt :innen |
+| Mengenauswahl und Preis direkt im Header der Startseite | übernommen | Sorte und Menge wählen, Preis sofort sehen, ohne Unterseite |
+| Markenrichtung "Erster Commit", Farben "Cobalt Rush" | übernommen | Creme, Kobalt, Lime. Recherche in 02_Recherche/22 |
+| Team-Karussell "Contributors" | übernommen | Vorbild "The Chew Crew" von Forest Gum. Nur echte Fotos |
+| Bild-Slots mit KI-Prompts | übernommen | 05_Vorlagen/Bild-Prompts.md, Bilder nach website/img/slots/ |
+| Stick-Pack im Five-Gum-Stil statt Metalldose | übernommen | Schwarzes Pack, Chrom-Zahl = mg Koffein, Farbgrafik pro Sorte. Format beim Hersteller klären |
+| Website im Keynote-Stil | übernommen | Hell, Geist, Bento, Farbflächen mit Linienmuster. Ersetzt "Cobalt Rush". Recherche in 02_Recherche/23 |
+| Biohacking und Fokus als Versprechen | verworfen | Rechtlich nicht drin (unter 75 mg, HCVO). Stattdessen Koffein-Timeline mit Daten |
+| Retro-Wrapper (Wrigley's, Beech-Nut) vs. Five-Stil | Five-Stil bleibt Hauptlinie | Retro eher als limitierte "Throwback Edition" oder für Merch |
+| Website mit Nike-Gefühl: "Bleib dran.", Video-Hero, Manifest | übernommen | Motivation über die Person, nicht über Wirkung des Produkts. Videos und Bilder von Mixkit (freie Lizenz), nur für den Prototyp |
+| Zielgruppe Studenten | übernommen | Neue Persona: Klausurphase, Bib bis Schließung |
+| Hackathons auf der Website | entfernt | Ersetzt durch Meetups, Lerngruppen, Coworkings |
+| Persönliches zum Gründer (Name, Job, 3D-Druck, Fotos, Team-Karussell) | entfernt | Story jetzt als "Team GUMMIT" ohne Person |
+| Weißer Hintergrund | ersetzt | Weiche Farbverläufe in den Sortenfarben, feines Rautenmuster, Glas-Karten |
+| Motivationssprüche ("Bleib dran.", Manifest) | ersetzt | Zu typisch. Jetzt trocken und konkret: "60 mg. Kein Becher." und drei Szenen mit Uhrzeit |
