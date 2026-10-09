@@ -73,7 +73,7 @@
 - Den Automatenbetrieb und die Registrierung beim Bezirksamt in Berlin habe ich nicht im Detail recherchiert.
 **7. Hersteller mit IFS Food und kleineren Mengen (Stand 09.10.2026)**
 - IFS Food ist ab jetzt Pflicht für jeden Hersteller.
-- **Back to Basics A/S** (Vejle, Dänemark): Private Label für Kaugummi, IFS und BRC (A+). Bietet auch fertige neutrale Ware zum schnellen Start. MOQ und Koffein nicht angegeben, anfragen. https://b11b.com/en/gum/, info@b11b.com, +45 75721355
+- **Back to Basics A/S** (Vejle, Dänemark): Private Label für Kaugummi, IFS und BRC (A+), eigene Entwicklung in Dänemark. Koffein, Vitamine oder Funktions-Gum stehen nirgends auf der Seite. MOQ „je nach Produkt und Verpackung“. Anfrage: 05_Vorlagen/Mail_Back_to_Basics.md. https://b11b.com/en/gum/, info@b11b.com, +45 75721355
 - **roelli roelli confectionery** (St. Gallen, Schweiz): Private und White Label für Gums, Drops, Toffees, kleine Marken (z. B. CBD-Gum). IFS nicht belegt, Zertifikat anfordern. https://roelliroelli.ch/en/offer/, contact@roelliroelli.ch
 - **Wachmeister** (Schweiz): eigene Marke mit 30 mg Koffein pro Kaugummi, „in einem Schweizer Labor mit IFS Food Zertifizierung“ hergestellt, verkauft eine Office Box. Kein White Label bekannt, aber fragen, ob sie liefern oder den Hersteller nennen. https://www.wachmeister.com, info@wachmeister.com
 - Raus: Delica (MOQ 20 Tonnen, https://www.delica.com/en/product/chewing-gum/private-label)
