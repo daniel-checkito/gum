@@ -98,8 +98,31 @@ main { overflow-x: clip; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; }
 .stack-badge { position: absolute; top: 20px; right: 20px; font: 700 18px var(--body); background: #fff; color: var(--ink); border-radius: 999px; padding: 8px 14px; box-shadow: var(--shadow); }
 
+/* Video-Hero und Manifest (Nike-Gefühl) */
+.shout { font-family: var(--display); font-weight: 400; text-transform: uppercase; letter-spacing: 0; line-height: .88; }
+.hero-video { position: relative; overflow: hidden; color: #fff; padding: 72px 0 80px; min-height: calc(100vh - 90px); display: flex; align-items: center; }
+.bg-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0, 0, 0, .72) 0%, rgba(0, 0, 0, .35) 55%, rgba(0, 0, 0, .15) 100%); }
+.hero-video .wrap { position: relative; width: 100%; }
+.hero-video .hero-grid { grid-template-columns: 1.15fr .85fr; align-items: center; }
+.hero-video h1.shout { font-size: clamp(5rem, 13vw, 11.5rem); }
+.hero-video .eyebrow { color: rgba(255, 255, 255, .75); }
+.hero-video .lede { color: rgba(255, 255, 255, .9); font-size: 21px; }
+.btn.white { background: #fff; color: var(--ink); }
+.btn.white:hover { background: #E8E8ED; }
+.hero-video .buybox { color: var(--ink); background: rgba(255, 255, 255, .94); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+.stage.mini { aspect-ratio: 16 / 8.5; border-radius: 18px; }
+.stage.mini .pack-view { width: 62%; transform: rotate(-5deg); }
+.stage.mini .stack-badge { top: 12px; right: 12px; font-size: 15px; padding: 6px 12px; }
+.manifest .panel { position: relative; overflow: hidden; min-height: 92vh; display: flex; align-items: flex-end; color: #fff; padding: 0 0 96px; }
+.manifest .panel .shade { background: linear-gradient(0deg, rgba(0, 0, 0, .75) 0%, rgba(0, 0, 0, .25) 55%, rgba(0, 0, 0, .1) 100%); }
+.manifest .wrap { position: relative; width: 100%; }
+.manifest .shout { font-size: clamp(3.2rem, 8vw, 7.4rem); max-width: 15ch; }
+.manifest .eyebrow { color: rgba(255, 255, 255, .7); margin-bottom: 14px; }
+.manifest .lede { color: rgba(255, 255, 255, .9); margin-top: 18px; font-size: 22px; }
+
 /* Eckdaten */
-.specs-band { padding: 8px 0 24px; }
+.specs-band { padding: 24px 0 24px; }
 .specs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .specs div { background: var(--surface); border-radius: var(--r); padding: 26px 24px; box-shadow: var(--shadow); }
 .specs b { display: block; font-size: clamp(2.6rem, 5vw, 3.6rem); font-weight: 700; letter-spacing: -.05em; line-height: 1; }
@@ -204,7 +227,7 @@ main { overflow-x: clip; }
 .table td.empty { color: var(--muted); text-align: center; padding: 28px 12px; }
 
 /* Personas */
-.personas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+.personas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 48px; }
 .persona { padding: 16px 16px 26px; display: flex; flex-direction: column; gap: 8px; }
 .persona h3, .persona p { padding: 0 8px; }
 .persona p { color: var(--muted); }
@@ -371,7 +394,10 @@ input:focus, select:focus, textarea:focus { border-color: var(--blue); box-shado
 @media (max-width: 960px) {
   .hero-grid, .pdp, .split2, .reserve, .founder, .teaser, .cmp-grid { grid-template-columns: 1fr; }
   .pdp-media, .founder-photo, .hero-media { position: static; }
-  .personas, .flavors, .offers, .values { grid-template-columns: 1fr; }
+  .flavors, .offers, .values { grid-template-columns: 1fr; }
+  .personas { grid-template-columns: 1fr 1fr; }
+  .hero-video .hero-grid { grid-template-columns: 1fr; }
+  .hero-video { min-height: 0; }
   .service, .specs { grid-template-columns: 1fr 1fr; }
   .bento { grid-template-columns: 1fr 1fr; }
   .foot { grid-template-columns: 1fr 1fr; }
@@ -394,6 +420,9 @@ input:focus, select:focus, textarea:focus { border-color: var(--blue); box-shado
   .chips { grid-template-columns: 1fr; }
   .row { grid-template-columns: 1fr; }
   .bento { grid-template-columns: 1fr; }
+  .personas { grid-template-columns: 1fr; }
+  .manifest .panel { min-height: 78vh; padding-bottom: 64px; }
+  .hero-video { padding: 40px 0 48px; }
   .t-big, .t-wide { grid-column: auto; grid-row: auto; }
   .cmp-row { grid-template-columns: 1fr 70px; }
   .cmp-row .cmp-track { grid-column: 1 / -1; grid-row: 2; }

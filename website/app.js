@@ -28,6 +28,22 @@
     if (cfg.contactEmail) { a.href = "mailto:" + cfg.contactEmail; a.textContent = cfg.contactEmail; }
   });
 
+  // ---------- Hintergrund-Videos: erst laden, wenn sichtbar ----------
+  var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var vids = $$("video[data-src]");
+  if (!still && vids.length && "IntersectionObserver" in window) {
+    var vio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var v = e.target;
+        if (e.isIntersecting) {
+          if (!v.src) v.src = v.dataset.src;
+          var pr = v.play(); if (pr && pr.catch) pr.catch(function () {});
+        } else if (v.src) v.pause();
+      });
+    }, { rootMargin: "200px" });
+    vids.forEach(function (v) { vio.observe(v); });
+  }
+
   // ---------- Produktseite ----------
   var sel = { flavor: flavors[0], pack: packs[0], view: "front" };
   if ($("shop-flavors")) {
