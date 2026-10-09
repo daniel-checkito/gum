@@ -3,9 +3,9 @@
 
   // Shop
   var flavors = [
-    { name: "Hotfix", taste: "mint", mg: 60, color: "#C6FF3D" },
-    { name: "Ship It", taste: "cherry", mg: 52, color: "#FF5A6E" },
-    { name: "Demo Day", taste: "berry", mg: 52, color: "#B9A4FF" }
+    { name: "Hotfix", taste: "mint", mg: 60, color: "#A8E6A1" },
+    { name: "Ship It", taste: "cherry", mg: 52, color: "#F07A86" },
+    { name: "Demo Day", taste: "berry", mg: 52, color: "#B7A8EA" }
   ];
   var packs = cfg.packs || [{ tins: 1, price: 4.99, url: "" }];
   var sel = { flavor: flavors[0], pack: packs[0] };
