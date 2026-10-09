@@ -76,7 +76,7 @@ Alle Ideen aus dem Gespräch vom 08.10.2026, in der Reihenfolge, wie sie kamen, 
 | Zielgruppe Luma-Events Berlin, Vibe Coder, Hustler | übernommen für Website | Hackathons, Demo Days und AI-Meetups als erster Kanal, Host-Box für Veranstalter |
 | Look dunkel mit Neon (Lime, Pink, Violett), Terminal-Optik | ersetzt Kobalt/Weiß | Weißes Branding wirkte zu medizinisch |
 | Humor mit Glazing- und Dev-Memes | übernommen | „You're absolutely right!“, „Works on my machine“. Weiter keine Wirkversprechen (kein 10x, kein Fokus) |
-| Glaze-o-meter statt Deckel-Generator | übernommen | Idee eintippen, wird übertrieben gelobt, als Deckel teilen |
+| Glaze-o-meter (Deckel-Generator) | wieder raus | Deckel lassen sich im Pilot nicht individuell bedrucken, also kein Versprechen auf der Website. Glazing-Humor bleibt im Laufband |
 | Sorten Hotfix, Ship It, Demo Day, Touch Grass | ersetzen Deadline, Standup, Kundencall, Feierabend | Passen zur Dev-Zielgruppe |
 | Website auf Englisch | übernommen | Berliner Tech-Szene ist international. Pflichtangaben deutsch und englisch |
 | Website live auf gum-prototype.vercel.app | erledigt | Ordner website/, jeder Push auf main geht live |

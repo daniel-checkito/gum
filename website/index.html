@@ -19,7 +19,6 @@
   <a class="logo" href="#top">GUMMIT<span class="cursor" aria-hidden="true"></span></a>
   <nav class="nav-links" aria-label="Main">
     <a href="#flavors">Flavors</a>
-    <a href="#glaze">Glaze-o-meter</a>
     <a href="#events">For hosts</a>
     <a href="#teams">For teams</a>
     <a class="btn" href="#waitlist">Join the waitlist</a>
@@ -34,7 +33,7 @@
       <p class="sub">Sugar-free, sweetened with xylitol, 52–60 mg caffeine per piece. Built for hackathons, demo days and the 47th tab of your Cursor session.</p>
       <div class="hero-cta">
         <a class="btn" href="#waitlist">git gummit</a>
-        <a class="btn ghost" href="#glaze">Get glazed →</a>
+        <a class="btn ghost" href="#events">Hosting an event? →</a>
       </div>
     </div>
     <div class="hero-art" aria-hidden="true">
@@ -70,7 +69,7 @@
       <div class="card">
         <div class="big">8 pcs</div>
         <div class="label">in a metal tin</div>
-        <p class="small">Fits next to your MacBook charger. Keep the tin, refill it. Stickers encouraged.</p>
+        <p class="small">Fits next to your MacBook charger. Metal tin, stickers encouraged.</p>
       </div>
     </div>
   </section>
@@ -78,7 +77,7 @@
   <section class="wrap" id="flavors">
     <p class="prompt">ls ./flavors</p>
     <h2>Pick your branch</h2>
-    <p class="lead">Every tin gets a different line on the lid. Collect them, post them, argue about them in the group chat.</p>
+    <p class="lead">Three flavors with caffeine, one without (soon). Pick by taste, argue about the names in the group chat.</p>
     <div class="flavors">
       <article class="flavor lime">
         <span class="tag">main</span>
@@ -111,43 +110,6 @@
     </div>
   </section>
 
-  <section class="wrap" id="glaze">
-    <p class="prompt">npx glaze-o-meter</p>
-    <h2>Glaze-o-meter</h2>
-    <p class="lead">Tell us what you're building. We glaze it shamelessly and put it on a lid. Download it, post it, tag us. The best lines go on the next batch, with your name inside the lid.</p>
-    <div class="gen">
-      <div class="gen-form">
-        <div class="field">
-          <label for="gen-idea">what are you building?</label>
-          <input type="text" id="gen-idea" maxlength="40" placeholder="an AI agent for my fridge">
-        </div>
-        <div class="gen-actions">
-          <button class="btn pink" type="button" id="gen-glaze">Glaze me</button>
-        </div>
-        <div class="field">
-          <label for="gen-text">lid text (edit freely)</label>
-          <textarea id="gen-text" maxlength="90">You're absolutely right! This gum has no sugar.</textarea>
-          <div class="counter"><span id="gen-count">0</span> / 90</div>
-        </div>
-        <div class="field">
-          <span class="flabel" id="color-label">tin color</span>
-          <div class="swatches" role="group" aria-labelledby="color-label" id="swatches"></div>
-        </div>
-        <div class="gen-actions">
-          <button class="btn" type="button" id="gen-download">Download lid</button>
-          <button class="btn ghost" type="button" id="gen-submit">Submit for next batch</button>
-        </div>
-      </div>
-      <div class="gen-preview">
-        <div class="lid" id="lid">
-          <div class="lid-head" id="lid-head">git gummit -m</div>
-          <p class="lid-text" id="lid-text"></p>
-          <div class="lid-foot"><b>GUMMIT</b><span id="lid-flavor"></span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="wrap" id="events">
     <p class="prompt">grep -r "free snacks" luma.com/berlin</p>
     <h2>Hosting on Luma? We bring the gum.</h2>
@@ -158,7 +120,7 @@
         <p>Hackathon, AI meetup, founder breakfast, demo night. We send a box, your guests stop eating the pizza crusts out of boredom.</p>
         <ul>
           <li>Free tins for your event (while we're in beta)</li>
-          <li>Custom lid line for your event</li>
+          <li>Sample sachets for goodie bags</li>
           <li>Counter display for the check-in desk</li>
           <li>We just want a photo and a tag</li>
         </ul>
@@ -228,10 +190,6 @@
             <label for="f-where">where do you build?</label>
             <input id="f-where" name="where" type="text" placeholder="Factory, home, U8">
           </div>
-        </div>
-        <div class="field">
-          <label for="f-line">your lid line (optional)</label>
-          <input id="f-line" name="line" type="text" maxlength="90" placeholder="Works on my machine.">
         </div>
         <label class="check"><input type="checkbox" id="f-ok" required> <span>Yes, you can email me about GUMMIT. Unsubscribe anytime. See <a href="/datenschutz">privacy policy</a>.</span></label>
         <button class="btn" type="submit">Join the waitlist</button>
