@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>BISS Markenstory</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&amp;family=Instrument+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1F2C7A}a:hover{color:#121a4d}
+</style>
+</helmet>
+<div style="width: 1440px; height: 900px; box-sizing: border-box; padding: 56px; background: #EDF1F2; display: flex; gap: 56px; font-family: 'Instrument Sans', sans-serif; color: #1F2C7A">
+<div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 76px; line-height: 0.95; letter-spacing: -0.035em">Lange Bürotage brauchen keinen Zucker.</h1>
+<div style="display: flex; flex-direction: column; gap: 18px; font-size: 21px; line-height: 1.55; max-width: 40rem">
+<p style="margin: 0">Deadline am Freitag, Calls im Stundentakt, der Kaffee im 4. Stock ist wieder kalt. Wer im Coworking lange Tage macht, findet im Automaten meistens eine Dose mit bis zu 27 Gramm Zucker.</p>
+<p style="margin: 0">BISS ist das Gegenteil: ein Kaugummi mit 30 mg Koffein, ohne Zucker, mit Xylit. Klein genug für die Laptoptasche. Ehrlich genug, um die Zahl auf die Vorderseite zu drucken.</p>
+<p style="margin: 0">Gegründet in Berlin von Daniel, Azubi im E-Commerce, Student und 3D-Druck-Creator. [Deine echte Szene in einem Satz: der Moment, in dem dir die Idee kam.]</p>
+</div>
+</div>
+<div style="width: 520px; flex-shrink: 0; display: flex; flex-direction: column; gap: 24px">
+<div style="background: #1F2C7A; color: #EDF1F2; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 18px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 22px">Was BISS verspricht</h2>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 28px; color: {{accent}}">Die Zahl zuerst</div>
+<div style="font-size: 17px; line-height: 1.45">Koffein in mg steht vorne, nicht im Kleingedruckten.</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 28px; color: {{accent}}">Kein Zucker, kein Theater</div>
+<div style="font-size: 17px; line-height: 1.45">Keine Wundersätze. Nur was drin ist und wofür du es nimmst.</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 28px; color: {{accent}}">Jede Charge geprüft</div>
+<div style="font-size: 17px; line-height: 1.45">Laboranalyse per QR-Code auf jeder Packung.</div>
+</div>
+</div>
+<div style="background: #ffffff; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 22px">Sprüche nach Einsatz</h2>
+<div style="display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 12px 16px; font-size: 17px; line-height: 1.35; align-items: baseline">
+<span style="color: #4a548f">Hauptclaim</span><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 22px">Biss haben. Ohne Zucker.</span>
+<span style="color: #4a548f">Kampagne</span><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 22px">Kau dich durch.</span>
+<span style="color: #4a548f">Büro-Plakat</span><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 22px">Für Deadline, Calls und den Kaffee im 4. Stock.</span>
+<span style="color: #4a548f">Für Betreiber</span><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 22px">Eine Spirale, die sich dreht.</span>
+</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#FF6B1F","options":["#FF6B1F","#9FE3C8","#F2D23C"]},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+renderVals() {
+return { accent: this.props.accent ?? '#FF6B1F' };
+}
+}
+</script>
+</body>
+</html>

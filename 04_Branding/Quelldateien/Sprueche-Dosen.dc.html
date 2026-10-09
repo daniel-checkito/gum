@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Jede Dose ein Spruch</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&amp;family=Instrument+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1F2C7A}a:hover{color:#121a4d}
+</style>
+</helmet>
+<div style="width: 1600px; height: 1100px; box-sizing: border-box; padding: 48px 56px; background: #DDE3EA; display: flex; flex-direction: column; gap: 32px; font-family: 'Instrument Sans', sans-serif; color: #1F2C7A">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 32px">
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 44px; letter-spacing: -0.02em">Jede Dose ein anderer Spruch</h1>
+<div style="font-size: 17px; color: #4a548f; max-width: 620px; text-align: right">Deckel wechselt pro Charge. Man sammelt, fotografiert, teilt. Pflichttexte bleiben ernst auf der Rückseite.</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px 32px">
+<sc-for list="{{tins}}" as="t" hint-placeholder-count="8">
+<div style="height: 268px; border-radius: 30px; background: {{t.bg}}; box-shadow: inset 0 0 0 5px {{t.edge}}; box-sizing: border-box; padding: 26px; display: flex; flex-direction: column; justify-content: space-between">
+<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 31px; line-height: 1.04; letter-spacing: -0.015em; color: {{t.fg}}">{{t.line}}</div>
+<div style="display: flex; justify-content: space-between; align-items: baseline">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -0.04em; color: {{t.fg}}">BISS</span>
+<span style="font-size: 13px; color: {{t.fg}}; opacity: 0.85">{{t.sorte}}</span>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="display: flex; gap: 32px; align-items: stretch">
+<div style="flex: 1; background: #F7F9FA; border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 22px">Seitenrand der Dose</h2>
+<div style="font-size: 16px; line-height: 1.5">„Diese Dose wird nicht weggeworfen. Die wird nachgefüllt. Wie dein Wasserglas. Hoffentlich.“</div>
+</div>
+<div style="flex: 1; background: #F7F9FA; border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 22px">Innen im Deckel</h2>
+<div style="font-size: 16px; line-height: 1.5">„Schön, dass du reinguckst. Mehr ist hier nicht. Nur Kaugummi.“</div>
+</div>
+<div style="flex: 1; background: #ffffff; border: 1.5px solid #c9d0e0; border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 22px">Rückseite bleibt ernst</h2>
+<div style="font-size: 14px; line-height: 1.5">Enthält Koffein. Für Kinder und schwangere Frauen nicht empfohlen. Kann bei übermäßigem Verzehr abführend wirken. Keine Witze neben diesem Text.</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1600,"height":1100}}'>
+class Component extends DCLogic {
+renderVals() {
+const K = { bg: '#1F2C7A', edge: '#18235f', fg: '#EDF1F2' };
+const M = { bg: '#9FE3C8', edge: '#86cdb1', fg: '#1F2C7A' };
+const Y = { bg: '#F2D23C', edge: '#d9b928', fg: '#1F2C7A' };
+const C = { bg: '#E3A869', edge: '#c98f52', fg: '#1F2C7A' };
+const O = { bg: '#FF6B1F', edge: '#e05a14', fg: '#1F2C7A' };
+const W = { bg: '#F7F9FA', edge: '#c9d0e0', fg: '#1F2C7A' };
+return { tins: [
+{ ...K, line: 'Wir haben den Zucker vergessen. Absichtlich.', sorte: 'Deadline' },
+{ ...M, line: 'Kamera aus, Kaugummi rein.', sorte: 'Deadline' },
+{ ...Y, line: 'Für Leute, die um 3 noch Mails schreiben.', sorte: 'Deep Work' },
+{ ...C, line: 'Pfand gibt’s keins. Die Dose behältste.', sorte: 'Standup' },
+{ ...O, line: 'Hier könnte deine Ausrede stehen.', sorte: 'Deep Work' },
+{ ...W, line: 'Ja, wir sind auch müde.', sorte: 'Feierabend' },
+{ ...K, line: 'Dein Chef muss davon nichts wissen.', sorte: 'Standup' },
+{ ...M, line: 'Schmeckt besser als der Kaffee im 4. Stock.', sorte: 'Deadline' }
+] };
+}
+}
+</script>
+</body>
+</html>

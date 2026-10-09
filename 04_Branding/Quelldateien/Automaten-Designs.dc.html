@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Vier Automaten-Designs</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&amp;family=Instrument+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1F2C7A}a:hover{color:#121a4d}
+</style>
+</helmet>
+<div style="width: 1600px; height: 1080px; box-sizing: border-box; padding: 48px 56px; background: #E9ECEF; display: flex; flex-direction: column; gap: 32px; font-family: 'Instrument Sans', sans-serif; color: #1F2C7A">
+<div style="display: flex; align-items: baseline; justify-content: space-between">
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 44px; letter-spacing: -0.02em">Vier Automaten, vier Orte</h1>
+<div style="font-size: 17px; color: #4a548f">Jedes Modell kann im Look des Kunden foliert werden. Unsere Marke steht klein darunter.</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; flex: 1">
+
+<div style="display: flex; flex-direction: column; gap: 18px">
+<div style="height: 750px; display: flex; align-items: flex-end; justify-content: center; background: #F4EFE7; border-radius: 24px; padding: 28px 0 0 0">
+<div style="display: flex; flex-direction: column; align-items: center">
+<div style="width: 210px; height: 46px; border-radius: 23px; background: #120f2b; display: flex; align-items: center; justify-content: center; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 22px; color: #FF8A4C; text-shadow: 0 0 10px #FF6B1F, 0 0 22px #FF6B1F; margin-bottom: 14px">BIS FEIERABEND</div>
+<div style="width: 250px; height: 500px; background: #1F2C7A; border-radius: 14px 14px 4px 4px; box-sizing: border-box; padding: 14px; display: flex; flex-direction: column; gap: 10px">
+<div style="flex: 1; border-radius: 8px; background: #2d3d99; border: 3px solid #4256c4; box-sizing: border-box; padding: 12px; display: flex; flex-direction: column; justify-content: space-around; box-shadow: inset 0 0 30px rgba(255,255,255,0.18)">
+<div style="display: flex; gap: 8px; align-items: flex-end; border-bottom: 3px solid #6a7bd9; padding-bottom: 4px"><div style="width: 30px; height: 54px; border-radius: 6px; background: #F2D23C"></div><div style="width: 30px; height: 54px; border-radius: 6px; background: #F2D23C"></div><div style="width: 30px; height: 54px; border-radius: 6px; background: #9FE3C8"></div><div style="width: 30px; height: 54px; border-radius: 6px; background: #ffffff"></div><div style="width: 30px; height: 54px; border-radius: 6px; background: #ffffff"></div></div>
+<div style="display: flex; gap: 8px; align-items: flex-end; border-bottom: 3px solid #6a7bd9; padding-bottom: 4px"><div style="width: 44px; height: 30px; border-radius: 6px; background: #EDF1F2; border-bottom: 6px solid #9FE3C8"></div><div style="width: 44px; height: 30px; border-radius: 6px; background: #EDF1F2; border-bottom: 6px solid #9FE3C8"></div><div style="width: 44px; height: 30px; border-radius: 6px; background: #EDF1F2; border-bottom: 6px solid #F2D23C"></div><div style="width: 44px; height: 30px; border-radius: 6px; background: #EDF1F2; border-bottom: 6px solid #E3A869"></div></div>
+<div style="display: flex; gap: 8px; align-items: flex-end; border-bottom: 3px solid #6a7bd9; padding-bottom: 4px"><div style="width: 56px; height: 26px; border-radius: 6px; background: #c9a77a"></div><div style="width: 56px; height: 26px; border-radius: 6px; background: #c9a77a"></div><div style="width: 56px; height: 26px; border-radius: 6px; background: #8b6f4e"></div></div>
+<div style="display: flex; gap: 8px; align-items: flex-end; border-bottom: 3px solid #6a7bd9; padding-bottom: 4px"><div style="width: 30px; height: 50px; border-radius: 6px; background: #FF6B1F"></div><div style="width: 30px; height: 50px; border-radius: 6px; background: #FF6B1F"></div><div style="width: 30px; height: 50px; border-radius: 6px; background: #EDF1F2"></div><div style="width: 30px; height: 50px; border-radius: 6px; background: #EDF1F2"></div><div style="width: 30px; height: 50px; border-radius: 6px; background: #EDF1F2"></div></div>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center">
+<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 20px; color: #EDF1F2">Tür auf, nehmen.</div>
+<div style="width: 44px; height: 34px; border-radius: 6px; background: #FF6B1F"></div>
+</div>
+</div>
+<div style="width: 270px; height: 34px; background: #b88a5a; border-radius: 4px; box-shadow: inset 0 -6px 0 #9c7146"></div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 28px">Kantine</h2>
+<div style="font-size: 15px; color: #4a548f">Smart Fridge mit Glastür und Neon-Schild</div>
+<div style="font-size: 16px; line-height: 1.45">Für Coworkings und Startup-Büros. Kühlt Getränke, Tür öffnet mit Karte, Waage im Regal bucht ab.</div>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 18px">
+<div style="height: 750px; display: flex; align-items: flex-end; justify-content: center; background: #D9DCDF; border-radius: 24px; padding: 28px 0 0 0">
+<div style="display: flex; flex-direction: column; align-items: center">
+<div style="width: 250px; height: 560px; background: #a8adb3; border-radius: 4px; box-sizing: border-box; padding: 14px; display: flex; gap: 12px; box-shadow: inset 0 0 0 1px #8f959c">
+<div style="flex: 1; display: flex; flex-direction: column; gap: 10px">
+<div style="height: 10px; background: #1F2C7A; border-radius: 2px"></div>
+<div style="flex: 1; background: #1c1f24; border-radius: 4px; padding: 10px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-around">
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px"><div style="height: 30px; border-radius: 4px; background: #1F2C7A; border-bottom: 5px solid #9FE3C8"></div><div style="height: 30px; border-radius: 4px; background: #1F2C7A; border-bottom: 5px solid #9FE3C8"></div><div style="height: 30px; border-radius: 4px; background: #1F2C7A; border-bottom: 5px solid #F2D23C"></div></div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px"><div style="height: 30px; border-radius: 4px; background: #c9a77a"></div><div style="height: 30px; border-radius: 4px; background: #c9a77a"></div><div style="height: 30px; border-radius: 4px; background: #c9a77a"></div></div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px"><div style="height: 30px; border-radius: 4px; background: #EDF1F2"></div><div style="height: 30px; border-radius: 4px; background: #EDF1F2"></div><div style="height: 30px; border-radius: 4px; background: #FF6B1F"></div></div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px"><div style="height: 30px; border-radius: 4px; background: #5a6170"></div><div style="height: 30px; border-radius: 4px; background: #5a6170"></div><div style="height: 30px; border-radius: 4px; background: #5a6170"></div></div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px"><div style="height: 30px; border-radius: 4px; background: #F2D23C"></div><div style="height: 30px; border-radius: 4px; background: #F2D23C"></div><div style="height: 30px; border-radius: 4px; background: #9FE3C8"></div></div>
+</div>
+<div style="height: 56px; background: #1c1f24; border-radius: 4px"></div>
+</div>
+<div style="width: 56px; display: flex; flex-direction: column; gap: 10px; padding-top: 22px">
+<div style="height: 76px; border-radius: 4px; background: #0f1218; box-shadow: inset 0 0 0 2px #1F2C7A"></div>
+<div style="height: 40px; border-radius: 4px; background: #1F2C7A"></div>
+<div style="margin-top: auto; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 13px; color: #1F2C7A; writing-mode: vertical-rl; transform: rotate(180deg); padding-bottom: 6px">PLATTE 01</div>
+</div>
+</div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 28px">Platte</h2>
+<div style="font-size: 15px; color: #4a548f">Spiralautomat in Betonoptik</div>
+<div style="font-size: 16px; line-height: 1.45">Für Agenturen und Design-Büros. Folie in Sichtbeton, eine Linie in Kobalt, dunkles Fenster. Ruhig, fällt trotzdem auf.</div>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 18px">
+<div style="height: 750px; display: flex; align-items: center; justify-content: center; background: #EFE6D8; border-radius: 24px; padding: 28px 0 0 0">
+<div style="width: 230px; height: 400px; background: #c69c6d; border-radius: 26px; box-sizing: border-box; padding: 18px; display: flex; flex-direction: column; gap: 14px; align-items: center; box-shadow: inset 0 0 0 6px #b48a5c, 0 18px 0 -8px #d8ccbb">
+<div style="width: 180px; height: 180px; border-radius: 50%; background: #F7F2EA; border: 6px solid #a67d50; box-sizing: border-box; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding: 30px; align-content: center">
+<div style="height: 26px; border-radius: 6px; background: #1F2C7A"></div><div style="height: 26px; border-radius: 6px; background: #1F2C7A"></div><div style="height: 26px; border-radius: 6px; background: #1F2C7A"></div>
+<div style="height: 26px; border-radius: 6px; background: #9FE3C8"></div><div style="height: 26px; border-radius: 6px; background: #F2D23C"></div><div style="height: 26px; border-radius: 6px; background: #E3A869"></div>
+</div>
+<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 26px; color: #F7F2EA">Für zwischendurch</div>
+<div style="display: flex; gap: 10px; width: 100%">
+<div style="flex: 1; height: 44px; border-radius: 12px; background: #F7F2EA"></div>
+<div style="width: 60px; height: 44px; border-radius: 12px; background: #1F2C7A"></div>
+</div>
+<div style="width: 140px; height: 50px; border-radius: 14px; background: #8c6a45; margin-top: auto"></div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 28px">Eiche</h2>
+<div style="font-size: 15px; color: #4a548f">Wandautomat mit Holzfront</div>
+<div style="font-size: 16px; line-height: 1.45">Für Concept Stores, Cafés, Hotels und Praxen. Hängt an der Wand, braucht keinen Boden, wirkt wie ein Möbel.</div>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 18px">
+<div style="height: 750px; display: flex; align-items: flex-end; justify-content: center; background: #1F2C7A; border-radius: 24px; padding: 28px 0 0 0">
+<div style="display: flex; flex-direction: column; align-items: center">
+<div style="width: 170px; height: 170px; border-radius: 50%; background: rgba(237,241,242,0.25); border: 5px solid #EDF1F2; box-sizing: border-box; display: flex; flex-wrap: wrap; align-content: center; justify-content: center; gap: 6px; padding: 24px">
+<div style="width: 30px; height: 20px; border-radius: 10px; background: #FF6B1F"></div><div style="width: 30px; height: 20px; border-radius: 10px; background: #9FE3C8"></div><div style="width: 30px; height: 20px; border-radius: 10px; background: #F2D23C"></div><div style="width: 30px; height: 20px; border-radius: 10px; background: #ffffff"></div><div style="width: 30px; height: 20px; border-radius: 10px; background: #FF6B1F"></div><div style="width: 30px; height: 20px; border-radius: 10px; background: #9FE3C8"></div><div style="width: 30px; height: 20px; border-radius: 10px; background: #ffffff"></div><div style="width: 30px; height: 20px; border-radius: 10px; background: #F2D23C"></div><div style="width: 30px; height: 20px; border-radius: 10px; background: #FF6B1F"></div>
+</div>
+<div style="width: 130px; height: 110px; background: #FF6B1F; border-radius: 18px 18px 8px 8px; margin-top: -6px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px">
+<div style="width: 60px; height: 22px; border-radius: 6px; background: #1F2C7A"></div>
+<div style="width: 46px; height: 26px; border-radius: 0 0 14px 14px; background: #c4501a"></div>
+</div>
+<div style="width: 34px; height: 330px; background: repeating-linear-gradient(180deg, #F2D23C 0 14px, #e7c52f 14px 16px)"></div>
+<div style="width: 150px; height: 26px; border-radius: 13px; background: #F2D23C"></div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 28px; color: #1F2C7A">Kiez-Säule</h2>
+<div style="font-size: 15px; color: #4a548f">Kaugummiautomat neu gedacht, 3D-gedruckt</div>
+<div style="font-size: 16px; line-height: 1.45">Für Coworking-Lounges, Agenturen, Concept Stores. Kopf und Ausgabe aus dem 3D-Drucker, Farbe frei wählbar. Nur Feierabend ohne Koffein, falls Kinder Zugang haben.</div>
+</div>
+</div>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1600,"height":1080}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

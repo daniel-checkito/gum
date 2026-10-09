@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>BISS Website</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&amp;family=Instrument+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1F2C7A}a:hover{color:#121a4d}
+</style>
+</helmet>
+<div style="width: 100%; min-height: 100%; background: #EDF1F2; font-family: 'Instrument Sans', sans-serif; color: #1F2C7A">
+<nav style="max-width: 1200px; margin: 0 auto; padding: 24px 32px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center">
+<a href="#top" style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 34px; letter-spacing: -0.05em; text-decoration: none; color: #1F2C7A">BISS</a>
+<div style="display: flex; flex-wrap: wrap; gap: 24px; font-size: 16px; margin-left: auto; align-items: center">
+<a href="#drin" style="text-decoration: none">Was drin ist</a>
+<a href="#automaten" style="text-decoration: none">Wo es BISS gibt</a>
+<a href="#warteliste" style="background: #1F2C7A; color: #EDF1F2; text-decoration: none; padding: 12px 20px; border-radius: 999px; font-weight: 600">Auf die Warteliste</a>
+</div>
+</nav>
+<section id="top" style="max-width: 1200px; margin: 0 auto; padding: 0 32px; box-sizing: border-box">
+<div style="position: relative; overflow: hidden; background: #1F2C7A; border-radius: 32px; padding: 72px 56px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center; color: #EDF1F2">
+<div style="position: absolute; width: 200px; height: 200px; border-radius: 50%; background: #EDF1F2; top: -86px; right: -60px"></div>
+<div style="position: absolute; width: 140px; height: 140px; border-radius: 50%; background: #EDF1F2; top: -84px; right: 104px"></div>
+<div style="position: absolute; width: 140px; height: 140px; border-radius: 50%; background: #EDF1F2; top: 96px; right: -84px"></div>
+<div style="flex: 999 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(3.2rem, 7vw, 6.4rem); line-height: 0.92; letter-spacing: -0.04em">Biss haben. Ohne Zucker.</h1>
+<p style="margin: 0; font-size: 20px; line-height: 1.5; max-width: 36rem; opacity: 0.9">Kaugummi mit 30 mg Koffein pro Stück, gesüßt mit Xylit. Ab [Monat] in Berliner Coworkings und online.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center">
+<a href="#warteliste" style="background: {{accent}}; color: #1F2C7A; text-decoration: none; padding: 16px 28px; border-radius: 999px; font-weight: 600; font-size: 18px">Auf die Warteliste</a>
+<a href="#drin" style="color: #EDF1F2; font-size: 17px">Was drin ist</a>
+</div>
+</div>
+<div style="flex: 1 1 240px; display: flex; justify-content: center">
+<div style="position: relative; overflow: hidden; width: 220px; height: 400px; background: #EDF1F2; border-radius: 18px; display: flex; flex-direction: column; justify-content: space-between; color: #1F2C7A; transform: rotate(-6deg)">
+<div style="position: absolute; width: 86px; height: 86px; border-radius: 50%; background: #1F2C7A; top: -36px; right: -28px"></div>
+<div style="position: absolute; width: 60px; height: 60px; border-radius: 50%; background: #1F2C7A; top: -34px; right: 44px"></div>
+<div style="position: absolute; width: 60px; height: 60px; border-radius: 50%; background: #1F2C7A; top: 38px; right: -34px"></div>
+<div style="padding: 26px 22px 0 22px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 72px; line-height: 0.9; letter-spacing: -0.05em">BISS</div>
+<div style="padding: 0 22px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 68px; line-height: 0.9; color: #1F2C7A">30 mg</div>
+<div style="font-size: 14px">Koffein pro Stück</div>
+<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 24px; margin-top: 8px">0 g Zucker</div>
+</div>
+<div style="background: #9FE3C8; padding: 14px 22px; display: flex; flex-direction: column; gap: 2px">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 22px; line-height: 1.05">Deadline</span>
+<span style="font-size: 13px">Eisminze, 10 Stück</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="drin" style="max-width: 1200px; margin: 0 auto; padding: 96px 32px 0 32px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(2.2rem, 4vw, 3.2rem); letter-spacing: -0.02em">Drei Zahlen, nichts versteckt</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px">
+<div style="background: #ffffff; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 10px">
+<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 64px; line-height: 1; color: #1F2C7A">30 mg</div>
+<div style="font-size: 18px; font-weight: 600">Koffein pro Stück</div>
+<div style="font-size: 16px; line-height: 1.5; color: #4a548f">Etwa ein Drittel eines Espressos. Du bestimmst die Dosis Stück für Stück.</div>
+</div>
+<div style="background: #ffffff; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 10px">
+<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 64px; line-height: 1; color: #1F2C7A">0 g</div>
+<div style="font-size: 18px; font-weight: 600">Zucker</div>
+<div style="font-size: 16px; line-height: 1.5; color: #4a548f">Zuckerfreier Kaugummi trägt zur Erhaltung der Zahnmineralisierung bei, wenn du ihn mindestens 20 Minuten nach dem Essen kaust.</div>
+</div>
+<div style="background: #ffffff; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 10px">
+<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 64px; line-height: 1; color: #1F2C7A">Xylit</div>
+<div style="font-size: 18px; font-weight: 600">als Hauptsüße</div>
+<div style="font-size: 16px; line-height: 1.5; color: #4a548f">Aus Birkenholz gewonnen, kein Zucker. Jede Charge mit Laboranalyse per QR-Code.</div>
+</div>
+</div>
+</section>
+<section style="max-width: 1200px; margin: 0 auto; padding: 96px 32px 0 32px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+<div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(2.2rem, 4vw, 3.2rem); letter-spacing: -0.02em">Kleiner als dein Kaffee</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.55; color: #4a548f; max-width: 30rem">Ein Stück BISS hat weniger Koffein als ein Espresso. Werte für Kaffee und Energy Drink nach EFSA.</p>
+</div>
+<div style="flex: 999 1 480px; min-width: 0; background: #ffffff; border-radius: 24px; padding: 32px; box-sizing: border-box; display: flex; flex-direction: column; gap: 16px; font-size: 16px">
+<div style="display: grid; grid-template-columns: minmax(120px, 190px) minmax(0, 1fr) 64px; gap: 16px; align-items: center"><span style="font-weight: 600">1 Stück BISS</span><div style="height: 18px; border-radius: 9px; background: {{accent}}; width: 33%"></div><span style="font-weight: 600">30 mg</span></div>
+<div style="display: grid; grid-template-columns: minmax(120px, 190px) minmax(0, 1fr) 64px; gap: 16px; align-items: center"><span>Espresso, 60 ml</span><div style="height: 18px; border-radius: 9px; background: #9aa4c9; width: 89%"></div><span>80 mg</span></div>
+<div style="display: grid; grid-template-columns: minmax(120px, 190px) minmax(0, 1fr) 64px; gap: 16px; align-items: center"><span>Energy Drink, 250 ml</span><div style="height: 18px; border-radius: 9px; background: #9aa4c9; width: 89%"></div><span>80 mg</span></div>
+<div style="display: grid; grid-template-columns: minmax(120px, 190px) minmax(0, 1fr) 64px; gap: 16px; align-items: center"><span>Filterkaffee, 200 ml</span><div style="height: 18px; border-radius: 9px; background: #9aa4c9; width: 100%"></div><span>90 mg</span></div>
+</div>
+</section>
+<section id="automaten" style="max-width: 1200px; margin: 0 auto; padding: 96px 32px 0 32px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(2.2rem, 4vw, 3.2rem); letter-spacing: -0.02em">Wo es BISS gibt</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px">
+<div style="border: 1.5px solid #c9d0e0; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 8px">
+<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 26px">[Coworking]</div>
+<div style="font-size: 16px; color: #4a548f">[Straße], Kreuzberg</div>
+<div style="font-size: 15px; font-weight: 600; margin-top: 8px">Automat ab [Datum]</div>
+</div>
+<div style="border: 1.5px solid #c9d0e0; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 8px">
+<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 26px">[Agentur-Büro]</div>
+<div style="font-size: 16px; color: #4a548f">[Straße], Mitte</div>
+<div style="font-size: 15px; font-weight: 600; margin-top: 8px">Automat ab [Datum]</div>
+</div>
+<div style="border: 1.5px solid #c9d0e0; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 8px">
+<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 26px">Online</div>
+<div style="font-size: 16px; color: #4a548f">3er-Pack und Abo im Shop</div>
+<div style="font-size: 15px; font-weight: 600; margin-top: 8px">Start mit der Warteliste</div>
+</div>
+</div>
+</section>
+<section id="warteliste" style="max-width: 1200px; margin: 0 auto; padding: 96px 32px; box-sizing: border-box">
+<div style="background: {{accent}}; border-radius: 32px; padding: 56px; display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-end">
+<div style="flex: 1 1 360px; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(2.2rem, 4vw, 3.2rem); letter-spacing: -0.02em; line-height: 1">Sei beim ersten Automaten dabei</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.5">Wir schreiben dir einmal, wenn BISS in Berlin steht. Die ersten 300 bekommen einen 3er-Pack zum Vorverkaufspreis.</p>
+</div>
+<form style="flex: 1 1 360px; display: flex; flex-direction: column; gap: 10px">
+<label for="mail" style="font-size: 15px; font-weight: 600">E-Mail-Adresse</label>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<input id="mail" type="email" placeholder="du@beispiel.de" style="flex: 1 1 220px; min-width: 0; height: 52px; border-radius: 999px; border: 2px solid #1F2C7A; padding: 0 20px; font-size: 17px; font-family: 'Instrument Sans', sans-serif; background: #ffffff; color: #1F2C7A">
+<button type="button" style="height: 52px; border-radius: 999px; border: none; background: #1F2C7A; color: #EDF1F2; padding: 0 24px; font-size: 17px; font-weight: 600; font-family: 'Instrument Sans', sans-serif; cursor: pointer">Auf die Warteliste setzen</button>
+</div>
+</form>
+</div>
+</section>
+<footer style="max-width: 1200px; margin: 0 auto; padding: 0 32px 48px 32px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 16px 32px; font-size: 14px; line-height: 1.5; color: #4a548f">
+<p style="margin: 0; flex: 1 1 480px">Enthält Koffein (30 mg pro Stück). Für Kinder und schwangere Frauen nicht empfohlen. Kann bei übermäßigem Verzehr abführend wirken. Xylit ist für Hunde giftig.</p>
+<div style="display: flex; gap: 24px">
+<a href="#impressum">Impressum</a>
+<a href="#datenschutz">Datenschutz</a>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#FF6B1F","options":["#FF6B1F","#9FE3C8","#F2D23C"]},"$preview":{"width":1440,"height":2380}}'>
+class Component extends DCLogic {
+renderVals() {
+return { accent: this.props.accent ?? '#FF6B1F' };
+}
+}
+</script>
+</body>
+</html>
