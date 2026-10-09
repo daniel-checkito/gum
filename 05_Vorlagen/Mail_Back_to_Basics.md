@@ -3,22 +3,22 @@ Betreff: Koffein-Kaugummi ohne Zucker als Private Label
 
 ## Deutsch
 
-Hey Dominik,
+Guten Tag,
 
-wir wollen Koffein-Kaugummi ohne Zucker unter eigener Marke machen.
+wir möchten Koffein-Kaugummi ohne Zucker unter eigener Marke herstellen lassen.
 
-1. Welche Verpackungen habt ihr dafür, z. B. Dose, Blister oder Flasche?
-2. Was ist eure Mindestabnahmemenge?
+1. Welche Verpackungen bieten Sie dafür an, z. B. Dose, Blister oder Flasche?
+2. Wie hoch ist Ihre Mindestabnahmemenge?
 
-Danke dir!
+Vielen Dank!
 
-- Daniel
+Dominik
 
 ## English
 
 Hey,
 
-I'm Daniel from Berlin. We're building a small gum brand for offices and coworking spaces and are looking for a manufacturer for sugar-free caffeine gum under our own brand.
+I'm Dominik from Berlin. We're building a small gum brand for offices and coworking spaces and are looking for a manufacturer for sugar-free caffeine gum under our own brand.
 
 Two questions:
 
@@ -27,4 +27,4 @@ Two questions:
 
 Thanks!
 
-- Daniel
+Dominik
