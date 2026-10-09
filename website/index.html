@@ -1,217 +1,240 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BISS – Koffein-Kaugummi ohne Zucker</title>
-<meta name="description" content="Zuckerfreier Kaugummi mit Koffein und Xylit. Für lange Bürotage in Berliner Coworkings, Startups und Agenturen.">
-<meta property="og:title" content="BISS – Biss haben. Ohne Zucker.">
-<meta property="og:description" content="Koffein-Kaugummi mit Xylit, ohne Zucker. Für lange Bürotage in Berlin.">
+<title>GUMMIT – caffeine gum for people who ship</title>
+<meta name="description" content="Sugar-free caffeine gum for Berlin builders, vibe coders and everyone at the next Luma event. The milligrams are on the front.">
+<meta property="og:title" content="GUMMIT – git gummit">
+<meta property="og:description" content="Sugar-free caffeine gum for Berlin builders, vibe coders and hackathon people.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#1F2C7A">
+<meta name="theme-color" content="#0B0A10">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="/fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/unbounded-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 
 <header class="wrap nav">
-  <a class="logo" href="#top">BISS</a>
-  <nav class="nav-links" aria-label="Hauptnavigation">
-    <a href="#sorten">Sorten</a>
-    <a href="#deckel">Deckel-Generator</a>
-    <a href="#teams">Für Teams</a>
-    <a class="btn" href="#vorbestellen">Vorbestellen</a>
+  <a class="logo" href="#top">GUMMIT<span class="cursor" aria-hidden="true"></span></a>
+  <nav class="nav-links" aria-label="Main">
+    <a href="#flavors">Flavors</a>
+    <a href="#glaze">Glaze-o-meter</a>
+    <a href="#events">For hosts</a>
+    <a href="#teams">For teams</a>
+    <a class="btn" href="#waitlist">Join the waitlist</a>
   </nav>
 </header>
 
-<main>
-  <div class="wrap" id="top">
-    <div class="hero">
-      <div class="bite b1"></div><div class="bite b2"></div><div class="bite b3"></div>
-      <div class="hero-text">
-        <h1>Biss haben.<br>Ohne Zucker.</h1>
-        <p>Kaugummi mit Koffein, gesüßt mit Xylit. In der Metalldose, die du behältst. Bald an der Theke in Berliner Coworkings und online.</p>
-        <div class="hero-cta">
-          <a class="btn signal" href="#vorbestellen">Auf die Liste</a>
-          <a class="btn ghost" href="#teams">Teambox anfragen</a>
-        </div>
+<main id="top">
+  <div class="wrap hero">
+    <div class="hero-text">
+      <span class="badge"><i></i>dropping at Berlin Luma events soon</span>
+      <h1>Caffeine gum for people who <span class="hl">ship.</span></h1>
+      <p class="sub">Sugar-free, sweetened with xylitol, 52–60 mg caffeine per piece. Built for hackathons, demo days and the 47th tab of your Cursor session.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#waitlist">git gummit</a>
+        <a class="btn ghost" href="#glaze">Get glazed →</a>
       </div>
-      <div class="hero-art" aria-hidden="true">
-        <div class="tin">
-          <div class="t-brand">BISS</div>
-          <div class="t-mg">60 mg</div>
-          <div class="t-sub">Koffein pro Stück. 0 g Zucker.</div>
-          <div class="t-sorte"><b>Deadline</b><span>Minze, 8 Stück</span></div>
-        </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="tin">
+        <div class="t-term">~/berlin $ ./chew</div>
+        <div class="t-brand">GUMMIT</div>
+        <div class="t-mg">60 mg</div>
+        <div class="t-sub">caffeine / piece · 0 g sugar</div>
+        <div class="t-flavor"><b>Hotfix</b><span>mint · 8 pieces</span></div>
       </div>
+      <div class="sticker">no sugar, no cap</div>
     </div>
   </div>
-
-  <section class="wrap" id="zahlen">
-    <div class="eyebrow">Die Zahl zuerst</div>
-    <h2>Drei Zahlen, nichts versteckt</h2>
-    <div class="cards">
-      <div class="card">
-        <div class="big">52–60 mg</div>
-        <div class="label">Koffein pro Stück</div>
-        <p class="small">Steht vorne auf der Dose, nicht im Kleingedruckten. Du entscheidest Stück für Stück. Nicht mehr als 3 pro Tag.</p>
-      </div>
-      <div class="card">
-        <div class="big">0 g</div>
-        <div class="label">Zucker</div>
-        <p class="small">Gesüßt mit Xylit. Kein Sirup, keine 27 Gramm Zucker wie in der Dose aus dem Automaten.</p>
-      </div>
-      <div class="card">
-        <div class="big">8 Stück</div>
-        <div class="label">in der Metalldose</div>
-        <p class="small">Passt in jede Laptoptasche. Die Dose wird nicht weggeworfen. Die wird nachgefüllt.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="wrap" id="sorten">
-    <div class="eyebrow">Sorten</div>
-    <h2>Für jeden Termin im Kalender</h2>
-    <p class="lead">Jede Dose hat einen anderen Spruch auf dem Deckel. Sammeln erlaubt.</p>
-    <div class="sorten">
-      <article class="sorte minze">
-        <span class="tag">Deadline</span>
-        <p class="quote">Wir haben den Zucker vergessen. Absichtlich.</p>
-        <div class="mg">60 mg</div>
-        <p class="meta">Minze. Koffein pro Stück.</p>
-      </article>
-      <article class="sorte cola">
-        <span class="tag">Standup</span>
-        <p class="quote">Kurz und knapp. Wie ein Standup sein sollte.</p>
-        <div class="mg">52 mg</div>
-        <p class="meta">Kirsche. Koffein pro Stück.</p>
-      </article>
-      <article class="sorte yuzu">
-        <span class="tag">Kundencall</span>
-        <p class="quote">Bitte nicht stören. Danke.</p>
-        <div class="mg">52 mg</div>
-        <p class="meta">Beere. Koffein pro Stück.</p>
-      </article>
-      <article class="sorte later">
-        <span class="tag">Feierabend</span>
-        <p class="quote">Laptop zu. Dose auf.</p>
-        <div class="mg">0 mg</div>
-        <p class="meta">Ohne Koffein. Kommt später.</p>
-      </article>
-    </div>
-  </section>
 
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track" id="marquee"></div>
   </div>
 
-  <section class="wrap" id="deckel">
-    <div class="eyebrow">Deckel-Generator</div>
-    <h2>Dein Spruch auf unserer Dose</h2>
-    <p class="lead">Ausrede, Abwesenheitsnotiz, Lieblingssatz aus dem letzten Meeting. Tipp ihn ein, lad dir den Deckel runter, teil ihn. Die besten kommen auf die nächste Charge, mit deinem Namen innen im Deckel.</p>
+  <section class="wrap" id="numbers">
+    <p class="prompt">cat nutrition.md</p>
+    <h2>The numbers. No marketing fog.</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="big">52–60 mg</div>
+        <div class="label">caffeine per piece</div>
+        <p class="small">Printed on the front, not hidden in a footnote. You decide the dose, one piece at a time. Max 3 a day, even during a hackathon.</p>
+      </div>
+      <div class="card">
+        <div class="big">0 g</div>
+        <div class="label">sugar</div>
+        <p class="small">Sweetened with xylitol. Your dentist will finally glaze you back.</p>
+      </div>
+      <div class="card">
+        <div class="big">8 pcs</div>
+        <div class="label">in a metal tin</div>
+        <p class="small">Fits next to your MacBook charger. Keep the tin, refill it. Stickers encouraged.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="flavors">
+    <p class="prompt">ls ./flavors</p>
+    <h2>Pick your branch</h2>
+    <p class="lead">Every tin gets a different line on the lid. Collect them, post them, argue about them in the group chat.</p>
+    <div class="flavors">
+      <article class="flavor lime">
+        <span class="tag">main</span>
+        <h3>Hotfix</h3>
+        <p class="quote">// for the bug you found in prod at 23:58</p>
+        <div class="mg">60 mg</div>
+        <p class="meta">Mint · caffeine per piece</p>
+      </article>
+      <article class="flavor pink">
+        <span class="tag">feature/ship-it</span>
+        <h3>Ship It</h3>
+        <p class="quote">// LGTM. didn't read it. merging.</p>
+        <div class="mg">52 mg</div>
+        <p class="meta">Cherry · caffeine per piece</p>
+      </article>
+      <article class="flavor violet">
+        <span class="tag">release/demo-day</span>
+        <h3>Demo Day</h3>
+        <p class="quote">// pitch_deck_v14_FINAL_final2.pdf</p>
+        <div class="mg">52 mg</div>
+        <p class="meta">Berry · caffeine per piece</p>
+      </article>
+      <article class="flavor later">
+        <span class="tag">coming soon</span>
+        <h3>Touch Grass</h3>
+        <p class="quote">// logging off. for real this time.</p>
+        <div class="mg">0 mg</div>
+        <p class="meta">No caffeine · later</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap" id="glaze">
+    <p class="prompt">npx glaze-o-meter</p>
+    <h2>Glaze-o-meter</h2>
+    <p class="lead">Tell us what you're building. We glaze it shamelessly and put it on a lid. Download it, post it, tag us. The best lines go on the next batch, with your name inside the lid.</p>
     <div class="gen">
       <div class="gen-form">
         <div class="field">
-          <label for="gen-text">Dein Spruch</label>
-          <textarea id="gen-text" maxlength="70">Hier könnte deine Ausrede stehen.</textarea>
-          <div class="counter"><span id="gen-count">0</span> / 70</div>
-        </div>
-        <div class="field">
-          <span class="flabel" id="farbe-label">Sorte</span>
-          <div class="swatches" role="group" aria-labelledby="farbe-label" id="swatches"></div>
+          <label for="gen-idea">what are you building?</label>
+          <input type="text" id="gen-idea" maxlength="40" placeholder="an AI agent for my fridge">
         </div>
         <div class="gen-actions">
-          <button class="btn" type="button" id="gen-download">Als Bild speichern</button>
-          <button class="btn ghost" type="button" id="gen-submit">Spruch einreichen</button>
+          <button class="btn pink" type="button" id="gen-glaze">Glaze me</button>
+        </div>
+        <div class="field">
+          <label for="gen-text">lid text (edit freely)</label>
+          <textarea id="gen-text" maxlength="90">You're absolutely right! This gum has no sugar.</textarea>
+          <div class="counter"><span id="gen-count">0</span> / 90</div>
+        </div>
+        <div class="field">
+          <span class="flabel" id="color-label">tin color</span>
+          <div class="swatches" role="group" aria-labelledby="color-label" id="swatches"></div>
+        </div>
+        <div class="gen-actions">
+          <button class="btn" type="button" id="gen-download">Download lid</button>
+          <button class="btn ghost" type="button" id="gen-submit">Submit for next batch</button>
         </div>
       </div>
       <div class="gen-preview">
         <div class="lid" id="lid">
+          <div class="lid-head" id="lid-head">git gummit -m</div>
           <p class="lid-text" id="lid-text"></p>
-          <div class="lid-foot"><b>BISS</b><span id="lid-sorte"></span></div>
+          <div class="lid-foot"><b>GUMMIT</b><span id="lid-flavor"></span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="wrap" id="teams">
-    <div class="eyebrow">Für Teams und Coworkings</div>
-    <h2>Fürs Büro, nicht für die Tanke</h2>
+  <section class="wrap" id="events">
+    <p class="prompt">grep -r "free snacks" luma.com/berlin</p>
+    <h2>Hosting on Luma? We bring the gum.</h2>
     <div class="split">
-      <div class="panel dark">
-        <h3>Teambox</h3>
-        <p>Für Agenturen und Startups, die ihre Leute nicht mit Zucker durch den Tag schicken wollen.</p>
+      <div class="panel feature">
+        <span class="kicker">for event hosts</span>
+        <h3>Host box</h3>
+        <p>Hackathon, AI meetup, founder breakfast, demo night. We send a box, your guests stop eating the pizza crusts out of boredom.</p>
         <ul>
-          <li>Gemischte Box mit allen Sorten</li>
-          <li>Einzelsachets für Meetingräume</li>
-          <li>Mit Rechnung, auf Wunsch mit eurem Logo</li>
-          <li>Als Onboarding-Dose für neue Leute</li>
+          <li>Free tins for your event (while we're in beta)</li>
+          <li>Custom lid line for your event</li>
+          <li>Counter display for the check-in desk</li>
+          <li>We just want a photo and a tag</li>
         </ul>
-        <a class="btn signal" href="#vorbestellen" data-typ="team">Teambox anfragen</a>
+        <a class="btn" href="#waitlist" data-type="host">Get a host box</a>
       </div>
-      <div class="panel light">
-        <h3>Für Coworkings</h3>
-        <p>Ein kleines Display an eurer Theke. Kein Automat, kein Vertrag.</p>
+      <div class="panel" id="teams">
+        <span class="kicker">for startups &amp; coworkings</span>
+        <h3>Team box</h3>
+        <p>For teams that ship on Fridays anyway. Onboarding gift, meeting room stash, or just better than the office fruit bowl.</p>
         <ul>
-          <li>Thekendisplay, wir füllen nach</li>
-          <li>Ihr bekommt Provision pro Dose, keine Miete</li>
-          <li>Keine Laufzeit, jederzeit beendbar</li>
-          <li>Probier-Nachmittag um 14 Uhr in eurer Küche</li>
+          <li>Mixed box, all flavors</li>
+          <li>Single sachets for meeting rooms</li>
+          <li>Invoice included, your logo on request</li>
+          <li>Coworkings: counter display, commission, no rent</li>
         </ul>
-        <a class="btn" href="#vorbestellen" data-typ="coworking">Display anfragen</a>
+        <a class="btn ghost" href="#waitlist" data-type="team">Ask for a team box</a>
       </div>
     </div>
   </section>
 
-  <section class="wrap honest" id="ehrlich">
-    <div>
-      <div class="eyebrow">Ehrlich gesagt</div>
-      <h2>Was wir versprechen. Und was nicht.</h2>
-      <p class="lead">Wir versprechen dir keinen Turbo und keinen Fokus. Nur einen Kaugummi ohne Zucker, bei dem die Koffeinmenge vorne steht.</p>
-    </div>
-    <div class="honest-list">
-      <div><b>Die Zahl zuerst</b><span>Koffein in mg steht vorne auf der Dose. Immer die echte Zahl.</span></div>
-      <div><b>Kein Zucker, kein Theater</b><span>Keine Wundersätze, keine Hustle-Sprüche. Lange Bürotage sind lang, das reicht.</span></div>
-      <div><b>Gemacht in Berlin</b><span>Den Kaugummi stellt im Moment ein erfahrener Hersteller her. Wir kümmern uns um alles drumherum. Eigene Rezeptur kommt, wenn genug Leute mitmachen.</span></div>
+  <section class="wrap" id="honest">
+    <p class="prompt">cat CLAIMS.md</p>
+    <h2>What we promise. And what we won't.</h2>
+    <div class="terminal">
+      <div class="terminal-bar"><i></i><i></i><i></i></div>
+<pre><span class="c"># things we will say</span>
+<span class="ok">✓</span> the caffeine number is on the front
+<span class="ok">✓</span> zero sugar, sweetened with xylitol
+<span class="ok">✓</span> the tin is metal and you can keep it
+<span class="ok">✓</span> built in Berlin, by someone who also has 40 tabs open
+
+<span class="c"># things we won't say</span>
+<span class="no">✗</span> "10x your output"
+<span class="no">✗</span> "unlock flow state"
+<span class="no">✗</span> "biohack your brain"
+
+<span class="c"># it's gum. with caffeine. that's the whole pitch.</span></pre>
     </div>
   </section>
 
-  <section class="wrap" id="vorbestellen">
+  <section class="wrap" id="waitlist">
     <div class="cta">
       <div>
-        <h2>Sei bei der ersten Charge dabei</h2>
-        <p class="lead">Wir schreiben dir einmal, wenn BISS in deinem Coworking steht oder online bestellbar ist. Kein Newsletter-Spam.</p>
+        <h2>Get the first batch.</h2>
+        <p class="lead">One email when GUMMIT drops at your next event or online. No newsletter spam, we're too busy shipping.</p>
         <div class="preorder" id="preorder" hidden>
-          <a class="btn" id="preorder-link" href="#" rel="noopener">Jetzt vorbestellen</a>
+          <a class="btn" id="preorder-link" href="#" rel="noopener">Pre-order now</a>
           <small id="preorder-note"></small>
         </div>
       </div>
       <form id="lead-form" novalidate>
         <div class="field">
-          <label for="f-email">E-Mail-Adresse</label>
-          <input id="f-email" name="email" type="email" autocomplete="email" placeholder="du@beispiel.de" required>
+          <label for="f-email">email</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@startup.xyz" required>
         </div>
         <div class="row">
           <div class="field">
-            <label for="f-typ">Ich bin</label>
-            <select id="f-typ" name="typ">
-              <option value="privat">Einzelperson</option>
-              <option value="team">ein Team / eine Firma</option>
-              <option value="coworking">ein Coworking</option>
+            <label for="f-type">I'm a</label>
+            <select id="f-type" name="type">
+              <option value="builder">builder / vibe coder</option>
+              <option value="host">event host</option>
+              <option value="team">startup team</option>
+              <option value="coworking">coworking</option>
             </select>
           </div>
           <div class="field">
-            <label for="f-ort">Wo arbeitest du?</label>
-            <input id="f-ort" name="ort" type="text" placeholder="z. B. Coworking in Kreuzberg">
+            <label for="f-where">where do you build?</label>
+            <input id="f-where" name="where" type="text" placeholder="Factory, home, U8">
           </div>
         </div>
         <div class="field">
-          <label for="f-spruch">Spruch für den Deckel (optional)</label>
-          <input id="f-spruch" name="spruch" type="text" maxlength="70" placeholder="Dein Satz für die nächste Charge">
+          <label for="f-line">your lid line (optional)</label>
+          <input id="f-line" name="line" type="text" maxlength="90" placeholder="Works on my machine.">
         </div>
-        <label class="check"><input type="checkbox" id="f-ok" required> <span>Ich bin einverstanden, dass ihr mir zu BISS schreibt. Abmelden geht jederzeit. Mehr in der <a href="/datenschutz">Datenschutzerklärung</a>.</span></label>
-        <button class="btn" type="submit">Eintragen</button>
+        <label class="check"><input type="checkbox" id="f-ok" required> <span>Yes, you can email me about GUMMIT. Unsubscribe anytime. See <a href="/datenschutz">privacy policy</a>.</span></label>
+        <button class="btn" type="submit">Join the waitlist</button>
         <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
       </form>
     </div>
@@ -220,10 +243,13 @@
 
 <footer class="wrap">
   <div class="legal">
-    <p>Kaugummi mit Koffein, mit Süßungsmitteln. Enthält Koffein (52 bis 60 mg pro Stück je nach Sorte). Für Kinder und schwangere Frauen nicht empfohlen. Nicht mehr als 3 Stück pro Tag. Andere Koffeinquellen beachten. Kann bei übermäßigem Verzehr abführend wirken. Xylit ist für Hunde giftig.</p>
-    <nav aria-label="Rechtliches">
+    <div>
+      <p>Kaugummi mit Koffein, mit Süßungsmitteln. Enthält Koffein (52 bis 60 mg pro Stück je nach Sorte). Für Kinder und schwangere Frauen nicht empfohlen. Nicht mehr als 3 Stück pro Tag. Andere Koffeinquellen beachten. Kann bei übermäßigem Verzehr abführend wirken. Xylit ist für Hunde giftig.</p>
+      <p>Contains caffeine. Not recommended for children or pregnant women. Max 3 pieces per day. Excessive consumption may have a laxative effect. Xylitol is toxic to dogs.</p>
+    </div>
+    <nav aria-label="Legal">
       <a href="/impressum">Impressum</a>
-      <a href="/datenschutz">Datenschutz</a>
+      <a href="/datenschutz">Privacy</a>
     </nav>
   </div>
 </footer>

@@ -67,3 +67,16 @@ Alle Ideen aus dem Gespräch vom 08.10.2026, in der Reihenfolge, wie sie kamen, 
 | Story „nur von KI gesteuert, als Test“ | angepasst übernommen | Starker Aufhänger, aber ehrlich rahmen: KI entscheidet Sorten, Sprüche, Preise, Posts, Daniel macht Recht, Ware, Sicherheit. Als LinkedIn-Serie, nicht auf der Dose |
 | Sponsoring bei SUPERPUBLIC (Batch 001, Factory Berlin) | neu, Top-Chance | 4 Gründerteams, 6 Wochen gefilmt, Demo Day ca. Anfang November. 3D-gedruckter Automat statt teurem Gerät, Kontakt media@superpublic.space |
 | Verpackung premium oder farbig | Empfehlung Mischung | Premium-Dose (Kobalt, Prägung) als Basis, Farbe pro Sorte und wechselnder Spruch auf dem Deckel gegen „nur BISS“ |
+
+## Update 09.10.2026: Website und Rebrand
+
+| Idee | Ergebnis | Warum |
+| --- | --- | --- |
+| Name GUMMIT (gum + git commit) | neuer Arbeitstitel | BISS zu langweilig. Wortspiel für Vibe Coder, „git gummit“ als Claim. Register noch prüfen |
+| Zielgruppe Luma-Events Berlin, Vibe Coder, Hustler | übernommen für Website | Hackathons, Demo Days und AI-Meetups als erster Kanal, Host-Box für Veranstalter |
+| Look dunkel mit Neon (Lime, Pink, Violett), Terminal-Optik | ersetzt Kobalt/Weiß | Weißes Branding wirkte zu medizinisch |
+| Humor mit Glazing- und Dev-Memes | übernommen | „You're absolutely right!“, „Works on my machine“. Weiter keine Wirkversprechen (kein 10x, kein Fokus) |
+| Glaze-o-meter statt Deckel-Generator | übernommen | Idee eintippen, wird übertrieben gelobt, als Deckel teilen |
+| Sorten Hotfix, Ship It, Demo Day, Touch Grass | ersetzen Deadline, Standup, Kundencall, Feierabend | Passen zur Dev-Zielgruppe |
+| Website auf Englisch | übernommen | Berliner Tech-Szene ist international. Pflichtangaben deutsch und englisch |
+| Website live auf gum-prototype.vercel.app | erledigt | Ordner website/, jeder Push auf main geht live |

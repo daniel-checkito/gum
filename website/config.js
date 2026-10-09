@@ -1,5 +1,5 @@
 // Hier trägst du deine Daten ein. Leer lassen = Funktion aus.
-window.BISS_CONFIG = {
+window.GUMMIT_CONFIG = {
   // Formular-Endpunkt, der JSON per POST annimmt, z. B. von formspree.io:
   // "https://formspree.io/f/abcdwxyz"
   formEndpoint: "",
@@ -9,6 +9,6 @@ window.BISS_CONFIG = {
 
   // Bezahlte Vorbestellung, z. B. ein Stripe Payment Link: "https://buy.stripe.com/..."
   preorderUrl: "",
-  preorderLabel: "Jetzt vorbestellen",
-  preorderNote: "Bezahlt wird jetzt, geliefert wird mit der ersten Charge. Kommt sie nicht, gibt es das Geld zurück."
+  preorderLabel: "Pre-order now",
+  preorderNote: "Pay now, get the first batch. If it never ships, you get a full refund."
 };
