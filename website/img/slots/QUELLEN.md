@@ -15,6 +15,6 @@ Sie sind Platzhalter für den Prototyp. Vor dem Launch durch eigene Fotos ersetz
 | community-tasche.jpg | 1746 | Laptop im Café |
 | mission-event.jpg | 4531 | Studentin in der Bibliothek |
 | poster-hero.jpg + Video | 48503 | Konzentrierter junger Mann am Computer |
-| poster-run.jpg + Video | 608 | Läufer im Gegenlicht |
+| poster-cafe.jpg + Video | 1746 | Laptop im Café |
 | poster-library.jpg + Video | 14734 | Student in der Bibliothek |
 | Video Code | 1749 | Entwickler mit Kaffee |

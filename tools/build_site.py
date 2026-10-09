@@ -217,7 +217,7 @@ BENTO = f'''<div class="bento">
   <div class="tile"><b class="big">8</b><h3>Sticks, flach verpackt</h3><p>Passt neben Laptop, Ladekabel und Event-Badge.</p></div>
   <div class="tile grad"><h3>Du promptest.<br>Claude coded.<br>Du kaust.</h3></div>
   <div class="tile"><h3>Koffein-Timeline</h3><p>Sieh als Kurve, wie viel Koffein über den Tag im Körper ist.</p><a class="more" href="/#timeline">Ausprobieren →</a></div>
-  <div class="tile t-wide"><p class="eyebrow">Berlin × San Francisco</p><h3>Gebaut in Kreuzberg. Im Tempo der Bay Area.</h3><p>Klare Zahlen, klares Design, kein Zucker. Für Leute, die heute launchen statt nächstes Quartal.</p></div>
+  <div class="tile t-wide"><p class="eyebrow">Aus Berlin</p><h3>Versand aus Berlin. Kein Abo.</h3><p>Reservieren ist unverbindlich. Bezahlt wird erst, wenn du wirklich bestellst.</p></div>
 </div>'''
 
 TIMELINE = '''<section class="band" id="timeline">
@@ -244,14 +244,14 @@ TIMELINE = '''<section class="band" id="timeline">
 '''
 
 MANIFEST_PANELS = [
-    ("608", "poster-run", "Niemand sieht die Nächte vor dem Launch.", "Du schon. Und das reicht."),
-    ("14734", "poster-library", "Talent ist der Anfang. Wiederholung ist der Rest.", "Kapitel sieben, dritte Runde. Weiter."),
-    ("1749", "poster-code", "Mach den Commit.", "Fertig schlägt perfekt. Gummit. Push. Repeat."),
+    ("14734", "poster-library", "22:41 · Bibliothek", "Seite 212 von 480.", "Der Automat im Erdgeschoss hat nur Cola."),
+    ("1746", "poster-cafe", "15:12 · Café", "Schlange bis zur Tür.", "Das Pack ist schon in der Jackentasche."),
+    ("1749", "poster-code", "01:07 · Zuhause", "Build läuft. Kaffee ist kalt.", "Ein Stick liegt neben dem Ladekabel."),
 ]
 MANIFEST = '<section class="manifest" id="manifest">' + "".join(
     f'<div class="panel"><video class="bg-video" muted loop playsinline preload="none" poster="/img/slots/{poster}.jpg" data-src="https://assets.mixkit.co/videos/{vid}/{vid}-720.mp4"></video><div class="shade"></div>'
-    f'<div class="wrap"><p class="eyebrow">Manifest {i + 1}/3</p><h2 class="shout">{title}</h2><p class="lede">{sub}</p></div></div>'
-    for i, (vid, poster, title, sub) in enumerate(MANIFEST_PANELS)) + '</section>'
+    f'<div class="wrap"><p class="eyebrow">{when}</p><h2 class="shout">{title}</h2><p class="lede">{sub}</p></div></div>'
+    for vid, poster, when, title, sub in MANIFEST_PANELS) + '</section>'
 
 PDP_VIEWS = "".join(
     f'<div class="pack-view" data-f="{f["id"]}" data-v="{v}"{"" if (f["id"], v) == ("minze", "front") else " hidden"}>{pack(f, v, "pdp-" + f["id"] + "-" + v)}</div>'
@@ -317,9 +317,9 @@ def home():
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <p class="eyebrow">GUMMIT · Koffein-Kaugummi</p>
-      <h1 class="shout">Bleib<br>dran.</h1>
-      <p class="lede">Für die Nacht vor der Klausur, den Sprint vor dem Launch und die Stunde, in der es klick macht. Zuckerfreier Kaugummi mit 52 bis 60 mg Koffein pro Stick.</p>
-      <div class="hero-cta"><a class="btn white" href="#manifest">Unser Manifest</a><a class="btn white-ghost" href="/produkt">Alle Produktinfos</a></div>
+      <h1 class="shout">60 mg.<br>Kein Becher.</h1>
+      <p class="lede">Zuckerfreier Kaugummi mit Koffein. Die Menge steht vorne drauf, der Rest passt in die Hosentasche.</p>
+      <div class="hero-cta"><a class="btn white" href="/produkt">Alle Produktinfos</a></div>
     </div>
     <div class="buybox card">
       <div class="stage mini" id="stage" style="--stage:{FLAVORS[0]["color"]}">
@@ -349,8 +349,8 @@ def home():
 <section class="band" id="fuer-wen">
   <div class="wrap">
     {section_label("01", "Für wen")}
-    <h2>Für alle, die <em>dranbleiben.</em></h2>
-    <p class="lead">Nicht für alle. Für Leute, die abends noch einen Prototyp fertig machen, für die Prüfung die dritte Runde drehen und Montag pitchen.</p>
+    <h2>Für lange Tage <em>mit Laptop.</em></h2>
+    <p class="lead">Für Leute, die abends noch einen Prototyp fertig machen, für die Prüfung die dritte Runde drehen und Montag pitchen.</p>
     <div class="personas">
       <article class="card persona">{img_slot("persona-vibecoder", "Vibe Coder", "persona-img")}<span class="num">A</span><h3>Vibe Coder</h3><p>Du baust mit Cursor, Claude und Kaffee. Der Kaffee ist kalt, der Build läuft noch. Das Pack liegt neben dem Ladekabel.</p></article>
       <article class="card persona">{img_slot("persona-gruender", "Gründer", "persona-img")}<span class="num">B</span><h3>Gründer</h3><p>Pitch-Deck Version 14, Probelauf um 23 Uhr. Kein Zucker vor dem Auftritt, keine Dose Energy auf dem Tisch.</p></article>
@@ -364,7 +364,7 @@ def home():
 <section class="band" id="warum">
   <div class="wrap">
     {section_label("02", "Warum GUMMIT")}
-    <h2>Koffein, <em>neu gedacht.</em></h2>
+    <h2>Was drin ist. <em>Was nicht.</em></h2>
     <p class="lead">Kein Becher, kein Zucker, kein Anstehen. Ein Stick, eine klare Zahl.</p>
     {BENTO}
   </div>
@@ -373,7 +373,7 @@ def home():
 <section class="band senses" id="sorten">
   <div class="wrap">
     {section_label("03", "Sorten")}
-    <h2>Drei Sorten. <em>Alle Sinne.</em></h2>
+    <h2>Drei Sorten. <em>Drei Farben.</em></h2>
     <p class="lead">Jede Sorte hat ihre eigene Farbe, ihr eigenes Muster und ihre eigene Zahl.</p>
     <div class="flavors">
       {FLAVOR_CARDS}
@@ -432,7 +432,7 @@ def home():
 {SERVICE}
 '''
     return page("/", "GUMMIT – Koffein-Kaugummi für Berliner Builder",
-                "Zuckerfreier Kaugummi mit 52 bis 60 mg Koffein pro Stick. Für alle, die dranbleiben: Lernphasen, Launches, lange Abende im Coworking.",
+                "Zuckerfreier Kaugummi mit 52 bis 60 mg Koffein pro Stick. Für Lernphasen, Launches und lange Abende im Coworking.",
                 "/", body)
 
 

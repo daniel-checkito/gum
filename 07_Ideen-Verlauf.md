@@ -101,3 +101,4 @@ Alle Ideen aus dem Gespräch vom 08.10.2026, in der Reihenfolge, wie sie kamen, 
 | Hackathons auf der Website | entfernt | Ersetzt durch Meetups, Lerngruppen, Coworkings |
 | Persönliches zum Gründer (Name, Job, 3D-Druck, Fotos, Team-Karussell) | entfernt | Story jetzt als "Team GUMMIT" ohne Person |
 | Weißer Hintergrund | ersetzt | Weiche Farbverläufe in den Sortenfarben, feines Rautenmuster, Glas-Karten |
+| Motivationssprüche ("Bleib dran.", Manifest) | ersetzt | Zu typisch. Jetzt trocken und konkret: "60 mg. Kein Becher." und drei Szenen mit Uhrzeit |
