@@ -3,11 +3,9 @@ Betreff: Koffein-Kaugummi ohne Zucker als Private Label
 
 ## Deutsch
 
-Hey,
+Hey Dominik,
 
-ich bin Daniel aus Berlin. Wir bauen eine kleine Kaugummi-Marke für Büros und Coworkings auf und suchen einen Hersteller für Koffein-Kaugummi ohne Zucker unter unserer Marke.
-
-Zwei Fragen:
+wir wollen Koffein-Kaugummi ohne Zucker unter eigener Marke machen.
 
 1. Welche Verpackungen habt ihr dafür, z. B. Dose, Blister oder Flasche?
 2. Was ist eure Mindestabnahmemenge?
