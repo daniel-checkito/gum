@@ -98,3 +98,5 @@ Alle Ideen aus dem Gespräch vom 08.10.2026, in der Reihenfolge, wie sie kamen, 
 | Retro-Wrapper (Wrigley's, Beech-Nut) vs. Five-Stil | Five-Stil bleibt Hauptlinie | Retro eher als limitierte "Throwback Edition" oder für Merch |
 | Website mit Nike-Gefühl: "Bleib dran.", Video-Hero, Manifest | übernommen | Motivation über die Person, nicht über Wirkung des Produkts. Videos und Bilder von Mixkit (freie Lizenz), nur für den Prototyp |
 | Zielgruppe Studenten | übernommen | Neue Persona: Klausurphase, Bib bis Schließung |
+| Hackathons auf der Website | entfernt | Ersetzt durch Meetups, Lerngruppen, Coworkings |
+| Persönliches zum Gründer (Name, Job, 3D-Druck, Fotos, Team-Karussell) | entfernt | Story jetzt als "Team GUMMIT" ohne Person |

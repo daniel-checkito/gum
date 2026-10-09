@@ -7,7 +7,7 @@ Stil: **Keynote**. Hellgrau #F5F5F7, Weiß, Text #1D1D1F. Farbe kommt von den So
 1. **Stil-Block** unten vor jeden Prompt setzen.
 2. **Pack:** KI kann Text auf Verpackungen schlecht. Lade eine Referenz aus `05_Vorlagen/Bild-Referenz/` als Bildvorlage hoch (z. B. `pack-minze-front.png`). Oder lass das Pack klein bzw. unscharf und ohne lesbaren Text.
 3. **Speichern** als `website/img/slots/<Datei>.jpg` (oder .webp). Breite mindestens 1600 px. Danach `python3 tools/build_site.py` laufen lassen oder mir die Bilder schicken. Der Platzhalter wird automatisch ersetzt.
-4. **Echte Menschen** (Daniel, Team) bitte echt fotografieren. Keine KI-Gesichter für Team oder Bewertungen. Für Szenen mit Leuten nur Menschen ohne erkennbare Gesichter oder von hinten, damit niemand glaubt, das seien echte Kunden.
+4. **Keine KI-Gesichter** für Bewertungen. Für Szenen mit Leuten nur Menschen ohne erkennbare Gesichter oder von hinten, damit niemand glaubt, das seien echte Kunden.
 
 ## Stil-Block (immer davor)
 
@@ -23,15 +23,13 @@ Negativ (falls das Tool es kann): `text, letters, watermark, logo, brand names, 
 |---|---|---|
 | persona-vibecoder | 4:3 | Startseite, Für wen A |
 | persona-gruender | 4:3 | Startseite, Für wen B |
-| persona-hackathon | 4:3 | Startseite, Für wen C |
+| persona-student | 4:3 | Startseite, Für wen C |
 | mission-event | 4:5 | Mission-Band |
-| community-hackathon | 4:3 | Community-Galerie |
+| community-meetup | 4:3 | Community-Galerie |
 | community-demoday | 4:3 | Community-Galerie |
 | community-coworking | 4:3 | Community-Galerie |
 | community-tasche | 4:3 | Community-Galerie |
 | produkt-hand | 1:1 | Produktseite, Ansicht "Größe" |
-| daniel | 4:5 | Story, Startseite (echtes Foto) |
-| team-daniel, team-2, team-3 | 4:5 | Contributors (echte Fotos) |
 
 ### persona-vibecoder (4:3)
 ```
@@ -43,19 +41,19 @@ Over-the-shoulder shot of a young developer at a wooden desk at night, laptop sc
 Young founder rehearsing a pitch in an empty Berlin coworking event space, seen from the side and slightly blurred, holding a clicker, slide deck projected softly on a white wall without readable text, a slim black gum stick pack with red graphic on a high table in the foreground in sharp focus, folding chairs, late evening
 ```
 
-### persona-hackathon (4:3)
+### persona-student (4:3)
 ```
-Top-down flatlay of a crowded hackathon table: three laptops, pizza box, post-its, tangled cables, lanyard badges without text, unlabeled glass bottles, in the center an open slim black gum stick pack with violet graphic, silver-wrapped sticks sliding out, hands reaching in from the edges, no faces
+Student studying late in a quiet university library, seen from the side, stack of books and notes, laptop, a slim black gum stick pack with cyan graphic on the desk in sharp focus, warm desk lamp, calm and determined mood
 ```
 
 ### mission-event (4:5)
 ```
-Students at a beginner hackathon in a Berlin university room, seen from behind and the side, laptops, whiteboard with abstract doodles, one person holding up a slim black gum stick pack like a trophy, joyful candid moment, lime green paper cups, cobalt blue hoodie, no readable text
+Small study group at a long table in a Berlin coworking space in the evening, seen from behind and the side, laptops and notebooks, one person passing a slim black gum stick pack across the table, warm candid moment, no readable text
 ```
 
-### community-hackathon (4:3)
+### community-meetup (4:3)
 ```
-Wide shot of a busy hackathon at night in a Berlin warehouse loft, long tables, warm string lights, people from behind working on laptops, a few slim black gum stick packs with cyan, red and violet graphics on the tables, energetic but tidy
+Wide shot of an evening tech meetup in a Berlin loft, people from behind listening and working on laptops, warm string lights, a few slim black gum stick packs with cyan, red and violet graphics on the tables, energetic but tidy
 ```
 
 ### community-demoday (4:3)
@@ -85,9 +83,3 @@ Für spätere Produktfotos, je eine Sorte auf ihrer Farbe:
 Studio product photo of a glossy black slim gum stick pack floating slightly tilted, large chrome number on the front, colored graphic on the right side, background in [#19B6E8 | #F0364A | #8B5CFF] with thin concentric diamond line pattern, soft reflections, premium, like a Five gum ad
 ```
 Referenz: `pack-<sorte>-front.png`.
-
-## Echte Fotos (kein KI)
-
-- **daniel / team-daniel:** Hochformat 4:5. Vor einer Wand in Hellgrau oder einer Sortenfarbe. Weiches Studiolicht. Pack in der Hand, ehrliches Grinsen.
-- **team-2, team-3:** Gleicher Hintergrund und gleiches Licht wie bei Daniel, damit das Karussell einheitlich aussieht (wie "The Chew Crew" bei Forest Gum).
-- **Namen und Rollen** in `tools/build_site.py` unter `CREW` eintragen.
