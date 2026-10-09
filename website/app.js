@@ -3,96 +3,83 @@
 
   // Shop
   var flavors = [
-    { name: "Hotfix", taste: "mint", mg: 60, color: "#C6FF3D", fg: "#0B0A10" },
-    { name: "Ship It", taste: "cherry", mg: 52, color: "#FF3DA5", fg: "#0B0A10" },
-    { name: "Demo Day", taste: "berry", mg: 52, color: "#7B5CFF", fg: "#F4F1EA" }
+    { name: "Hotfix", taste: "mint", mg: 60, color: "#C6FF3D" },
+    { name: "Ship It", taste: "cherry", mg: 52, color: "#FF5A6E" },
+    { name: "Demo Day", taste: "berry", mg: 52, color: "#B9A4FF" }
   ];
   var packs = cfg.packs || [{ tins: 1, price: 4.99, url: "" }];
   var sel = { flavor: flavors[0], pack: packs[0] };
   var eur = function (n) { return "€" + n.toFixed(2); };
+  var $ = function (id) { return document.getElementById(id); };
 
-  function chip(parent, label, sub, active, onClick) {
+  function chip(parent, html, onClick) {
     var b = document.createElement("button");
     b.type = "button";
     b.className = "chip";
-    b.setAttribute("aria-pressed", active ? "true" : "false");
-    b.innerHTML = "<span>" + label + "</span>" + (sub ? "<small>" + sub + "</small>" : "");
-    b.addEventListener("click", function () {
-      parent.querySelectorAll(".chip").forEach(function (x) { x.setAttribute("aria-pressed", "false"); });
-      b.setAttribute("aria-pressed", "true");
-      onClick();
-    });
+    b.innerHTML = html;
+    b.addEventListener("click", onClick);
     parent.appendChild(b);
+    return b;
   }
 
-  function renderShop() {
+  var fChips = flavors.map(function (f) {
+    return chip($("shop-flavors"), "<span><i class=\"dot\" style=\"background:" + f.color + "\"></i>" + f.name + "</span><small>" + f.taste + " · " + f.mg + " mg</small>",
+      function () { sel.flavor = f; render(); });
+  });
+  var pChips = packs.map(function (p) {
+    return chip($("shop-packs"), "<span>" + p.tins + (p.tins === 1 ? " tin" : " tins") + "</span><small>" + eur(p.price) + "</small>",
+      function () { sel.pack = p; render(); });
+  });
+
+  function render() {
     var f = sel.flavor, p = sel.pack, base = packs[0].price;
-    document.getElementById("shop-mg").textContent = f.mg + " mg";
-    document.getElementById("shop-tinname").textContent = f.name;
-    document.getElementById("shop-tintaste").textContent = f.taste + " · 8 pieces";
-    var tf = document.getElementById("shop-tinflavor");
-    tf.style.background = f.color; tf.style.color = f.fg;
-    document.getElementById("shop-mg").style.color = f.color;
-    var stack = document.getElementById("shop-stack");
-    stack.hidden = p.tins === 1; stack.textContent = "×" + p.tins;
-    document.getElementById("lede-mg").textContent = f.mg + " mg";
-    document.getElementById("pill-mg").textContent = f.mg + " mg";
-    document.getElementById("sticky-name").textContent = f.name + " · " + p.tins + (p.tins === 1 ? " tin" : " tins");
-    document.getElementById("sticky-price").textContent = eur(p.price);
-    document.querySelectorAll("#thumbs button").forEach(function (t, i) { t.setAttribute("aria-pressed", flavors[i] === f ? "true" : "false"); });
-    document.querySelectorAll("#shop-flavors .chip").forEach(function (c, i) { c.setAttribute("aria-pressed", flavors[i] === f ? "true" : "false"); });
-    document.getElementById("shop-price").textContent = eur(p.price);
-    document.getElementById("shop-per").textContent = eur(p.price / p.tins) + " / tin";
+    fChips.forEach(function (c, i) { c.setAttribute("aria-pressed", flavors[i] === f ? "true" : "false"); });
+    pChips.forEach(function (c, i) { c.setAttribute("aria-pressed", packs[i] === p ? "true" : "false"); });
+    $("shop-tin").style.background = f.color;
+    $("shop-mg").textContent = f.mg + " mg";
+    $("shop-tinname").textContent = f.name;
+    $("shop-tintaste").textContent = f.taste + " · 8 pcs";
+    $("lede-mg").textContent = f.mg + " mg";
+    $("shop-stack").hidden = p.tins === 1;
+    $("shop-stack").textContent = "×" + p.tins;
+    $("shop-price").textContent = eur(p.price);
+    $("shop-per").textContent = eur(p.price / p.tins) + " / tin";
     var save = Math.round((1 - p.price / (base * p.tins)) * 100);
-    var sv = document.getElementById("shop-save");
-    sv.hidden = save <= 0; sv.textContent = "save " + save + "%";
-    var buy = document.getElementById("shop-buy");
-    buy.textContent = p.url ? "Pre-order · " + eur(p.price) : "Reserve my tins";
-    document.getElementById("shop-note").textContent = p.url
-      ? "Secure checkout"
-      : "No payment now";
+    $("shop-save").hidden = save <= 0;
+    $("shop-save").textContent = "save " + save + "%";
+    $("shop-buy").textContent = p.url ? "Pre-order · " + eur(p.price) : "Reserve my tins";
+    $("shop-note").textContent = p.url ? "Secure checkout" : "No payment now";
+    $("sticky-name").textContent = f.name + " · " + p.tins + (p.tins === 1 ? " tin" : " tins");
+    $("sticky-price").textContent = eur(p.price);
   }
+  render();
 
-  var fWrap = document.getElementById("shop-flavors");
-  flavors.forEach(function (f, i) {
-    chip(fWrap, f.name, f.taste + " · " + f.mg + " mg", i === 0, function () { sel.flavor = f; renderShop(); });
-  });
-  var pWrap = document.getElementById("shop-packs");
-  packs.forEach(function (p, i) {
-    chip(pWrap, p.tins + (p.tins === 1 ? " tin" : " tins"), eur(p.price), i === 0, function () { sel.pack = p; renderShop(); });
-  });
-  var thumbs = document.getElementById("thumbs");
-  flavors.forEach(function (f) {
-    var t = document.createElement("button");
-    t.type = "button";
-    t.tabIndex = -1;
-    t.innerHTML = "<i style=\"background:" + f.color + "\"></i><span>" + f.name + "</span>";
-    t.addEventListener("click", function () { sel.flavor = f; renderShop(); });
-    thumbs.appendChild(t);
-  });
-  renderShop();
-
-  // Sticky buy bar on mobile once the buy box is out of view
-  var sticky = document.getElementById("sticky-buy");
+  // Sticky buy bar once the buy button is out of view
   if ("IntersectionObserver" in window) {
     new IntersectionObserver(function (entries) {
-      sticky.hidden = entries[0].isIntersecting;
-    }).observe(document.getElementById("shop-buy"));
+      $("sticky-buy").hidden = entries[0].isIntersecting || entries[0].boundingClientRect.top > 0;
+    }).observe($("shop-buy"));
   }
 
-  document.getElementById("shop-buy").addEventListener("click", function () {
+  $("shop-buy").addEventListener("click", function () {
     if (sel.pack.url) { location.href = sel.pack.url; return; }
-    var picked = document.getElementById("f-picked");
-    picked.hidden = false;
-    picked.textContent = "Reserving: " + sel.pack.tins + "× " + sel.flavor.name + " (" + eur(sel.pack.price) + ")";
-    document.getElementById("waitlist").scrollIntoView({ behavior: "smooth" });
-    setTimeout(function () { document.getElementById("f-email").focus({ preventScroll: true }); }, 600);
+    $("f-picked").hidden = false;
+    $("f-picked").textContent = "Reserving: " + sel.pack.tins + "× " + sel.flavor.name + " (" + eur(sel.pack.price) + ")";
+    $("waitlist").scrollIntoView({ behavior: "smooth" });
+    setTimeout(function () { $("f-email").focus({ preventScroll: true }); }, 600);
   });
 
-  var fType = document.getElementById("f-type");
+  var fType = $("f-type");
   document.querySelectorAll("[data-type]").forEach(function (a) {
     a.addEventListener("click", function () { fType.value = a.getAttribute("data-type"); });
   });
+
+  // Chat link: WhatsApp, else email, else FAQ
+  var chat = $("chat-link");
+  if (chat) {
+    if (cfg.whatsapp) chat.href = "https://wa.me/" + cfg.whatsapp.replace(/\D/g, "");
+    else if (cfg.contactEmail) chat.href = "mailto:" + cfg.contactEmail;
+  }
 
   // Pre-order
   if (cfg.preorderUrl) {
