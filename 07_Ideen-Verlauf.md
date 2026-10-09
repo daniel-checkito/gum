@@ -87,3 +87,8 @@ Alle Ideen aus dem Gespräch vom 08.10.2026, in der Reihenfolge, wie sie kamen, 
 | Mission "Projekt Erster Commit" | übernommen | Gratis-Dosen für Einsteiger-Events ab 18, offen gezählt auf /mission. Vorbild Projekt Wildwuchs |
 | Chat-Block "Daniel fragen" | entfernt | Auf Wunsch |
 | Gezeichnete Dose statt KI-Foto | übernommen | Vorderseite, offen, Rückseite mit Pflichtangaben. KI-Foto zeigte noch "Hotfix" |
+| Kein Gendern auf der Website | übernommen | Builder, Gründer statt :innen |
+| Mengenauswahl und Preis direkt im Header der Startseite | übernommen | Sorte und Menge wählen, Preis sofort sehen, ohne Unterseite |
+| Markenrichtung "Erster Commit", Farben "Cobalt Rush" | übernommen | Creme, Kobalt, Lime. Recherche in 02_Recherche/22 |
+| Team-Karussell "Contributors" | übernommen | Vorbild "The Chew Crew" von Forest Gum. Nur echte Fotos |
+| Bild-Slots mit KI-Prompts | übernommen | 05_Vorlagen/Bild-Prompts.md, Bilder nach website/img/slots/ |
