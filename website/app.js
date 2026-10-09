@@ -6,9 +6,9 @@
   var tins = function (n) { return n + (n === 1 ? " Dose" : " Dosen"); };
 
   var flavors = [
-    { id: "hotfix", name: "Hotfix", taste: "Minze", mg: 60, color: "#A8DCC6", img: "/img/tin-hotfix" },
-    { id: "shipit", name: "Ship It", taste: "Kirsche", mg: 52, color: "#F7A8B8" },
-    { id: "demoday", name: "Demo Day", taste: "Beere", mg: 52, color: "#C3B8EE" }
+    { id: "minze", name: "Mint Condition", taste: "Minze", mg: 60, color: "#A8DCC6" },
+    { id: "kirsche", name: "Cherry Pick", taste: "Kirsche", mg: 52, color: "#F7A8B8" },
+    { id: "beere", name: "Berry Important", taste: "Beere", mg: 52, color: "#C3B8EE" }
   ];
   var packs = cfg.packs || [{ tins: 1, price: 4.99, url: "" }];
   var netG = cfg.netWeightGrams || 12;
@@ -28,11 +28,11 @@
   });
 
   // ---------- Produktseite ----------
-  var sel = { flavor: flavors[0], pack: packs[0], view: "photo" };
+  var sel = { flavor: flavors[0], pack: packs[0], view: "front" };
   if ($("shop-flavors")) {
     var q = new URLSearchParams(location.search).get("sorte");
+    q = { hotfix: "minze", shipit: "kirsche", demoday: "beere" }[q] || q;
     flavors.forEach(function (f) { if (f.id === q) sel.flavor = f; });
-    if (!sel.flavor.img) sel.view = "drawn";
 
     var radio = function (parent, html, onPick) {
       var b = document.createElement("button");
@@ -43,7 +43,7 @@
     };
     var fChips = flavors.map(function (f) {
       return radio($("shop-flavors"), "<span><i class=\"dot\" style=\"background:" + f.color + "\"></i>" + f.name + "</span><small>" + f.taste + " · " + f.mg + " mg</small>",
-        function () { sel.flavor = f; sel.view = f.img ? "photo" : "drawn"; render(); });
+        function () { sel.flavor = f; if (sel.view === "ph") sel.view = "front"; render(); });
     });
     var base = packs[0].price;
     var pChips = packs.map(function (p) {
@@ -53,33 +53,16 @@
     });
     var thumbs = $$("#thumbs button");
     thumbs.forEach(function (t) {
-      t.addEventListener("click", function () { sel.view = t.dataset.view; sel.phLabel = t.dataset.label; render(); });
+      t.addEventListener("click", function () { sel.view = t.dataset.view; render(); });
     });
 
     var render = function () {
       var f = sel.flavor, p = sel.pack;
-      if (sel.view === "photo" && !f.img) sel.view = "drawn";
       fChips.forEach(function (c, i) { c.setAttribute("aria-checked", flavors[i] === f ? "true" : "false"); });
       pChips.forEach(function (c, i) { c.setAttribute("aria-checked", packs[i] === p ? "true" : "false"); });
-      thumbs.forEach(function (t) {
-        var on = t.dataset.view === sel.view && (t.dataset.view !== "ph" || t.dataset.label === sel.phLabel);
-        t.setAttribute("aria-pressed", on ? "true" : "false");
-        if (t.dataset.view === "photo") t.hidden = !f.img;
-      });
-      $("shop-photo").hidden = sel.view !== "photo";
-      $("shop-drawn").hidden = sel.view !== "drawn";
+      thumbs.forEach(function (t) { t.setAttribute("aria-pressed", t.dataset.view === sel.view ? "true" : "false"); });
+      $$(".pack-view").forEach(function (v) { v.hidden = !(v.dataset.f === f.id && v.dataset.v === sel.view); });
       $("shop-ph").hidden = sel.view !== "ph";
-      $("render-note").hidden = sel.view !== "photo";
-      if (sel.view === "ph") $("shop-ph-label").textContent = sel.phLabel || "";
-      if (f.img) {
-        $("shop-photo-webp").srcset = f.img + ".webp";
-        $("shop-photo-img").src = f.img + ".jpg";
-        $("shop-photo-img").alt = "GUMMIT-Dose " + f.name + ", " + f.mg + " mg Koffein pro Stück";
-      }
-      $("shop-tin").style.background = f.color;
-      $("shop-mg").textContent = f.mg;
-      $("shop-tinname").textContent = f.name;
-      $("shop-tintaste").textContent = f.taste + " · 8 Stk.";
       $("pdp-flavor").textContent = f.name;
       $("lede-mg").textContent = f.mg;
       $("shop-stack").hidden = p.tins === 1;
@@ -139,8 +122,8 @@
     var perPiece = best.price / best.tins / 8;
     var single = packs[0].price / 8;
     var rows = drinks.map(function (d) { return { name: d.name, label: eur(d.price), mg: d.mg, sugar: d.sugar, est: d.est, per100: d.price / d.mg * 100 }; });
-    rows.push({ name: "GUMMIT Hotfix, 1 Dose", label: eur(single) + " / Stück", mg: 60, sugar: "0 g", per100: single / 60 * 100, own: true });
-    rows.push({ name: "GUMMIT Hotfix, " + tins(best.tins), label: eur(perPiece) + " / Stück", mg: 60, sugar: "0 g", per100: perPiece / 60 * 100, own: true });
+    rows.push({ name: "GUMMIT 60 mg, 1 Dose", label: eur(single) + " / Stück", mg: 60, sugar: "0 g", per100: single / 60 * 100, own: true });
+    rows.push({ name: "GUMMIT 60 mg, " + tins(best.tins), label: eur(perPiece) + " / Stück", mg: 60, sugar: "0 g", per100: perPiece / 60 * 100, own: true });
     rows.sort(function (a, b) { return b.per100 - a.per100; });
     var max = rows[0].per100;
     $("cmp").innerHTML = rows.map(function (r) {
