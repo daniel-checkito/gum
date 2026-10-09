@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Dose Clean</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --kobalt:#1F2C7A; --kobalt-dark:#18235f; --kobalt-emboss:#26348f;
+    --schmelz:#EDF1F2; --signal:#FF6B1F; --minze:#9FE3C8; --bg:#E4E8EC;
+    --muted:#5a6394;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);font-family:'Instrument Sans',system-ui,sans-serif;color:var(--kobalt)}
+  .board{width:1600px;height:900px;padding:56px 64px;display:flex;flex-direction:column;gap:40px}
+  .head{display:flex;justify-content:space-between;align-items:baseline}
+  h1{margin:0;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:42px;letter-spacing:-0.02em}
+  .sub{font-size:17px;color:var(--muted)}
+  .row{display:flex;gap:64px;align-items:center;flex:1}
+
+  /* Dose, Draufsicht */
+  .tin{position:relative;border-radius:36px;background:
+        radial-gradient(120% 90% at 20% 10%, #2a3a95 0%, var(--kobalt) 45%, #18225f 100%);
+       box-shadow: inset 0 0 0 6px var(--kobalt-dark), inset 0 0 0 7px #3446a8,
+                   0 30px 60px -20px rgba(20,28,80,.45), 0 8px 18px -6px rgba(20,28,80,.35);
+       overflow:hidden}
+  .tin.big{width:560px;height:437px;padding:44px 46px}
+  .tin.small{width:250px;height:195px;padding:22px 22px;border-radius:20px;
+       box-shadow: inset 0 0 0 4px var(--kobalt-dark), inset 0 0 0 5px #3446a8, 0 16px 30px -12px rgba(20,28,80,.4)}
+  /* Bissecke: drei Kreise in Hintergrundfarbe */
+  .bite{position:absolute;border-radius:50%;background:var(--bg)}
+  .big .b1{width:92px;height:92px;top:-40px;right:46px}
+  .big .b2{width:92px;height:92px;top:12px;right:-38px}
+  .big .b3{width:70px;height:70px;top:-26px;right:-22px}
+  .small .b1{width:44px;height:44px;top:-20px;right:22px}
+  .small .b2{width:44px;height:44px;top:6px;right:-20px}
+  .small .b3{width:34px;height:34px;top:-14px;right:-14px}
+
+  .brand{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;letter-spacing:-0.05em;line-height:.85;
+         color:#22308a;text-shadow:0 1px 0 rgba(255,255,255,.10), 0 -1px 0 rgba(5,10,40,.55)}
+  .big .brand{font-size:96px}
+  .small .brand{font-size:40px}
+  .quote{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:600;color:var(--schmelz);letter-spacing:-0.01em}
+  .big .quote{font-size:40px;line-height:1.08;margin-top:46px;max-width:400px}
+  .small .quote{font-size:17px;line-height:1.12;margin-top:20px;max-width:190px}
+  .foot{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:flex-end}
+  .big .foot{padding:0 46px 40px}
+  .small .foot{padding:0 22px 18px}
+  .mg{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;color:var(--signal);line-height:1}
+  .big .mg{font-size:50px}
+  .small .mg{font-size:22px}
+  .mglabel{color:#c9d0f0}
+  .big .mglabel{font-size:15px;margin-top:4px}
+  .small .mglabel{font-size:9px;margin-top:2px}
+  .sorte{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;color:var(--minze)}
+  .big .sorte{font-size:22px}
+  .small .sorte{font-size:12px}
+
+  .col{display:flex;flex-direction:column;gap:14px;align-items:center}
+  .cap{font-size:15px;color:var(--muted);text-align:center;max-width:560px}
+  .grid{display:grid;grid-template-columns:250px 250px;gap:30px 34px}
+  .right{display:flex;flex-direction:column;gap:30px}
+
+  /* Boden */
+  .bottom{width:250px;height:195px;border-radius:20px;background:#d9dde3;
+          box-shadow: inset 0 0 0 4px #c3c8cf, 0 16px 30px -12px rgba(20,28,80,.3);padding:14px 16px;
+          font-size:6.4px;line-height:1.32;color:#1b2360;overflow:hidden}
+  .bottom b{font-weight:600}
+  .bottom .warn{font-size:7.2px;font-weight:600;margin:3px 0}
+  .legend{display:flex;gap:26px;font-size:14px;color:var(--muted)}
+  .dot{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:7px;vertical-align:-1px}
+</style>
+</head>
+<body>
+<div class="board">
+  <div class="head">
+    <h1>Dose: clean, hochwertig, ein Satz</h1>
+    <div class="sub">59 × 46 × 18,5 mm · 8 Stück · Pilot mit Guming-Werten</div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="tin big">
+        <div class="bite b1"></div><div class="bite b2"></div><div class="bite b3"></div>
+        <div class="brand">BISS</div>
+        <div class="quote">Eins nach<br>dem anderen.</div>
+        <div class="foot">
+          <div><div class="mg">60 mg</div><div class="mglabel">Koffein pro Stück · 0 g Zucker</div></div>
+          <div class="sorte">Deadline</div>
+        </div>
+      </div>
+      <div class="cap">Deckel: Kobalt matt, Name als Prägung, gedruckt nur Satz, mg und Sorte. Echte ausgestanzte Bissecke oben rechts.</div>
+    </div>
+
+    <div class="right">
+      <div class="grid">
+        <div class="col">
+          <div class="tin small">
+            <div class="bite b1"></div><div class="bite b2"></div><div class="bite b3"></div>
+            <div class="brand">BISS</div>
+            <div class="quote">Noch eine Mail.<br>Dann Feierabend.</div>
+            <div class="foot"><div><div class="mg">52 mg</div><div class="mglabel">Koffein pro Stück</div></div><div class="sorte" style="color:#ff9fb0">Standup</div></div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="tin small">
+            <div class="bite b1"></div><div class="bite b2"></div><div class="bite b3"></div>
+            <div class="brand">BISS</div>
+            <div class="quote">Deadline heute.<br>Panik morgen.</div>
+            <div class="foot"><div><div class="mg">60 mg</div><div class="mglabel">Koffein pro Stück</div></div><div class="sorte">Deadline</div></div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="tin small">
+            <div class="bite b1"></div><div class="bite b2"></div><div class="bite b3"></div>
+            <div class="brand">BISS</div>
+            <div class="quote">Du schaffst das. Der Kaugummi ist nur dabei.</div>
+            <div class="foot"><div><div class="mg">52 mg</div><div class="mglabel">Koffein pro Stück</div></div><div class="sorte" style="color:#c7b6ff">Kundencall</div></div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="bottom">
+            <b>Kaugummi mit Koffein, mit Süßungsmitteln</b> · 8 Stück (19,2 g)
+            <div class="warn">Enthält Koffein. Für Kinder und schwangere Frauen nicht empfohlen (2.510 mg/100 g).</div>
+            Nicht mehr als 3 Stück pro Tag (180 mg). Andere Koffeinquellen beachten. Kann bei übermäßigem Verzehr abführend wirken.<br>
+            <b>Zutaten:</b> Süßungsmittel (Sorbit, Isomalt, Maltit, Sucralose, Acesulfam K), Kaumasse, Aromen, Koffein, Feuchthaltemittel (E 422), Gummi arabicum, Natrium-L-ascorbat, Überzugsmittel (E 903), Vitamin B6, Guaranaextrakt. Enthält Süßholz. Kann Spuren von Soja enthalten.<br>
+            <b>Nährwerte je 100 g:</b> 674 kJ / 162 kcal · Fett &lt;0,5 g · KH 65 g, davon Zucker &lt;0,1 g, mehrwertige Alkohole 63 g · Eiweiß &lt;0,5 g · Salz 0,14 g<br>
+            Trocken unter 25 °C lagern. MHD und Los: siehe Deckelrand.<br>
+            [Name GbR/UG], [Anschrift], Berlin
+          </div>
+          <div class="cap" style="font-size:13px">Boden: alle Pflichtangaben, Koffeinhinweis im selben Sichtfeld wie die Bezeichnung</div>
+        </div>
+      </div>
+      <div class="legend">
+        <span><span class="dot" style="background:var(--kobalt)"></span>Kobalt #1F2C7A</span>
+        <span><span class="dot" style="background:var(--signal)"></span>Signal #FF6B1F (nur mg)</span>
+        <span><span class="dot" style="background:var(--schmelz);box-shadow:inset 0 0 0 1px #c3c8cf"></span>Zahnschmelz #EDF1F2 (Satz)</span>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
