@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BISS – Koffein-Kaugummi ohne Zucker</title>
+<meta name="description" content="Zuckerfreier Kaugummi mit Koffein und Xylit. Für lange Bürotage in Berliner Coworkings, Startups und Agenturen.">
+<meta property="og:title" content="BISS – Biss haben. Ohne Zucker.">
+<meta property="og:description" content="Koffein-Kaugummi mit Xylit, ohne Zucker. Für lange Bürotage in Berlin.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#1F2C7A">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<header class="wrap nav">
+  <a class="logo" href="#top">BISS</a>
+  <nav class="nav-links" aria-label="Hauptnavigation">
+    <a href="#sorten">Sorten</a>
+    <a href="#deckel">Deckel-Generator</a>
+    <a href="#teams">Für Teams</a>
+    <a class="btn" href="#vorbestellen">Vorbestellen</a>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap" id="top">
+    <div class="hero">
+      <div class="bite b1"></div><div class="bite b2"></div><div class="bite b3"></div>
+      <div class="hero-text">
+        <h1>Biss haben.<br>Ohne Zucker.</h1>
+        <p>Kaugummi mit Koffein, gesüßt mit Xylit. In der Metalldose, die du behältst. Bald an der Theke in Berliner Coworkings und online.</p>
+        <div class="hero-cta">
+          <a class="btn signal" href="#vorbestellen">Auf die Liste</a>
+          <a class="btn ghost" href="#teams">Teambox anfragen</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="tin">
+          <div class="t-brand">BISS</div>
+          <div class="t-mg">60 mg</div>
+          <div class="t-sub">Koffein pro Stück. 0 g Zucker.</div>
+          <div class="t-sorte"><b>Deadline</b><span>Minze, 8 Stück</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="wrap" id="zahlen">
+    <div class="eyebrow">Die Zahl zuerst</div>
+    <h2>Drei Zahlen, nichts versteckt</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="big">52–60 mg</div>
+        <div class="label">Koffein pro Stück</div>
+        <p class="small">Steht vorne auf der Dose, nicht im Kleingedruckten. Du entscheidest Stück für Stück. Nicht mehr als 3 pro Tag.</p>
+      </div>
+      <div class="card">
+        <div class="big">0 g</div>
+        <div class="label">Zucker</div>
+        <p class="small">Gesüßt mit Xylit. Kein Sirup, keine 27 Gramm Zucker wie in der Dose aus dem Automaten.</p>
+      </div>
+      <div class="card">
+        <div class="big">8 Stück</div>
+        <div class="label">in der Metalldose</div>
+        <p class="small">Passt in jede Laptoptasche. Die Dose wird nicht weggeworfen. Die wird nachgefüllt.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="sorten">
+    <div class="eyebrow">Sorten</div>
+    <h2>Für jeden Termin im Kalender</h2>
+    <p class="lead">Jede Dose hat einen anderen Spruch auf dem Deckel. Sammeln erlaubt.</p>
+    <div class="sorten">
+      <article class="sorte minze">
+        <span class="tag">Deadline</span>
+        <p class="quote">Wir haben den Zucker vergessen. Absichtlich.</p>
+        <div class="mg">60 mg</div>
+        <p class="meta">Minze. Koffein pro Stück.</p>
+      </article>
+      <article class="sorte cola">
+        <span class="tag">Standup</span>
+        <p class="quote">Kurz und knapp. Wie ein Standup sein sollte.</p>
+        <div class="mg">52 mg</div>
+        <p class="meta">Kirsche. Koffein pro Stück.</p>
+      </article>
+      <article class="sorte yuzu">
+        <span class="tag">Kundencall</span>
+        <p class="quote">Bitte nicht stören. Danke.</p>
+        <div class="mg">52 mg</div>
+        <p class="meta">Beere. Koffein pro Stück.</p>
+      </article>
+      <article class="sorte later">
+        <span class="tag">Feierabend</span>
+        <p class="quote">Laptop zu. Dose auf.</p>
+        <div class="mg">0 mg</div>
+        <p class="meta">Ohne Koffein. Kommt später.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="marquee"></div>
+  </div>
+
+  <section class="wrap" id="deckel">
+    <div class="eyebrow">Deckel-Generator</div>
+    <h2>Dein Spruch auf unserer Dose</h2>
+    <p class="lead">Ausrede, Abwesenheitsnotiz, Lieblingssatz aus dem letzten Meeting. Tipp ihn ein, lad dir den Deckel runter, teil ihn. Die besten kommen auf die nächste Charge, mit deinem Namen innen im Deckel.</p>
+    <div class="gen">
+      <div class="gen-form">
+        <div class="field">
+          <label for="gen-text">Dein Spruch</label>
+          <textarea id="gen-text" maxlength="70">Hier könnte deine Ausrede stehen.</textarea>
+          <div class="counter"><span id="gen-count">0</span> / 70</div>
+        </div>
+        <div class="field">
+          <span class="flabel" id="farbe-label">Sorte</span>
+          <div class="swatches" role="group" aria-labelledby="farbe-label" id="swatches"></div>
+        </div>
+        <div class="gen-actions">
+          <button class="btn" type="button" id="gen-download">Als Bild speichern</button>
+          <button class="btn ghost" type="button" id="gen-submit">Spruch einreichen</button>
+        </div>
+      </div>
+      <div class="gen-preview">
+        <div class="lid" id="lid">
+          <p class="lid-text" id="lid-text"></p>
+          <div class="lid-foot"><b>BISS</b><span id="lid-sorte"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="teams">
+    <div class="eyebrow">Für Teams und Coworkings</div>
+    <h2>Fürs Büro, nicht für die Tanke</h2>
+    <div class="split">
+      <div class="panel dark">
+        <h3>Teambox</h3>
+        <p>Für Agenturen und Startups, die ihre Leute nicht mit Zucker durch den Tag schicken wollen.</p>
+        <ul>
+          <li>Gemischte Box mit allen Sorten</li>
+          <li>Einzelsachets für Meetingräume</li>
+          <li>Mit Rechnung, auf Wunsch mit eurem Logo</li>
+          <li>Als Onboarding-Dose für neue Leute</li>
+        </ul>
+        <a class="btn signal" href="#vorbestellen" data-typ="team">Teambox anfragen</a>
+      </div>
+      <div class="panel light">
+        <h3>Für Coworkings</h3>
+        <p>Ein kleines Display an eurer Theke. Kein Automat, kein Vertrag.</p>
+        <ul>
+          <li>Thekendisplay, wir füllen nach</li>
+          <li>Ihr bekommt Provision pro Dose, keine Miete</li>
+          <li>Keine Laufzeit, jederzeit beendbar</li>
+          <li>Probier-Nachmittag um 14 Uhr in eurer Küche</li>
+        </ul>
+        <a class="btn" href="#vorbestellen" data-typ="coworking">Display anfragen</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap honest" id="ehrlich">
+    <div>
+      <div class="eyebrow">Ehrlich gesagt</div>
+      <h2>Was wir versprechen. Und was nicht.</h2>
+      <p class="lead">Wir versprechen dir keinen Turbo und keinen Fokus. Nur einen Kaugummi ohne Zucker, bei dem die Koffeinmenge vorne steht.</p>
+    </div>
+    <div class="honest-list">
+      <div><b>Die Zahl zuerst</b><span>Koffein in mg steht vorne auf der Dose. Immer die echte Zahl.</span></div>
+      <div><b>Kein Zucker, kein Theater</b><span>Keine Wundersätze, keine Hustle-Sprüche. Lange Bürotage sind lang, das reicht.</span></div>
+      <div><b>Gemacht in Berlin</b><span>Den Kaugummi stellt im Moment ein erfahrener Hersteller her. Wir kümmern uns um alles drumherum. Eigene Rezeptur kommt, wenn genug Leute mitmachen.</span></div>
+    </div>
+  </section>
+
+  <section class="wrap" id="vorbestellen">
+    <div class="cta">
+      <div>
+        <h2>Sei bei der ersten Charge dabei</h2>
+        <p class="lead">Wir schreiben dir einmal, wenn BISS in deinem Coworking steht oder online bestellbar ist. Kein Newsletter-Spam.</p>
+        <div class="preorder" id="preorder" hidden>
+          <a class="btn" id="preorder-link" href="#" rel="noopener">Jetzt vorbestellen</a>
+          <small id="preorder-note"></small>
+        </div>
+      </div>
+      <form id="lead-form" novalidate>
+        <div class="field">
+          <label for="f-email">E-Mail-Adresse</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" placeholder="du@beispiel.de" required>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="f-typ">Ich bin</label>
+            <select id="f-typ" name="typ">
+              <option value="privat">Einzelperson</option>
+              <option value="team">ein Team / eine Firma</option>
+              <option value="coworking">ein Coworking</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-ort">Wo arbeitest du?</label>
+            <input id="f-ort" name="ort" type="text" placeholder="z. B. Coworking in Kreuzberg">
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-spruch">Spruch für den Deckel (optional)</label>
+          <input id="f-spruch" name="spruch" type="text" maxlength="70" placeholder="Dein Satz für die nächste Charge">
+        </div>
+        <label class="check"><input type="checkbox" id="f-ok" required> <span>Ich bin einverstanden, dass ihr mir zu BISS schreibt. Abmelden geht jederzeit. Mehr in der <a href="/datenschutz">Datenschutzerklärung</a>.</span></label>
+        <button class="btn" type="submit">Eintragen</button>
+        <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div class="legal">
+    <p>Kaugummi mit Koffein, mit Süßungsmitteln. Enthält Koffein (52 bis 60 mg pro Stück je nach Sorte). Für Kinder und schwangere Frauen nicht empfohlen. Nicht mehr als 3 Stück pro Tag. Andere Koffeinquellen beachten. Kann bei übermäßigem Verzehr abführend wirken. Xylit ist für Hunde giftig.</p>
+    <nav aria-label="Rechtliches">
+      <a href="/impressum">Impressum</a>
+      <a href="/datenschutz">Datenschutz</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="/config.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>
