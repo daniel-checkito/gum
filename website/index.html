@@ -3,228 +3,298 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BISS – Koffein-Kaugummi ohne Zucker</title>
-<meta name="description" content="Zuckerfreier Kaugummi mit Koffein und Xylit. Für lange Bürotage in Berliner Coworkings, Startups und Agenturen.">
-<meta property="og:title" content="BISS – Biss haben. Ohne Zucker.">
-<meta property="og:description" content="Koffein-Kaugummi mit Xylit, ohne Zucker. Für lange Bürotage in Berlin.">
-<meta property="og:type" content="website">
-<meta name="theme-color" content="#1F2C7A">
+<title>GUMMIT – Koffein-Kaugummi für Berliner Builder</title>
+<meta name="description" content="Zuckerfreier Kaugummi mit 52 bis 60 mg Koffein pro Stück. Für alle, die in Berlin Dinge bauen: Hackathons, Demo Days, lange Abende im Coworking.">
+<meta property="og:title" content="GUMMIT – Kau rein. Ship raus.">
+<meta property="og:description" content="Zuckerfreier Koffein-Kaugummi aus Berlin. 8 Stück in der Metalldose.">
+<meta property="og:type" content="product">
+<meta property="og:image" content="/img/tin-hotfix.jpg">
+<meta name="theme-color" content="#E8643C">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="/fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 
-<header class="wrap nav">
-  <a class="logo" href="#top">BISS</a>
-  <nav class="nav-links" aria-label="Hauptnavigation">
-    <a href="#sorten">Sorten</a>
-    <a href="#deckel">Deckel-Generator</a>
-    <a href="#teams">Für Teams</a>
-    <a class="btn" href="#vorbestellen">Vorbestellen</a>
-  </nav>
-</header>
+<div class="topline"></div>
+<div class="site-head">
+  <header class="wrap nav">
+    <a class="logo" href="/"><span>GUMMIT</span></a>
+    <nav class="nav-links" aria-label="Hauptmenü">
+      <a href="#fuer-wen">Für wen</a>
+      <a href="#story">Story</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn small" href="#buy">Reservieren</a>
+    </nav>
+  </header>
+</div>
 
 <main>
-  <div class="wrap" id="top">
-    <div class="hero">
-      <div class="bite b1"></div><div class="bite b2"></div><div class="bite b3"></div>
-      <div class="hero-text">
-        <h1>Biss haben.<br>Ohne Zucker.</h1>
-        <p>Kaugummi mit Koffein, gesüßt mit Xylit. In der Metalldose, die du behältst. Bald an der Theke in Berliner Coworkings und online.</p>
-        <div class="hero-cta">
-          <a class="btn signal" href="#vorbestellen">Auf die Liste</a>
-          <a class="btn ghost" href="#teams">Teambox anfragen</a>
+  <div class="hero-band">
+    <section class="wrap pdp" id="buy">
+      <div class="pdp-info">
+        <span class="kicker">Koffein-Kaugummi · aus Berlin</span>
+        <h1>Kau rein.<br>Ship raus.</h1>
+        <p class="lede">Zuckerfreier Kaugummi mit <b id="lede-mg">60 mg</b> Koffein pro Stück. Für alle, die in Berlin Dinge bauen.</p>
+        <div class="buybox">
+          <div class="price-row"><span class="price" id="shop-price">4,99 €</span><span class="per" id="shop-per">4,99 € / Dose</span><span class="save" id="shop-save" hidden></span></div>
+          <fieldset class="opt"><legend>Sorte</legend><div class="chips" id="shop-flavors"></div></fieldset>
+          <fieldset class="opt"><legend>Menge</legend><div class="packs" id="shop-packs"></div></fieldset>
+          <button class="btn buy" type="button" id="shop-buy">Dosen reservieren</button>
+          <ul class="assure"><li id="shop-note">Jetzt nichts zahlen</li><li>Mail vor dem Versand</li><li>Versand aus Berlin</li></ul>
         </div>
       </div>
-      <div class="hero-art" aria-hidden="true">
-        <div class="tin">
-          <div class="t-brand">BISS</div>
-          <div class="t-mg">60 mg</div>
-          <div class="t-sub">Koffein pro Stück. 0 g Zucker.</div>
-          <div class="t-sorte"><b>Deadline</b><span>Minze, 8 Stück</span></div>
+      <div class="pdp-media">
+        <div class="stage">
+          <picture class="photo" id="shop-photo" hidden>
+            <source id="shop-photo-webp" type="image/webp" srcset="">
+            <img id="shop-photo-img" src="" alt="" width="1200" height="1200" fetchpriority="high">
+          </picture>
+          <div class="sun" id="shop-sun"></div>
+          <div class="tin" id="shop-tin">
+            <svg class="mascot" viewBox="0 0 160 160" aria-hidden="true"><path d="M26 31Q26 40 35 40Q26 40 26 49Q26 40 17 40Q26 40 26 31Z" fill="#111"/><path d="M134 29Q134 36 141 36Q134 36 134 43Q134 36 127 36Q134 36 134 29Z" fill="#111"/><path d="M132 112Q132 120 140 120Q132 120 132 128Q132 120 124 120Q132 120 132 112Z" fill="#111"/>
+<path d="M36 82q-14-2-18-16M124 82q14-2 18-16M66 112v14h-8M94 112v14h8" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="36" y="46" width="88" height="66" rx="30" fill="#fff" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M58 74q7-9 14 0M88 74q7-9 14 0" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M66 86q14 16 28 0Z" fill="#111" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="53" cy="89" rx="7" ry="4.5" fill="#F4A58A"/><ellipse cx="107" cy="89" rx="7" ry="4.5" fill="#F4A58A"/>
+</svg>
+            <div class="t-brand">GUMMIT</div>
+            <div class="t-mg" id="shop-mg">60 mg</div>
+            <div class="t-sub">Koffein pro Stück · 0 g Zucker</div>
+            <div class="t-flavor"><b id="shop-tinname">Hotfix</b><span id="shop-tintaste">Minze · 8 Stk.</span></div>
+          </div>
+          <div class="stack-badge" id="shop-stack" hidden>×1</div>
+          <div class="sticker">0 Zucker. 0 Drama.</div>
         </div>
+        <p class="render-note" id="render-note" hidden>Produkt-Rendering. Die echte Dose kann leicht abweichen.</p>
       </div>
-    </div>
+    </section>
   </div>
 
-  <section class="wrap" id="zahlen">
-    <div class="eyebrow">Die Zahl zuerst</div>
-    <h2>Drei Zahlen, nichts versteckt</h2>
-    <div class="cards">
-      <div class="card">
-        <div class="big">52–60 mg</div>
-        <div class="label">Koffein pro Stück</div>
-        <p class="small">Steht vorne auf der Dose, nicht im Kleingedruckten. Du entscheidest Stück für Stück. Nicht mehr als 3 pro Tag.</p>
-      </div>
-      <div class="card">
-        <div class="big">0 g</div>
-        <div class="label">Zucker</div>
-        <p class="small">Gesüßt mit Xylit. Kein Sirup, keine 27 Gramm Zucker wie in der Dose aus dem Automaten.</p>
-      </div>
-      <div class="card">
-        <div class="big">8 Stück</div>
-        <div class="label">in der Metalldose</div>
-        <p class="small">Passt in jede Laptoptasche. Die Dose wird nicht weggeworfen. Die wird nachgefüllt.</p>
+  <div class="factbar"><ul><li>0 g Zucker</li><li>52–60 mg Koffein pro Stück</li><li>8 Stück pro Dose</li><li>Versand aus Berlin</li></ul></div>
+
+  <section class="band cream" id="fuer-wen">
+    <div class="wrap">
+      <h2 class="center">Gemacht für Berlins Builder</h2>
+      <p class="lead center">Nicht für alle. Für Leute, die abends noch einen Prototyp fertig machen, am Wochenende auf Hackathons sitzen und Montag pitchen.</p>
+      <div class="personas">
+        <article class="persona"><span class="tag">01</span><h3>Vibe Coder</h3><p>Du baust mit Cursor, Claude und Kaffee. Der Kaffee ist kalt, der Build läuft noch. Eine Dose passt neben das Ladekabel.</p></article>
+        <article class="persona"><span class="tag">02</span><h3>Gründer:innen vor dem Demo Day</h3><p>Pitch-Deck Version 14, Probelauf um 23 Uhr. Kein Zucker-Crash vor dem Auftritt.</p></article>
+        <article class="persona"><span class="tag">03</span><h3>Hackathon-Teams</h3><p>48 Stunden, ein Tisch, zu viel Pizza. Eine Dose in die Mitte, alle wissen, wie viel drin ist.</p></article>
       </div>
     </div>
   </section>
+  <div class="checker"></div>
 
-  <section class="wrap" id="sorten">
-    <div class="eyebrow">Sorten</div>
-    <h2>Für jeden Termin im Kalender</h2>
-    <p class="lead">Jede Dose hat einen anderen Spruch auf dem Deckel. Sammeln erlaubt.</p>
-    <div class="sorten">
-      <article class="sorte minze">
-        <span class="tag">Deadline</span>
-        <p class="quote">Wir haben den Zucker vergessen. Absichtlich.</p>
-        <div class="mg">60 mg</div>
-        <p class="meta">Minze. Koffein pro Stück.</p>
-      </article>
-      <article class="sorte cola">
-        <span class="tag">Standup</span>
-        <p class="quote">Kurz und knapp. Wie ein Standup sein sollte.</p>
-        <div class="mg">52 mg</div>
-        <p class="meta">Kirsche. Koffein pro Stück.</p>
-      </article>
-      <article class="sorte yuzu">
-        <span class="tag">Kundencall</span>
-        <p class="quote">Bitte nicht stören. Danke.</p>
-        <div class="mg">52 mg</div>
-        <p class="meta">Beere. Koffein pro Stück.</p>
-      </article>
-      <article class="sorte later">
-        <span class="tag">Feierabend</span>
-        <p class="quote">Laptop zu. Dose auf.</p>
-        <div class="mg">0 mg</div>
-        <p class="meta">Ohne Koffein. Kommt später.</p>
-      </article>
-    </div>
-  </section>
-
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track" id="marquee"></div>
-  </div>
-
-  <section class="wrap" id="deckel">
-    <div class="eyebrow">Deckel-Generator</div>
-    <h2>Dein Spruch auf unserer Dose</h2>
-    <p class="lead">Ausrede, Abwesenheitsnotiz, Lieblingssatz aus dem letzten Meeting. Tipp ihn ein, lad dir den Deckel runter, teil ihn. Die besten kommen auf die nächste Charge, mit deinem Namen innen im Deckel.</p>
-    <div class="gen">
-      <div class="gen-form">
-        <div class="field">
-          <label for="gen-text">Dein Spruch</label>
-          <textarea id="gen-text" maxlength="70">Hier könnte deine Ausrede stehen.</textarea>
-          <div class="counter"><span id="gen-count">0</span> / 70</div>
-        </div>
-        <div class="field">
-          <span class="flabel" id="farbe-label">Sorte</span>
-          <div class="swatches" role="group" aria-labelledby="farbe-label" id="swatches"></div>
-        </div>
-        <div class="gen-actions">
-          <button class="btn" type="button" id="gen-download">Als Bild speichern</button>
-          <button class="btn ghost" type="button" id="gen-submit">Spruch einreichen</button>
-        </div>
-      </div>
-      <div class="gen-preview">
-        <div class="lid" id="lid">
-          <p class="lid-text" id="lid-text"></p>
-          <div class="lid-foot"><b>BISS</b><span id="lid-sorte"></span></div>
-        </div>
+  <section class="band coral" id="warum">
+    <div class="wrap center">
+      <h2>Warum GUMMIT?</h2>
+      <p class="lead">Kaugummi mit Koffein und null Zucker. Klein genug für die Hosentasche, ehrlich genug, um die Dosis groß aufs Etikett zu drucken.</p>
+      <div class="mascots">
+        <div><svg viewBox="0 0 160 160" aria-hidden="true"><path d="M26 31Q26 40 35 40Q26 40 26 49Q26 40 17 40Q26 40 26 31Z" fill="#111"/><path d="M134 29Q134 36 141 36Q134 36 134 43Q134 36 127 36Q134 36 134 29Z" fill="#111"/><path d="M132 112Q132 120 140 120Q132 120 132 128Q132 120 124 120Q132 120 132 112Z" fill="#111"/>
+<path d="M36 82q-14-2-18-16M124 82q14-2 18-16M66 112v14h-8M94 112v14h8" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="36" y="46" width="88" height="66" rx="30" fill="#fff" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M58 74q7-9 14 0M88 74q7-9 14 0" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M66 86q14 16 28 0Z" fill="#111" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="53" cy="89" rx="7" ry="4.5" fill="#F4A58A"/><ellipse cx="107" cy="89" rx="7" ry="4.5" fill="#F4A58A"/>
+</svg><h3>Schmeckt nach Kaugummi</h3><p>Minze, Kirsche oder Beere. Nicht nach Apotheke.</p></div>
+        <div><svg viewBox="0 0 160 160" aria-hidden="true">
+<path d="M12 72h18M8 88h22M14 104h14" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M60 104l-6 16h-8M98 110l8 14h8" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M44 56 80 40 116 56 80 72Z" fill="#fff" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M44 56 80 72v44L44 100Z" fill="#F2F2F2" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M80 72 116 56v44l-36 16Z" fill="#E2E2E2" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="56" cy="83" r="4.5" fill="#111"/><circle cx="70" cy="89" r="4.5" fill="#111"/>
+<path d="M50 74l9 3M65 80l9 4M53 101q4-4 8 0t8 0" fill="none" stroke="#111" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M126 32c-4 8-6 12 0 14 6-2 4-6 0-14Z" fill="#A9C4E6" stroke="#111" stroke-width="3" stroke-linejoin="round"/>
+<rect x="6" y="18" width="70" height="26" rx="13" fill="#fff" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><text x="41" y="36" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-weight="700" font-size="14" fill="#111">tschüss!</text>
+</svg><h3>Null Zucker</h3><p>Gesüßt mit Xylit. Der Zucker ist schon weg.</p></div>
+        <div><svg viewBox="0 0 160 160" aria-hidden="true"><path d="M28 34Q28 42 36 42Q28 42 28 50Q28 42 20 42Q28 42 28 34Z" fill="#111"/><path d="M136 45Q136 54 145 54Q136 54 136 63Q136 54 127 54Q136 54 136 45Z" fill="#111"/><path d="M128 126Q128 132 134 132Q128 132 128 138Q128 132 122 132Q128 132 128 126Z" fill="#111"/>
+<rect x="40" y="38" width="80" height="92" rx="18" fill="#F8D9C8" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M40 60h80" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="66" cy="78" r="4.5" fill="#111"/><path d="M87 78q6-6 12 0M70 88q10 9 20 0" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="58" cy="90" rx="6" ry="4" fill="#F4A58A"/><ellipse cx="102" cy="90" rx="6" ry="4" fill="#F4A58A"/>
+<text x="80" y="121" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="16" fill="#111">60 MG</text>
+</svg><h3>Dosis vorne drauf</h3><p>52–60 mg pro Stück, groß gedruckt. Kein Rätselraten.</p></div>
+        <div><svg viewBox="0 0 160 160" aria-hidden="true"><path transform="translate(20 30) scale(1.6)" d="M5 9C1 6 0 4 0 2.5 0 .5 2-.5 3.5.2 4.3.6 5 1.5 5 1.5S5.7.6 6.5.2C8-.5 10 .5 10 2.5 10 4 9 6 5 9Z" fill="#FAF9F5" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/><path transform="translate(122 22) scale(1.9)" d="M5 9C1 6 0 4 0 2.5 0 .5 2-.5 3.5.2 4.3.6 5 1.5 5 1.5S5.7.6 6.5.2C8-.5 10 .5 10 2.5 10 4 9 6 5 9Z" fill="#FAF9F5" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/><path d="M140 66Q140 74 148 74Q140 74 140 82Q140 74 132 74Q140 74 140 66Z" fill="#111"/><path d="M18 79Q18 86 25 86Q18 86 18 93Q18 86 11 86Q18 86 18 79Z" fill="#111"/>
+<rect x="40" y="40" width="80" height="58" rx="10" fill="#A9C4E6" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M60 58l9 6-9 6M100 58l-9 6 9 6" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M68 78q12 13 24 0Z" fill="#111" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="56" cy="80" rx="6" ry="4" fill="#F4A58A"/><ellipse cx="104" cy="80" rx="6" ry="4" fill="#F4A58A"/>
+<path d="M26 104h108l-10 16H36Z" fill="#fff" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><h3>Für Builder gemacht</h3><p>Hackathons, Demo Days, der 47. Tab in Cursor.</p></div>
       </div>
     </div>
   </section>
+  <div class="checker"></div>
 
-  <section class="wrap" id="teams">
-    <div class="eyebrow">Für Teams und Coworkings</div>
-    <h2>Fürs Büro, nicht für die Tanke</h2>
-    <div class="split">
-      <div class="panel dark">
-        <h3>Teambox</h3>
-        <p>Für Agenturen und Startups, die ihre Leute nicht mit Zucker durch den Tag schicken wollen.</p>
-        <ul>
-          <li>Gemischte Box mit allen Sorten</li>
-          <li>Einzelsachets für Meetingräume</li>
-          <li>Mit Rechnung, auf Wunsch mit eurem Logo</li>
-          <li>Als Onboarding-Dose für neue Leute</li>
-        </ul>
-        <a class="btn signal" href="#vorbestellen" data-typ="team">Teambox anfragen</a>
-      </div>
-      <div class="panel light">
-        <h3>Für Coworkings</h3>
-        <p>Ein kleines Display an eurer Theke. Kein Automat, kein Vertrag.</p>
-        <ul>
-          <li>Thekendisplay, wir füllen nach</li>
-          <li>Ihr bekommt Provision pro Dose, keine Miete</li>
-          <li>Keine Laufzeit, jederzeit beendbar</li>
-          <li>Probier-Nachmittag um 14 Uhr in eurer Küche</li>
-        </ul>
-        <a class="btn" href="#vorbestellen" data-typ="coworking">Display anfragen</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="wrap honest" id="ehrlich">
-    <div>
-      <div class="eyebrow">Ehrlich gesagt</div>
-      <h2>Was wir versprechen. Und was nicht.</h2>
-      <p class="lead">Wir versprechen dir keinen Turbo und keinen Fokus. Nur einen Kaugummi ohne Zucker, bei dem die Koffeinmenge vorne steht.</p>
-    </div>
-    <div class="honest-list">
-      <div><b>Die Zahl zuerst</b><span>Koffein in mg steht vorne auf der Dose. Immer die echte Zahl.</span></div>
-      <div><b>Kein Zucker, kein Theater</b><span>Keine Wundersätze, keine Hustle-Sprüche. Lange Bürotage sind lang, das reicht.</span></div>
-      <div><b>Gemacht in Berlin</b><span>Den Kaugummi stellt im Moment ein erfahrener Hersteller her. Wir kümmern uns um alles drumherum. Eigene Rezeptur kommt, wenn genug Leute mitmachen.</span></div>
-    </div>
-  </section>
-
-  <section class="wrap" id="vorbestellen">
-    <div class="cta">
+  <section class="band cream" id="inhalt">
+    <div class="wrap split2">
       <div>
-        <h2>Sei bei der ersten Charge dabei</h2>
-        <p class="lead">Wir schreiben dir einmal, wenn BISS in deinem Coworking steht oder online bestellbar ist. Kein Newsletter-Spam.</p>
-        <div class="preorder" id="preorder" hidden>
-          <a class="btn" id="preorder-link" href="#" rel="noopener">Jetzt vorbestellen</a>
-          <small id="preorder-note"></small>
+        <h2>So geht's</h2>
+        <ol class="steps">
+          <li><b>Ein Stück nehmen,</b> wenn der nächste Arbeitsblock startet.</li>
+          <li><b>Kauen</b> wie normalen Kaugummi. Der Geschmack hält.</li>
+          <li><b>Mitzählen.</b> Höchstens 3 Stück am Tag, Kaffee mitgerechnet.</li>
+        </ol>
+      </div>
+      <div>
+        <h2>Was drin ist</h2>
+        <table class="facts-table">
+          <tr><th>Koffein</th><td>Hotfix 60 mg · Ship It 52 mg · Demo Day 52 mg pro Stück</td></tr>
+          <tr><th>Zucker</th><td>0 g</td></tr>
+          <tr><th>Süße</th><td>Xylit</td></tr>
+          <tr><th>Stück</th><td>8 pro Dose</td></tr>
+          <tr><th>Pro Tag</th><td>höchstens 3 Stück</td></tr>
+          <tr><th>Verpackung</th><td>Metall-Klappdose</td></tr>
+        </table>
+        <p class="fine">Alle Zutaten und Nährwerte stehen auf der Dose. Für Kinder und schwangere Frauen nicht empfohlen.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band peach" id="community">
+    <div class="wrap">
+      <h2 class="center">Bald hier: ihr</h2>
+      <p class="lead center">Die erste Charge geht auf Berliner Events. Danach füllen wir diese Seite mit euren Fotos und Meinungen. Echte, versprochen.</p>
+      <div class="gallery">
+        <div class="ph-tile"><span>Foto folgt</span><b>Hackathon</b></div>
+        <div class="ph-tile"><span>Foto folgt</span><b>Demo Day</b></div>
+        <div class="ph-tile"><span>Foto folgt</span><b>Coworking</b></div>
+        <div class="ph-tile"><span>Foto folgt</span><b>Deine Dose</b></div>
+      </div>
+      <div class="quotes">
+        <figure class="quote-ph"><blockquote>Hier steht bald, was du nach deinem ersten Stück denkst.</blockquote><figcaption>Platz frei für dich</figcaption></figure>
+        <figure class="quote-ph"><blockquote>Hier steht bald, wie die Dose den Demo Day überlebt hat.</blockquote><figcaption>Platz frei für dein Team</figcaption></figure>
+        <figure class="quote-ph"><blockquote>Hier steht bald, was dein Coworking dazu sagt.</blockquote><figcaption>Platz frei für deinen Space</figcaption></figure>
+      </div>
+      <p class="center" style="margin-top:28px"><a class="btn pink" href="#buy">Erste Dose sichern</a></p>
+    </div>
+  </section>
+  <div class="checker"></div>
+
+  <section class="band cream-2" id="story">
+    <div class="wrap founder">
+      <div class="founder-photo" aria-label="Foto folgt">
+        <span class="founder-initial">D</span>
+        <span class="founder-note">Foto folgt</span>
+      </div>
+      <div>
+        <h2>Die GUMMIT-Story</h2>
+        <p>Ich bin Daniel. Tagsüber habe ich einen Job in der Tech-Branche, abends baue ich Side Projects und drucke Dinge mit meinem 3D-Drucker. Die meisten guten Ideen kommen bei mir nach 21 Uhr.</p>
+        <p>Und genau da war das Problem: Der Kaffee in der Küche ist kalt, der Automat im Coworking hat nur Zuckerdosen, und Energy Drinks fühlen sich nach Abiparty an. Ich wollte etwas Kleines, das in die Laptoptasche passt, keinen Zucker hat und ehrlich sagt, wie viel Koffein drin ist.</p>
+        <p>Also habe ich angefangen, Koffein-Kaugummis zu testen. Die meisten schmecken nach Apotheke oder verstecken die Dosis im Kleingedruckten. Daraus wurde GUMMIT: Kaugummi mit Koffein, null Zucker, die Zahl groß vorne drauf.</p>
+        <p>Die erste Charge bringe ich selbst zu den Events, auf denen ich eh bin: Hackathons, Luma-Meetups, Demo Days. Wenn du mich dort siehst, sag Hallo.</p>
+        <span class="sig">– Daniel</span>
+        <div class="story-card">
+          <b>$</b> git log --oneline<br>
+          a1c3f02 erste Charge shippen<br>
+          9e7b210 Sorte Kirsche hinzugefügt<br>
+          4d2a8c1 Zucker entfernt<br>
+          0b5e9f3 initial commit: Kaugummi
         </div>
       </div>
-      <form id="lead-form" novalidate>
-        <div class="field">
-          <label for="f-email">E-Mail-Adresse</label>
-          <input id="f-email" name="email" type="email" autocomplete="email" placeholder="du@beispiel.de" required>
-        </div>
-        <div class="row">
-          <div class="field">
-            <label for="f-typ">Ich bin</label>
-            <select id="f-typ" name="typ">
-              <option value="privat">Einzelperson</option>
-              <option value="team">ein Team / eine Firma</option>
-              <option value="coworking">ein Coworking</option>
-            </select>
+    </div>
+  </section>
+
+  <section class="band peach">
+    <div class="wrap chat">
+      <div class="avatar"><span class="wave">👋</span>D</div>
+      <div>
+        <h3>Noch Fragen?</h3>
+        <p>Schreib Daniel direkt. Echter Mensch, kein Bot.</p>
+        <a class="btn pink" id="chat-link" href="#faq">Daniel fragen</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band yellow" id="teams">
+    <div class="wrap teams">
+      <div>
+        <h2>Für Teams &amp; Events</h2>
+        <p>Du organisierst einen Hackathon oder ein Meetup? Wir bringen eine Host-Box. Du hast ein Startup oder ein Coworking? Team-Boxen mit Rechnung und ein Display für die Theke.</p>
+      </div>
+      <div class="ctas">
+        <a class="btn white" href="#reservieren" data-type="host">Host-Box anfragen</a>
+        <a class="btn pink" href="#reservieren" data-type="team">Team-Box</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band cream" id="faq">
+    <div class="wrap">
+      <h2 class="center">FAQ</h2>
+      <div class="faq">
+        <details><summary>Was genau ist GUMMIT?</summary><p>Zuckerfreier Kaugummi mit Koffein. Jedes Stück hat je nach Sorte 52 bis 60 mg Koffein. 8 Stück stecken in einer Metalldose.</p></details>
+        <details><summary>Wie viele Stück pro Tag?</summary><p>Höchstens 3 Stück am Tag. Kaffee, Mate und Energy Drinks mitzählen. Für Kinder und schwangere Frauen nicht empfohlen.</p></details>
+        <details><summary>Wie funktioniert das Reservieren?</summary><p>Sorte und Menge wählen, Mail-Adresse eintragen. Du zahlst jetzt nichts. Wir schreiben dir einmal, bevor die erste Charge verschickt wird, dann entscheidest du.</p></details>
+        <details><summary>Wohin liefert ihr?</summary><p>Aus Berlin nach Deutschland, Österreich und in die Schweiz.</p></details>
+        <details><summary>Worauf muss ich achten?</summary><p>Xylit kann bei übermäßigem Verzehr abführend wirken und ist für Hunde giftig.</p></details>
+        <details><summary>Macht mich das 10x produktiver?</summary><p>Nein. Es ist Kaugummi mit Koffein. Die Zahl vorne drauf ist der ganze Pitch.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="band coral" id="reservieren">
+    <div class="wrap" id="waitlist">
+      <div class="reserve">
+        <div>
+          <h2>Sichere dir die erste Charge</h2>
+          <p class="lead">Eine Mail, bevor die erste Charge verschickt wird. Jetzt nichts zahlen, kein Spam.</p>
+          <div class="preorder" id="preorder" hidden>
+            <a class="btn" id="preorder-link" href="#" rel="noopener">Jetzt vorbestellen</a>
+            <small id="preorder-note"></small>
           </div>
-          <div class="field">
-            <label for="f-ort">Wo arbeitest du?</label>
-            <input id="f-ort" name="ort" type="text" placeholder="z. B. Coworking in Kreuzberg">
+        </div>
+        <form id="lead-form" novalidate>
+          <p class="picked" id="f-picked" hidden></p>
+          <div class="field"><label for="f-email">E-Mail</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="du@startup.de" required></div>
+          <div class="row">
+            <div class="field"><label for="f-type">Ich bin</label>
+              <select id="f-type" name="type">
+                <option value="builder">Builder / Vibe Coder</option>
+                <option value="founder">Gründer:in</option>
+                <option value="host">Event-Host</option>
+                <option value="team">Startup-Team</option>
+                <option value="coworking">Coworking</option>
+              </select>
+            </div>
+            <div class="field"><label for="f-where">Wo baust du?</label><input id="f-where" name="where" type="text" placeholder="Factory, Zuhause, U8"></div>
           </div>
-        </div>
-        <div class="field">
-          <label for="f-spruch">Spruch für den Deckel (optional)</label>
-          <input id="f-spruch" name="spruch" type="text" maxlength="70" placeholder="Dein Satz für die nächste Charge">
-        </div>
-        <label class="check"><input type="checkbox" id="f-ok" required> <span>Ich bin einverstanden, dass ihr mir zu BISS schreibt. Abmelden geht jederzeit. Mehr in der <a href="/datenschutz">Datenschutzerklärung</a>.</span></label>
-        <button class="btn" type="submit">Eintragen</button>
-        <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
-      </form>
+          <label class="check"><input type="checkbox" id="f-ok" required> <span>Ja, ihr dürft mir zu GUMMIT schreiben. Abmelden geht jederzeit. Mehr in der <a href="/datenschutz">Datenschutzerklärung</a>.</span></label>
+          <button class="btn" type="submit">Reservieren</button>
+          <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="band cream">
+    <div class="wrap service">
+      <div><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M6 18h32v24H6zM38 26h10l8 8v8H38z" fill="none" stroke="#111" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18" cy="46" r="5" fill="#fff" stroke="#111" stroke-width="3.5"/><circle cx="46" cy="46" r="5" fill="#fff" stroke="#111" stroke-width="3.5"/></svg><h3>Versand aus Berlin</h3><p>Nach Deutschland, Österreich und in die Schweiz.</p></div>
+      <div><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 12h40a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4H28l-10 8v-8h-6a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4Z" fill="none" stroke="#111" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 28h.1M32 28h.1M42 28h.1" fill="none" stroke="#111" stroke-width="5" stroke-linecap="round"/></svg><h3>Echte Menschen</h3><p>Fragen landen direkt bei Daniel.</p></div>
+      <div><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="22" fill="none" stroke="#111" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 18v14l9 6" fill="none" stroke="#111" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Jetzt reservieren, später zahlen</h3><p>Keine Zahlung, bis die erste Charge rausgeht.</p></div>
+      <div><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6l22 8v16c0 14-10 22-22 28C20 52 10 44 10 30V14Z" fill="none" stroke="#111" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 32l7 7 13-14" fill="none" stroke="#111" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Ehrliche Dosis</h3><p>mg vorne, höchstens 3 am Tag hinten.</p></div>
     </div>
   </section>
 </main>
 
-<footer class="wrap">
-  <div class="legal">
-    <p>Kaugummi mit Koffein, mit Süßungsmitteln. Enthält Koffein (52 bis 60 mg pro Stück je nach Sorte). Für Kinder und schwangere Frauen nicht empfohlen. Nicht mehr als 3 Stück pro Tag. Andere Koffeinquellen beachten. Kann bei übermäßigem Verzehr abführend wirken. Xylit ist für Hunde giftig.</p>
-    <nav aria-label="Rechtliches">
-      <a href="/impressum">Impressum</a>
-      <a href="/datenschutz">Datenschutz</a>
-    </nav>
+<div class="sticky-buy" id="sticky-buy" hidden>
+  <div><span id="sticky-name">Hotfix · 1 Dose</span><b id="sticky-price">4,99 €</b></div>
+  <a class="btn small" href="#buy">Reservieren</a>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><a class="logo" href="/"><span>GUMMIT</span></a><p style="margin-top:14px">Zuckerfreier Koffein-Kaugummi aus Berlin.</p></div>
+      <div><h4>Shop</h4><ul><li><a href="#buy">Dosen reservieren</a></li><li><a href="#teams">Team-Box</a></li><li><a href="#teams">Host-Box</a></li></ul></div>
+      <div><h4>Info</h4><ul><li><a href="#story">Story</a></li><li><a href="#faq">FAQ</a></li><li><a href="/impressum">Impressum</a></li><li><a href="/datenschutz">Datenschutz</a></li></ul></div>
+    </div>
+    <div class="legal">
+      <p>Kaugummi mit Koffein, mit Süßungsmitteln. Enthält Koffein (52 bis 60 mg pro Stück je nach Sorte). Für Kinder und schwangere Frauen nicht empfohlen. Nicht mehr als 3 Stück pro Tag. Andere Koffeinquellen beachten. Kann bei übermäßigem Verzehr abführend wirken. Xylit ist für Hunde giftig.</p>
+    </div>
   </div>
 </footer>
 
