@@ -19,7 +19,7 @@ window.GUMMIT_CONFIG = {
     { tins: 10, price: 39.90, url: "" }
   ],
 
-  // Füllmenge einer Dose in Gramm (8 Stück). Vorläufig, vom Hersteller bestätigen lassen.
+  // Füllmenge eines Packs in Gramm (8 Sticks). Vorläufig, vom Hersteller bestätigen lassen.
   // Daraus rechnet die Produktseite Grundpreis pro kg und mg Koffein pro 100 g.
   netWeightGrams: 12,
 
