@@ -7,6 +7,9 @@ window.GUMMIT_CONFIG = {
   // Fallback, solange kein Endpunkt da ist: Formular öffnet eine Mail an diese Adresse.
   contactEmail: "",
 
+  // WhatsApp-Nummer für „Fragen? Schreib Daniel“, z. B. "+491701234567"
+  whatsapp: "",
+
   // Shop: Preise pro Paket (Startpreise, anpassen). url = Stripe Payment Link pro Paket.
   // Ohne url reserviert der Button nur (Warteliste, keine Zahlung).
   packs: [
