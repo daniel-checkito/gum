@@ -6,6 +6,8 @@ Danach liegen alle .html-Dateien in website/. Inhalte hier ändern, nicht in den
 """
 from pathlib import Path
 
+from tin_art import FLAVORS, front, opened, back
+
 OUT = Path(__file__).resolve().parent.parent / "website"
 
 # ---------- Icons und Figuren (eigene Zeichnungen) ----------
@@ -67,26 +69,20 @@ I_SHIELD = f'<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6l22 8v16c
 ARROW = '<svg class="arrow" viewBox="0 0 80 40" aria-hidden="true"><path d="M4 30C20 8 46 4 70 14M60 6l10 8-12 4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
 
 
-def tin(prefix="shop", name="Hotfix", taste="Minze", mg="60", color="#A8DCC6", extra=""):
-    ids = (lambda s: f' id="{prefix}-{s}"') if prefix else (lambda s: "")
-    return f'''<div class="tin"{ids("tin")} style="background:{color}"{extra}>
-  <div class="t-brand">GUMMIT</div>
-  <div class="t-mg"><span{ids("mg")}>{mg}</span> mg</div>
-  <div class="t-sub">Koffein pro Stück · 0 g Zucker</div>
-  <div class="t-flavor"><b{ids("tinname")}>{name}</b><span{ids("tintaste")}>{taste} · 8 Stk.</span></div>
-</div>'''
+def pack(f, view="front", uid=None):
+    fn = {"front": front, "open": opened, "back": back}[view]
+    return fn(f, uid or f"{f['id']}-{view}")
 
 
 # ---------- Layout ----------
-NAV = [("/produkt", "Produkt"), ("/teams", "Für Teams"), ("/story", "Story"), ("/faq", "FAQ")]
+NAV = [("/produkt", "Produkt"), ("/mission", "Mission"), ("/teams", "Für Teams"), ("/story", "Story"), ("/faq", "FAQ")]
 
 WARNING = ("Kaugummi mit Koffein, mit Süßungsmitteln. Enthält Koffein. Für Kinder und schwangere Frauen nicht empfohlen. "
            "Nicht mehr als 3 Stück pro Tag. Andere Koffeinquellen beachten. Kann bei übermäßigem Verzehr abführend wirken. "
            "Xylit ist für Hunde giftig.")
 
 
-def head(title, desc, path, preload_img=False):
-    pre = '<link rel="preload" as="image" href="/img/tin-hotfix.webp" type="image/webp">\n' if preload_img else ""
+def head(title, desc, path):
     return f'''<!doctype html>
 <html lang="de">
 <head>
@@ -97,12 +93,12 @@ def head(title, desc, path, preload_img=False):
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:type" content="website">
-<meta property="og:image" content="/img/tin-hotfix.jpg">
+<meta property="og:image" content="https://gum-prototype.vercel.app/img/og.png">
 <meta name="theme-color" content="#F4F0E8">
 <link rel="canonical" href="https://gum-prototype.vercel.app{path}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-{pre}<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
@@ -130,17 +126,17 @@ def footer():
     <div class="foot">
       <div>
         <a class="logo" href="/"><span>GUMMIT</span></a>
-        <p class="foot-claim">Zuckerfreier Koffein-Kaugummi aus Berlin. Für alle, die Dinge bauen.</p>
+        <p class="foot-claim"><b>Gummit. Push. Repeat.</b><br>Zuckerfreier Koffein-Kaugummi aus Berlin. Für alle, die Dinge bauen.</p>
       </div>
       <div><h4>Shop</h4><ul><li><a href="/produkt">Koffein-Kaugummi</a></li><li><a href="/teams">Team-Box</a></li><li><a href="/teams#host">Host-Box für Events</a></li><li><a href="/teams#coworking">Coworking-Display</a></li></ul></div>
-      <div><h4>GUMMIT</h4><ul><li><a href="/story">Story</a></li><li><a href="/faq">FAQ</a></li><li><a href="/kontakt">Kontakt</a></li></ul></div>
+      <div><h4>GUMMIT</h4><ul><li><a href="/mission">Mission</a></li><li><a href="/story">Story</a></li><li><a href="/faq">FAQ</a></li><li><a href="/kontakt">Kontakt</a></li></ul></div>
       <div><h4>Rechtliches</h4><ul><li><a href="/impressum">Impressum</a></li><li><a href="/datenschutz">Datenschutz</a></li><li><a href="/agb">AGB</a></li><li><a href="/widerruf">Widerruf</a></li><li><a href="/versand">Versand &amp; Zahlung</a></li></ul></div>
     </div>
     <p class="legal">{WARNING}</p>
   </div>
 </footer>
 <div class="sticky-buy" id="sticky-buy" hidden>
-  <div><span id="sticky-name">Hotfix · 1 Dose</span><b id="sticky-price">4,99 €</b></div>
+  <div><span id="sticky-name">Mint Condition · 1 Dose</span><b id="sticky-price">4,99 €</b></div>
   <a class="btn small" href="#kaufen">Reservieren</a>
 </div>
 <script src="/config.js"></script>
@@ -154,8 +150,8 @@ def section_label(n, text):
     return f'<p class="sec-label"><span>{n}</span>{text}</p>'
 
 
-def page(path, title, desc, active, body, preload_img=False):
-    return head(title, desc, path, preload_img) + header(active) + body + footer()
+def page(path, title, desc, active, body):
+    return head(title, desc, path) + header(active) + body + footer()
 
 
 # ---------- Bausteine ----------
@@ -248,15 +244,35 @@ SERVICE = f'''<section class="band service-band">
 </section>
 '''
 
+FLAVOR_CARDS = "".join(
+    f'<a class="flavor card" href="/produkt?sorte={f["id"]}"><div class="flavor-pack">{pack(f, "front", "card-" + f["id"])}</div>'
+    f'<h3>{f["name"]}</h3><p>{f["taste"]} · {f["mg"]} mg pro Stück. {f["line"]}</p><span class="more">Ansehen →</span></a>'
+    for f in FLAVORS)
+
+PDP_VIEWS = "".join(
+    f'<div class="pack-view" data-f="{f["id"]}" data-v="{v}"{"" if (f["id"], v) == ("minze", "front") else " hidden"}>{pack(f, v, "pdp-" + f["id"] + "-" + v)}</div>'
+    for f in FLAVORS for v in ("front", "open", "back"))
+
+MISSION_BAND = '''<section class="mission-band" id="mission">
+  <div class="wrap">
+    <p class="sec-label light"><span>05</span>Mission</p>
+    <h2>Projekt <em>Erster Commit</em></h2>
+    <p class="lead">Mit jeder Dose bringst du GUMMIT zu Berliner Builder:innen, die gerade erst anfangen. Gratis auf Uni-Hackathons, Einsteiger-Meetups und Community-Events ohne Budget.</p>
+    <div class="hero-cta"><a class="btn ghost" href="/mission">Mehr erfahren</a><a class="btn white-ghost" href="/teams#anfrage">Event vorschlagen</a></div>
+    <p class="mission-stamp" aria-hidden="true">chew good,<br>ship good.</p>
+  </div>
+</section>
+'''
+
 FAQ = {
     "Produkt": [
         ("Was genau ist GUMMIT?", "Zuckerfreier Kaugummi mit Koffein. Jedes Stück hat je nach Sorte 52 bis 60 mg Koffein. 8 Stück stecken in einer Metall-Klappdose."),
-        ("Wie schmeckt es?", "Hotfix nach Minze, Ship It nach Kirsche, Demo Day nach Beere. Koffein schmeckt leicht bitter. Minze überdeckt das am besten, deshalb ist Hotfix unser Startpunkt."),
+        ("Wie schmeckt es?", "Mint Condition nach Minze, Cherry Pick nach Kirsche, Berry Important nach Beere. Koffein schmeckt leicht bitter. Minze überdeckt das am besten, deshalb ist Mint Condition unser Startpunkt."),
         ("Was ist drin?", "Kaugummi, Koffein und Xylit als Süße, dazu Aromen. Die vollständige Zutatenliste und die Nährwerte stehen auf der Produktseite, sobald der Hersteller sie final bestätigt hat, und immer auf der Dose."),
         ("Ist die Dose nachfüllbar?", "Ja, die Metall-Klappdose kannst du behalten und wiederverwenden. Ein Nachfüllpack ist geplant."),
     ],
     "Koffein und Sicherheit": [
-        ("Wie viel Koffein ist in einem Stück?", "Hotfix 60 mg, Ship It und Demo Day je 52 mg. Zum Vergleich: Ein Espresso hat laut BfR etwa 80 mg."),
+        ("Wie viel Koffein ist in einem Stück?", "Mint Condition 60 mg, Cherry Pick und Berry Important je 52 mg. Zum Vergleich: Ein Espresso hat laut BfR etwa 80 mg."),
         ("Wie viele Stück pro Tag?", "Höchstens 3 Stück am Tag. Kaffee, Mate und Energy Drinks mitzählen. Das BfR nennt für gesunde Erwachsene bis zu 400 mg Koffein über den Tag verteilt als unbedenklich."),
         ("Wer sollte GUMMIT nicht kauen?", "Kinder und schwangere Frauen. Wenn du empfindlich auf Koffein reagierst, frag lieber vorher deine Ärztin oder deinen Arzt."),
         ("Worauf muss ich noch achten?", "Xylit kann bei übermäßigem Verzehr abführend wirken und ist für Hunde giftig. Dose also nicht in Reichweite vom Bürohund lassen."),
@@ -271,6 +287,7 @@ FAQ = {
     "Teams und Events": [
         ("Gibt es GUMMIT für Firmen?", "Ja. Team-Boxen mit Rechnung, auf Wunsch mit eurem Logo, und ein Display für Coworkings. Mehr unter Für Teams."),
         ("Bringt ihr GUMMIT zu unserem Event?", "Für ausgewählte Hackathons und Meetups in Berlin gibt es Host-Boxen. Schreib uns über die Teams-Seite."),
+        ("Was ist Projekt Erster Commit?", "Wir bringen GUMMIT gratis zu Berliner Events für Leute, die gerade anfangen zu bauen: Uni-Hackathons, Einsteiger-Meetups, Community-Events ohne Budget. Nur Events ab 18. Jedes unterstützte Event listen wir auf der Mission-Seite."),
     ],
 }
 
@@ -293,7 +310,7 @@ def home():
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <span class="sticker">Neu aus Berlin</span>
-      <h1 class="riso">Kau rein.<br>Ship raus.</h1>
+      <h1 class="riso">Gummit.<br>Push.<br>Repeat.</h1>
       <p class="lede">Zuckerfreier Kaugummi mit <b>52–60 mg Koffein</b> pro Stück. In der Metalldose, für <em>lange Build-Tage</em>, Hackathons und Demo Days.</p>
       <div class="hero-cta">
         <a class="btn" href="/produkt">Zum Produkt · ab <span data-from-price>3,99 €</span></a>
@@ -302,15 +319,13 @@ def home():
       <ul class="hero-facts"><li><b>0 g</b> Zucker</li><li><b>8</b> Stück pro Dose</li><li><b>3</b> Sorten</li></ul>
     </div>
     <div class="hero-media">
-      <figure class="polaroid">
-        <picture>
-          <source type="image/webp" srcset="/img/tin-hotfix.webp">
-          <img src="/img/tin-hotfix.jpg" alt="GUMMIT-Dose Hotfix mit 60 mg Koffein pro Stück, daneben Kaugummistücke" width="1200" height="1200" fetchpriority="high">
-        </picture>
-        <figcaption>Hotfix · Minze · 60 mg</figcaption>
-      </figure>
+      <div class="tin-fan">
+        <a class="fan-l" href="/produkt?sorte=kirsche" aria-label="Cherry Pick ansehen">{pack(FLAVORS[1], "front", "hero-k")}</a>
+        <a class="fan-r" href="/produkt?sorte=beere" aria-label="Berry Important ansehen">{pack(FLAVORS[2], "front", "hero-b")}</a>
+        <a class="fan-c" href="/produkt?sorte=minze" aria-label="Mint Condition ansehen">{pack(FLAVORS[0], "front", "hero-m")}</a>
+      </div>
       <p class="note">{ARROW}<span>die Zahl steht vorne drauf</span></p>
-      <p class="render-note">Produkt-Rendering. Die echte Dose kann leicht abweichen.</p>
+      <p class="render-note">Entwurf der Dose. Die echte Verpackung kann leicht abweichen.</p>
     </div>
   </div>
 </section>
@@ -347,19 +362,19 @@ def home():
     {section_label("03", "Sorten")}
     <h2>Drei Sorten, <em>eine</em> Dose</h2>
     <div class="flavors">
-      <a class="flavor card" href="/produkt?sorte=hotfix">{tin(None, "Hotfix", "Minze", "60", "#A8DCC6")}<h3>Hotfix</h3><p>Minze · 60 mg pro Stück. Für den Bug, den du um 23:58 in Prod findest.</p><span class="more">Ansehen →</span></a>
-      <a class="flavor card" href="/produkt?sorte=shipit">{tin(None, "Ship It", "Kirsche", "52", "#F7A8B8")}<h3>Ship It</h3><p>Kirsche · 52 mg pro Stück. LGTM, nicht gelesen, gemergt.</p><span class="more">Ansehen →</span></a>
-      <a class="flavor card" href="/produkt?sorte=demoday">{tin(None, "Demo Day", "Beere", "52", "#C3B8EE")}<h3>Demo Day</h3><p>Beere · 52 mg pro Stück. pitch_deck_v14_FINAL_final2.pdf</p><span class="more">Ansehen →</span></a>
+      {FLAVOR_CARDS}
     </div>
   </div>
 </section>
 
 {COMPARE.format(label=section_label("04", "Rechnen wir mal"))}
 
+{MISSION_BAND}
+
 <section class="band paper-2" id="so-gehts">
   <div class="wrap split2">
     <div>
-      {section_label("05", "So geht's")}
+      {section_label("06", "So geht's")}
       <h2>Pop. Kau. <em>Ship.</em></h2>
       <ol class="steps">
         <li><b>Ein Stück nehmen,</b> wenn der nächste Arbeitsblock startet.</li>
@@ -368,7 +383,7 @@ def home():
       </ol>
     </div>
     <div>
-      {section_label("06", "Community")}
+      {section_label("07", "Community")}
       <h2>Bald hier: <em>ihr</em></h2>
       <p class="lead">Die erste Charge geht auf Berliner Events. Danach kommen hier eure Fotos hin.</p>
       {PHOTOS}
@@ -380,7 +395,7 @@ def home():
   <div class="wrap teaser">
     <div class="teaser-photo ph-tile tape"><span>Foto folgt</span><b>Daniel</b></div>
     <div>
-      {section_label("07", "Story")}
+      {section_label("08", "Story")}
       <h2>Gebaut von einem, der <em>auch</em> nachts baut</h2>
       <p class="lead">Tagsüber Tech-Job, abends Side Projects und 3D-Drucker. Der Kaffee war kalt, der Automat hatte nur Zucker. Also hat Daniel GUMMIT gestartet.</p>
       <a class="btn ghost" href="/story">Ganze Story lesen</a>
@@ -391,7 +406,7 @@ def home():
 <section class="band blue-soft" id="teams-teaser">
   <div class="wrap teams-teaser">
     <div>
-      {section_label("08", "Für Teams")}
+      {section_label("09", "Für Teams")}
       <h2>Für Teams, Hosts <em>&amp;</em> Coworkings</h2>
       <p class="lead">Team-Boxen mit Rechnung, Host-Boxen für Hackathons und ein Display für eure Theke.</p>
     </div>
@@ -401,7 +416,7 @@ def home():
 
 <section class="band" id="faq-teaser">
   <div class="wrap">
-    {section_label("09", "FAQ")}
+    {section_label("10", "FAQ")}
     <h2>Kurz gefragt</h2>
     {faq_html(["Produkt", "Koffein und Sicherheit"], limit=2)}
     <p class="more-link"><a href="/faq">Alle Fragen ansehen →</a></p>
@@ -413,7 +428,7 @@ def home():
 '''
     return page("/", "GUMMIT – Koffein-Kaugummi für Berliner Builder",
                 "Zuckerfreier Kaugummi mit 52 bis 60 mg Koffein pro Stück. Für alle, die in Berlin Dinge bauen: Hackathons, Demo Days, lange Abende im Coworking.",
-                "/", body, preload_img=True)
+                "/", body)
 
 
 def product():
@@ -422,27 +437,22 @@ def product():
 <section class="pdp wrap" id="kaufen">
   <div class="pdp-media">
     <div class="pdp-main card" id="pdp-main">
-      <picture class="pdp-photo" id="shop-photo">
-        <source id="shop-photo-webp" type="image/webp" srcset="/img/tin-hotfix.webp">
-        <img id="shop-photo-img" src="/img/tin-hotfix.jpg" alt="GUMMIT-Dose Hotfix" width="1200" height="1200" fetchpriority="high">
-      </picture>
-      <div class="pdp-drawn" id="shop-drawn" hidden>{tin("shop")}</div>
-      <div class="pdp-ph ph-tile" id="shop-ph" hidden><span>Foto folgt</span><b id="shop-ph-label">Dose offen</b></div>
+      {PDP_VIEWS}
+      <div class="pdp-ph ph-tile" id="shop-ph" hidden><span>Foto folgt</span><b>In der Hand</b></div>
       <span class="stack-badge" id="shop-stack" hidden>×1</span>
     </div>
-    <div class="thumbs" id="thumbs" role="tablist" aria-label="Produktbilder">
-      <button type="button" data-view="photo" aria-pressed="true">Foto</button>
-      <button type="button" data-view="drawn" aria-pressed="false">Etikett</button>
-      <button type="button" data-view="ph" data-label="Dose offen" aria-pressed="false">Dose offen</button>
-      <button type="button" data-view="ph" data-label="In der Hand" aria-pressed="false">Größe</button>
-      <button type="button" data-view="ph" data-label="Rückseite" aria-pressed="false">Rückseite</button>
+    <div class="thumbs" id="thumbs" role="group" aria-label="Ansichten">
+      <button type="button" data-view="front" aria-pressed="true">Vorderseite</button>
+      <button type="button" data-view="open" aria-pressed="false">Offen</button>
+      <button type="button" data-view="back" aria-pressed="false">Rückseite</button>
+      <button type="button" data-view="ph" aria-pressed="false">Größe</button>
     </div>
-    <p class="render-note" id="render-note">Produkt-Rendering. Die echte Dose kann leicht abweichen.</p>
+    <p class="render-note">Entwurf der Dose. Die echte Verpackung kann leicht abweichen.</p>
   </div>
 
   <div class="pdp-info">
     <p class="kicker">Kaugummi mit Koffein, mit Süßungsmitteln</p>
-    <h1>GUMMIT <span id="pdp-flavor">Hotfix</span></h1>
+    <h1>GUMMIT <span id="pdp-flavor">Mint Condition</span></h1>
     <p class="lede">Zuckerfreier Kaugummi mit <b><span id="lede-mg">60</span> mg Koffein</b> pro Stück. 8 Stück in der Metall-Klappdose.</p>
     <div class="price-row"><span class="price" id="shop-price">4,99 €</span><span class="save" id="shop-save" hidden></span></div>
     <p class="price-meta"><span id="shop-per">4,99 € / Dose</span> · inkl. MwSt., zzgl. <a href="/versand">Versand</a> · <span id="shop-unit">Grundpreis folgt</span></p>
@@ -513,9 +523,9 @@ def product():
 
 {RESERVE_FORM}
 '''
-    return page("/produkt", "GUMMIT Koffein-Kaugummi – Hotfix, Ship It, Demo Day",
+    return page("/produkt", "GUMMIT Koffein-Kaugummi – Mint Condition, Cherry Pick, Berry Important",
                 "Zuckerfreier Kaugummi mit 52 bis 60 mg Koffein pro Stück, 8 Stück in der Metalldose. Drei Sorten, ab 3,99 € pro Dose. Jetzt unverbindlich reservieren.",
-                "/produkt", body, preload_img=True)
+                "/produkt", body)
 
 
 def teams():
@@ -635,14 +645,53 @@ a1c3f02 erste Charge shippen
     </div>
   </div>
 </section>
-<section class="band peach-band">
-  <div class="wrap chat">
-    <div class="avatar"><span class="wave">👋</span>D</div>
-    <div><h3>Schreib mir direkt</h3><p>Fragen, Feedback, Event-Ideen. Ich antworte selbst.</p><a class="btn" href="/kontakt" data-chat>Daniel schreiben</a></div>
+'''
+    return page("/story", "Story – GUMMIT", "Wie GUMMIT entstanden ist: kalter Kaffee, Zucker im Automaten und ein Kaugummi mit der Zahl vorne drauf.", "/story", body)
+
+
+def mission():
+    body = f'''
+<section class="page-hero mission-hero">
+  <div class="wrap">
+    <span class="sticker">Mission</span>
+    <h1 class="riso">Projekt <br>Erster Commit.</h1>
+    <p class="lede">Jede Dose GUMMIT hilft Berliner Builder:innen, die gerade erst anfangen.</p>
+  </div>
+</section>
+<section class="band">
+  <div class="wrap split2">
+    <div class="prose">
+      <p>Die besten Projekte in Berlin starten selten im Büro. Sie starten auf Uni-Hackathons, in Einsteiger-Meetups und auf Community-Events, die mit null Budget laufen. Dort gibt es Pizza, Mate und Leute, die ihren ersten Prototyp bauen.</p>
+      <p>Genau da wollen wir sein. Mit jeder Dose, die du kaufst, finanzierst du Dosen für diese Events. Wir bringen sie gratis vorbei und fragen nur nach einem Foto.</p>
+      <p>Wir halten es ehrlich: Jedes Event, das wir unterstützen, steht unten mit Datum und Menge. Keine Prozent-Versprechen, die keiner prüfen kann.</p>
+    </div>
+    <div class="values one">
+      <div class="card"><span class="num">1</span><h3>Gratis für Einsteiger-Events</h3><p>Uni-Hackathons, Coding-Meetups, Community-Events ohne Sponsor.</p></div>
+      <div class="card"><span class="num">2</span><h3>Nur ab 18</h3><p>GUMMIT enthält Koffein. Deshalb unterstützen wir nur Events für Erwachsene.</p></div>
+      <div class="card"><span class="num">3</span><h3>Offen gezählt</h3><p>Jedes Event steht hier. Du siehst, wohin die Dosen gehen.</p></div>
+    </div>
+  </div>
+</section>
+<section class="band paper-2">
+  <div class="wrap">
+    <h2>Bisher <em>unterstützt</em></h2>
+    <div class="table-scroll"><table class="table">
+      <thead><tr><th>Datum</th><th>Event</th><th>Dosen</th></tr></thead>
+      <tbody><tr><td colspan="3" class="empty">Noch keine Events. Das erste kommt mit der ersten Charge.</td></tr></tbody>
+    </table></div>
+  </div>
+</section>
+<section class="mission-band">
+  <div class="wrap">
+    <h2>Du machst ein Event <em>für Einsteiger?</em></h2>
+    <p class="lead">Erzähl uns davon. Wenn es passt, bringen wir GUMMIT vorbei.</p>
+    <div class="hero-cta"><a class="btn ghost" href="/teams#anfrage">Event vorschlagen</a></div>
   </div>
 </section>
 '''
-    return page("/story", "Story – GUMMIT", "Wie GUMMIT entstanden ist: kalter Kaffee, Zucker im Automaten und ein Kaugummi mit der Zahl vorne drauf.", "/story", body)
+    return page("/mission", "Mission – Projekt Erster Commit – GUMMIT",
+                "Mit jeder Dose GUMMIT unterstützt du Berliner Einsteiger-Events: Uni-Hackathons, Coding-Meetups, Community-Events ohne Budget.",
+                "/mission", body)
 
 
 def faq_page():
@@ -765,7 +814,7 @@ def notfound():
 
 
 PAGES = {
-    "index.html": home, "produkt.html": product, "teams.html": teams, "story.html": story,
+    "index.html": home, "produkt.html": product, "mission.html": mission, "teams.html": teams, "story.html": story,
     "faq.html": faq_page, "kontakt.html": contact, "versand.html": versand, "widerruf.html": widerruf,
     "agb.html": agb, "impressum.html": impressum, "datenschutz.html": datenschutz, "404.html": notfound,
 }

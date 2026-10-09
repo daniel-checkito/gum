@@ -82,3 +82,8 @@ Alle Ideen aus dem Gespräch vom 08.10.2026, in der Reihenfolge, wie sie kamen, 
 | Website live auf gum-prototype.vercel.app | erledigt | Ordner website/, jeder Push auf main geht live |
 | Neubau Website „Berlin Zine“ mit Unterseiten | übernommen | Orange zu viel. Papier, Tinte, Riso-Blau, Pink nur als Akzent. Produktseite, Teams, Story, FAQ, Kontakt, Rechtsseiten. Recherche in 02_Recherche/20 |
 | Platzhalter-Bewertungen | verworfen | Rechtlich heikel (UWG). Stattdessen „Noch keine Bewertungen“ und Foto-Platzhalter |
+| Sorten Mint Condition, Cherry Pick, Berry Important | übernommen | Hotfix, Ship It, Demo Day zu langweilig. Geschmack steht jetzt im Namen (Learning Forest Gum) |
+| Claim "Kau rein. Ship raus." | ersetzt durch "Gummit. Push. Repeat." | GUMMIT klingt wie commit |
+| Mission "Projekt Erster Commit" | übernommen | Gratis-Dosen für Einsteiger-Events ab 18, offen gezählt auf /mission. Vorbild Projekt Wildwuchs |
+| Chat-Block "Daniel fragen" | entfernt | Auf Wunsch |
+| Gezeichnete Dose statt KI-Foto | übernommen | Vorderseite, offen, Rückseite mit Pflichtangaben. KI-Foto zeigte noch "Hotfix" |
