@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GUMMIT – caffeine gum for people who ship</title>
-<meta name="description" content="Sugar-free caffeine gum for Berlin builders, vibe coders and everyone at the next Luma event. The milligrams are on the front.">
-<meta property="og:title" content="GUMMIT – git gummit">
-<meta property="og:description" content="Sugar-free caffeine gum for Berlin builders, vibe coders and hackathon people.">
-<meta property="og:type" content="website">
+<title>GUMMIT – sugar-free caffeine gum</title>
+<meta name="description" content="Sugar-free caffeine chewing gum from Berlin. 52–60 mg caffeine per piece, 8 pieces per metal tin.">
+<meta property="og:title" content="GUMMIT – sugar-free caffeine gum">
+<meta property="og:description" content="52–60 mg caffeine per piece. 0 g sugar. 8 pieces per metal tin. From Berlin.">
+<meta property="og:type" content="product">
 <meta name="theme-color" content="#0B0A10">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/fonts/unbounded-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -15,201 +15,145 @@
 </head>
 <body>
 
-<div class="announce"><span>First batch: <b>reserve now, pay later</b> · Shipping from Berlin to DE, AT, CH</span></div>
-
 <header class="wrap nav">
-  <a class="logo" href="#top">GUMMIT<span class="cursor" aria-hidden="true"></span></a>
+  <a class="logo" href="/">GUMMIT<span class="cursor" aria-hidden="true"></span></a>
   <nav class="nav-links" aria-label="Main">
-    <a href="#shop">Shop</a>
-    <a href="#flavors">Flavors</a>
-        <a href="#faq">FAQ</a>
-    <a class="btn" href="#shop">Get the tins</a>
+    <a href="#facts">What's inside</a>
+    <a href="#faq">FAQ</a>
+    <a class="btn small" href="#buy">Reserve</a>
   </nav>
 </header>
 
-<main id="top">
-  <div class="wrap hero">
-    <div class="hero-text">
-      <span class="badge"><i></i>dropping at Berlin Luma events soon</span>
-      <h1>Caffeine gum for people who <span class="hl">ship.</span></h1>
-      <p class="sub">Sugar-free, sweetened with xylitol, 52–60 mg caffeine per piece. Built for hackathons, demo days and the 47th tab of your Cursor session.</p>
-      <div class="hero-cta">
-        <a class="btn" href="#shop">Shop the tins</a>
-        <a class="btn ghost" href="#events">Hosting an event? →</a>
-      </div>
-    </div>
-    <div class="hero-art" aria-hidden="true">
-      <div class="tin">
-        <div class="t-term">~/berlin $ ./chew</div>
-        <div class="t-brand">GUMMIT</div>
-        <div class="t-mg">60 mg</div>
-        <div class="t-sub">caffeine / piece · 0 g sugar</div>
-        <div class="t-flavor"><b>Hotfix</b><span>mint · 8 pieces</span></div>
-      </div>
-      <div class="sticker">no sugar, no cap</div>
-    </div>
-  </div>
-
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track" id="marquee"></div>
-  </div>
-
-  <section class="wrap" id="shop">
-    <div class="shop">
-      <div class="shop-gallery" aria-hidden="true">
-        <div class="shop-stage" id="shop-stage">
-          <div class="tin big-tin" id="shop-tin">
-            <div class="t-term">~/berlin $ ./chew</div>
-            <div class="t-brand">GUMMIT</div>
-            <div class="t-mg" id="shop-mg">60 mg</div>
-            <div class="t-sub">caffeine / piece · 0 g sugar</div>
-            <div class="t-flavor" id="shop-tinflavor"><b id="shop-tinname">Hotfix</b><span id="shop-tintaste">mint · 8 pieces</span></div>
-          </div>
-          <div class="stack-badge" id="shop-stack">×1</div>
+<main>
+  <section class="wrap pdp" id="buy">
+    <div class="pdp-media">
+      <div class="stage" id="stage">
+        <div class="tin big-tin" id="shop-tin">
+          <div class="t-term">~/berlin $ ./chew</div>
+          <div class="t-brand">GUMMIT</div>
+          <div class="t-mg" id="shop-mg">60 mg</div>
+          <div class="t-sub">caffeine / piece · 0 g sugar</div>
+          <div class="t-flavor" id="shop-tinflavor"><b id="shop-tinname">Hotfix</b><span id="shop-tintaste">mint · 8 pieces</span></div>
         </div>
+        <div class="stack-badge" id="shop-stack" hidden>×1</div>
       </div>
-      <div class="shop-buy">
-        <p class="prompt">npm i gummit</p>
-        <h2 class="shop-title">GUMMIT caffeine gum</h2>
-        <div class="price-row"><span class="price" id="shop-price">€4.99</span><span class="per" id="shop-per">€4.99 / tin</span><span class="save" id="shop-save" hidden></span></div>
-        <p class="tax">Incl. VAT. Shipping calculated at checkout. Launch prices for the first batch.</p>
-
-        <fieldset class="opt">
-          <legend>Flavor</legend>
-          <div class="chips" id="shop-flavors"></div>
-        </fieldset>
-        <fieldset class="opt">
-          <legend>Pack</legend>
-          <div class="packs" id="shop-packs"></div>
-        </fieldset>
-
-        <button class="btn buy" type="button" id="shop-buy">Reserve my tins</button>
-        <p class="buy-note" id="shop-note">No payment yet. We email you when the first batch ships.</p>
-
-        <ul class="facts">
-          <li><b>52–60 mg</b> caffeine per piece</li>
-          <li><b>0 g</b> sugar, xylitol</li>
-          <li><b>8</b> pieces per metal tin</li>
-          <li><b>Max 3</b> pieces a day</li>
-        </ul>
-      </div>
+      <div class="thumbs" id="thumbs" aria-hidden="true"></div>
     </div>
 
+    <div class="pdp-info">
+      <p class="eyebrow">GUMMIT · Berlin</p>
+      <h1>Sugar-free caffeine gum.</h1>
+      <p class="lede">Chewing gum with <b id="lede-mg">60 mg</b> caffeine per piece. 8 pieces in a metal tin. For long build days, hackathons and demo nights.</p>
+
+      <ul class="pills">
+        <li><b id="pill-mg">60 mg</b> caffeine / piece</li>
+        <li><b>0 g</b> sugar</li>
+        <li><b>8</b> pieces / tin</li>
+      </ul>
+
+      <div class="price-row"><span class="price" id="shop-price">€4.99</span><span class="per" id="shop-per">€4.99 / tin</span><span class="save" id="shop-save" hidden></span></div>
+
+      <fieldset class="opt">
+        <legend>Flavor</legend>
+        <div class="chips" id="shop-flavors"></div>
+      </fieldset>
+      <fieldset class="opt">
+        <legend>Pack</legend>
+        <div class="packs" id="shop-packs"></div>
+      </fieldset>
+
+      <button class="btn buy" type="button" id="shop-buy">Reserve my tins</button>
+      <ul class="assure">
+        <li id="shop-note">No payment now</li>
+        <li>Email before it ships</li>
+        <li>Ships from Berlin</li>
+      </ul>
+    </div>
   </section>
 
   <section class="wrap" id="why">
-    <div class="features">
-      <div class="feature"><div class="ficon"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="54" fill="#C6FF3D" stroke="#7B5CFF" stroke-width="6"/>
+    <div class="icons4">
+      <div><div class="ficon"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="54" fill="#C6FF3D" stroke="#7B5CFF" stroke-width="6"/>
   <path d="M55 38 74 49 74 71 55 82 36 71 36 49Z" fill="#B9A8FF" stroke="#0B0A10" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
   <path d="M74 49 92 43 102 60 92 77 74 71" fill="none" stroke="#0B0A10" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
   <path d="M55 38V24" fill="none" stroke="#0B0A10" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
   <circle cx="55" cy="22" r="5" fill="#7B5CFF" stroke="#0B0A10" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="102" cy="60" r="5" fill="#7B5CFF" stroke="#0B0A10" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="36" cy="71" r="5" fill="#7B5CFF" stroke="#0B0A10" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
-</svg></div><div><h3>52–60 mg caffeine</h3><p>Per piece, printed on the front. Pick your dose, one piece at a time.</p></div></div>
-      <div class="feature"><div class="ficon"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="54" fill="#C6FF3D" stroke="#7B5CFF" stroke-width="6"/>
+</svg></div><h3>Dose on the front</h3><p>52–60 mg per piece, printed big. One piece at a time.</p></div>
+      <div><div class="ficon"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="54" fill="#C6FF3D" stroke="#7B5CFF" stroke-width="6"/>
   <path d="M36 50 58 39 80 50 58 61Z" fill="#E4DCFF" stroke="#0B0A10" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
   <path d="M36 50 58 61V86L36 75Z" fill="#B9A8FF" stroke="#0B0A10" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
   <path d="M58 61 80 50V75L58 86Z" fill="#9C86FF" stroke="#0B0A10" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
   <path d="M27 93 93 27" stroke="#FF3DA5" stroke-width="9" stroke-linecap="round"/>
-</svg></div><div><h3>Zero sugar</h3><p>Sweetened with xylitol. Your dentist will finally glaze you back.</p></div></div>
-      <div class="feature"><div class="ficon"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="54" fill="#C6FF3D" stroke="#7B5CFF" stroke-width="6"/>
+</svg></div><h3>Zero sugar</h3><p>Sweetened with xylitol. Your dentist will glaze you back.</p></div>
+      <div><div class="ficon"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="54" fill="#C6FF3D" stroke="#7B5CFF" stroke-width="6"/>
   <rect x="32" y="50" width="56" height="36" rx="9" fill="#B9A8FF" stroke="#0B0A10" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
   <path d="M32 50V44a9 9 0 0 1 9-9h38a9 9 0 0 1 9 9v6Z" fill="#7B5CFF" stroke="#0B0A10" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
   <path d="M44 62h20M44 72h12" fill="none" stroke="#0B0A10" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
-</svg></div><div><h3>Pocket tin</h3><p>8 pieces in a metal tin. Fits next to your charger, survives your backpack.</p></div></div>
-      <div class="feature"><div class="ficon"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="54" fill="#C6FF3D" stroke="#7B5CFF" stroke-width="6"/>
+</svg></div><h3>Pocket tin</h3><p>Metal, 8 pieces. Fits next to your charger.</p></div>
+      <div><div class="ficon"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="54" fill="#C6FF3D" stroke="#7B5CFF" stroke-width="6"/>
   <path d="M42 22 60 46 78 22" fill="none" stroke="#FF3DA5" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
   <rect x="38" y="44" width="44" height="50" rx="8" fill="#F4F1EA" stroke="#0B0A10" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
   <circle cx="60" cy="62" r="7" fill="#7B5CFF" stroke="#0B0A10" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
   <path d="M49 78h22M52 86h16" fill="none" stroke="#0B0A10" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
-</svg></div><div><h3>Made for the scene</h3><p>Hackathons, demo days, Luma meetups. Hosts get a box, teams get an invoice.</p></div></div>
+</svg></div><h3>Made for the scene</h3><p>Hackathons, demo days, Luma meetups.</p></div>
     </div>
   </section>
 
-  <section class="wrap" id="flavors">
-    <p class="prompt">ls ./flavors</p>
-    <h2>Pick your branch</h2>
-    <p class="lead">Three flavors with caffeine, one without (soon). Pick by taste, argue about the names in the group chat.</p>
-    <div class="flavors">
-      <article class="flavor lime">
-        <span class="tag">main</span>
-        <h3>Hotfix</h3>
-        <p class="quote">// for the bug you found in prod at 23:58</p>
-        <div class="mg">60 mg</div>
-        <p class="meta">Mint · caffeine per piece</p>
-      </article>
-      <article class="flavor pink">
-        <span class="tag">feature/ship-it</span>
-        <h3>Ship It</h3>
-        <p class="quote">// LGTM. didn't read it. merging.</p>
-        <div class="mg">52 mg</div>
-        <p class="meta">Cherry · caffeine per piece</p>
-      </article>
-      <article class="flavor violet">
-        <span class="tag">release/demo-day</span>
-        <h3>Demo Day</h3>
-        <p class="quote">// pitch_deck_v14_FINAL_final2.pdf</p>
-        <div class="mg">52 mg</div>
-        <p class="meta">Berry · caffeine per piece</p>
-      </article>
-      <article class="flavor later">
-        <span class="tag">coming soon</span>
-        <h3>Touch Grass</h3>
-        <p class="quote">// logging off. for real this time.</p>
-        <div class="mg">0 mg</div>
-        <p class="meta">No caffeine · later</p>
-      </article>
+  <section class="wrap split2" id="facts">
+    <div>
+      <p class="prompt">how to use</p>
+      <h2>Pop. Chew. Ship.</h2>
+      <ol class="steps">
+        <li><b>Pop one piece</b> when the next block of work starts.</li>
+        <li><b>Chew it</b> like normal gum. The flavor lasts.</li>
+        <li><b>Keep count.</b> Max 3 pieces a day, including your coffee.</li>
+      </ol>
+    </div>
+    <div>
+      <p class="prompt">cat facts.md</p>
+      <h2>What's inside</h2>
+      <table class="facts-table">
+        <tr><th>Caffeine</th><td>Hotfix 60 mg · Ship It 52 mg · Demo Day 52 mg per piece</td></tr>
+        <tr><th>Sugar</th><td>0 g</td></tr>
+        <tr><th>Sweetener</th><td>Xylitol</td></tr>
+        <tr><th>Pieces</th><td>8 per tin</td></tr>
+        <tr><th>Max per day</th><td>3 pieces</td></tr>
+        <tr><th>Packaging</th><td>Metal flip tin</td></tr>
+      </table>
+      <p class="fine">Full ingredients and nutrition facts are on the tin. Not recommended for children and pregnant women.</p>
     </div>
   </section>
 
   <section class="wrap" id="events">
-    <p class="prompt">grep -r "free snacks" luma.com/berlin</p>
-    <h2>Hosting on Luma? We bring the gum.</h2>
-    <div class="split">
-      <div class="panel feature">
-        <span class="kicker">for event hosts</span>
-        <h3>Host box</h3>
-        <p>Hackathon, AI meetup, founder breakfast, demo night. We send a box, your guests stop eating the pizza crusts out of boredom.</p>
-        <ul>
-          <li>Free tins for your event (while we're in beta)</li>
-          <li>Sample sachets for goodie bags</li>
-          <li>Counter display for the check-in desk</li>
-          <li>We just want a photo and a tag</li>
-        </ul>
-        <a class="btn" href="#waitlist" data-type="host">Get a host box</a>
+    <div class="band">
+      <div>
+        <h2>For events and teams</h2>
+        <p>Hosting a hackathon or meetup? We bring a host box. Running a startup or coworking? Team boxes with invoice, displays for your counter.</p>
       </div>
-      <div class="panel" id="teams">
-        <span class="kicker">for startups &amp; coworkings</span>
-        <h3>Team box</h3>
-        <p>For teams that ship on Fridays anyway. Onboarding gift, meeting room stash, or just better than the office fruit bowl.</p>
-        <ul>
-          <li>Mixed box, all flavors</li>
-          <li>Single sachets for meeting rooms</li>
-          <li>Invoice included, your logo on request</li>
-          <li>Coworkings: counter display, commission, no rent</li>
-        </ul>
-        <a class="btn ghost" href="#waitlist" data-type="team">Ask for a team box</a>
+      <div class="band-cta">
+        <a class="btn" href="#waitlist" data-type="host">Get a host box</a>
+        <a class="btn ghost" href="#waitlist" data-type="team">Team box</a>
       </div>
     </div>
   </section>
 
   <section class="wrap" id="faq">
-    <p class="prompt">man gummit</p>
     <h2>FAQ</h2>
     <div class="faq">
-      <details><summary>How much caffeine is in one piece?</summary><p>52 to 60 mg depending on the flavor: Hotfix 60 mg, Ship It and Demo Day 52 mg. The number is on the front of every tin.</p></details>
+      <details><summary>What exactly is it?</summary><p>Sugar-free chewing gum with caffeine. Each piece has 52 to 60 mg caffeine depending on the flavor. 8 pieces come in one metal tin.</p></details>
       <details><summary>How many can I have per day?</summary><p>Max 3 pieces a day. Count your coffee, mate and energy drinks too. Not recommended for children and pregnant women.</p></details>
-      <details><summary>Is it really sugar-free?</summary><p>Yes. It is sweetened with xylitol. Like all xylitol products, too much can have a laxative effect, and xylitol is toxic to dogs.</p></details>
-      <details><summary>When does it ship?</summary><p>With the first batch. Reserve now and we email you once before it ships. No payment until then.</p></details>
-      <details><summary>Can I get it for my event or team?</summary><p>Yes. Event hosts get a host box, teams get a team box with invoice. Pick your type in the form below.</p></details>
-      <details><summary>Will it make me 10x?</summary><p>No. It's gum with caffeine. We don't promise flow states, we promise the number on the front.</p></details>
+      <details><summary>How does reserving work?</summary><p>Pick flavor and pack, leave your email. No payment now. We email you once before the first batch ships, then you decide.</p></details>
+      <details><summary>Where do you ship?</summary><p>From Berlin to Germany, Austria and Switzerland.</p></details>
+      <details><summary>Anything to watch out for?</summary><p>Xylitol can have a laxative effect if you overdo it, and it is toxic to dogs.</p></details>
+      <details><summary>Will it make me 10x?</summary><p>No. It's gum with caffeine. The number on the front is the whole pitch.</p></details>
     </div>
   </section>
 
   <section class="wrap" id="waitlist">
     <div class="cta">
       <div>
-        <h2>Get the first batch.</h2>
-        <p class="lead">One email when GUMMIT drops at your next event or online. No newsletter spam, we're too busy shipping.</p>
+        <h2>Reserve your tins.</h2>
+        <p class="lead">One email before the first batch ships. No payment now, no spam.</p>
         <div class="preorder" id="preorder" hidden>
           <a class="btn" id="preorder-link" href="#" rel="noopener">Pre-order now</a>
           <small id="preorder-note"></small>
@@ -237,12 +181,17 @@
           </div>
         </div>
         <label class="check"><input type="checkbox" id="f-ok" required> <span>Yes, you can email me about GUMMIT. Unsubscribe anytime. See <a href="/datenschutz">privacy policy</a>.</span></label>
-        <button class="btn" type="submit">Join the waitlist</button>
+        <button class="btn" type="submit">Reserve</button>
         <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
       </form>
     </div>
   </section>
 </main>
+
+<div class="sticky-buy" id="sticky-buy" hidden>
+  <div><b id="sticky-name">Hotfix · 1 tin</b><span id="sticky-price">€4.99</span></div>
+  <a class="btn" href="#buy">Reserve</a>
+</div>
 
 <footer class="wrap">
   <div class="legal">

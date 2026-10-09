@@ -1,25 +1,6 @@
 (function () {
   var cfg = window.GUMMIT_CONFIG || {};
 
-  // Ticker
-  var lines = [
-    "You're absolutely right! This gum has no sugar.",
-    "Works on my machine.",
-    "Context window full. Mouth empty.",
-    "Shipped it on a Friday. Again.",
-    "Not a productivity hack. Just gum.",
-    "Prompted, not programmed.",
-    "Tab. Tab. Tab. Chew.",
-    "Lowkey goated, highkey sugar-free.",
-    "Your demo will crash. Your breath won't.",
-    "git push --force (your luck)",
-    "Seen at every Luma event. Allegedly."
-  ];
-  var track = document.getElementById("marquee");
-  if (track) {
-    track.innerHTML = lines.concat(lines).map(function (s) { return "<span>" + s + "</span>"; }).join("");
-  }
-
   // Shop
   var flavors = [
     { name: "Hotfix", taste: "mint", mg: 60, color: "#C6FF3D", fg: "#0B0A10" },
@@ -52,7 +33,14 @@
     var tf = document.getElementById("shop-tinflavor");
     tf.style.background = f.color; tf.style.color = f.fg;
     document.getElementById("shop-mg").style.color = f.color;
-    document.getElementById("shop-stack").textContent = "×" + p.tins;
+    var stack = document.getElementById("shop-stack");
+    stack.hidden = p.tins === 1; stack.textContent = "×" + p.tins;
+    document.getElementById("lede-mg").textContent = f.mg + " mg";
+    document.getElementById("pill-mg").textContent = f.mg + " mg";
+    document.getElementById("sticky-name").textContent = f.name + " · " + p.tins + (p.tins === 1 ? " tin" : " tins");
+    document.getElementById("sticky-price").textContent = eur(p.price);
+    document.querySelectorAll("#thumbs button").forEach(function (t, i) { t.setAttribute("aria-pressed", flavors[i] === f ? "true" : "false"); });
+    document.querySelectorAll("#shop-flavors .chip").forEach(function (c, i) { c.setAttribute("aria-pressed", flavors[i] === f ? "true" : "false"); });
     document.getElementById("shop-price").textContent = eur(p.price);
     document.getElementById("shop-per").textContent = eur(p.price / p.tins) + " / tin";
     var save = Math.round((1 - p.price / (base * p.tins)) * 100);
@@ -61,8 +49,8 @@
     var buy = document.getElementById("shop-buy");
     buy.textContent = p.url ? "Pre-order · " + eur(p.price) : "Reserve my tins";
     document.getElementById("shop-note").textContent = p.url
-      ? "Secure checkout. Ships with the first batch, full refund if it doesn't."
-      : "No payment yet. We email you when the first batch ships.";
+      ? "Secure checkout"
+      : "No payment now";
   }
 
   var fWrap = document.getElementById("shop-flavors");
@@ -73,7 +61,24 @@
   packs.forEach(function (p, i) {
     chip(pWrap, p.tins + (p.tins === 1 ? " tin" : " tins"), eur(p.price), i === 0, function () { sel.pack = p; renderShop(); });
   });
+  var thumbs = document.getElementById("thumbs");
+  flavors.forEach(function (f) {
+    var t = document.createElement("button");
+    t.type = "button";
+    t.tabIndex = -1;
+    t.innerHTML = "<i style=\"background:" + f.color + "\"></i><span>" + f.name + "</span>";
+    t.addEventListener("click", function () { sel.flavor = f; renderShop(); });
+    thumbs.appendChild(t);
+  });
   renderShop();
+
+  // Sticky buy bar on mobile once the buy box is out of view
+  var sticky = document.getElementById("sticky-buy");
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries) {
+      sticky.hidden = entries[0].isIntersecting;
+    }).observe(document.getElementById("shop-buy"));
+  }
 
   document.getElementById("shop-buy").addEventListener("click", function () {
     if (sel.pack.url) { location.href = sel.pack.url; return; }
