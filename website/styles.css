@@ -158,6 +158,28 @@ main { overflow-x: clip; }
 .founder-initial { width: 120px; height: 120px; border-radius: 50%; background: var(--coral); color: var(--white); border: 2.5px solid var(--ink); display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 900; font-size: 56px; }
 .founder-note { font-family: var(--mono); font-size: 13px; }
 
+/* Caffeine per euro */
+.cmp { max-width: 860px; margin: 40px auto 0; display: grid; gap: 10px; }
+.cmp-row { display: grid; grid-template-columns: 210px 1fr 72px; gap: 14px; align-items: center; font-size: 15px; }
+.cmp-name { font-weight: 600; }
+.cmp-track { height: 22px; background: rgba(31,30,29,.07); border-radius: 6px; overflow: hidden; }
+.cmp-track i { display: block; height: 100%; background: #9A948C; border-radius: 0 4px 4px 0; }
+.cmp-row.own .cmp-track i { background: var(--ink); }
+.cmp-row.own .cmp-name { font-weight: 800; }
+.cmp-val { font-family: var(--mono); font-size: 14px; text-align: right; }
+.cmp .fine { margin-top: 4px; }
+.calc { max-width: 860px; margin: 36px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; background: var(--white); border: 2.5px solid var(--ink); border-radius: 22px; padding: 26px; box-shadow: 0 5px 0 var(--ink); }
+.calc-in { display: flex; flex-direction: column; gap: 10px; }
+.calc-in label { font-weight: 700; font-size: 15px; }
+.calc-row { display: flex; align-items: center; gap: 14px; }
+.calc-row input { flex: 1; accent-color: var(--ink); }
+.calc-row output { font-family: var(--mono); font-weight: 700; min-width: 40px; }
+.calc-out { display: flex; flex-direction: column; justify-content: center; gap: 8px; }
+.calc-big { font-family: var(--display); font-weight: 900; font-size: 2.2rem; line-height: 1; }
+.cmp-table { max-width: 860px; margin: 18px auto 0; }
+.cmp-table summary { cursor: pointer; font-weight: 700; padding: 8px 0; }
+.cmp-table .facts-table th, .cmp-table .facts-table td { width: auto; font-size: 14px; }
+
 /* Facts bar */
 .factbar { background: var(--ink); color: var(--white); }
 .factbar ul { list-style: none; margin: 0 auto; padding: 16px 32px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 36px; font-weight: 700; max-width: 1240px; }
@@ -261,7 +283,9 @@ footer { background: var(--sand); padding: 56px 0 48px; }
 
 @media (max-width: 900px) {
   .pdp, .split2, .story, .reserve, .founder { grid-template-columns: 1fr; }
-  .personas, .quotes { grid-template-columns: 1fr; }
+  .personas, .quotes, .calc { grid-template-columns: 1fr; }
+  .cmp-row { grid-template-columns: 1fr 64px; }
+  .cmp-row .cmp-track { grid-column: 1 / -1; grid-row: 2; }
   .gallery { grid-template-columns: 1fr 1fr; }
   .founder-photo { position: static; max-width: 320px; aspect-ratio: 1; }
   .pdp { gap: 8px; padding-top: 16px; }
