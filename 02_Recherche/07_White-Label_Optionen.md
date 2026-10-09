@@ -71,3 +71,22 @@
 - Ob Werbemittel als eigene Marke weiterverkauft werden dürfen, ist nirgends schriftlich bestätigt.
 - Accio- und Alibaba-Angaben sind nicht geprüft.
 - Den Automatenbetrieb und die Registrierung beim Bezirksamt in Berlin habe ich nicht im Detail recherchiert.
+**7. Hersteller mit IFS Food und kleineren Mengen (Stand 09.10.2026)**
+- IFS Food ist ab jetzt Pflicht für jeden Hersteller.
+- **Back to Basics A/S** (Vejle, Dänemark): Private Label für Kaugummi, IFS und BRC (A+), eigene Entwicklung in Dänemark. Koffein, Vitamine oder Funktions-Gum stehen nirgends auf der Seite. MOQ „je nach Produkt und Verpackung“. Anfrage: 05_Vorlagen/Mail_Back_to_Basics.md. https://b11b.com/en/gum/, info@b11b.com, +45 75721355
+- **roelli roelli confectionery** (St. Gallen, Schweiz): Private und White Label für Gums, Drops, Toffees, kleine Marken (z. B. CBD-Gum). IFS nicht belegt, Zertifikat anfordern. https://roelliroelli.ch/en/offer/, contact@roelliroelli.ch
+- **Wachmeister** (Schweiz): eigene Marke mit 30 mg Koffein pro Kaugummi, „in einem Schweizer Labor mit IFS Food Zertifizierung“ hergestellt, verkauft eine Office Box. Kein White Label bekannt, aber fragen, ob sie liefern oder den Hersteller nennen. https://www.wachmeister.com, info@wachmeister.com
+- Raus: Delica (MOQ 20 Tonnen, https://www.delica.com/en/product/chewing-gum/private-label)
+
+**8. Top 3 für Koffein, IFS Food und kleine Mengen (Stand 09.10.2026)**
+1. **Indaco** (Neapel): IFS und BRC laut Katalog 2026, Funktions-Gum mit „Energy“ (Koffein), Private Label, wirbt mit „low MOQs“. Kaumasse 350 bis 450 kg pro Sorte, Blister ab 20.000 Stück. Kontakt giovanni.martufi@indacocandy.com. https://plmaamsterdam26.digital.ice.it/wp-content/uploads/2026/04/INDACO-EUROPE-Catalogue-2026-official.pdf
+2. **Back to Basics** (Vejle): IFS und BRC, Private Label, MOQ pro Projekt. Koffein nicht genannt. Anfrage: 05_Vorlagen/Mail_Back_to_Basics.md
+3. **Wachmeister** (Schweiz): fertiger Koffein-Gum mit 30 mg, aus Schweizer IFS-Produktion. Kleinste Mengen möglich, weil Ware schon da ist. White Label anfragen. Die einzige Kaugummifabrik der Schweiz ist Delica in Buchs, also vermutlich auch Hersteller von Guming und Wachmeister (nicht belegt). Delica direkt: MOQ 20 Tonnen
+- roelli roelli: keine Mindestmenge genannt, Generalunternehmer ohne eigene Fabrik
+
+**9. Bei nur 200 Dosen (Stand 09.10.2026)**
+- 200 Dosen mal 8 Stück sind 1.600 Stück, ca. 4 kg. Dafür macht kein Hersteller eine eigene Rezeptur. Indaco, Back to Basics und Delica fallen raus
+- Bleiben nur fertige Produkte:
+  1. Guming Werbemittel-Dose: ab 250 Stück, 2,44 € netto plus 150 € Einrichtung, ca. 760 €. Schweizer IFS-Produktion, 52 bis 60 mg, kein Xylit
+  2. Wachmeister: 30 mg, Beutel mit 8 Stück, enthält auch Xylit (nicht nur). Endkundenpreis 20 Beutel CHF 42. Kein White-Label-Angebot bekannt, anfragen: info@wachmeister.com
+- Nicht: lose Ware kaufen und selbst in Dosen füllen. Dann sind wir Hersteller und Verpacker

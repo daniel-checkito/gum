@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Röhrchen Schwarz</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#E8E9EB;--signal:#FF6B1F;--white:#F4F4F2;--muted:#5d5f66}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);font-family:'Instrument Sans',system-ui,sans-serif;color:#111}
+  .board{width:1600px;height:1000px;padding:56px 64px;display:flex;flex-direction:column}
+  .head{display:flex;justify-content:space-between;align-items:baseline}
+  h1{margin:0;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:42px;letter-spacing:-0.02em}
+  .sub{font-size:17px;color:var(--muted)}
+  .stage{flex:1;display:flex;align-items:flex-end;justify-content:center;gap:90px;padding-bottom:70px;position:relative}
+
+  .tube{position:relative;display:flex;flex-direction:column;align-items:center}
+  .tube.side{transform:scale(.82);transform-origin:bottom center}
+
+  /* Deckel */
+  .cap{position:relative;width:232px;height:96px;border-radius:16px 16px 6px 6px;
+       background:linear-gradient(90deg,#050505 0%,#262626 16%,#121212 38%,#070707 66%,#1d1d1d 86%,#020202 100%);
+       box-shadow:inset 0 -3px 0 rgba(255,255,255,.05)}
+  .cap::before{content:"";position:absolute;left:8px;right:8px;top:-9px;height:20px;border-radius:50%;
+       background:linear-gradient(90deg,#0b0b0b,#2b2b2b 30%,#151515 60%,#0a0a0a)}
+  .cap .line{position:absolute;left:0;right:0;bottom:22px;height:2px;background:rgba(0,0,0,.65);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+  .hinge{position:absolute;left:-26px;top:20px;width:34px;height:44px;border-radius:8px 4px 4px 8px;
+       background:linear-gradient(90deg,#030303,#1f1f1f 60%,#0c0c0c)}
+  .hinge::after{content:"";position:absolute;left:8px;top:13px;width:14px;height:18px;border-radius:4px;background:var(--bg);opacity:.9}
+
+  /* Körper */
+  .body{position:relative;width:224px;height:560px;border-radius:4px 4px 18px 18px;overflow:hidden;
+       background:linear-gradient(90deg,#030303 0%,#1e1e1e 12%,#2c2c2c 20%,#121212 38%,#070707 62%,#151515 82%,#262626 90%,#020202 100%)}
+  .body::after{content:"";position:absolute;top:0;bottom:0;left:22%;width:7%;
+       background:linear-gradient(90deg,transparent,rgba(255,255,255,.07),transparent)}
+  .print{position:absolute;inset:0;padding:46px 30px 34px;display:flex;flex-direction:column;color:var(--white);z-index:1}
+  .brand{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:22px;letter-spacing:.32em;opacity:.92}
+  .rule{width:34px;height:2px;background:var(--white);opacity:.5;margin:16px 0 0}
+  .quote{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:600;font-size:38px;line-height:1.04;letter-spacing:-0.015em;margin-top:auto}
+  .meta{margin-top:30px;display:flex;flex-direction:column;gap:4px}
+  .mg{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:26px;color:var(--signal);line-height:1}
+  .mgl{font-size:12px;color:#c9c9c4}
+  .legal{margin-top:18px;font-size:7.4px;line-height:1.35;color:#9d9d98}
+  .shadow{width:250px;height:26px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.35),transparent);margin-top:-8px}
+  .cap-label{position:absolute;bottom:-46px;font-size:14px;color:var(--muted);white-space:nowrap}
+  .note{display:flex;gap:28px;font-size:14px;color:var(--muted);justify-content:center}
+  .dot{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:7px;vertical-align:-1px}
+</style>
+</head>
+<body>
+<div class="board">
+  <div class="head">
+    <h1>Röhrchen schwarz: clean, weißer Satz vorne</h1>
+    <div class="sub">Flip-Top-Röhrchen wie miradent · ca. 30 Stück · Pilot-Werte</div>
+  </div>
+
+  <div class="stage">
+    <div class="tube side">
+      <div class="cap"><div class="hinge"></div><div class="line"></div></div>
+      <div class="body"><div class="print">
+        <div class="brand">BISS</div><div class="rule"></div>
+        <div class="quote" style="font-size:31px">Noch eine Mail.<br>Dann Feierabend.</div>
+        <div class="meta"><div class="mg">52 mg</div><div class="mgl">Koffein pro Stück · zuckerfrei</div></div>
+        <div class="legal">Kaugummi mit Koffein, mit Süßungsmitteln. Enthält Koffein. Für Kinder und schwangere Frauen nicht empfohlen (2.100 mg/100 g).</div>
+      </div></div>
+      <div class="shadow"></div>
+    </div>
+
+    <div class="tube">
+      <div class="cap"><div class="hinge"></div><div class="line"></div></div>
+      <div class="body"><div class="print">
+        <div class="brand">BISS</div><div class="rule"></div>
+        <div class="quote">Eins nach<br>dem anderen.</div>
+        <div class="meta"><div class="mg">60 mg</div><div class="mgl">Koffein pro Stück · zuckerfrei</div></div>
+        <div class="legal">Kaugummi mit Koffein, mit Süßungsmitteln. Enthält Koffein. Für Kinder und schwangere Frauen nicht empfohlen (2.510 mg/100 g).</div>
+      </div></div>
+      <div class="shadow"></div>
+    </div>
+
+    <div class="tube side">
+      <div class="cap"><div class="hinge"></div><div class="line"></div></div>
+      <div class="body"><div class="print">
+        <div class="brand">BISS</div><div class="rule"></div>
+        <div class="quote">Du schaffst das.</div>
+        <div class="meta"><div class="mg">52 mg</div><div class="mgl">Koffein pro Stück · zuckerfrei</div></div>
+        <div class="legal">Kaugummi mit Koffein, mit Süßungsmitteln. Enthält Koffein. Für Kinder und schwangere Frauen nicht empfohlen (2.100 mg/100 g).</div>
+      </div></div>
+      <div class="shadow"></div>
+    </div>
+  </div>
+
+  <div class="note">
+    <span><span class="dot" style="background:#0a0a0a"></span>Schwarz matt</span>
+    <span><span class="dot" style="background:#F4F4F2;box-shadow:inset 0 0 0 1px #c9c9c4"></span>Weiß: Name und Satz</span>
+    <span><span class="dot" style="background:#FF6B1F"></span>Signal: nur die mg-Zahl</span>
+    <span>Rückseite: Zutaten, Nährwerte, Höchstmenge, MHD, Anschrift</span>
+  </div>
+</div>
+</body>
+</html>
