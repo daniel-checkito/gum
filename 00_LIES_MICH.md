@@ -15,7 +15,7 @@ Urteil: 5 von 10, lohnt sich als gestufter Test, nicht als großer Sprung. Der P
 | Ordner | Was drin ist |
 | --- | --- |
 | 01_Plaene | Businessplan (Markt, Produkt, Wettbewerb, Zahlen, Recht), Launch-Plan (Name, White Label, Budget, Schritt für Schritt), Wachstum und Viral-Marketing, Plan v2 (aktueller Stand) |
-| 02_Recherche | Sechzehn Recherche-Berichte mit Quellen: Vending-Markt, Regulierung, Go-to-Market, Pro/Contra-Debatte, Markenname, White Label, Pflichten und Kosten, Wettbewerb, Zielgruppe Büro, Guming-Analyse, Varianten mit Kreatin, Arginin, Protein, Agenten-Feedback, Vitamine und Zusätze, SUPERPUBLIC, White Label Recht und Hindernisse |
+| 02_Recherche | Siebzehn Recherche-Berichte mit Quellen: Vending-Markt, Regulierung, Go-to-Market, Pro/Contra-Debatte, Markenname, White Label, Pflichten und Kosten, Wettbewerb, Zielgruppe Büro, Guming-Analyse, Varianten mit Kreatin, Arginin, Protein, Agenten-Feedback, Vitamine und Zusätze, SUPERPUBLIC, White Label Recht und Hindernisse, Guming-Tiefenanalyse |
 | 03_Zahlen | Excel-Rechnung: Artikel, Margen, ein Automat im Vergleich, Zielgruppen. Gelbe Zellen sind Annahmen |
 | 04_Branding | 17 Bilder (Markenboard, Verpackung, Dosen, Website, Automaten-Designs und Kosten, Story, Sell-Sheet, Plakate, Ads, Sprüche), Markenbuch, Tonfall und Sprüche, Quelldateien |
 | 05_Vorlagen | Mails an Guming, Automatenbetreiber, Hersteller (Rezeptur v1) und SUPERPUBLIC, Creator-Briefing |
@@ -58,8 +58,9 @@ Die Online-Versionen sind aktueller, wenn du dort weiter änderst. Dieser Ordner
 ## Offen
 
 - Ob Guming White Label erlaubt
-- Ob Guming mit Xylit süßt (nicht öffentlich, sonst Xylit aus Story und Sprüchen streichen)
-- Ob Guming selbst produziert und ob die Werbemittel-Dose dieselbe Rezeptur hat
+- Geklärt: Guming hat kein Xylit (Sorbit, Isomalt, Maltit, Sucralose). Xylit im Pilot nicht erwähnen
+- Preis: Guming kostet bei EDEKA 0,25 € pro Stück, unsere Dose 0,62 €. Preis über Ort und Marke begründen
+- Wer Gumings Schweizer Lohnhersteller ist und ob die Werbemittel-Dose dieselbe Rezeptur hat
 - Ob SPÄTKAU oder MUNTA im Register frei ist
 - Ob die Guming-Sorten der Zielgruppe schmecken
 - Ob „munter“ in MUNTA als Wirkversprechen gilt

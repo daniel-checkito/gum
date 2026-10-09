@@ -34,7 +34,7 @@ ich bin Daniel aus Berlin. Wir wollen euren Koffein-Kaugummi in der Klappdose in
 Bevor wir bestellen, brauche ich ein paar Sachen:
 
 1. Ist Weiterverkauf unter unserer Marke für euch okay, also am Empfang, online und als Teambox für Firmen? Wenn ja, gern schriftlich.
-2. Habt ihr eine Spezifikation für mich? Vor allem Zutaten, welche Süßungsmittel (Xylit?), Vitamine in mg, Koffein pro Stück und pro 100 g, Nährwerte.
+2. Habt ihr eine Spezifikation für die Dose? Zutaten, Vitamine, Koffein pro Stück und pro 100 g, Nährwerte. Geht auch eine Variante mit Xylit?
 3. Ist die Werbemittel-Dose dieselbe Rezeptur wie die im Shop?
 4. Läuft der Kaugummi bei euch als normales Lebensmittel oder als Nahrungsergänzungsmittel?
 5. Bedruckt ihr auch den Dosenboden? Da müssen die Pflichtangaben hin.

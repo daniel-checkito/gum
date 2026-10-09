@@ -12,7 +12,7 @@ Sobald unser Name auf der Dose steht, sind wir rechtlich der Hersteller. Guming 
 | --- | --- | --- | --- |
 | 1 | **Guming sagt Nein oder nur Werbemittel** | Das Angebot ist für Werbegeschenke, nicht für Weiterverkauf. Guming verkauft selbst an 3.500 Händler, wir sind Konkurrenz. Preise könnten für Weiterverkauf steigen | Schriftliche Erlaubnis zum Weiterverkauf vor jeder Bestellung. Plan B: enerjetix im Original (Phase 1), China-OEM oder Delica (Phase 3) |
 | 2 | **Wir haften privat** | Die GbR haftet mit dem Privatvermögen aller Gesellschafter (§ 721 BGB). Ein Koffeinprodukt mit 480 mg pro Dose ist kein kleines Haftungsrisiko | Vor Phase 2 (eigene Marke) in eine UG oder GmbH wechseln. Produkthaftpflicht mit Rückrufkosten, Koffein ausdrücklich nennen |
-| 3 | **Wir wissen nicht, was drin ist** | Guming nennt online keine Zutaten, keine Süßungsmittel, keine Vitaminmengen, kein mg pro Stück. Unser ganzes Konzept sagt „mit Xylit“. Ist kein Xylit drin, sind Dose, Sprüche und Hunde-Hinweis falsch | Spezifikation mit Zutaten, Süßungsmitteln, Vitaminen in mg, Koffein pro Stück und pro 100 g anfordern. Ohne Xylit: Xylit aus der Story streichen |
+| 3 | **Kein Xylit drin** | Geklärt (17_Guming_Tiefenanalyse.md): Sorbit, Isomalt, Maltit, Sucralose, Acesulfam K. Unser Konzept sagt „mit Xylit“. Mit Guming-Ware wären Dose, Sprüche und Hunde-Hinweis falsch | Xylit aus Pilot-Story streichen. Spezifikation trotzdem schriftlich anfordern, auch für die Werbemittel-Dose |
 | 4 | **Etikett passt nicht auf die Dose** | Boden ca. 27 cm². Alle Pflichtangaben müssen drauf (Ausnahme erst unter 25 cm²), Schrift mind. 0,9 mm x-Höhe. Koffeinhinweis und Füllmenge im selben Sichtfeld wie die Bezeichnung | Klären, ob Guming den Boden bedruckt. Sonst Peel-off-Etikett. Layout vom Anwalt prüfen lassen, bevor gedruckt wird |
 | 5 | **NEM-Status unklar** | Mit Vitaminen und dosierter Form kann der Gum ein NEM sein. Dann muss der, unter dessen Namen er verkauft wird, ihn beim BVL anzeigen, mit eigenem Etikettmuster. Andere Pflichttexte (Koffein pro Tagesdosis statt pro 100 g) | Guming fragen, wie sie ihr Produkt einstufen und ob sie es angezeigt haben. Wir übernehmen dieselbe Einstufung, Anwalt bestätigt. Anzeige ist kostenlos |
 | 6 | **Abhängig von einem Zwei-Personen-Lieferanten** | Guming hat ca. 2 Mitarbeiter und lässt vermutlich selbst fertigen. Fällt Guming aus oder ändert die Rezeptur, steht unser Produkt | Echten Hersteller und dessen Zertifikat (IFS, FSSC oder BRC) erfragen. Rechte an unseren Druckvorlagen bei uns behalten. Rezeptur v1 als Ausweg weiter planen |
@@ -61,9 +61,7 @@ Eine Mail mit „passt schon“ reicht nicht. Mindestens:
 
 ## Offen
 
-- Süßungsmittel bei Guming (Xylit ja oder nein), nicht öffentlich auffindbar
-- Ob Guming selbst produziert oder fertigen lässt
-- Ob Guming den Gum als NEM einstuft
+- Wer Gumings Lohnhersteller in der Schweiz ist (Produktseite: „Produziert in der Schweiz“, IFS Food)
 - Ob die Werbemittel-Dose dieselbe Rezeptur hat wie die Shop-Ware (Katalog sagt nur „wie 1 Tasse Kaffee“)
 - Ob Coworkings sich als Lebensmittelbetrieb melden müssen
 
@@ -79,4 +77,4 @@ Eine Mail mit „passt schon“ reicht nicht. Mindestens:
 - NemV § 5: https://www.gesetze-im-internet.de/nemv/__5.html
 - Richtlinie (EU) 2024/2853: https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32024L2853
 - PPWR (VO 2025/40): https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32025R0040
-- Guming Shop (keine Zutaten angegeben, Abruf 09.10.2026): https://guming.de/collections/all
+- Guming Produktseite mit Zutaten (Abruf 09.10.2026): https://guming.de/products/fresh-mint
