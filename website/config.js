@@ -21,6 +21,6 @@ window.GUMMIT_CONFIG = {
 
   // Bezahlte Vorbestellung, z. B. ein Stripe Payment Link: "https://buy.stripe.com/..."
   preorderUrl: "",
-  preorderLabel: "Pre-order now",
-  preorderNote: "Pay now, get the first batch. If it never ships, you get a full refund."
+  preorderLabel: "Jetzt vorbestellen",
+  preorderNote: "Jetzt zahlen, erste Charge bekommen. Kommt sie nicht, gibt es das Geld komplett zurück."
 };
