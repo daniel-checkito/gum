@@ -3,6 +3,7 @@
   var $ = function (id) { return document.getElementById(id); };
   var $$ = function (sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); };
   var eur = function (n) { return n.toFixed(2).replace(".", ",") + " €"; };
+  var put = function (id, text) { var el = $(id); if (el) el.textContent = text; };
   var tins = function (n) { return n + (n === 1 ? " Dose" : " Dosen"); };
 
   var flavors = [
@@ -56,27 +57,39 @@
       t.addEventListener("click", function () { sel.view = t.dataset.view; render(); });
     });
 
+    $$("#tin-fan a").forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        if (a.dataset.f === sel.flavor.id) return;
+        e.preventDefault();
+        flavors.forEach(function (f) { if (f.id === a.dataset.f) sel.flavor = f; });
+        render();
+      });
+    });
+
     var render = function () {
       var f = sel.flavor, p = sel.pack;
       fChips.forEach(function (c, i) { c.setAttribute("aria-checked", flavors[i] === f ? "true" : "false"); });
       pChips.forEach(function (c, i) { c.setAttribute("aria-checked", packs[i] === p ? "true" : "false"); });
       thumbs.forEach(function (t) { t.setAttribute("aria-pressed", t.dataset.view === sel.view ? "true" : "false"); });
       $$(".pack-view").forEach(function (v) { v.hidden = !(v.dataset.f === f.id && v.dataset.v === sel.view); });
-      $("shop-ph").hidden = sel.view !== "ph";
-      $("pdp-flavor").textContent = f.name;
-      $("lede-mg").textContent = f.mg;
-      $("shop-stack").hidden = p.tins === 1;
-      $("shop-stack").textContent = "×" + p.tins;
+      if ($("shop-ph")) $("shop-ph").hidden = sel.view !== "ph";
+      $$("#tin-fan a").forEach(function (a) {
+        var rest = flavors.filter(function (x) { return x !== f; });
+        a.className = a.dataset.f === f.id ? "fan-c" : a.dataset.f === rest[0].id ? "fan-l" : "fan-r";
+      });
+      put("pdp-flavor", f.name);
+      put("lede-mg", f.mg);
+      if ($("shop-stack")) { $("shop-stack").hidden = p.tins === 1; $("shop-stack").textContent = "×" + p.tins; }
 
-      var mg100 = Math.round(f.mg / (netG / 8) * 100);
-      $("shop-mg100").textContent = mg100.toLocaleString("de-DE");
-      $("nut-mg100").textContent = mg100.toLocaleString("de-DE") + " mg";
-      $("nut-mg").textContent = f.mg + " mg";
-      $("net-weight").textContent = netG.toString().replace(".", ",");
+      var mg100 = Math.round(f.mg / (netG / 8) * 100).toLocaleString("de-DE");
+      put("shop-mg100", mg100);
+      put("nut-mg100", mg100 + " mg");
+      put("nut-mg", f.mg + " mg");
+      put("net-weight", netG.toString().replace(".", ","));
 
-      $("shop-price").textContent = eur(p.price);
-      $("shop-per").textContent = eur(p.price / p.tins) + " / Dose";
-      $("shop-unit").textContent = "Grundpreis " + eur(p.price / (p.tins * netG) * 1000) + " / kg (vorläufig)";
+      put("shop-price", eur(p.price));
+      put("shop-per", eur(p.price / p.tins) + " / Dose");
+      put("shop-unit", "Grundpreis " + eur(p.price / (p.tins * netG) * 1000) + " / kg (vorläufig)");
       var save = Math.round((1 - p.price / (base * p.tins)) * 100);
       $("shop-save").hidden = save <= 0;
       $("shop-save").textContent = save + " % gespart";
@@ -88,7 +101,7 @@
         $("sticky-name").textContent = f.name + " · " + tins(p.tins);
         $("sticky-price").textContent = eur(p.price);
       }
-      if (history.replaceState) history.replaceState(null, "", "?sorte=" + f.id + location.hash);
+      if ($("pdp-flavor") && history.replaceState) history.replaceState(null, "", "?sorte=" + f.id + location.hash);
     };
     render();
 

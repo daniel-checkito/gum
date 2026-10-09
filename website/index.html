@@ -9,7 +9,7 @@
 <meta property="og:description" content="Zuckerfreier Kaugummi mit 52 bis 60 mg Koffein pro Stück. Für alle, die in Berlin Dinge bauen: Hackathons, Demo Days, lange Abende im Coworking.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://gum-prototype.vercel.app/img/og.png">
-<meta name="theme-color" content="#F4F0E8">
+<meta name="theme-color" content="#F3EFE6">
 <link rel="canonical" href="https://gum-prototype.vercel.app/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -27,21 +27,11 @@
 </header>
 <main id="inhalt">
 
-<section class="hero">
+<section class="hero" id="kaufen">
   <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <span class="sticker">Neu aus Berlin</span>
-      <h1 class="riso">Gummit.<br>Push.<br>Repeat.</h1>
-      <p class="lede">Zuckerfreier Kaugummi mit <b>52–60 mg Koffein</b> pro Stück. In der Metalldose, für <em>lange Build-Tage</em>, Hackathons und Demo Days.</p>
-      <div class="hero-cta">
-        <a class="btn" href="/produkt">Zum Produkt · ab <span data-from-price>3,99 €</span></a>
-        <a class="btn ghost" href="/teams">Für Teams &amp; Events</a>
-      </div>
-      <ul class="hero-facts"><li><b>0 g</b> Zucker</li><li><b>8</b> Stück pro Dose</li><li><b>3</b> Sorten</li></ul>
-    </div>
     <div class="hero-media">
-      <div class="tin-fan">
-        <a class="fan-l" href="/produkt?sorte=kirsche" aria-label="Cherry Pick ansehen"><svg class="pack-svg" viewBox="0 0 400 320" role="img" aria-label="GUMMIT Cherry Pick, Kirsche, 52 mg Koffein pro Stück, Vorderseite der Dose"><defs>
+      <div class="tin-fan" id="tin-fan">
+        <a class="fan-l" data-f="kirsche" href="/produkt?sorte=kirsche" aria-label="Cherry Pick ansehen"><svg class="pack-svg" viewBox="0 0 400 320" role="img" aria-label="GUMMIT Cherry Pick, Kirsche, 52 mg Koffein pro Stück, Vorderseite der Dose"><defs>
 <linearGradient id="hero-k-metal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7F7F5"/><stop offset=".35" stop-color="#C9C9C5"/><stop offset=".6" stop-color="#EDEDEA"/><stop offset="1" stop-color="#9A9A96"/></linearGradient>
 <linearGradient id="hero-k-metal-h" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#A9A9A5"/><stop offset=".25" stop-color="#EFEFEC"/><stop offset=".7" stop-color="#C4C4C0"/><stop offset="1" stop-color="#8E8E8A"/></linearGradient>
 <linearGradient id="hero-k-gloss" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".38" stop-color="#fff" stop-opacity=".08"/><stop offset=".39" stop-color="#fff" stop-opacity="0"/></linearGradient>
@@ -49,33 +39,33 @@
 <linearGradient id="hero-k-side" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E77F96"/><stop offset="1" stop-color="#F7A8B8"/></linearGradient>
 <clipPath id="hero-k-face"><rect x="58" y="56" width="284" height="214" rx="22"/></clipPath>
 </defs>
-<ellipse cx="200" cy="300" rx="158" ry="12" fill="#1D1D1B" opacity=".14"/>
-<rect x="48" y="60" width="304" height="230" rx="30" fill="url(#hero-k-metal-h)" stroke="#1D1D1B" stroke-width="2.5"/>
-<rect x="46" y="44" width="308" height="234" rx="30" fill="url(#hero-k-metal)" stroke="#1D1D1B" stroke-width="2.5"/>
+<ellipse cx="200" cy="300" rx="158" ry="12" fill="#15172B" opacity=".14"/>
+<rect x="48" y="60" width="304" height="230" rx="30" fill="url(#hero-k-metal-h)" stroke="#15172B" stroke-width="2.5"/>
+<rect x="46" y="44" width="308" height="234" rx="30" fill="url(#hero-k-metal)" stroke="#15172B" stroke-width="2.5"/>
 <rect x="58" y="56" width="284" height="214" rx="22" fill="#F7A8B8"/>
 <g clip-path="url(#hero-k-face)">
   <circle cx="320" cy="58" r="70" fill="#E77F96" opacity=".35"/>
-  <text x="79" y="127" font-family="Anton, Impact, sans-serif" font-size="60" fill="#0078BF" opacity=".9">GUMMIT</text><text x="76" y="124" font-family="Anton, Impact, sans-serif" font-size="60" fill="#1D1D1B">GUMMIT</text>
-  <text x="78" y="146" font-family="Instrument Sans, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="2.2" fill="#1D1D1B">KAUGUMMI MIT KOFFEIN</text>
-  <text x="76" y="226" font-family="Anton, Impact, sans-serif" font-size="78" fill="#1D1D1B">52</text>
-  <text x="160" y="196" font-family="Anton, Impact, sans-serif" font-size="26" fill="#1D1D1B">MG</text>
-  <text x="160" y="211" font-family="Instrument Sans, Arial, sans-serif" font-weight="700" font-size="9.5" fill="#1D1D1B">KOFFEIN</text>
-  <text x="160" y="223" font-family="Instrument Sans, Arial, sans-serif" font-weight="700" font-size="9.5" fill="#1D1D1B">PRO STÜCK</text>
+  <text x="79" y="127" font-family="Anton, Impact, sans-serif" font-size="60" fill="#2F3BFF" opacity=".9">GUMMIT</text><text x="76" y="124" font-family="Anton, Impact, sans-serif" font-size="60" fill="#15172B">GUMMIT</text>
+  <text x="78" y="146" font-family="Bricolage Grotesque, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="2.2" fill="#15172B">KAUGUMMI MIT KOFFEIN</text>
+  <text x="76" y="226" font-family="Anton, Impact, sans-serif" font-size="78" fill="#15172B">52</text>
+  <text x="160" y="196" font-family="Anton, Impact, sans-serif" font-size="26" fill="#15172B">MG</text>
+  <text x="160" y="211" font-family="Bricolage Grotesque, Arial, sans-serif" font-weight="700" font-size="9.5" fill="#15172B">KOFFEIN</text>
+  <text x="160" y="223" font-family="Bricolage Grotesque, Arial, sans-serif" font-weight="700" font-size="9.5" fill="#15172B">PRO STÜCK</text>
   <g transform="translate(238 150)">
-<path d="M26 38C30 20 40 8 54 2M58 40C56 24 56 12 54 2" fill="none" stroke="#1D1D1B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M54 2c10-4 22 0 26 8-10 4-20 2-26-8Z" fill="#4DB384" stroke="#1D1D1B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
-<circle cx="24" cy="48" r="15" fill="#E8364F" stroke="#1D1D1B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="58" cy="50" r="15" fill="#D42A45" stroke="#1D1D1B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M26 38C30 20 40 8 54 2M58 40C56 24 56 12 54 2" fill="none" stroke="#15172B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M54 2c10-4 22 0 26 8-10 4-20 2-26-8Z" fill="#4DB384" stroke="#15172B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="24" cy="48" r="15" fill="#E8364F" stroke="#15172B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="58" cy="50" r="15" fill="#D42A45" stroke="#15172B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M18 42a6 6 0 0 1 6-4M52 44a6 6 0 0 1 6-4" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
 </g>
-  <g transform="translate(300 96) rotate(12)"><circle r="27" fill="#F4F0E8" stroke="#1D1D1B" stroke-width="2.2"/><text y="-2" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="17" fill="#1D1D1B">0 G</text><text y="11" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-weight="700" font-size="7.5" letter-spacing="1" fill="#1D1D1B">ZUCKER</text></g>
-  <rect x="58" y="236" width="284" height="40" fill="#1D1D1B"/>
-  <text x="78" y="262" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="22" fill="#F4F0E8">Cherry Pick</text>
-  <text x="322" y="261" text-anchor="end" font-family="Instrument Sans, Arial, sans-serif" font-size="10" fill="#F4F0E8">Kirsche · 8 Stück · 12 g ℮</text>
+  <g transform="translate(300 96) rotate(12)"><circle r="27" fill="#F3EFE6" stroke="#15172B" stroke-width="2.2"/><text y="-2" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="17" fill="#15172B">0 G</text><text y="11" text-anchor="middle" font-family="Bricolage Grotesque, Arial, sans-serif" font-weight="700" font-size="7.5" letter-spacing="1" fill="#15172B">ZUCKER</text></g>
+  <rect x="58" y="236" width="284" height="40" fill="#15172B"/>
+  <text x="78" y="262" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="22" fill="#F3EFE6">Cherry Pick</text>
+  <text x="322" y="261" text-anchor="end" font-family="Bricolage Grotesque, Arial, sans-serif" font-size="10" fill="#F3EFE6">Kirsche · 8 Stück · 12 g ℮</text>
   <rect x="58" y="56" width="284" height="214" fill="url(#hero-k-gloss)"/>
 </g>
 <rect x="58" y="56" width="284" height="214" rx="22" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="1.5"/>
 </svg></a>
-        <a class="fan-r" href="/produkt?sorte=beere" aria-label="Berry Important ansehen"><svg class="pack-svg" viewBox="0 0 400 320" role="img" aria-label="GUMMIT Berry Important, Beere, 52 mg Koffein pro Stück, Vorderseite der Dose"><defs>
+        <a class="fan-r" data-f="beere" href="/produkt?sorte=beere" aria-label="Berry Important ansehen"><svg class="pack-svg" viewBox="0 0 400 320" role="img" aria-label="GUMMIT Berry Important, Beere, 52 mg Koffein pro Stück, Vorderseite der Dose"><defs>
 <linearGradient id="hero-b-metal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7F7F5"/><stop offset=".35" stop-color="#C9C9C5"/><stop offset=".6" stop-color="#EDEDEA"/><stop offset="1" stop-color="#9A9A96"/></linearGradient>
 <linearGradient id="hero-b-metal-h" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#A9A9A5"/><stop offset=".25" stop-color="#EFEFEC"/><stop offset=".7" stop-color="#C4C4C0"/><stop offset="1" stop-color="#8E8E8A"/></linearGradient>
 <linearGradient id="hero-b-gloss" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".38" stop-color="#fff" stop-opacity=".08"/><stop offset=".39" stop-color="#fff" stop-opacity="0"/></linearGradient>
@@ -83,32 +73,32 @@
 <linearGradient id="hero-b-side" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9A8BDB"/><stop offset="1" stop-color="#C3B8EE"/></linearGradient>
 <clipPath id="hero-b-face"><rect x="58" y="56" width="284" height="214" rx="22"/></clipPath>
 </defs>
-<ellipse cx="200" cy="300" rx="158" ry="12" fill="#1D1D1B" opacity=".14"/>
-<rect x="48" y="60" width="304" height="230" rx="30" fill="url(#hero-b-metal-h)" stroke="#1D1D1B" stroke-width="2.5"/>
-<rect x="46" y="44" width="308" height="234" rx="30" fill="url(#hero-b-metal)" stroke="#1D1D1B" stroke-width="2.5"/>
+<ellipse cx="200" cy="300" rx="158" ry="12" fill="#15172B" opacity=".14"/>
+<rect x="48" y="60" width="304" height="230" rx="30" fill="url(#hero-b-metal-h)" stroke="#15172B" stroke-width="2.5"/>
+<rect x="46" y="44" width="308" height="234" rx="30" fill="url(#hero-b-metal)" stroke="#15172B" stroke-width="2.5"/>
 <rect x="58" y="56" width="284" height="214" rx="22" fill="#C3B8EE"/>
 <g clip-path="url(#hero-b-face)">
   <circle cx="320" cy="58" r="70" fill="#9A8BDB" opacity=".35"/>
-  <text x="79" y="127" font-family="Anton, Impact, sans-serif" font-size="60" fill="#0078BF" opacity=".9">GUMMIT</text><text x="76" y="124" font-family="Anton, Impact, sans-serif" font-size="60" fill="#1D1D1B">GUMMIT</text>
-  <text x="78" y="146" font-family="Instrument Sans, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="2.2" fill="#1D1D1B">KAUGUMMI MIT KOFFEIN</text>
-  <text x="76" y="226" font-family="Anton, Impact, sans-serif" font-size="78" fill="#1D1D1B">52</text>
-  <text x="160" y="196" font-family="Anton, Impact, sans-serif" font-size="26" fill="#1D1D1B">MG</text>
-  <text x="160" y="211" font-family="Instrument Sans, Arial, sans-serif" font-weight="700" font-size="9.5" fill="#1D1D1B">KOFFEIN</text>
-  <text x="160" y="223" font-family="Instrument Sans, Arial, sans-serif" font-weight="700" font-size="9.5" fill="#1D1D1B">PRO STÜCK</text>
+  <text x="79" y="127" font-family="Anton, Impact, sans-serif" font-size="60" fill="#2F3BFF" opacity=".9">GUMMIT</text><text x="76" y="124" font-family="Anton, Impact, sans-serif" font-size="60" fill="#15172B">GUMMIT</text>
+  <text x="78" y="146" font-family="Bricolage Grotesque, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="2.2" fill="#15172B">KAUGUMMI MIT KOFFEIN</text>
+  <text x="76" y="226" font-family="Anton, Impact, sans-serif" font-size="78" fill="#15172B">52</text>
+  <text x="160" y="196" font-family="Anton, Impact, sans-serif" font-size="26" fill="#15172B">MG</text>
+  <text x="160" y="211" font-family="Bricolage Grotesque, Arial, sans-serif" font-weight="700" font-size="9.5" fill="#15172B">KOFFEIN</text>
+  <text x="160" y="223" font-family="Bricolage Grotesque, Arial, sans-serif" font-weight="700" font-size="9.5" fill="#15172B">PRO STÜCK</text>
   <g transform="translate(238 150)">
-<circle cx="22" cy="42" r="14" fill="#5B4BC4" stroke="#1D1D1B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="50" cy="44" r="14" fill="#7462D8" stroke="#1D1D1B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="36" cy="20" r="14" fill="#4A3CA8" stroke="#1D1D1B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M30 14l6 4 6-4M16 36l6 4 6-4M44 38l6 4 6-4" fill="none" stroke="#1D1D1B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M58 8c8-6 18-4 22 2-8 6-16 4-22-2Z" fill="#4DB384" stroke="#1D1D1B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="22" cy="42" r="14" fill="#5B4BC4" stroke="#15172B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="50" cy="44" r="14" fill="#7462D8" stroke="#15172B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="36" cy="20" r="14" fill="#4A3CA8" stroke="#15172B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M30 14l6 4 6-4M16 36l6 4 6-4M44 38l6 4 6-4" fill="none" stroke="#15172B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M58 8c8-6 18-4 22 2-8 6-16 4-22-2Z" fill="#4DB384" stroke="#15172B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
 </g>
-  <g transform="translate(300 96) rotate(12)"><circle r="27" fill="#F4F0E8" stroke="#1D1D1B" stroke-width="2.2"/><text y="-2" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="17" fill="#1D1D1B">0 G</text><text y="11" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-weight="700" font-size="7.5" letter-spacing="1" fill="#1D1D1B">ZUCKER</text></g>
-  <rect x="58" y="236" width="284" height="40" fill="#1D1D1B"/>
-  <text x="78" y="262" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="22" fill="#F4F0E8">Berry Important</text>
-  <text x="322" y="261" text-anchor="end" font-family="Instrument Sans, Arial, sans-serif" font-size="10" fill="#F4F0E8">Beere · 8 Stück · 12 g ℮</text>
+  <g transform="translate(300 96) rotate(12)"><circle r="27" fill="#F3EFE6" stroke="#15172B" stroke-width="2.2"/><text y="-2" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="17" fill="#15172B">0 G</text><text y="11" text-anchor="middle" font-family="Bricolage Grotesque, Arial, sans-serif" font-weight="700" font-size="7.5" letter-spacing="1" fill="#15172B">ZUCKER</text></g>
+  <rect x="58" y="236" width="284" height="40" fill="#15172B"/>
+  <text x="78" y="262" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="22" fill="#F3EFE6">Berry Important</text>
+  <text x="322" y="261" text-anchor="end" font-family="Bricolage Grotesque, Arial, sans-serif" font-size="10" fill="#F3EFE6">Beere · 8 Stück · 12 g ℮</text>
   <rect x="58" y="56" width="284" height="214" fill="url(#hero-b-gloss)"/>
 </g>
 <rect x="58" y="56" width="284" height="214" rx="22" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="1.5"/>
 </svg></a>
-        <a class="fan-c" href="/produkt?sorte=minze" aria-label="Mint Condition ansehen"><svg class="pack-svg" viewBox="0 0 400 320" role="img" aria-label="GUMMIT Mint Condition, Minze, 60 mg Koffein pro Stück, Vorderseite der Dose"><defs>
+        <a class="fan-c" data-f="minze" href="/produkt?sorte=minze" aria-label="Mint Condition ansehen"><svg class="pack-svg" viewBox="0 0 400 320" role="img" aria-label="GUMMIT Mint Condition, Minze, 60 mg Koffein pro Stück, Vorderseite der Dose"><defs>
 <linearGradient id="hero-m-metal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7F7F5"/><stop offset=".35" stop-color="#C9C9C5"/><stop offset=".6" stop-color="#EDEDEA"/><stop offset="1" stop-color="#9A9A96"/></linearGradient>
 <linearGradient id="hero-m-metal-h" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#A9A9A5"/><stop offset=".25" stop-color="#EFEFEC"/><stop offset=".7" stop-color="#C4C4C0"/><stop offset="1" stop-color="#8E8E8A"/></linearGradient>
 <linearGradient id="hero-m-gloss" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".38" stop-color="#fff" stop-opacity=".08"/><stop offset=".39" stop-color="#fff" stop-opacity="0"/></linearGradient>
@@ -116,40 +106,55 @@
 <linearGradient id="hero-m-side" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6FBF9E"/><stop offset="1" stop-color="#A8DCC6"/></linearGradient>
 <clipPath id="hero-m-face"><rect x="58" y="56" width="284" height="214" rx="22"/></clipPath>
 </defs>
-<ellipse cx="200" cy="300" rx="158" ry="12" fill="#1D1D1B" opacity=".14"/>
-<rect x="48" y="60" width="304" height="230" rx="30" fill="url(#hero-m-metal-h)" stroke="#1D1D1B" stroke-width="2.5"/>
-<rect x="46" y="44" width="308" height="234" rx="30" fill="url(#hero-m-metal)" stroke="#1D1D1B" stroke-width="2.5"/>
+<ellipse cx="200" cy="300" rx="158" ry="12" fill="#15172B" opacity=".14"/>
+<rect x="48" y="60" width="304" height="230" rx="30" fill="url(#hero-m-metal-h)" stroke="#15172B" stroke-width="2.5"/>
+<rect x="46" y="44" width="308" height="234" rx="30" fill="url(#hero-m-metal)" stroke="#15172B" stroke-width="2.5"/>
 <rect x="58" y="56" width="284" height="214" rx="22" fill="#A8DCC6"/>
 <g clip-path="url(#hero-m-face)">
   <circle cx="320" cy="58" r="70" fill="#6FBF9E" opacity=".35"/>
-  <text x="79" y="127" font-family="Anton, Impact, sans-serif" font-size="60" fill="#0078BF" opacity=".9">GUMMIT</text><text x="76" y="124" font-family="Anton, Impact, sans-serif" font-size="60" fill="#1D1D1B">GUMMIT</text>
-  <text x="78" y="146" font-family="Instrument Sans, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="2.2" fill="#1D1D1B">KAUGUMMI MIT KOFFEIN</text>
-  <text x="76" y="226" font-family="Anton, Impact, sans-serif" font-size="78" fill="#1D1D1B">60</text>
-  <text x="160" y="196" font-family="Anton, Impact, sans-serif" font-size="26" fill="#1D1D1B">MG</text>
-  <text x="160" y="211" font-family="Instrument Sans, Arial, sans-serif" font-weight="700" font-size="9.5" fill="#1D1D1B">KOFFEIN</text>
-  <text x="160" y="223" font-family="Instrument Sans, Arial, sans-serif" font-weight="700" font-size="9.5" fill="#1D1D1B">PRO STÜCK</text>
+  <text x="79" y="127" font-family="Anton, Impact, sans-serif" font-size="60" fill="#2F3BFF" opacity=".9">GUMMIT</text><text x="76" y="124" font-family="Anton, Impact, sans-serif" font-size="60" fill="#15172B">GUMMIT</text>
+  <text x="78" y="146" font-family="Bricolage Grotesque, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="2.2" fill="#15172B">KAUGUMMI MIT KOFFEIN</text>
+  <text x="76" y="226" font-family="Anton, Impact, sans-serif" font-size="78" fill="#15172B">60</text>
+  <text x="160" y="196" font-family="Anton, Impact, sans-serif" font-size="26" fill="#15172B">MG</text>
+  <text x="160" y="211" font-family="Bricolage Grotesque, Arial, sans-serif" font-weight="700" font-size="9.5" fill="#15172B">KOFFEIN</text>
+  <text x="160" y="223" font-family="Bricolage Grotesque, Arial, sans-serif" font-weight="700" font-size="9.5" fill="#15172B">PRO STÜCK</text>
   <g transform="translate(238 150)">
-<path d="M8 52C2 30 14 8 40 2c6 24-6 46-32 50Z" fill="#4DB384" stroke="#1D1D1B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><path d="M10 50C18 36 26 22 38 6" fill="none" stroke="#1D1D1B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M30 58c10-20 30-30 52-24-6 22-28 32-52 24Z" fill="#7FD0A8" stroke="#1D1D1B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><path d="M32 57c14-8 28-14 48-22" fill="none" stroke="#1D1D1B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M8 52C2 30 14 8 40 2c6 24-6 46-32 50Z" fill="#4DB384" stroke="#15172B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><path d="M10 50C18 36 26 22 38 6" fill="none" stroke="#15172B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M30 58c10-20 30-30 52-24-6 22-28 32-52 24Z" fill="#7FD0A8" stroke="#15172B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><path d="M32 57c14-8 28-14 48-22" fill="none" stroke="#15172B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
 </g>
-  <g transform="translate(300 96) rotate(12)"><circle r="27" fill="#F4F0E8" stroke="#1D1D1B" stroke-width="2.2"/><text y="-2" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="17" fill="#1D1D1B">0 G</text><text y="11" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-weight="700" font-size="7.5" letter-spacing="1" fill="#1D1D1B">ZUCKER</text></g>
-  <rect x="58" y="236" width="284" height="40" fill="#1D1D1B"/>
-  <text x="78" y="262" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="22" fill="#F4F0E8">Mint Condition</text>
-  <text x="322" y="261" text-anchor="end" font-family="Instrument Sans, Arial, sans-serif" font-size="10" fill="#F4F0E8">Minze · 8 Stück · 12 g ℮</text>
+  <g transform="translate(300 96) rotate(12)"><circle r="27" fill="#F3EFE6" stroke="#15172B" stroke-width="2.2"/><text y="-2" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="17" fill="#15172B">0 G</text><text y="11" text-anchor="middle" font-family="Bricolage Grotesque, Arial, sans-serif" font-weight="700" font-size="7.5" letter-spacing="1" fill="#15172B">ZUCKER</text></g>
+  <rect x="58" y="236" width="284" height="40" fill="#15172B"/>
+  <text x="78" y="262" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="22" fill="#F3EFE6">Mint Condition</text>
+  <text x="322" y="261" text-anchor="end" font-family="Bricolage Grotesque, Arial, sans-serif" font-size="10" fill="#F3EFE6">Minze · 8 Stück · 12 g ℮</text>
   <rect x="58" y="56" width="284" height="214" fill="url(#hero-m-gloss)"/>
 </g>
 <rect x="58" y="56" width="284" height="214" rx="22" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="1.5"/>
 </svg></a>
+        <span class="stack-badge" id="shop-stack" hidden>×1</span>
       </div>
       <p class="note"><svg class="arrow" viewBox="0 0 80 40" aria-hidden="true"><path d="M4 30C20 8 46 4 70 14M60 6l10 8-12 4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>die Zahl steht vorne drauf</span></p>
       <p class="render-note">Entwurf der Dose. Die echte Verpackung kann leicht abweichen.</p>
+    </div>
+    <div class="hero-copy">
+      <span class="sticker">Neu aus Berlin</span>
+      <h1 class="riso">Gummit. Push. Repeat.</h1>
+      <p class="lede">Zuckerfreier Kaugummi mit <b>52–60 mg Koffein</b> pro Stück. 8 Stück in der Metalldose, für lange Build-Tage, Hackathons und Demo Days.</p>
+      <div class="buybox card">
+        <fieldset class="opt"><legend>Sorte</legend><div class="chips" id="shop-flavors" role="radiogroup"></div></fieldset>
+        <fieldset class="opt"><legend>Menge</legend><div class="packs" id="shop-packs" role="radiogroup"></div></fieldset>
+        <div class="price-row"><span class="price" id="shop-price">4,99 €</span><span class="save" id="shop-save" hidden></span></div>
+        <p class="price-meta"><span id="shop-per">4,99 € / Dose</span> · inkl. MwSt. · <span id="shop-unit">Grundpreis folgt</span></p>
+        <button class="btn buy" type="button" id="shop-buy">Unverbindlich reservieren</button>
+        <p class="buy-note" id="shop-note">Unverbindlich, kein Kaufvertrag. Zahlung erst nach separater Bestellung.</p>
+        <p class="warn small">Enthält Koffein (<span id="shop-mg100">–</span> mg/100 g). Für Kinder und schwangere Frauen nicht empfohlen. <a href="/produkt">Alle Produktinfos</a></p>
+      </div>
     </div>
   </div>
 </section>
 
 <div class="ticker" aria-hidden="true"><div class="ticker-track">
-  <span>0 g Zucker</span><span>52–60 mg Koffein pro Stück</span><span>Metall-Klappdose</span><span>Versand aus Berlin</span><span>Keine Wirkversprechen. Nur Kaugummi.</span>
-  <span>0 g Zucker</span><span>52–60 mg Koffein pro Stück</span><span>Metall-Klappdose</span><span>Versand aus Berlin</span><span>Keine Wirkversprechen. Nur Kaugummi.</span>
+  <span>0 g Zucker</span><span>52–60 mg Koffein pro Stück</span><span>Metall-Klappdose</span><span>Versand aus Berlin</span><span>Keine Wirkversprechen. Nur Kaugummi.</span><span>Projekt Erster Commit: 0 Dosen verschickt. Noch.</span>
+  <span>0 g Zucker</span><span>52–60 mg Koffein pro Stück</span><span>Metall-Klappdose</span><span>Versand aus Berlin</span><span>Keine Wirkversprechen. Nur Kaugummi.</span><span>Projekt Erster Commit: 0 Dosen verschickt. Noch.</span>
 </div></div>
 
 <section class="band" id="fuer-wen">
@@ -158,9 +163,9 @@
     <h2>Gemacht für Berlins <em>Builder</em></h2>
     <p class="lead">Nicht für alle. Für Leute, die abends noch einen Prototyp fertig machen, am Wochenende auf Hackathons sitzen und Montag pitchen.</p>
     <div class="personas">
-      <article class="card persona"><span class="num">A</span><h3>Vibe Coder</h3><p>Du baust mit Cursor, Claude und Kaffee. Der Kaffee ist kalt, der Build läuft noch. Die Dose liegt neben dem Ladekabel.</p></article>
-      <article class="card persona"><span class="num">B</span><h3>Gründer:innen</h3><p>Pitch-Deck Version 14, Probelauf um 23 Uhr. Kein Zucker vor dem Auftritt, keine Dose Energy auf dem Tisch.</p></article>
-      <article class="card persona"><span class="num">C</span><h3>Hackathon-Teams</h3><p>48 Stunden, ein Tisch, zu viel Pizza. Eine Dose in die Mitte, alle sehen, wie viel drin ist.</p></article>
+      <article class="card persona"><div class="slot ph-tile tape persona-img"><span>Bild folgt · persona-vibecoder</span><b>Vibe Coder</b></div><span class="num">A</span><h3>Vibe Coder</h3><p>Du baust mit Cursor, Claude und Kaffee. Der Kaffee ist kalt, der Build läuft noch. Die Dose liegt neben dem Ladekabel.</p></article>
+      <article class="card persona"><div class="slot ph-tile tape persona-img"><span>Bild folgt · persona-gruender</span><b>Gründer</b></div><span class="num">B</span><h3>Gründer</h3><p>Pitch-Deck Version 14, Probelauf um 23 Uhr. Kein Zucker vor dem Auftritt, keine Dose Energy auf dem Tisch.</p></article>
+      <article class="card persona"><div class="slot ph-tile tape persona-img"><span>Bild folgt · persona-hackathon</span><b>Hackathon-Team</b></div><span class="num">C</span><h3>Hackathon-Teams</h3><p>48 Stunden, ein Tisch, zu viel Pizza. Eine Dose in die Mitte, alle sehen, wie viel drin ist.</p></article>
     </div>
   </div>
 </section>
@@ -171,37 +176,37 @@
     <h2>Koffein ohne <em>Theater</em></h2>
     <p class="lead">Kein Zucker, kein Becher, kein Anstehen. Klein genug für die Hosentasche, ehrlich genug, um die Dosis groß aufs Etikett zu drucken.</p>
     <div class="mascots">
-  <div><svg viewBox="0 0 160 160" aria-hidden="true"><path d="M26 31Q26 40 35 40Q26 40 26 49Q26 40 17 40Q26 40 26 31Z" fill="#1D1D1B"/><path d="M134 29Q134 36 141 36Q134 36 134 43Q134 36 127 36Q134 36 134 29Z" fill="#1D1D1B"/><path d="M132 112Q132 120 140 120Q132 120 132 128Q132 120 124 120Q132 120 132 112Z" fill="#1D1D1B"/>
-<path d="M36 82q-14-2-18-16M124 82q14-2 18-16M66 112v14h-8M94 112v14h8" fill="none" stroke="#1D1D1B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<rect x="36" y="46" width="88" height="66" rx="30" fill="#fff" stroke="#1D1D1B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M58 74q7-9 14 0M88 74q7-9 14 0" fill="none" stroke="#1D1D1B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M66 86q14 16 28 0Z" fill="#1D1D1B" stroke="#1D1D1B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <div><svg viewBox="0 0 160 160" aria-hidden="true"><path d="M26 31Q26 40 35 40Q26 40 26 49Q26 40 17 40Q26 40 26 31Z" fill="#15172B"/><path d="M134 29Q134 36 141 36Q134 36 134 43Q134 36 127 36Q134 36 134 29Z" fill="#15172B"/><path d="M132 112Q132 120 140 120Q132 120 132 128Q132 120 124 120Q132 120 132 112Z" fill="#15172B"/>
+<path d="M36 82q-14-2-18-16M124 82q14-2 18-16M66 112v14h-8M94 112v14h8" fill="none" stroke="#15172B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="36" y="46" width="88" height="66" rx="30" fill="#fff" stroke="#15172B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M58 74q7-9 14 0M88 74q7-9 14 0" fill="none" stroke="#15172B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M66 86q14 16 28 0Z" fill="#15172B" stroke="#15172B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 <ellipse cx="53" cy="89" rx="7" ry="4.5" fill="#FFB3D9"/><ellipse cx="107" cy="89" rx="7" ry="4.5" fill="#FFB3D9"/>
 </svg><h3>Schmeckt nach Kaugummi</h3><p>Minze, Kirsche oder Beere. Nicht nach Apotheke.</p></div>
   <div><svg viewBox="0 0 160 160" aria-hidden="true">
-<path d="M12 72h18M8 88h22M14 104h14" fill="none" stroke="#1D1D1B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M60 104l-6 16h-8M98 110l8 14h8" fill="none" stroke="#1D1D1B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M44 56 80 40 116 56 80 72Z" fill="#fff" stroke="#1D1D1B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M44 56 80 72v44L44 100Z" fill="#F2F2F2" stroke="#1D1D1B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M80 72 116 56v44l-36 16Z" fill="#E2E2E2" stroke="#1D1D1B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="56" cy="83" r="4.5" fill="#1D1D1B"/><circle cx="70" cy="89" r="4.5" fill="#1D1D1B"/>
-<path d="M50 74l9 3M65 80l9 4M53 101q4-4 8 0t8 0" fill="none" stroke="#1D1D1B" stroke-width="3.5" stroke-linecap="round"/>
-<path d="M126 32c-4 8-6 12 0 14 6-2 4-6 0-14Z" fill="#7FC4EE" stroke="#1D1D1B" stroke-width="3" stroke-linejoin="round"/>
-<rect x="6" y="18" width="70" height="26" rx="13" fill="#fff" stroke="#1D1D1B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><text x="41" y="36" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-weight="700" font-size="14" fill="#1D1D1B">tschüss!</text>
+<path d="M12 72h18M8 88h22M14 104h14" fill="none" stroke="#15172B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M60 104l-6 16h-8M98 110l8 14h8" fill="none" stroke="#15172B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M44 56 80 40 116 56 80 72Z" fill="#fff" stroke="#15172B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M44 56 80 72v44L44 100Z" fill="#F2F2F2" stroke="#15172B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M80 72 116 56v44l-36 16Z" fill="#E2E2E2" stroke="#15172B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="56" cy="83" r="4.5" fill="#15172B"/><circle cx="70" cy="89" r="4.5" fill="#15172B"/>
+<path d="M50 74l9 3M65 80l9 4M53 101q4-4 8 0t8 0" fill="none" stroke="#15172B" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M126 32c-4 8-6 12 0 14 6-2 4-6 0-14Z" fill="#9EA5FF" stroke="#15172B" stroke-width="3" stroke-linejoin="round"/>
+<rect x="6" y="18" width="70" height="26" rx="13" fill="#fff" stroke="#15172B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><text x="41" y="36" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="700" font-size="14" fill="#15172B">tschüss!</text>
 </svg><h3>Null Zucker</h3><p>Gesüßt mit Xylit. Der Zucker ist schon weg.</p></div>
-  <div><svg viewBox="0 0 160 160" aria-hidden="true"><path d="M28 34Q28 42 36 42Q28 42 28 50Q28 42 20 42Q28 42 28 34Z" fill="#1D1D1B"/><path d="M136 45Q136 54 145 54Q136 54 136 63Q136 54 127 54Q136 54 136 45Z" fill="#1D1D1B"/><path d="M128 126Q128 132 134 132Q128 132 128 138Q128 132 122 132Q128 132 128 126Z" fill="#1D1D1B"/>
-<rect x="40" y="38" width="80" height="92" rx="18" fill="#CFE6F5" stroke="#1D1D1B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M40 60h80" fill="none" stroke="#1D1D1B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="66" cy="78" r="4.5" fill="#1D1D1B"/><path d="M87 78q6-6 12 0M70 88q10 9 20 0" fill="none" stroke="#1D1D1B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <div><svg viewBox="0 0 160 160" aria-hidden="true"><path d="M28 34Q28 42 36 42Q28 42 28 50Q28 42 20 42Q28 42 28 34Z" fill="#15172B"/><path d="M136 45Q136 54 145 54Q136 54 136 63Q136 54 127 54Q136 54 136 45Z" fill="#15172B"/><path d="M128 126Q128 132 134 132Q128 132 128 138Q128 132 122 132Q128 132 128 126Z" fill="#15172B"/>
+<rect x="40" y="38" width="80" height="92" rx="18" fill="#E4E2FF" stroke="#15172B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M40 60h80" fill="none" stroke="#15172B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="66" cy="78" r="4.5" fill="#15172B"/><path d="M87 78q6-6 12 0M70 88q10 9 20 0" fill="none" stroke="#15172B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 <ellipse cx="58" cy="90" rx="6" ry="4" fill="#FFB3D9"/><ellipse cx="102" cy="90" rx="6" ry="4" fill="#FFB3D9"/>
-<text x="80" y="120" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="18" fill="#1D1D1B">60 MG</text>
+<text x="80" y="120" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="18" fill="#15172B">60 MG</text>
 </svg><h3>Dosis vorne drauf</h3><p>52–60 mg pro Stück, groß gedruckt. Kein Rätselraten.</p></div>
-  <div><svg viewBox="0 0 160 160" aria-hidden="true"><path transform="translate(20 30) scale(1.6)" d="M5 9C1 6 0 4 0 2.5 0 .5 2-.5 3.5.2 4.3.6 5 1.5 5 1.5S5.7.6 6.5.2C8-.5 10 .5 10 2.5 10 4 9 6 5 9Z" fill="#FF48B0" stroke="#1D1D1B" stroke-width="1.6" stroke-linejoin="round"/><path transform="translate(122 22) scale(1.9)" d="M5 9C1 6 0 4 0 2.5 0 .5 2-.5 3.5.2 4.3.6 5 1.5 5 1.5S5.7.6 6.5.2C8-.5 10 .5 10 2.5 10 4 9 6 5 9Z" fill="#FF48B0" stroke="#1D1D1B" stroke-width="1.6" stroke-linejoin="round"/><path d="M140 66Q140 74 148 74Q140 74 140 82Q140 74 132 74Q140 74 140 66Z" fill="#1D1D1B"/><path d="M18 79Q18 86 25 86Q18 86 18 93Q18 86 11 86Q18 86 18 79Z" fill="#1D1D1B"/>
-<rect x="40" y="40" width="80" height="58" rx="10" fill="#7FC4EE" stroke="#1D1D1B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M60 58l9 6-9 6M100 58l-9 6 9 6" fill="none" stroke="#1D1D1B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M68 78q12 13 24 0Z" fill="#1D1D1B" stroke="#1D1D1B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <div><svg viewBox="0 0 160 160" aria-hidden="true"><path transform="translate(20 30) scale(1.6)" d="M5 9C1 6 0 4 0 2.5 0 .5 2-.5 3.5.2 4.3.6 5 1.5 5 1.5S5.7.6 6.5.2C8-.5 10 .5 10 2.5 10 4 9 6 5 9Z" fill="#FF48B0" stroke="#15172B" stroke-width="1.6" stroke-linejoin="round"/><path transform="translate(122 22) scale(1.9)" d="M5 9C1 6 0 4 0 2.5 0 .5 2-.5 3.5.2 4.3.6 5 1.5 5 1.5S5.7.6 6.5.2C8-.5 10 .5 10 2.5 10 4 9 6 5 9Z" fill="#FF48B0" stroke="#15172B" stroke-width="1.6" stroke-linejoin="round"/><path d="M140 66Q140 74 148 74Q140 74 140 82Q140 74 132 74Q140 74 140 66Z" fill="#15172B"/><path d="M18 79Q18 86 25 86Q18 86 18 93Q18 86 11 86Q18 86 18 79Z" fill="#15172B"/>
+<rect x="40" y="40" width="80" height="58" rx="10" fill="#D7F94A" stroke="#15172B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M60 58l9 6-9 6M100 58l-9 6 9 6" fill="none" stroke="#15172B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M68 78q12 13 24 0Z" fill="#15172B" stroke="#15172B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 <ellipse cx="56" cy="80" rx="6" ry="4" fill="#FFB3D9"/><ellipse cx="104" cy="80" rx="6" ry="4" fill="#FFB3D9"/>
-<path d="M26 104h108l-10 16H36Z" fill="#fff" stroke="#1D1D1B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M26 104h108l-10 16H36Z" fill="#fff" stroke="#15172B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 </svg><h3>Für Builder gemacht</h3><p>Hackathons, Demo Days, der 47. Tab in Cursor.</p></div>
 </div>
   </div>
@@ -220,26 +225,26 @@
 <linearGradient id="card-minze-side" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6FBF9E"/><stop offset="1" stop-color="#A8DCC6"/></linearGradient>
 <clipPath id="card-minze-face"><rect x="58" y="56" width="284" height="214" rx="22"/></clipPath>
 </defs>
-<ellipse cx="200" cy="300" rx="158" ry="12" fill="#1D1D1B" opacity=".14"/>
-<rect x="48" y="60" width="304" height="230" rx="30" fill="url(#card-minze-metal-h)" stroke="#1D1D1B" stroke-width="2.5"/>
-<rect x="46" y="44" width="308" height="234" rx="30" fill="url(#card-minze-metal)" stroke="#1D1D1B" stroke-width="2.5"/>
+<ellipse cx="200" cy="300" rx="158" ry="12" fill="#15172B" opacity=".14"/>
+<rect x="48" y="60" width="304" height="230" rx="30" fill="url(#card-minze-metal-h)" stroke="#15172B" stroke-width="2.5"/>
+<rect x="46" y="44" width="308" height="234" rx="30" fill="url(#card-minze-metal)" stroke="#15172B" stroke-width="2.5"/>
 <rect x="58" y="56" width="284" height="214" rx="22" fill="#A8DCC6"/>
 <g clip-path="url(#card-minze-face)">
   <circle cx="320" cy="58" r="70" fill="#6FBF9E" opacity=".35"/>
-  <text x="79" y="127" font-family="Anton, Impact, sans-serif" font-size="60" fill="#0078BF" opacity=".9">GUMMIT</text><text x="76" y="124" font-family="Anton, Impact, sans-serif" font-size="60" fill="#1D1D1B">GUMMIT</text>
-  <text x="78" y="146" font-family="Instrument Sans, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="2.2" fill="#1D1D1B">KAUGUMMI MIT KOFFEIN</text>
-  <text x="76" y="226" font-family="Anton, Impact, sans-serif" font-size="78" fill="#1D1D1B">60</text>
-  <text x="160" y="196" font-family="Anton, Impact, sans-serif" font-size="26" fill="#1D1D1B">MG</text>
-  <text x="160" y="211" font-family="Instrument Sans, Arial, sans-serif" font-weight="700" font-size="9.5" fill="#1D1D1B">KOFFEIN</text>
-  <text x="160" y="223" font-family="Instrument Sans, Arial, sans-serif" font-weight="700" font-size="9.5" fill="#1D1D1B">PRO STÜCK</text>
+  <text x="79" y="127" font-family="Anton, Impact, sans-serif" font-size="60" fill="#2F3BFF" opacity=".9">GUMMIT</text><text x="76" y="124" font-family="Anton, Impact, sans-serif" font-size="60" fill="#15172B">GUMMIT</text>
+  <text x="78" y="146" font-family="Bricolage Grotesque, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="2.2" fill="#15172B">KAUGUMMI MIT KOFFEIN</text>
+  <text x="76" y="226" font-family="Anton, Impact, sans-serif" font-size="78" fill="#15172B">60</text>
+  <text x="160" y="196" font-family="Anton, Impact, sans-serif" font-size="26" fill="#15172B">MG</text>
+  <text x="160" y="211" font-family="Bricolage Grotesque, Arial, sans-serif" font-weight="700" font-size="9.5" fill="#15172B">KOFFEIN</text>
+  <text x="160" y="223" font-family="Bricolage Grotesque, Arial, sans-serif" font-weight="700" font-size="9.5" fill="#15172B">PRO STÜCK</text>
   <g transform="translate(238 150)">
-<path d="M8 52C2 30 14 8 40 2c6 24-6 46-32 50Z" fill="#4DB384" stroke="#1D1D1B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><path d="M10 50C18 36 26 22 38 6" fill="none" stroke="#1D1D1B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M30 58c10-20 30-30 52-24-6 22-28 32-52 24Z" fill="#7FD0A8" stroke="#1D1D1B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><path d="M32 57c14-8 28-14 48-22" fill="none" stroke="#1D1D1B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M8 52C2 30 14 8 40 2c6 24-6 46-32 50Z" fill="#4DB384" stroke="#15172B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><path d="M10 50C18 36 26 22 38 6" fill="none" stroke="#15172B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M30 58c10-20 30-30 52-24-6 22-28 32-52 24Z" fill="#7FD0A8" stroke="#15172B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><path d="M32 57c14-8 28-14 48-22" fill="none" stroke="#15172B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
 </g>
-  <g transform="translate(300 96) rotate(12)"><circle r="27" fill="#F4F0E8" stroke="#1D1D1B" stroke-width="2.2"/><text y="-2" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="17" fill="#1D1D1B">0 G</text><text y="11" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-weight="700" font-size="7.5" letter-spacing="1" fill="#1D1D1B">ZUCKER</text></g>
-  <rect x="58" y="236" width="284" height="40" fill="#1D1D1B"/>
-  <text x="78" y="262" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="22" fill="#F4F0E8">Mint Condition</text>
-  <text x="322" y="261" text-anchor="end" font-family="Instrument Sans, Arial, sans-serif" font-size="10" fill="#F4F0E8">Minze · 8 Stück · 12 g ℮</text>
+  <g transform="translate(300 96) rotate(12)"><circle r="27" fill="#F3EFE6" stroke="#15172B" stroke-width="2.2"/><text y="-2" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="17" fill="#15172B">0 G</text><text y="11" text-anchor="middle" font-family="Bricolage Grotesque, Arial, sans-serif" font-weight="700" font-size="7.5" letter-spacing="1" fill="#15172B">ZUCKER</text></g>
+  <rect x="58" y="236" width="284" height="40" fill="#15172B"/>
+  <text x="78" y="262" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="22" fill="#F3EFE6">Mint Condition</text>
+  <text x="322" y="261" text-anchor="end" font-family="Bricolage Grotesque, Arial, sans-serif" font-size="10" fill="#F3EFE6">Minze · 8 Stück · 12 g ℮</text>
   <rect x="58" y="56" width="284" height="214" fill="url(#card-minze-gloss)"/>
 </g>
 <rect x="58" y="56" width="284" height="214" rx="22" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="1.5"/>
@@ -251,28 +256,28 @@
 <linearGradient id="card-kirsche-side" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E77F96"/><stop offset="1" stop-color="#F7A8B8"/></linearGradient>
 <clipPath id="card-kirsche-face"><rect x="58" y="56" width="284" height="214" rx="22"/></clipPath>
 </defs>
-<ellipse cx="200" cy="300" rx="158" ry="12" fill="#1D1D1B" opacity=".14"/>
-<rect x="48" y="60" width="304" height="230" rx="30" fill="url(#card-kirsche-metal-h)" stroke="#1D1D1B" stroke-width="2.5"/>
-<rect x="46" y="44" width="308" height="234" rx="30" fill="url(#card-kirsche-metal)" stroke="#1D1D1B" stroke-width="2.5"/>
+<ellipse cx="200" cy="300" rx="158" ry="12" fill="#15172B" opacity=".14"/>
+<rect x="48" y="60" width="304" height="230" rx="30" fill="url(#card-kirsche-metal-h)" stroke="#15172B" stroke-width="2.5"/>
+<rect x="46" y="44" width="308" height="234" rx="30" fill="url(#card-kirsche-metal)" stroke="#15172B" stroke-width="2.5"/>
 <rect x="58" y="56" width="284" height="214" rx="22" fill="#F7A8B8"/>
 <g clip-path="url(#card-kirsche-face)">
   <circle cx="320" cy="58" r="70" fill="#E77F96" opacity=".35"/>
-  <text x="79" y="127" font-family="Anton, Impact, sans-serif" font-size="60" fill="#0078BF" opacity=".9">GUMMIT</text><text x="76" y="124" font-family="Anton, Impact, sans-serif" font-size="60" fill="#1D1D1B">GUMMIT</text>
-  <text x="78" y="146" font-family="Instrument Sans, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="2.2" fill="#1D1D1B">KAUGUMMI MIT KOFFEIN</text>
-  <text x="76" y="226" font-family="Anton, Impact, sans-serif" font-size="78" fill="#1D1D1B">52</text>
-  <text x="160" y="196" font-family="Anton, Impact, sans-serif" font-size="26" fill="#1D1D1B">MG</text>
-  <text x="160" y="211" font-family="Instrument Sans, Arial, sans-serif" font-weight="700" font-size="9.5" fill="#1D1D1B">KOFFEIN</text>
-  <text x="160" y="223" font-family="Instrument Sans, Arial, sans-serif" font-weight="700" font-size="9.5" fill="#1D1D1B">PRO STÜCK</text>
+  <text x="79" y="127" font-family="Anton, Impact, sans-serif" font-size="60" fill="#2F3BFF" opacity=".9">GUMMIT</text><text x="76" y="124" font-family="Anton, Impact, sans-serif" font-size="60" fill="#15172B">GUMMIT</text>
+  <text x="78" y="146" font-family="Bricolage Grotesque, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="2.2" fill="#15172B">KAUGUMMI MIT KOFFEIN</text>
+  <text x="76" y="226" font-family="Anton, Impact, sans-serif" font-size="78" fill="#15172B">52</text>
+  <text x="160" y="196" font-family="Anton, Impact, sans-serif" font-size="26" fill="#15172B">MG</text>
+  <text x="160" y="211" font-family="Bricolage Grotesque, Arial, sans-serif" font-weight="700" font-size="9.5" fill="#15172B">KOFFEIN</text>
+  <text x="160" y="223" font-family="Bricolage Grotesque, Arial, sans-serif" font-weight="700" font-size="9.5" fill="#15172B">PRO STÜCK</text>
   <g transform="translate(238 150)">
-<path d="M26 38C30 20 40 8 54 2M58 40C56 24 56 12 54 2" fill="none" stroke="#1D1D1B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M54 2c10-4 22 0 26 8-10 4-20 2-26-8Z" fill="#4DB384" stroke="#1D1D1B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
-<circle cx="24" cy="48" r="15" fill="#E8364F" stroke="#1D1D1B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="58" cy="50" r="15" fill="#D42A45" stroke="#1D1D1B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M26 38C30 20 40 8 54 2M58 40C56 24 56 12 54 2" fill="none" stroke="#15172B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M54 2c10-4 22 0 26 8-10 4-20 2-26-8Z" fill="#4DB384" stroke="#15172B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="24" cy="48" r="15" fill="#E8364F" stroke="#15172B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="58" cy="50" r="15" fill="#D42A45" stroke="#15172B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M18 42a6 6 0 0 1 6-4M52 44a6 6 0 0 1 6-4" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
 </g>
-  <g transform="translate(300 96) rotate(12)"><circle r="27" fill="#F4F0E8" stroke="#1D1D1B" stroke-width="2.2"/><text y="-2" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="17" fill="#1D1D1B">0 G</text><text y="11" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-weight="700" font-size="7.5" letter-spacing="1" fill="#1D1D1B">ZUCKER</text></g>
-  <rect x="58" y="236" width="284" height="40" fill="#1D1D1B"/>
-  <text x="78" y="262" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="22" fill="#F4F0E8">Cherry Pick</text>
-  <text x="322" y="261" text-anchor="end" font-family="Instrument Sans, Arial, sans-serif" font-size="10" fill="#F4F0E8">Kirsche · 8 Stück · 12 g ℮</text>
+  <g transform="translate(300 96) rotate(12)"><circle r="27" fill="#F3EFE6" stroke="#15172B" stroke-width="2.2"/><text y="-2" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="17" fill="#15172B">0 G</text><text y="11" text-anchor="middle" font-family="Bricolage Grotesque, Arial, sans-serif" font-weight="700" font-size="7.5" letter-spacing="1" fill="#15172B">ZUCKER</text></g>
+  <rect x="58" y="236" width="284" height="40" fill="#15172B"/>
+  <text x="78" y="262" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="22" fill="#F3EFE6">Cherry Pick</text>
+  <text x="322" y="261" text-anchor="end" font-family="Bricolage Grotesque, Arial, sans-serif" font-size="10" fill="#F3EFE6">Kirsche · 8 Stück · 12 g ℮</text>
   <rect x="58" y="56" width="284" height="214" fill="url(#card-kirsche-gloss)"/>
 </g>
 <rect x="58" y="56" width="284" height="214" rx="22" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="1.5"/>
@@ -284,27 +289,27 @@
 <linearGradient id="card-beere-side" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9A8BDB"/><stop offset="1" stop-color="#C3B8EE"/></linearGradient>
 <clipPath id="card-beere-face"><rect x="58" y="56" width="284" height="214" rx="22"/></clipPath>
 </defs>
-<ellipse cx="200" cy="300" rx="158" ry="12" fill="#1D1D1B" opacity=".14"/>
-<rect x="48" y="60" width="304" height="230" rx="30" fill="url(#card-beere-metal-h)" stroke="#1D1D1B" stroke-width="2.5"/>
-<rect x="46" y="44" width="308" height="234" rx="30" fill="url(#card-beere-metal)" stroke="#1D1D1B" stroke-width="2.5"/>
+<ellipse cx="200" cy="300" rx="158" ry="12" fill="#15172B" opacity=".14"/>
+<rect x="48" y="60" width="304" height="230" rx="30" fill="url(#card-beere-metal-h)" stroke="#15172B" stroke-width="2.5"/>
+<rect x="46" y="44" width="308" height="234" rx="30" fill="url(#card-beere-metal)" stroke="#15172B" stroke-width="2.5"/>
 <rect x="58" y="56" width="284" height="214" rx="22" fill="#C3B8EE"/>
 <g clip-path="url(#card-beere-face)">
   <circle cx="320" cy="58" r="70" fill="#9A8BDB" opacity=".35"/>
-  <text x="79" y="127" font-family="Anton, Impact, sans-serif" font-size="60" fill="#0078BF" opacity=".9">GUMMIT</text><text x="76" y="124" font-family="Anton, Impact, sans-serif" font-size="60" fill="#1D1D1B">GUMMIT</text>
-  <text x="78" y="146" font-family="Instrument Sans, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="2.2" fill="#1D1D1B">KAUGUMMI MIT KOFFEIN</text>
-  <text x="76" y="226" font-family="Anton, Impact, sans-serif" font-size="78" fill="#1D1D1B">52</text>
-  <text x="160" y="196" font-family="Anton, Impact, sans-serif" font-size="26" fill="#1D1D1B">MG</text>
-  <text x="160" y="211" font-family="Instrument Sans, Arial, sans-serif" font-weight="700" font-size="9.5" fill="#1D1D1B">KOFFEIN</text>
-  <text x="160" y="223" font-family="Instrument Sans, Arial, sans-serif" font-weight="700" font-size="9.5" fill="#1D1D1B">PRO STÜCK</text>
+  <text x="79" y="127" font-family="Anton, Impact, sans-serif" font-size="60" fill="#2F3BFF" opacity=".9">GUMMIT</text><text x="76" y="124" font-family="Anton, Impact, sans-serif" font-size="60" fill="#15172B">GUMMIT</text>
+  <text x="78" y="146" font-family="Bricolage Grotesque, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="2.2" fill="#15172B">KAUGUMMI MIT KOFFEIN</text>
+  <text x="76" y="226" font-family="Anton, Impact, sans-serif" font-size="78" fill="#15172B">52</text>
+  <text x="160" y="196" font-family="Anton, Impact, sans-serif" font-size="26" fill="#15172B">MG</text>
+  <text x="160" y="211" font-family="Bricolage Grotesque, Arial, sans-serif" font-weight="700" font-size="9.5" fill="#15172B">KOFFEIN</text>
+  <text x="160" y="223" font-family="Bricolage Grotesque, Arial, sans-serif" font-weight="700" font-size="9.5" fill="#15172B">PRO STÜCK</text>
   <g transform="translate(238 150)">
-<circle cx="22" cy="42" r="14" fill="#5B4BC4" stroke="#1D1D1B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="50" cy="44" r="14" fill="#7462D8" stroke="#1D1D1B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="36" cy="20" r="14" fill="#4A3CA8" stroke="#1D1D1B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M30 14l6 4 6-4M16 36l6 4 6-4M44 38l6 4 6-4" fill="none" stroke="#1D1D1B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M58 8c8-6 18-4 22 2-8 6-16 4-22-2Z" fill="#4DB384" stroke="#1D1D1B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="22" cy="42" r="14" fill="#5B4BC4" stroke="#15172B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="50" cy="44" r="14" fill="#7462D8" stroke="#15172B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="36" cy="20" r="14" fill="#4A3CA8" stroke="#15172B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M30 14l6 4 6-4M16 36l6 4 6-4M44 38l6 4 6-4" fill="none" stroke="#15172B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M58 8c8-6 18-4 22 2-8 6-16 4-22-2Z" fill="#4DB384" stroke="#15172B" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
 </g>
-  <g transform="translate(300 96) rotate(12)"><circle r="27" fill="#F4F0E8" stroke="#1D1D1B" stroke-width="2.2"/><text y="-2" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="17" fill="#1D1D1B">0 G</text><text y="11" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-weight="700" font-size="7.5" letter-spacing="1" fill="#1D1D1B">ZUCKER</text></g>
-  <rect x="58" y="236" width="284" height="40" fill="#1D1D1B"/>
-  <text x="78" y="262" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="22" fill="#F4F0E8">Berry Important</text>
-  <text x="322" y="261" text-anchor="end" font-family="Instrument Sans, Arial, sans-serif" font-size="10" fill="#F4F0E8">Beere · 8 Stück · 12 g ℮</text>
+  <g transform="translate(300 96) rotate(12)"><circle r="27" fill="#F3EFE6" stroke="#15172B" stroke-width="2.2"/><text y="-2" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="17" fill="#15172B">0 G</text><text y="11" text-anchor="middle" font-family="Bricolage Grotesque, Arial, sans-serif" font-weight="700" font-size="7.5" letter-spacing="1" fill="#15172B">ZUCKER</text></g>
+  <rect x="58" y="236" width="284" height="40" fill="#15172B"/>
+  <text x="78" y="262" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="22" fill="#F3EFE6">Berry Important</text>
+  <text x="322" y="261" text-anchor="end" font-family="Bricolage Grotesque, Arial, sans-serif" font-size="10" fill="#F3EFE6">Beere · 8 Stück · 12 g ℮</text>
   <rect x="58" y="56" width="284" height="214" fill="url(#card-beere-gloss)"/>
 </g>
 <rect x="58" y="56" width="284" height="214" rx="22" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="1.5"/>
@@ -345,8 +350,9 @@
   <div class="wrap">
     <p class="sec-label light"><span>05</span>Mission</p>
     <h2>Projekt <em>Erster Commit</em></h2>
-    <p class="lead">Mit jeder Dose bringst du GUMMIT zu Berliner Builder:innen, die gerade erst anfangen. Gratis auf Uni-Hackathons, Einsteiger-Meetups und Community-Events ohne Budget.</p>
+    <p class="lead">Mit jeder Dose bringst du GUMMIT zu Berliner Buildern, die gerade erst anfangen. Gratis auf Uni-Hackathons, Einsteiger-Meetups und Community-Events ohne Budget.</p>
     <div class="hero-cta"><a class="btn ghost" href="/mission">Mehr erfahren</a><a class="btn white-ghost" href="/teams#anfrage">Event vorschlagen</a></div>
+    <div class="slot ph-tile tape mission-img"><span>Bild folgt · mission-event</span><b>Einsteiger-Event</b></div>
     <p class="mission-stamp" aria-hidden="true">chew good,<br>ship good.</p>
   </div>
 </section>
@@ -368,10 +374,10 @@
       <h2>Bald hier: <em>ihr</em></h2>
       <p class="lead">Die erste Charge geht auf Berliner Events. Danach kommen hier eure Fotos hin.</p>
       <div class="gallery-ph">
-  <div class="ph-tile tape"><span>Foto folgt</span><b>Hackathon</b></div>
-  <div class="ph-tile tape"><span>Foto folgt</span><b>Demo Day</b></div>
-  <div class="ph-tile tape"><span>Foto folgt</span><b>Coworking</b></div>
-  <div class="ph-tile tape"><span>Foto folgt</span><b>Deine Dose</b></div>
+  <div class="slot ph-tile tape "><span>Bild folgt · community-hackathon</span><b>Hackathon</b></div>
+  <div class="slot ph-tile tape "><span>Bild folgt · community-demoday</span><b>Demo Day</b></div>
+  <div class="slot ph-tile tape "><span>Bild folgt · community-coworking</span><b>Coworking</b></div>
+  <div class="slot ph-tile tape "><span>Bild folgt · community-tasche</span><b>Deine Dose</b></div>
 </div>
     </div>
   </div>
@@ -379,7 +385,7 @@
 
 <section class="band" id="story-teaser">
   <div class="wrap teaser">
-    <div class="teaser-photo ph-tile tape"><span>Foto folgt</span><b>Daniel</b></div>
+    <div class="slot ph-tile tape teaser-photo"><span>Bild folgt · daniel</span><b>Daniel</b></div>
     <div>
       <p class="sec-label"><span>08</span>Story</p>
       <h2>Gebaut von einem, der <em>auch</em> nachts baut</h2>
@@ -388,6 +394,12 @@
     </div>
   </div>
 </section>
+
+<section class="band crew-band" id="crew">
+  <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Contributors</span><span>Contributors</span><span>Contributors</span><span>Contributors</span><span>Contributors</span><span>Contributors</span><span>Contributors</span><span>Contributors</span><span>Contributors</span><span>Contributors</span><span>Contributors</span><span>Contributors</span></div></div>
+  <div class="wrap"><div class="crew"><figure class="crew-card"><div class="slot ph-tile tape crew-img"><span>Bild folgt · team-daniel</span><b>Daniel</b></div><figcaption><b>Daniel</b><span>Gründer. Baut nachts Side Projects und druckt Dinge in 3D.</span></figcaption></figure><figure class="crew-card"><div class="slot ph-tile tape crew-img"><span>Bild folgt · team-2</span><b>[Name]</b></div><figcaption><b>[Name]</b><span>Mitgründer. [Rolle, ein Satz]</span></figcaption></figure><figure class="crew-card"><div class="slot ph-tile tape crew-img"><span>Bild folgt · team-3</span><b>[Name]</b></div><figcaption><b>[Name]</b><span>Events und Community. [Ein Satz]</span></figcaption></figure><figure class="crew-card join"><div class="slot crew-img join-img"><span>?</span></div><figcaption><b>Du?</b><span>Du machst Events in Berlin und willst mit anpacken? <a href="/kontakt">Schreib uns.</a></span></figcaption></figure></div></div>
+</section>
+
 
 <section class="band blue-soft" id="teams-teaser">
   <div class="wrap teams-teaser">
@@ -423,7 +435,7 @@
         <div class="field"><label for="r-type">Ich bin</label>
           <select id="r-type" name="type">
             <option value="builder">Builder / Vibe Coder</option>
-            <option value="founder">Gründer:in</option>
+            <option value="founder">Gründer</option>
             <option value="host">Event-Host</option>
             <option value="team">Startup-Team</option>
             <option value="coworking">Coworking</option>
@@ -440,10 +452,10 @@
 
 <section class="band service-band">
   <div class="wrap service">
-    <div><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M6 18h32v24H6zM38 26h10l8 8v8H38z" fill="none" stroke="#1D1D1B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18" cy="46" r="5" fill="#fff" stroke="#1D1D1B" stroke-width="3.5"/><circle cx="46" cy="46" r="5" fill="#fff" stroke="#1D1D1B" stroke-width="3.5"/></svg><h3>Versand aus Berlin</h3><p>Nach Deutschland, Österreich und in die Schweiz.</p></div>
-    <div><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 12h40a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4H28l-10 8v-8h-6a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4Z" fill="none" stroke="#1D1D1B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 28h.1M32 28h.1M42 28h.1" fill="none" stroke="#1D1D1B" stroke-width="5" stroke-linecap="round"/></svg><h3>Echte Menschen</h3><p>Fragen landen direkt bei Daniel.</p></div>
-    <div><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="22" fill="none" stroke="#1D1D1B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 18v14l9 6" fill="none" stroke="#1D1D1B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Erst reservieren</h3><p>Keine Zahlung, bis die erste Charge rausgeht.</p></div>
-    <div><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6l22 8v16c0 14-10 22-22 28C20 52 10 44 10 30V14Z" fill="none" stroke="#1D1D1B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 32l7 7 13-14" fill="none" stroke="#1D1D1B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Ehrliche Dosis</h3><p>mg vorne, höchstens 3 am Tag.</p></div>
+    <div><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M6 18h32v24H6zM38 26h10l8 8v8H38z" fill="none" stroke="#15172B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18" cy="46" r="5" fill="#fff" stroke="#15172B" stroke-width="3.5"/><circle cx="46" cy="46" r="5" fill="#fff" stroke="#15172B" stroke-width="3.5"/></svg><h3>Versand aus Berlin</h3><p>Nach Deutschland, Österreich und in die Schweiz.</p></div>
+    <div><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 12h40a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4H28l-10 8v-8h-6a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4Z" fill="none" stroke="#15172B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 28h.1M32 28h.1M42 28h.1" fill="none" stroke="#15172B" stroke-width="5" stroke-linecap="round"/></svg><h3>Echte Menschen</h3><p>Fragen landen direkt bei Daniel.</p></div>
+    <div><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="22" fill="none" stroke="#15172B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 18v14l9 6" fill="none" stroke="#15172B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Erst reservieren</h3><p>Keine Zahlung, bis die erste Charge rausgeht.</p></div>
+    <div><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6l22 8v16c0 14-10 22-22 28C20 52 10 44 10 30V14Z" fill="none" stroke="#15172B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 32l7 7 13-14" fill="none" stroke="#15172B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Ehrliche Dosis</h3><p>mg vorne, höchstens 3 am Tag.</p></div>
   </div>
 </section>
 

@@ -3,9 +3,9 @@
 Entwurf der echten Verpackung (Metall-Klappdose, 8 Stück). Wird von build_site.py importiert.
 """
 
-INK = "#1D1D1B"
-PAPER = "#F4F0E8"
-BLUE = "#0078BF"
+INK = "#15172B"
+PAPER = "#F3EFE6"
+BLUE = "#2F3BFF"
 
 FLAVORS = [
     {"id": "minze", "name": "Mint Condition", "taste": "Minze", "mg": 60, "color": "#A8DCC6", "deep": "#6FBF9E",
@@ -63,7 +63,7 @@ def _logo(x, y, size):
 
 def front(f, u):
     """Geschlossene Dose von vorne."""
-    T = "font-family=\"Instrument Sans, Arial, sans-serif\""
+    T = "font-family=\"Bricolage Grotesque, Arial, sans-serif\""
     return f'''<svg class="pack-svg" viewBox="0 0 400 320" role="img" aria-label="GUMMIT {f["name"]}, {f["taste"]}, {f["mg"]} mg Koffein pro Stück, Vorderseite der Dose">{_defs(u, f)}
 <ellipse cx="200" cy="300" rx="158" ry="12" fill="{INK}" opacity=".14"/>
 <rect x="48" y="60" width="304" height="230" rx="30" fill="url(#{u}-metal-h)" stroke="{INK}" stroke-width="2.5"/>
@@ -101,7 +101,7 @@ def opened(f, u):
 <path d="M66 156 82 24q2-14 16-14h204q14 0 16 14l16 132Z" fill="url(#{u}-metal-h)" stroke="{INK}" stroke-width="2.5" stroke-linejoin="round"/>
 <path d="M84 148 96 34q1-10 12-10h184q11 0 12 10l12 114Z" fill="#DADAD6" stroke="#A2A29E" stroke-width="1.4"/>
 <text x="200" y="98" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="34" fill="#BDBDB8" stroke="#F4F4F2" stroke-width=".8">GUMMIT</text>
-<text x="200" y="118" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-weight="700" font-size="9" letter-spacing="2" fill="#AFAFAA">BERLIN · 8 STÜCK</text>
+<text x="200" y="118" text-anchor="middle" font-family="Bricolage Grotesque, Arial, sans-serif" font-weight="700" font-size="9" letter-spacing="2" fill="#AFAFAA">BERLIN · 8 STÜCK</text>
 <rect x="48" y="156" width="304" height="158" rx="28" fill="{f["color"]}" stroke="{INK}" stroke-width="2.5"/>
 <rect x="64" y="170" width="272" height="128" rx="18" fill="url(#{u}-metal)" stroke="{INK}" stroke-width="2"/>
 <rect x="74" y="180" width="252" height="108" rx="12" fill="#C9C9C4"/>
@@ -113,7 +113,7 @@ def opened(f, u):
 
 def back(f, u):
     """Rückseite mit Pflichtangaben (Entwurf)."""
-    T = 'font-family="Instrument Sans, Arial, sans-serif" fill="#1D1D1B"'
+    T = 'font-family="Bricolage Grotesque, Arial, sans-serif" fill="#15172B"'
     lines = [
         (10.5, 700, f"GUMMIT {f['name']} · {f['taste']}"),
         (9, 400, "Kaugummi mit Koffein, mit Süßungsmitteln. Zuckerfrei."),

@@ -11,16 +11,16 @@ from tin_art import FLAVORS, front, opened, back
 OUT = Path(__file__).resolve().parent.parent / "website"
 
 # ---------- Icons und Figuren (eigene Zeichnungen) ----------
-S = 'stroke="#1D1D1B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"'
+S = 'stroke="#15172B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"'
 
 
 def star(x, y, r):
-    return f'<path d="M{x} {y-r}Q{x} {y} {x+r} {y}Q{x} {y} {x} {y+r}Q{x} {y} {x-r} {y}Q{x} {y} {x} {y-r}Z" fill="#1D1D1B"/>'
+    return f'<path d="M{x} {y-r}Q{x} {y} {x+r} {y}Q{x} {y} {x} {y+r}Q{x} {y} {x-r} {y}Q{x} {y} {x} {y-r}Z" fill="#15172B"/>'
 
 
 def heart(x, y, s=1.6):
     return (f'<path transform="translate({x} {y}) scale({s})" d="M5 9C1 6 0 4 0 2.5 0 .5 2-.5 3.5.2 4.3.6 5 1.5 5 1.5S5.7.6 6.5.2C8-.5 10 .5 10 2.5 10 4 9 6 5 9Z" '
-            'fill="#FF48B0" stroke="#1D1D1B" stroke-width="1.6" stroke-linejoin="round"/>')
+            'fill="#FF48B0" stroke="#15172B" stroke-width="1.6" stroke-linejoin="round"/>')
 
 
 CHEEK = "#FFB3D9"
@@ -29,7 +29,7 @@ M_GUM = f'''<svg viewBox="0 0 160 160" aria-hidden="true">{star(26,40,9)}{star(1
 <path d="M36 82q-14-2-18-16M124 82q14-2 18-16M66 112v14h-8M94 112v14h8" fill="none" {S}/>
 <rect x="36" y="46" width="88" height="66" rx="30" fill="#fff" {S}/>
 <path d="M58 74q7-9 14 0M88 74q7-9 14 0" fill="none" {S}/>
-<path d="M66 86q14 16 28 0Z" fill="#1D1D1B" {S}/>
+<path d="M66 86q14 16 28 0Z" fill="#15172B" {S}/>
 <ellipse cx="53" cy="89" rx="7" ry="4.5" fill="{CHEEK}"/><ellipse cx="107" cy="89" rx="7" ry="4.5" fill="{CHEEK}"/>
 </svg>'''
 
@@ -39,31 +39,31 @@ M_CUBE = f'''<svg viewBox="0 0 160 160" aria-hidden="true">
 <path d="M44 56 80 40 116 56 80 72Z" fill="#fff" {S}/>
 <path d="M44 56 80 72v44L44 100Z" fill="#F2F2F2" {S}/>
 <path d="M80 72 116 56v44l-36 16Z" fill="#E2E2E2" {S}/>
-<circle cx="56" cy="83" r="4.5" fill="#1D1D1B"/><circle cx="70" cy="89" r="4.5" fill="#1D1D1B"/>
-<path d="M50 74l9 3M65 80l9 4M53 101q4-4 8 0t8 0" fill="none" stroke="#1D1D1B" stroke-width="3.5" stroke-linecap="round"/>
-<path d="M126 32c-4 8-6 12 0 14 6-2 4-6 0-14Z" fill="#7FC4EE" stroke="#1D1D1B" stroke-width="3" stroke-linejoin="round"/>
-<rect x="6" y="18" width="70" height="26" rx="13" fill="#fff" {S}/><text x="41" y="36" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-weight="700" font-size="14" fill="#1D1D1B">tschüss!</text>
+<circle cx="56" cy="83" r="4.5" fill="#15172B"/><circle cx="70" cy="89" r="4.5" fill="#15172B"/>
+<path d="M50 74l9 3M65 80l9 4M53 101q4-4 8 0t8 0" fill="none" stroke="#15172B" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M126 32c-4 8-6 12 0 14 6-2 4-6 0-14Z" fill="#9EA5FF" stroke="#15172B" stroke-width="3" stroke-linejoin="round"/>
+<rect x="6" y="18" width="70" height="26" rx="13" fill="#fff" {S}/><text x="41" y="36" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="700" font-size="14" fill="#15172B">tschüss!</text>
 </svg>'''
 
 M_TIN = f'''<svg viewBox="0 0 160 160" aria-hidden="true">{star(28,42,8)}{star(136,54,9)}{star(128,132,6)}
-<rect x="40" y="38" width="80" height="92" rx="18" fill="#CFE6F5" {S}/>
+<rect x="40" y="38" width="80" height="92" rx="18" fill="#E4E2FF" {S}/>
 <path d="M40 60h80" fill="none" {S}/>
-<circle cx="66" cy="78" r="4.5" fill="#1D1D1B"/><path d="M87 78q6-6 12 0M70 88q10 9 20 0" fill="none" {S}/>
+<circle cx="66" cy="78" r="4.5" fill="#15172B"/><path d="M87 78q6-6 12 0M70 88q10 9 20 0" fill="none" {S}/>
 <ellipse cx="58" cy="90" rx="6" ry="4" fill="{CHEEK}"/><ellipse cx="102" cy="90" rx="6" ry="4" fill="{CHEEK}"/>
-<text x="80" y="120" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="18" fill="#1D1D1B">60 MG</text>
+<text x="80" y="120" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="18" fill="#15172B">60 MG</text>
 </svg>'''
 
 M_LAPTOP = f'''<svg viewBox="0 0 160 160" aria-hidden="true">{heart(20,30)}{heart(122,22,1.9)}{star(140,74,8)}{star(18,86,7)}
-<rect x="40" y="40" width="80" height="58" rx="10" fill="#7FC4EE" {S}/>
+<rect x="40" y="40" width="80" height="58" rx="10" fill="#D7F94A" {S}/>
 <path d="M60 58l9 6-9 6M100 58l-9 6 9 6" fill="none" {S}/>
-<path d="M68 78q12 13 24 0Z" fill="#1D1D1B" {S}/>
+<path d="M68 78q12 13 24 0Z" fill="#15172B" {S}/>
 <ellipse cx="56" cy="80" rx="6" ry="4" fill="{CHEEK}"/><ellipse cx="104" cy="80" rx="6" ry="4" fill="{CHEEK}"/>
 <path d="M26 104h108l-10 16H36Z" fill="#fff" {S}/>
 </svg>'''
 
-L = 'fill="none" stroke="#1D1D1B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"'
-I_TRUCK = f'<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M6 18h32v24H6zM38 26h10l8 8v8H38z" {L}/><circle cx="18" cy="46" r="5" fill="#fff" stroke="#1D1D1B" stroke-width="3.5"/><circle cx="46" cy="46" r="5" fill="#fff" stroke="#1D1D1B" stroke-width="3.5"/></svg>'
-I_CHAT = f'<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 12h40a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4H28l-10 8v-8h-6a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4Z" {L}/><path d="M22 28h.1M32 28h.1M42 28h.1" fill="none" stroke="#1D1D1B" stroke-width="5" stroke-linecap="round"/></svg>'
+L = 'fill="none" stroke="#15172B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"'
+I_TRUCK = f'<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M6 18h32v24H6zM38 26h10l8 8v8H38z" {L}/><circle cx="18" cy="46" r="5" fill="#fff" stroke="#15172B" stroke-width="3.5"/><circle cx="46" cy="46" r="5" fill="#fff" stroke="#15172B" stroke-width="3.5"/></svg>'
+I_CHAT = f'<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 12h40a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4H28l-10 8v-8h-6a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4Z" {L}/><path d="M22 28h.1M32 28h.1M42 28h.1" fill="none" stroke="#15172B" stroke-width="5" stroke-linecap="round"/></svg>'
 I_CLOCK = f'<svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="22" {L}/><path d="M32 18v14l9 6" {L}/></svg>'
 I_SHIELD = f'<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6l22 8v16c0 14-10 22-22 28C20 52 10 44 10 30V14Z" {L}/><path d="M22 32l7 7 13-14" {L}/></svg>'
 ARROW = '<svg class="arrow" viewBox="0 0 80 40" aria-hidden="true"><path d="M4 30C20 8 46 4 70 14M60 6l10 8-12 4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
@@ -72,6 +72,17 @@ ARROW = '<svg class="arrow" viewBox="0 0 80 40" aria-hidden="true"><path d="M4 3
 def pack(f, view="front", uid=None):
     fn = {"front": front, "open": opened, "back": back}[view]
     return fn(f, uid or f"{f['id']}-{view}")
+
+
+# ---------- Bild-Slots ----------
+# Bilder liegen in website/img/slots/<key>.webp oder .jpg. Fehlt die Datei, steht ein Platzhalter da.
+# Prompts zu jedem Slot: 05_Vorlagen/Bild-Prompts.md
+def img_slot(key, label, cls="", alt=None, eager=False):
+    for ext in ("webp", "jpg", "png"):
+        if (OUT / "img" / "slots" / f"{key}.{ext}").exists():
+            load = "" if eager else ' loading="lazy"'
+            return f'<div class="slot {cls}"><img src="/img/slots/{key}.{ext}" alt="{alt or label}"{load}></div>'
+    return f'<div class="slot ph-tile tape {cls}"><span>Bild folgt · {key}</span><b>{label}</b></div>'
 
 
 # ---------- Layout ----------
@@ -94,7 +105,7 @@ def head(title, desc, path):
 <meta property="og:description" content="{desc}">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://gum-prototype.vercel.app/img/og.png">
-<meta name="theme-color" content="#F4F0E8">
+<meta name="theme-color" content="#F3EFE6">
 <link rel="canonical" href="https://gum-prototype.vercel.app{path}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -169,7 +180,7 @@ RESERVE_FORM = '''<section class="band blue" id="reservieren">
         <div class="field"><label for="r-type">Ich bin</label>
           <select id="r-type" name="type">
             <option value="builder">Builder / Vibe Coder</option>
-            <option value="founder">Gründer:in</option>
+            <option value="founder">Gründer</option>
             <option value="host">Event-Host</option>
             <option value="team">Startup-Team</option>
             <option value="coworking">Coworking</option>
@@ -227,11 +238,11 @@ REVIEWS_EMPTY = '''<div class="reviews-empty card">
   <a class="btn ghost small" href="/kontakt">Feedback schicken</a>
 </div>'''
 
-PHOTOS = '''<div class="gallery-ph">
-  <div class="ph-tile tape"><span>Foto folgt</span><b>Hackathon</b></div>
-  <div class="ph-tile tape"><span>Foto folgt</span><b>Demo Day</b></div>
-  <div class="ph-tile tape"><span>Foto folgt</span><b>Coworking</b></div>
-  <div class="ph-tile tape"><span>Foto folgt</span><b>Deine Dose</b></div>
+PHOTOS = f'''<div class="gallery-ph">
+  {img_slot("community-hackathon", "Hackathon")}
+  {img_slot("community-demoday", "Demo Day")}
+  {img_slot("community-coworking", "Coworking")}
+  {img_slot("community-tasche", "Deine Dose")}
 </div>'''
 
 SERVICE = f'''<section class="band service-band">
@@ -253,12 +264,13 @@ PDP_VIEWS = "".join(
     f'<div class="pack-view" data-f="{f["id"]}" data-v="{v}"{"" if (f["id"], v) == ("minze", "front") else " hidden"}>{pack(f, v, "pdp-" + f["id"] + "-" + v)}</div>'
     for f in FLAVORS for v in ("front", "open", "back"))
 
-MISSION_BAND = '''<section class="mission-band" id="mission">
+MISSION_BAND = f'''<section class="mission-band" id="mission">
   <div class="wrap">
     <p class="sec-label light"><span>05</span>Mission</p>
     <h2>Projekt <em>Erster Commit</em></h2>
-    <p class="lead">Mit jeder Dose bringst du GUMMIT zu Berliner Builder:innen, die gerade erst anfangen. Gratis auf Uni-Hackathons, Einsteiger-Meetups und Community-Events ohne Budget.</p>
+    <p class="lead">Mit jeder Dose bringst du GUMMIT zu Berliner Buildern, die gerade erst anfangen. Gratis auf Uni-Hackathons, Einsteiger-Meetups und Community-Events ohne Budget.</p>
     <div class="hero-cta"><a class="btn ghost" href="/mission">Mehr erfahren</a><a class="btn white-ghost" href="/teams#anfrage">Event vorschlagen</a></div>
+    {img_slot("mission-event", "Einsteiger-Event", "mission-img", "Studierende auf einem Berliner Hackathon")}
     <p class="mission-stamp" aria-hidden="true">chew good,<br>ship good.</p>
   </div>
 </section>
@@ -274,7 +286,7 @@ FAQ = {
     "Koffein und Sicherheit": [
         ("Wie viel Koffein ist in einem Stück?", "Mint Condition 60 mg, Cherry Pick und Berry Important je 52 mg. Zum Vergleich: Ein Espresso hat laut BfR etwa 80 mg."),
         ("Wie viele Stück pro Tag?", "Höchstens 3 Stück am Tag. Kaffee, Mate und Energy Drinks mitzählen. Das BfR nennt für gesunde Erwachsene bis zu 400 mg Koffein über den Tag verteilt als unbedenklich."),
-        ("Wer sollte GUMMIT nicht kauen?", "Kinder und schwangere Frauen. Wenn du empfindlich auf Koffein reagierst, frag lieber vorher deine Ärztin oder deinen Arzt."),
+        ("Wer sollte GUMMIT nicht kauen?", "Kinder und schwangere Frauen. Wenn du empfindlich auf Koffein reagierst, frag lieber vorher deinen Arzt."),
         ("Worauf muss ich noch achten?", "Xylit kann bei übermäßigem Verzehr abführend wirken und ist für Hunde giftig. Dose also nicht in Reichweite vom Bürohund lassen."),
         ("Macht mich das 10x produktiver?", "Nein. Es ist Kaugummi mit Koffein. Die Zahl vorne drauf ist der ganze Pitch."),
     ],
@@ -306,33 +318,38 @@ def faq_html(groups=None, limit=None):
 # ---------- Seiten ----------
 def home():
     body = f'''
-<section class="hero">
+<section class="hero" id="kaufen">
   <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <span class="sticker">Neu aus Berlin</span>
-      <h1 class="riso">Gummit.<br>Push.<br>Repeat.</h1>
-      <p class="lede">Zuckerfreier Kaugummi mit <b>52–60 mg Koffein</b> pro Stück. In der Metalldose, für <em>lange Build-Tage</em>, Hackathons und Demo Days.</p>
-      <div class="hero-cta">
-        <a class="btn" href="/produkt">Zum Produkt · ab <span data-from-price>3,99 €</span></a>
-        <a class="btn ghost" href="/teams">Für Teams &amp; Events</a>
-      </div>
-      <ul class="hero-facts"><li><b>0 g</b> Zucker</li><li><b>8</b> Stück pro Dose</li><li><b>3</b> Sorten</li></ul>
-    </div>
     <div class="hero-media">
-      <div class="tin-fan">
-        <a class="fan-l" href="/produkt?sorte=kirsche" aria-label="Cherry Pick ansehen">{pack(FLAVORS[1], "front", "hero-k")}</a>
-        <a class="fan-r" href="/produkt?sorte=beere" aria-label="Berry Important ansehen">{pack(FLAVORS[2], "front", "hero-b")}</a>
-        <a class="fan-c" href="/produkt?sorte=minze" aria-label="Mint Condition ansehen">{pack(FLAVORS[0], "front", "hero-m")}</a>
+      <div class="tin-fan" id="tin-fan">
+        <a class="fan-l" data-f="kirsche" href="/produkt?sorte=kirsche" aria-label="Cherry Pick ansehen">{pack(FLAVORS[1], "front", "hero-k")}</a>
+        <a class="fan-r" data-f="beere" href="/produkt?sorte=beere" aria-label="Berry Important ansehen">{pack(FLAVORS[2], "front", "hero-b")}</a>
+        <a class="fan-c" data-f="minze" href="/produkt?sorte=minze" aria-label="Mint Condition ansehen">{pack(FLAVORS[0], "front", "hero-m")}</a>
+        <span class="stack-badge" id="shop-stack" hidden>×1</span>
       </div>
       <p class="note">{ARROW}<span>die Zahl steht vorne drauf</span></p>
       <p class="render-note">Entwurf der Dose. Die echte Verpackung kann leicht abweichen.</p>
+    </div>
+    <div class="hero-copy">
+      <span class="sticker">Neu aus Berlin</span>
+      <h1 class="riso">Gummit. Push. Repeat.</h1>
+      <p class="lede">Zuckerfreier Kaugummi mit <b>52–60 mg Koffein</b> pro Stück. 8 Stück in der Metalldose, für lange Build-Tage, Hackathons und Demo Days.</p>
+      <div class="buybox card">
+        <fieldset class="opt"><legend>Sorte</legend><div class="chips" id="shop-flavors" role="radiogroup"></div></fieldset>
+        <fieldset class="opt"><legend>Menge</legend><div class="packs" id="shop-packs" role="radiogroup"></div></fieldset>
+        <div class="price-row"><span class="price" id="shop-price">4,99 €</span><span class="save" id="shop-save" hidden></span></div>
+        <p class="price-meta"><span id="shop-per">4,99 € / Dose</span> · inkl. MwSt. · <span id="shop-unit">Grundpreis folgt</span></p>
+        <button class="btn buy" type="button" id="shop-buy">Unverbindlich reservieren</button>
+        <p class="buy-note" id="shop-note">Unverbindlich, kein Kaufvertrag. Zahlung erst nach separater Bestellung.</p>
+        <p class="warn small">Enthält Koffein (<span id="shop-mg100">–</span> mg/100 g). Für Kinder und schwangere Frauen nicht empfohlen. <a href="/produkt">Alle Produktinfos</a></p>
+      </div>
     </div>
   </div>
 </section>
 
 <div class="ticker" aria-hidden="true"><div class="ticker-track">
-  <span>0 g Zucker</span><span>52–60 mg Koffein pro Stück</span><span>Metall-Klappdose</span><span>Versand aus Berlin</span><span>Keine Wirkversprechen. Nur Kaugummi.</span>
-  <span>0 g Zucker</span><span>52–60 mg Koffein pro Stück</span><span>Metall-Klappdose</span><span>Versand aus Berlin</span><span>Keine Wirkversprechen. Nur Kaugummi.</span>
+  <span>0 g Zucker</span><span>52–60 mg Koffein pro Stück</span><span>Metall-Klappdose</span><span>Versand aus Berlin</span><span>Keine Wirkversprechen. Nur Kaugummi.</span><span>Projekt Erster Commit: 0 Dosen verschickt. Noch.</span>
+  <span>0 g Zucker</span><span>52–60 mg Koffein pro Stück</span><span>Metall-Klappdose</span><span>Versand aus Berlin</span><span>Keine Wirkversprechen. Nur Kaugummi.</span><span>Projekt Erster Commit: 0 Dosen verschickt. Noch.</span>
 </div></div>
 
 <section class="band" id="fuer-wen">
@@ -341,9 +358,9 @@ def home():
     <h2>Gemacht für Berlins <em>Builder</em></h2>
     <p class="lead">Nicht für alle. Für Leute, die abends noch einen Prototyp fertig machen, am Wochenende auf Hackathons sitzen und Montag pitchen.</p>
     <div class="personas">
-      <article class="card persona"><span class="num">A</span><h3>Vibe Coder</h3><p>Du baust mit Cursor, Claude und Kaffee. Der Kaffee ist kalt, der Build läuft noch. Die Dose liegt neben dem Ladekabel.</p></article>
-      <article class="card persona"><span class="num">B</span><h3>Gründer:innen</h3><p>Pitch-Deck Version 14, Probelauf um 23 Uhr. Kein Zucker vor dem Auftritt, keine Dose Energy auf dem Tisch.</p></article>
-      <article class="card persona"><span class="num">C</span><h3>Hackathon-Teams</h3><p>48 Stunden, ein Tisch, zu viel Pizza. Eine Dose in die Mitte, alle sehen, wie viel drin ist.</p></article>
+      <article class="card persona">{img_slot("persona-vibecoder", "Vibe Coder", "persona-img")}<span class="num">A</span><h3>Vibe Coder</h3><p>Du baust mit Cursor, Claude und Kaffee. Der Kaffee ist kalt, der Build läuft noch. Die Dose liegt neben dem Ladekabel.</p></article>
+      <article class="card persona">{img_slot("persona-gruender", "Gründer", "persona-img")}<span class="num">B</span><h3>Gründer</h3><p>Pitch-Deck Version 14, Probelauf um 23 Uhr. Kein Zucker vor dem Auftritt, keine Dose Energy auf dem Tisch.</p></article>
+      <article class="card persona">{img_slot("persona-hackathon", "Hackathon-Team", "persona-img")}<span class="num">C</span><h3>Hackathon-Teams</h3><p>48 Stunden, ein Tisch, zu viel Pizza. Eine Dose in die Mitte, alle sehen, wie viel drin ist.</p></article>
     </div>
   </div>
 </section>
@@ -393,7 +410,7 @@ def home():
 
 <section class="band" id="story-teaser">
   <div class="wrap teaser">
-    <div class="teaser-photo ph-tile tape"><span>Foto folgt</span><b>Daniel</b></div>
+    {img_slot("daniel", "Daniel", "teaser-photo", "Daniel, Gründer von GUMMIT")}
     <div>
       {section_label("08", "Story")}
       <h2>Gebaut von einem, der <em>auch</em> nachts baut</h2>
@@ -402,6 +419,8 @@ def home():
     </div>
   </div>
 </section>
+
+{crew_html()}
 
 <section class="band blue-soft" id="teams-teaser">
   <div class="wrap teams-teaser">
@@ -438,7 +457,7 @@ def product():
   <div class="pdp-media">
     <div class="pdp-main card" id="pdp-main">
       {PDP_VIEWS}
-      <div class="pdp-ph ph-tile" id="shop-ph" hidden><span>Foto folgt</span><b>In der Hand</b></div>
+      <div class="pdp-ph" id="shop-ph" hidden>{img_slot("produkt-hand", "In der Hand", "", "GUMMIT-Dose in der Hand, Größenvergleich")}</div>
       <span class="stack-badge" id="shop-stack" hidden>×1</span>
     </div>
     <div class="thumbs" id="thumbs" role="group" aria-label="Ansichten">
@@ -605,7 +624,7 @@ def story():
 </section>
 <section class="band">
   <div class="wrap founder">
-    <div class="founder-photo ph-tile tape"><span>Foto folgt</span><b>Daniel</b></div>
+    {img_slot("daniel", "Daniel", "founder-photo", "Daniel, Gründer von GUMMIT")}
     <div class="prose">
       <p>Ich bin Daniel. Tagsüber habe ich einen Job in der Tech-Branche, abends baue ich Side Projects und drucke Dinge mit meinem 3D-Drucker. Die meisten guten Ideen kommen bei mir nach 21 Uhr.</p>
       <p>Und genau da war das Problem: Der Kaffee in der Küche ist kalt, der Automat im Coworking hat nur Zuckerdosen, und Energy Drinks fühlen sich nach Abiparty an. Ich wollte etwas Kleines, das in die Laptoptasche passt, keinen Zucker hat und ehrlich sagt, wie viel Koffein drin ist.</p>
@@ -615,6 +634,7 @@ def story():
     </div>
   </div>
 </section>
+{crew_html()}
 <section class="band paper-2">
   <div class="wrap">
     <h2>Woran wir <em>glauben</em></h2>
@@ -649,13 +669,30 @@ a1c3f02 erste Charge shippen
     return page("/story", "Story – GUMMIT", "Wie GUMMIT entstanden ist: kalter Kaffee, Zucker im Automaten und ein Kaugummi mit der Zahl vorne drauf.", "/story", body)
 
 
+CREW = [
+    ("team-daniel", "Daniel", "Gründer. Baut nachts Side Projects und druckt Dinge in 3D."),
+    ("team-2", "[Name]", "Mitgründer. [Rolle, ein Satz]"),
+    ("team-3", "[Name]", "Events und Community. [Ein Satz]"),
+]
+
+
+def crew_html():
+    cards = "".join(f'<figure class="crew-card">{img_slot(k, n, "crew-img")}<figcaption><b>{n}</b><span>{t}</span></figcaption></figure>' for k, n, t in CREW)
+    cards += '<figure class="crew-card join"><div class="slot crew-img join-img"><span>?</span></div><figcaption><b>Du?</b><span>Du machst Events in Berlin und willst mit anpacken? <a href="/kontakt">Schreib uns.</a></span></figcaption></figure>'
+    return f'''<section class="band crew-band" id="crew">
+  <div class="marquee" aria-hidden="true"><div class="marquee-track">{"<span>Contributors</span>" * 12}</div></div>
+  <div class="wrap"><div class="crew">{cards}</div></div>
+</section>
+'''
+
+
 def mission():
     body = f'''
 <section class="page-hero mission-hero">
   <div class="wrap">
     <span class="sticker">Mission</span>
     <h1 class="riso">Projekt <br>Erster Commit.</h1>
-    <p class="lede">Jede Dose GUMMIT hilft Berliner Builder:innen, die gerade erst anfangen.</p>
+    <p class="lede">Jede Dose GUMMIT hilft Berliner Buildern, die gerade erst anfangen.</p>
   </div>
 </section>
 <section class="band">
@@ -809,7 +846,7 @@ def datenschutz():
 
 
 def notfound():
-    body = '''<section class="page-hero err"><div class="wrap"><span class="sticker">404</span><h1 class="riso">Diese Seite ist <br>im Meeting.</h1><p class="lede">Versuch's später. Oder geh zurück zum Kaugummi.</p><a class="btn" href="/">Zur Startseite</a></div></section>'''
+    body = '''<section class="page-hero err"><div class="wrap"><span class="sticker">404</span><h1 class="riso">Branch nicht <br>gefunden.</h1><p class="lede">Diese Seite gibt es nicht. Zurück zu main.</p><a class="btn" href="/">Zur Startseite</a></div></section>'''
     return page("/404", "404 – GUMMIT", "Seite nicht gefunden.", "", body)
 
 
