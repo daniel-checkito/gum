@@ -15,7 +15,7 @@ Urteil: 5 von 10, lohnt sich als gestufter Test, nicht als großer Sprung. Der P
 | Ordner | Was drin ist |
 | --- | --- |
 | 01_Plaene | Businessplan (Markt, Produkt, Wettbewerb, Zahlen, Recht), Launch-Plan (Name, White Label, Budget, Schritt für Schritt), Wachstum und Viral-Marketing, Plan v2 (aktueller Stand) |
-| 02_Recherche | Fünfzehn Recherche-Berichte mit Quellen: Vending-Markt, Regulierung, Go-to-Market, Pro/Contra-Debatte, Markenname, White Label, Pflichten und Kosten, Wettbewerb, Zielgruppe Büro, Guming-Analyse, Varianten mit Kreatin, Arginin, Protein, Agenten-Feedback, Vitamine und Zusätze, SUPERPUBLIC |
+| 02_Recherche | Sechzehn Recherche-Berichte mit Quellen: Vending-Markt, Regulierung, Go-to-Market, Pro/Contra-Debatte, Markenname, White Label, Pflichten und Kosten, Wettbewerb, Zielgruppe Büro, Guming-Analyse, Varianten mit Kreatin, Arginin, Protein, Agenten-Feedback, Vitamine und Zusätze, SUPERPUBLIC, White Label Recht und Hindernisse |
 | 03_Zahlen | Excel-Rechnung: Artikel, Margen, ein Automat im Vergleich, Zielgruppen. Gelbe Zellen sind Annahmen |
 | 04_Branding | 17 Bilder (Markenboard, Verpackung, Dosen, Website, Automaten-Designs und Kosten, Story, Sell-Sheet, Plakate, Ads, Sprüche), Markenbuch, Tonfall und Sprüche, Quelldateien |
 | 05_Vorlagen | Mails an Guming, Automatenbetreiber, Hersteller (Rezeptur v1) und SUPERPUBLIC, Creator-Briefing |
@@ -47,16 +47,19 @@ Die Online-Versionen sind aktueller, wenn du dort weiter änderst. Dieser Ordner
 ## Was du als Nächstes tun musst
 
 1. Blindtest: Guming-Sorten mit 10 Leuten probieren lassen (Probier-Set bei Guming bestellen, ca. 20 €).
-2. Mail an Guming (05_Vorlagen): Weiterverkauf unter eigener Marke erlaubt? Händlerpreis für 100 Packungen Endkundenware? Druckt ihr den Dosenboden?
+2. Mail an Guming, Version 2 (05_Vorlagen/Mail_Guming.md): schriftliche Erlaubnis, Spezifikation mit Süßungsmitteln, NEM-Status, Boden, Charge, Rückruf. Ohne das kein eigenes Design bestellen. Details: 02_Recherche/16_White-Label_Recht_und_Hindernisse.md
 3. Drei Coworkings fragen: 6 Wochen Thekendisplay auf Kommission, Probier-Nachmittag um 14 Uhr.
 4. Als Lebensmittelunternehmer beim Bezirksamt registrieren, Gewerbe der GbR erweitern, Produkthaftpflicht anfragen (Koffeinprodukt ausdrücklich nennen).
 5. Thekendisplay im 3D-Drucker drucken, Landingpage mit bezahlter Vorbestellung bauen.
 6. Bei CHECK24 klären, ob die Nebentätigkeit angemeldet werden muss.
-7. Erst nach Gate 1: Name im Register prüfen (MUNTA, SPÄTKAU, BISS), Anwalt für Etikett und Name.
+7. Erst nach Gate 1: Name im Register prüfen (MUNTA, SPÄTKAU, BISS), Anwalt für Vertrag, Etikett und Name in einem Termin.
+8. Vor Phase 2 (eigene Marke): UG statt GbR, weil die GbR privat haftet.
 
 ## Offen
 
 - Ob Guming White Label erlaubt
+- Ob Guming mit Xylit süßt (nicht öffentlich, sonst Xylit aus Story und Sprüchen streichen)
+- Ob Guming selbst produziert und ob die Werbemittel-Dose dieselbe Rezeptur hat
 - Ob SPÄTKAU oder MUNTA im Register frei ist
 - Ob die Guming-Sorten der Zielgruppe schmecken
 - Ob „munter“ in MUNTA als Wirkversprechen gilt
