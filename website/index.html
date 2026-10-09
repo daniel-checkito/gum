@@ -154,6 +154,34 @@
     </div>
   </section>
 
+  <section class="band cream" id="vergleich">
+    <div class="wrap">
+      <h2 class="center">Koffein pro Euro</h2>
+      <p class="lead center">Was kosten 100 mg Koffein, wenn du sie unterwegs kaufst? GUMMIT liegt unter Coffee to go und Energy Drinks. Nur Kaffee zu Hause ist günstiger, das sagen wir ehrlich.</p>
+      <div class="cmp" id="cmp" role="img" aria-label="Balkendiagramm: Preis pro 100 mg Koffein"></div>
+      <div class="calc">
+        <div class="calc-in">
+          <label for="calc-n">Wie oft kaufst du unterwegs Koffein pro Woche?</label>
+          <div class="calc-row"><input type="range" id="calc-n" min="1" max="20" value="5"><output id="calc-n-out">5×</output></div>
+          <label for="calc-what">Meistens</label>
+          <select id="calc-what"></select>
+        </div>
+        <div class="calc-out">
+          <p class="calc-big" id="calc-save">–</p>
+          <p id="calc-detail">–</p>
+        </div>
+      </div>
+      <details class="cmp-table">
+        <summary>Zahlen, Annahmen und Quellen</summary>
+        <table class="facts-table">
+          <thead><tr><th>Produkt</th><th>Preis</th><th>Koffein</th><th>Zucker</th><th>pro 100 mg</th></tr></thead>
+          <tbody id="cmp-rows"></tbody>
+        </table>
+        <p class="fine">Stand Oktober 2026, Preise ohne Pfand. Koffein laut BfR (Espresso-Basis 80 mg, Energy Drink 250 ml 80 mg) und Herstellerangaben (Monster 32 mg/100 ml, Club-Mate 20 mg/100 ml). Cappuccino: Durchschnitt deutscher Großstädte laut Coffeefriend-Auswertung. Red Bull: REWE. Monster: EDEKA. Club-Mate und Kaffee zu Hause sind Schätzungen. GUMMIT: Startpreise. Zucker laut Etikett, gerundet. Quellen: <a href="https://www.bfr.bund.de/veroeffentlichung/fragen-und-antworten-zu-koffein-und-koffeinhaltigen-lebensmitteln-einschliesslich-energy-drinks/" rel="noopener">BfR</a>, <a href="https://www.meininger.de/gastronomie/trends/kaffee-index-bremen-ist-spitzenreiter-beim-teuersten-cappuccino" rel="noopener">Meininger</a>, <a href="https://www.supermarktcheck.de/rewe/sortiment/energy-drinks/" rel="noopener">Supermarktcheck REWE</a>, <a href="https://wolt.com/de/deu/berlin/venue/edeka-gerstmann/items/gemusesafte-272" rel="noopener">EDEKA via Wolt</a>, <a href="https://en.wikipedia.org/wiki/Club-Mate" rel="noopener">Club-Mate</a>.</p>
+      </details>
+    </div>
+  </section>
+
   <section class="band peach" id="community">
     <div class="wrap">
       <h2 class="center">Bald hier: ihr</h2>
