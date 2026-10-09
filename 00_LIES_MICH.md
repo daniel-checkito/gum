@@ -15,10 +15,10 @@ Urteil: 5 von 10, lohnt sich als gestufter Test, nicht als großer Sprung. Der P
 | Ordner | Was drin ist |
 | --- | --- |
 | 01_Plaene | Businessplan (Markt, Produkt, Wettbewerb, Zahlen, Recht), Launch-Plan (Name, White Label, Budget, Schritt für Schritt), Wachstum und Viral-Marketing, Plan v2 (aktueller Stand) |
-| 02_Recherche | Fünfzehn Recherche-Berichte mit Quellen: Vending-Markt, Regulierung, Go-to-Market, Pro/Contra-Debatte, Markenname, White Label, Pflichten und Kosten, Wettbewerb, Zielgruppe Büro, Guming-Analyse, Varianten mit Kreatin, Arginin, Protein, Agenten-Feedback, Vitamine und Zusätze, SUPERPUBLIC |
+| 02_Recherche | Sechzehn Recherche-Berichte mit Quellen: Vending-Markt, Regulierung, Go-to-Market, Pro/Contra-Debatte, Markenname, White Label, Pflichten und Kosten, Wettbewerb, Zielgruppe Büro, Guming-Analyse, Varianten mit Kreatin, Arginin, Protein, Agenten-Feedback, Vitamine und Zusätze, SUPERPUBLIC, Weiterverkauf 30 mg (Fremdware) |
 | 03_Zahlen | Excel-Rechnung: Artikel, Margen, ein Automat im Vergleich, Zielgruppen. Gelbe Zellen sind Annahmen |
 | 04_Branding | 17 Bilder (Markenboard, Verpackung, Dosen, Website, Automaten-Designs und Kosten, Story, Sell-Sheet, Plakate, Ads, Sprüche), Markenbuch, Tonfall und Sprüche, Quelldateien |
-| 05_Vorlagen | Mails an Guming, Automatenbetreiber, Hersteller (Rezeptur v1) und SUPERPUBLIC, Creator-Briefing |
+| 05_Vorlagen | Mails an Guming, Wachmeister, Automatenbetreiber, Hersteller (Rezeptur v1) und SUPERPUBLIC, Creator-Briefing |
 | 06_Referenzbilder | Deine Inspirationsbilder (Blister, Metalldosen, Neuro, Focus Gum) |
 | 07_Ideen-Verlauf.md | Alle Ideen von Anfang an und warum sie raus- oder reingekommen sind |
 
@@ -56,6 +56,7 @@ Die Online-Versionen sind aktueller, wenn du dort weiter änderst. Dieser Ordner
 
 ## Offen
 
+- Wachmeister (30 mg, Schweiz): Vertrieb in Deutschland? Händlerpreis? Mail in 05_Vorlagen. Pflichten als Weiterverkäufer: 02_Recherche/16
 - Ob Guming White Label erlaubt
 - Ob SPÄTKAU oder MUNTA im Register frei ist
 - Ob die Guming-Sorten der Zielgruppe schmecken
