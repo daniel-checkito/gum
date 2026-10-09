@@ -42,3 +42,12 @@ Guming ist im Pilot unser Lieferant. In der Anfrage nicht als Konkurrent auftret
 
 - Weiterverkauf unter eigener Marke erlaubt?
 - Stückzahl pro Packung im Endkundenshop
+
+## Wer produziert Guming? (Stand 09.10.2026)
+
+- Marke: Guming GmbH, Tulpenweg 19b, 24582 Wattenbek, HRB 24252 Kiel, Geschäftsführer Elmar Salmassi und Tobias Dell. https://guming.de/policies/legal-notice
+- Produktseite: „Zertifiziert nach IFS Food. Produziert in der Schweiz.“ https://guming.de/products/fresh-mint
+- Den Lohnhersteller nennen sie nicht. Auch Open Food Facts hat keine Angabe.
+- Wahrscheinlichster Kandidat (nicht bestätigt): die einzige industrielle Kaugummiproduktion der Schweiz in Buchs AG (Chocolat Frey, Migros-Industrie; Delica nennt sich ebenfalls einzige Kaugummi-Herstellerin der Schweiz). Macht Private Label für Händler und „Branded Items für Brand Owner“. https://zahnfreundlich.ch/industrie-einzige-industrielle-kaugummiproduktion-der-schweiz/, https://www.delica.com/de/produkte/kaugummi/unsere-marken
+- Zum Vergleich: Die Schweizer Koffein-Gum-Startups Joltz und Chew Up lassen bei Indaco in Italien produzieren (Joltz: erste Bestellung 20.000 Packungen à 10 pro Sorte). https://zuercher-wirtschaft.ch/konkurrenz-um-kaugummis-mit-kick/
+- Klären: Bei Tobias Dell direkt fragen, oder auf einer Guming-Packung nach Hersteller- oder Identitätskennzeichen schauen.
