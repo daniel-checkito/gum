@@ -243,6 +243,16 @@ TIMELINE = '''<section class="band" id="timeline">
 </section>
 '''
 
+MANIFEST_PANELS = [
+    ("608", "poster-run", "Niemand sieht die Nächte vor dem Launch.", "Du schon. Und das reicht."),
+    ("14734", "poster-library", "Talent ist der Anfang. Wiederholung ist der Rest.", "Kapitel sieben, dritte Runde. Weiter."),
+    ("1749", "poster-code", "Mach den Commit.", "Fertig schlägt perfekt. Gummit. Push. Repeat."),
+]
+MANIFEST = '<section class="manifest" id="manifest">' + "".join(
+    f'<div class="panel"><video class="bg-video" muted loop playsinline preload="none" poster="/img/slots/{poster}.jpg" data-src="https://assets.mixkit.co/videos/{vid}/{vid}-720.mp4"></video><div class="shade"></div>'
+    f'<div class="wrap"><p class="eyebrow">Manifest {i + 1}/3</p><h2 class="shout">{title}</h2><p class="lede">{sub}</p></div></div>'
+    for i, (vid, poster, title, sub) in enumerate(MANIFEST_PANELS)) + '</section>'
+
 PDP_VIEWS = "".join(
     f'<div class="pack-view" data-f="{f["id"]}" data-v="{v}"{"" if (f["id"], v) == ("minze", "front") else " hidden"}>{pack(f, v, "pdp-" + f["id"] + "-" + v)}</div>'
     for f in FLAVORS for v in ("front", "open", "back"))
@@ -301,28 +311,28 @@ def faq_html(groups=None, limit=None):
 # ---------- Seiten ----------
 def home():
     body = f'''
-<section class="hero" id="kaufen">
+<section class="hero hero-video" id="kaufen">
+  <video class="bg-video" muted loop playsinline poster="/img/slots/poster-hero.jpg" data-src="https://assets.mixkit.co/videos/48503/48503-720.mp4"></video>
+  <div class="shade"></div>
   <div class="wrap hero-grid">
-    <div class="hero-media">
-      <div class="stage" id="stage" style="--stage:{FLAVORS[0]["color"]}">
+    <div class="hero-copy">
+      <p class="eyebrow">GUMMIT · Koffein-Kaugummi</p>
+      <h1 class="shout">Bleib<br>dran.</h1>
+      <p class="lede">Für die Nacht vor der Klausur, den Sprint vor dem Launch und die Stunde, in der es klick macht. Zuckerfreier Kaugummi mit 52 bis 60 mg Koffein pro Stick.</p>
+      <div class="hero-cta"><a class="btn white" href="#manifest">Unser Manifest</a><a class="btn white-ghost" href="/produkt">Alle Produktinfos</a></div>
+    </div>
+    <div class="buybox card">
+      <div class="stage mini" id="stage" style="--stage:{FLAVORS[0]["color"]}">
         {HERO_PACKS}
         <span class="stack-badge" id="shop-stack" hidden>×1</span>
       </div>
-      <p class="render-note">Entwurf des Packs. Die echte Verpackung kann abweichen.</p>
-    </div>
-    <div class="hero-copy">
-      <p class="eyebrow">GUMMIT · Koffein-Kaugummi</p>
-      <h1>Präzise dosiert.<br><em>Voll im Geschmack.</em></h1>
-      <p class="lede">Zuckerfreier Kaugummi mit 52 bis 60 mg Koffein pro Stick. Die Zahl steht groß vorne drauf. Gebaut in Berlin für Builder im KI-Zeitalter.</p>
-      <div class="buybox card">
-        <fieldset class="opt"><legend>Sorte</legend><div class="chips" id="shop-flavors" role="radiogroup"></div></fieldset>
-        <fieldset class="opt"><legend>Menge</legend><div class="packs" id="shop-packs" role="radiogroup"></div></fieldset>
-        <div class="price-row"><span class="price" id="shop-price">4,99 €</span><span class="save" id="shop-save" hidden></span></div>
-        <p class="price-meta"><span id="shop-per">4,99 € / Pack</span> · inkl. MwSt. · <span id="shop-unit">Grundpreis folgt</span></p>
-        <button class="btn buy" type="button" id="shop-buy">Unverbindlich reservieren</button>
-        <p class="buy-note" id="shop-note">Unverbindlich, kein Kaufvertrag. Zahlung erst nach separater Bestellung.</p>
-        <p class="warn small">Enthält Koffein (<span id="shop-mg100">–</span> mg/100 g). Für Kinder und schwangere Frauen nicht empfohlen. <a href="/produkt">Alle Produktinfos</a></p>
-      </div>
+      <fieldset class="opt"><legend>Sorte</legend><div class="chips" id="shop-flavors" role="radiogroup"></div></fieldset>
+      <fieldset class="opt"><legend>Menge</legend><div class="packs" id="shop-packs" role="radiogroup"></div></fieldset>
+      <div class="price-row"><span class="price" id="shop-price">4,99 €</span><span class="save" id="shop-save" hidden></span></div>
+      <p class="price-meta"><span id="shop-per">4,99 € / Pack</span> · inkl. MwSt. · <span id="shop-unit">Grundpreis folgt</span></p>
+      <button class="btn buy" type="button" id="shop-buy">Unverbindlich reservieren</button>
+      <p class="buy-note" id="shop-note">Unverbindlich, kein Kaufvertrag. Zahlung erst nach separater Bestellung.</p>
+      <p class="warn small">Enthält Koffein (<span id="shop-mg100">–</span> mg/100 g). Für Kinder und schwangere Frauen nicht empfohlen.</p>
     </div>
   </div>
 </section>
@@ -339,15 +349,18 @@ def home():
 <section class="band" id="fuer-wen">
   <div class="wrap">
     {section_label("01", "Für wen")}
-    <h2>Gemacht für Berlins <em>Builder</em></h2>
-    <p class="lead">Nicht für alle. Für Leute, die abends noch einen Prototyp fertig machen, am Wochenende auf Hackathons sitzen und Montag pitchen.</p>
+    <h2>Für alle, die <em>dranbleiben.</em></h2>
+    <p class="lead">Nicht für alle. Für Leute, die abends noch einen Prototyp fertig machen, für die Prüfung die dritte Runde drehen, am Wochenende auf Hackathons sitzen und Montag pitchen.</p>
     <div class="personas">
       <article class="card persona">{img_slot("persona-vibecoder", "Vibe Coder", "persona-img")}<span class="num">A</span><h3>Vibe Coder</h3><p>Du baust mit Cursor, Claude und Kaffee. Der Kaffee ist kalt, der Build läuft noch. Das Pack liegt neben dem Ladekabel.</p></article>
       <article class="card persona">{img_slot("persona-gruender", "Gründer", "persona-img")}<span class="num">B</span><h3>Gründer</h3><p>Pitch-Deck Version 14, Probelauf um 23 Uhr. Kein Zucker vor dem Auftritt, keine Dose Energy auf dem Tisch.</p></article>
-      <article class="card persona">{img_slot("persona-hackathon", "Hackathon-Team", "persona-img")}<span class="num">C</span><h3>Hackathon-Teams</h3><p>48 Stunden, ein Tisch, zu viel Pizza. Ein Pack in die Mitte, alle sehen, wie viel drin ist.</p></article>
+      <article class="card persona">{img_slot("persona-student", "Studenten", "persona-img")}<span class="num">C</span><h3>Studenten</h3><p>Klausurphase. Bib bis zur Schließung, Karteikarten, dritter Durchgang. Ein Stick statt dem vierten Automatenkaffee.</p></article>
+      <article class="card persona">{img_slot("persona-hackathon", "Hackathon-Team", "persona-img")}<span class="num">D</span><h3>Hackathon-Teams</h3><p>48 Stunden, ein Tisch, zu viel Pizza. Ein Pack in die Mitte, alle sehen, wie viel drin ist.</p></article>
     </div>
   </div>
 </section>
+
+{MANIFEST}
 
 <section class="band" id="warum">
   <div class="wrap">

@@ -95,3 +95,6 @@ Alle Ideen aus dem Gespräch vom 08.10.2026, in der Reihenfolge, wie sie kamen, 
 | Stick-Pack im Five-Gum-Stil statt Metalldose | übernommen | Schwarzes Pack, Chrom-Zahl = mg Koffein, Farbgrafik pro Sorte. Format beim Hersteller klären |
 | Website im Keynote-Stil | übernommen | Hell, Geist, Bento, Farbflächen mit Linienmuster. Ersetzt "Cobalt Rush". Recherche in 02_Recherche/23 |
 | Biohacking und Fokus als Versprechen | verworfen | Rechtlich nicht drin (unter 75 mg, HCVO). Stattdessen Koffein-Timeline mit Daten |
+| Retro-Wrapper (Wrigley's, Beech-Nut) vs. Five-Stil | Five-Stil bleibt Hauptlinie | Retro eher als limitierte "Throwback Edition" oder für Merch |
+| Website mit Nike-Gefühl: "Bleib dran.", Video-Hero, Manifest | übernommen | Motivation über die Person, nicht über Wirkung des Produkts. Videos und Bilder von Mixkit (freie Lizenz), nur für den Prototyp |
+| Zielgruppe Studenten | übernommen | Neue Persona: Klausurphase, Bib bis Schließung |
