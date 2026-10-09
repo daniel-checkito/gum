@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Pellet-Dose Schwarz</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#E8E9EB;--signal:#FF6B1F;--white:#F4F4F2;--muted:#5d5f66}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);font-family:'Instrument Sans',system-ui,sans-serif;color:#111}
+  .board{width:1600px;height:1000px;padding:56px 64px;display:flex;flex-direction:column}
+  .head{display:flex;justify-content:space-between;align-items:baseline}
+  h1{margin:0;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:42px;letter-spacing:-0.02em}
+  .sub{font-size:17px;color:var(--muted)}
+  .stage{flex:1;display:flex;align-items:flex-end;justify-content:center;gap:70px;padding-bottom:64px}
+
+  .jar{display:flex;flex-direction:column;align-items:center}
+  .jar.side{transform:scale(.8);transform-origin:bottom center}
+
+  .lid{position:relative;width:330px;height:92px;border-radius:22px 22px 8px 8px;
+       background:linear-gradient(90deg,#040404 0%,#262626 14%,#151515 36%,#080808 64%,#1e1e1e 86%,#020202 100%)}
+  .lid::before{content:"";position:absolute;left:10px;right:10px;top:-12px;height:28px;border-radius:50%;
+       background:linear-gradient(90deg,#0b0b0b,#2e2e2e 30%,#171717 62%,#0a0a0a)}
+  .lid .groove{position:absolute;left:0;right:0;top:46px;height:2px;background:rgba(0,0,0,.7);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+  .band{width:342px;height:24px;border-radius:4px;
+       background:repeating-linear-gradient(90deg,#0d0d0d 0 5px,#1f1f1f 5px 9px);
+       box-shadow:inset 0 2px 0 rgba(0,0,0,.6), inset 0 -2px 0 rgba(255,255,255,.04)}
+  .neck{width:312px;height:14px;background:linear-gradient(90deg,#030303,#1a1a1a 20%,#0b0b0b 60%,#151515 88%,#020202)}
+
+  .body{position:relative;width:360px;height:380px;border-radius:26px 26px 42px 42px;overflow:hidden;
+       background:linear-gradient(90deg,#030303 0%,#1d1d1d 10%,#2b2b2b 18%,#131313 36%,#070707 62%,#141414 82%,#252525 91%,#020202 100%)}
+  .body::after{content:"";position:absolute;top:0;bottom:0;left:19%;width:6%;
+       background:linear-gradient(90deg,transparent,rgba(255,255,255,.07),transparent)}
+  .label{position:absolute;left:0;right:0;top:34px;bottom:30px;border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07)}
+  .print{position:absolute;left:0;right:0;top:34px;bottom:30px;padding:28px 44px 22px;display:flex;flex-direction:column;color:var(--white);z-index:1}
+  .top{display:flex;justify-content:space-between;align-items:center}
+  .brand{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:22px;letter-spacing:.32em}
+  .count{font-size:12px;color:#bdbdb8;letter-spacing:.06em}
+  .quote{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:600;font-size:42px;line-height:1.02;letter-spacing:-0.015em;margin-top:auto}
+  .meta{margin-top:18px;display:flex;align-items:baseline;gap:12px}
+  .mg{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:28px;color:var(--signal);line-height:1}
+  .mgl{font-size:12px;color:#c9c9c4}
+  .legal{margin-top:12px;font-size:7.6px;line-height:1.35;color:#9d9d98;max-width:270px}
+  .shadow{width:380px;height:28px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.35),transparent);margin-top:-10px}
+  .note{display:flex;gap:28px;font-size:14px;color:var(--muted);justify-content:center}
+  .dot{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:7px;vertical-align:-1px}
+</style>
+</head>
+<body>
+<div class="board">
+  <div class="head">
+    <h1>Pellet-Dose schwarz</h1>
+    <div class="sub">Für Schreibtisch und Meetingraum · ca. 60 Pellets · Ziel-Rezeptur 30 mg</div>
+  </div>
+
+  <div class="stage">
+    <div class="jar side">
+      <div class="lid"><div class="groove"></div></div><div class="band"></div><div class="neck"></div>
+      <div class="body"><div class="label"></div><div class="print">
+        <div class="top"><div class="brand">BISS</div><div class="count">60 STÜCK</div></div>
+        <div class="quote" style="font-size:34px">Noch eine Mail.<br>Dann Feierabend.</div>
+        <div class="meta"><div class="mg">30 mg</div><div class="mgl">Koffein pro Stück · zuckerfrei</div></div>
+        <div class="legal">Kaugummi mit Koffein, mit Süßungsmitteln. Enthält Koffein. Für Kinder und schwangere Frauen nicht empfohlen (2.140 mg/100 g).</div>
+      </div></div>
+      <div class="shadow"></div>
+    </div>
+
+    <div class="jar">
+      <div class="lid"><div class="groove"></div></div><div class="band"></div><div class="neck"></div>
+      <div class="body"><div class="label"></div><div class="print">
+        <div class="top"><div class="brand">BISS</div><div class="count">60 STÜCK</div></div>
+        <div class="quote">Eins nach<br>dem anderen.</div>
+        <div class="meta"><div class="mg">30 mg</div><div class="mgl">Koffein pro Stück · zuckerfrei</div></div>
+        <div class="legal">Kaugummi mit Koffein, mit Süßungsmitteln. Enthält Koffein. Für Kinder und schwangere Frauen nicht empfohlen (2.140 mg/100 g).</div>
+      </div></div>
+      <div class="shadow"></div>
+    </div>
+
+    <div class="jar side">
+      <div class="lid"><div class="groove"></div></div><div class="band"></div><div class="neck"></div>
+      <div class="body"><div class="label"></div><div class="print">
+        <div class="top"><div class="brand">BISS</div><div class="count">60 STÜCK</div></div>
+        <div class="quote">Du schaffst das.</div>
+        <div class="meta"><div class="mg">30 mg</div><div class="mgl">Koffein pro Stück · zuckerfrei</div></div>
+        <div class="legal">Kaugummi mit Koffein, mit Süßungsmitteln. Enthält Koffein. Für Kinder und schwangere Frauen nicht empfohlen (2.140 mg/100 g).</div>
+      </div></div>
+      <div class="shadow"></div>
+    </div>
+  </div>
+
+  <div class="note">
+    <span><span class="dot" style="background:#0a0a0a"></span>Schwarz matt, Deckel und Etikett</span>
+    <span><span class="dot" style="background:#F4F4F2;box-shadow:inset 0 0 0 1px #c9c9c4"></span>Weiß: Name und Satz</span>
+    <span><span class="dot" style="background:#FF6B1F"></span>Signal: nur die mg-Zahl</span>
+    <span>Rückseite: Zutaten, Nährwerte, Höchstmenge, MHD, Anschrift</span>
+  </div>
+</div>
+</body>
+</html>
