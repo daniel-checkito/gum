@@ -102,3 +102,12 @@ Alle Ideen aus dem Gespräch vom 08.10.2026, in der Reihenfolge, wie sie kamen, 
 | Persönliches zum Gründer (Name, Job, 3D-Druck, Fotos, Team-Karussell) | entfernt | Story jetzt als "Team GUMMIT" ohne Person |
 | Weißer Hintergrund | ersetzt | Weiche Farbverläufe in den Sortenfarben, feines Rautenmuster, Glas-Karten |
 | Motivationssprüche ("Bleib dran.", Manifest) | ersetzt | Zu typisch. Jetzt trocken und konkret: "60 mg. Kein Becher." und drei Szenen mit Uhrzeit |
+| Erst Hersteller, dann Website | übernommen | Team-Gespräch 10.10.2026: Antworten zu Mindestmenge und Verpackung abwarten, dann Design und Muster |
+| Flaches Stick-Pack wie Five Gum | bestätigt | Passt flach in die Hosentasche, klappert nicht. Nicht rund. Papierhülle außen, Pflichtangaben hinten |
+| Ein kurzer Satz auf jedem Stick | übernommen | "Glückskeks-mäßig", trocken statt Motivation |
+| Blau-Weiß | verworfen | "Sieht aus wie Zahncreme". Schwarz als Markenfarbe, Minze jetzt grün |
+| Stock-Videos auf der Website | entfernt | "Fühlt sich an wie YouTube" |
+| Metall-Klappdose | zurückgestellt | Schön, aber teuer und kompliziert beim Abfüllen. Am Anfang Herstellerverpackung nutzen |
+| Forest Gum weiterverkaufen | verworfen | Kein Koffein |
+| Old-School-Design (Juicy Fruit, Doublemint) | offen | Ein Teammitglied dafür, Rest skeptisch. Idee für limitierte Edition |
+| Koffein-Wasser | notiert | Als mögliche zweite Produktlinie, rechtlich prüfen |

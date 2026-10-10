@@ -1,6 +1,6 @@
 # Bild-Prompts für die Website
 
-Stil: **Keynote**. Hellgrau #F5F5F7, Weiß, Text #1D1D1F. Farbe kommt von den Sorten: Minze #19B6E8, Kirsche #F0364A, Beere #8B5CFF. Das Produkt ist ein schwarzes, flaches Stick-Pack mit großer Chrom-Zahl (wie Five Gum), 8 Sticks.
+Stil: **Keynote**. Hellgrau #F5F5F7, Weiß, Text #1D1D1F. Farbe kommt von den Sorten: Minze #2BD47D, Kirsche #F0364A, Beere #8B5CFF. Das Produkt ist ein schwarzes, flaches Stick-Pack mit großer Chrom-Zahl (wie Five Gum), 8 Sticks.
 
 ## So gehst du vor
 
@@ -12,7 +12,7 @@ Stil: **Keynote**. Hellgrau #F5F5F7, Weiß, Text #1D1D1F. Farbe kommt von den So
 ## Stil-Block (immer davor)
 
 ```
-Premium tech product photography in the style of an Apple keynote, clean and minimal, soft studio light with one crisp highlight, light gray (#F5F5F7) or white surfaces, glossy black slim gum stick pack with a large chrome number on the front, accent colors electric cyan (#19B6E8), cherry red (#F0364A) and violet (#8B5CFF), futuristic but warm, shallow depth of field, no readable text, no logos
+Premium tech product photography in the style of an Apple keynote, clean and minimal, soft studio light with one crisp highlight, light gray (#F5F5F7) or white surfaces, glossy black slim gum stick pack with a large chrome number on the front, accent colors fresh green (#2BD47D), cherry red (#F0364A) and violet (#8B5CFF), futuristic but warm, shallow depth of field, no readable text, no logos
 ```
 
 Negativ (falls das Tool es kann): `text, letters, watermark, logo, brand names, faces looking into camera, stock photo smile, cyberpunk neon, dark moody, orange tones, round tin`
@@ -33,7 +33,7 @@ Negativ (falls das Tool es kann): `text, letters, watermark, logo, brand names, 
 
 ### persona-vibecoder (4:3)
 ```
-Over-the-shoulder shot of a young developer at a wooden desk at night, laptop screen glowing with blurred code editor, mechanical keyboard, a slim black gum stick pack with cyan graphic next to the keyboard, two silver-wrapped gum sticks beside it, cold coffee mug, charging cable, sticker-covered laptop lid edge, person seen from behind, Berlin altbau window in the background
+Over-the-shoulder shot of a young developer at a wooden desk at night, laptop screen glowing with blurred code editor, mechanical keyboard, a slim black gum stick pack with green graphic next to the keyboard, two silver-wrapped gum sticks beside it, cold coffee mug, charging cable, sticker-covered laptop lid edge, person seen from behind, Berlin altbau window in the background
 ```
 
 ### persona-gruender (4:3)
@@ -43,7 +43,7 @@ Young founder rehearsing a pitch in an empty Berlin coworking event space, seen 
 
 ### persona-student (4:3)
 ```
-Student studying late in a quiet university library, seen from the side, stack of books and notes, laptop, a slim black gum stick pack with cyan graphic on the desk in sharp focus, warm desk lamp, calm and determined mood
+Student studying late in a quiet university library, seen from the side, stack of books and notes, laptop, a slim black gum stick pack with green graphic on the desk in sharp focus, warm desk lamp, calm and determined mood
 ```
 
 ### mission-event (4:5)
@@ -53,7 +53,7 @@ Small study group at a long table in a Berlin coworking space in the evening, se
 
 ### community-meetup (4:3)
 ```
-Wide shot of an evening tech meetup in a Berlin loft, people from behind listening and working on laptops, warm string lights, a few slim black gum stick packs with cyan, red and violet graphics on the tables, energetic but tidy
+Wide shot of an evening tech meetup in a Berlin loft, people from behind listening and working on laptops, warm string lights, a few slim black gum stick packs with green, red and violet graphics on the tables, energetic but tidy
 ```
 
 ### community-demoday (4:3)
@@ -63,23 +63,23 @@ Demo day stage in a Berlin startup venue, speaker silhouette on a small stage, a
 
 ### community-coworking (4:3)
 ```
-Coworking counter in Berlin with a small white display holding slim black gum stick packs with cyan, red and violet graphics, coffee machine in the background, plants, someone grabbing a pack, hand only, soft daylight
+Coworking counter in Berlin with a small white display holding slim black gum stick packs with green, red and violet graphics, coffee machine in the background, plants, someone grabbing a pack, hand only, soft daylight
 ```
 
 ### community-tasche (4:3)
 ```
-Close-up of an open laptop sleeve or backpack front pocket, a slim black gum stick pack with cyan graphic peeking out next to an earbuds case, USB-C cable and a Luma-style event badge without text, on a light gray background
+Close-up of an open laptop sleeve or backpack front pocket, a slim black gum stick pack with green graphic peeking out next to an earbuds case, USB-C cable and a Luma-style event badge without text, on a light gray background
 ```
 
 ### produkt-hand (1:1)
 ```
-Close-up of a hand holding an open slim black gum stick pack with silver-wrapped sticks sliding out, pack slightly smaller than a phone, background electric cyan (#19B6E8) with thin concentric diamond line pattern, soft studio light, product clearly visible
+Close-up of a hand holding an open slim black gum stick pack with silver-wrapped sticks sliding out, pack slightly smaller than a phone, background fresh green (#2BD47D) with thin concentric diamond line pattern, soft studio light, product clearly visible
 ```
 Tipp: hier unbedingt `pack-minze-open.png` als Referenz hochladen.
 
 ### Extra: Sorten-Shots (optional, 4:5)
 Für spätere Produktfotos, je eine Sorte auf ihrer Farbe:
 ```
-Studio product photo of a glossy black slim gum stick pack floating slightly tilted, large chrome number on the front, colored graphic on the right side, background in [#19B6E8 | #F0364A | #8B5CFF] with thin concentric diamond line pattern, soft reflections, premium, like a Five gum ad
+Studio product photo of a glossy black slim gum stick pack floating slightly tilted, large chrome number on the front, colored graphic on the right side, background in [#2BD47D | #F0364A | #8B5CFF] with thin concentric diamond line pattern, soft reflections, premium, like a Five gum ad
 ```
 Referenz: `pack-<sorte>-front.png`.
