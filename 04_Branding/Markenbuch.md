@@ -1,5 +1,7 @@
 # Markenbuch BISS
 
+> Hinweis 10.10.2026: Teile dieses Markenbuchs sind veraltet. Aktueller Stand: Name GUMMIT, flaches Stick-Pack im Five-Gum-Stil, Schwarz als Markenfarbe, Sorten Minze (Grün #2BD47D), Kirsche (#F0364A), Beere (#8B5CFF). Siehe 08_Gespraeche/2026-10-10_Team-Gespraech.md und 02_Recherche/23_Keynote_Stick-Pack.md.
+
 Arbeitstitel. Fokus seit 08.10.2026: Coworkings und Büros, nicht Nachtleben. Namenskandidaten: SPÄTKAU oder MUNTA (neutraler für Büros), Entscheidung nach dem Registercheck. Wenn der Name wechselt, bleiben Farben, Schrift, Story und Sprüche gleich.
 
 ## Positionierung

@@ -20,6 +20,7 @@ Urteil: 5 von 10, lohnt sich als gestufter Test, nicht als großer Sprung. Der P
 | 04_Branding | 17 Bilder (Markenboard, Verpackung, Dosen, Website, Automaten-Designs und Kosten, Story, Sell-Sheet, Plakate, Ads, Sprüche), Markenbuch, Tonfall und Sprüche, Quelldateien |
 | 05_Vorlagen | Mails an Guming, Wachmeister, Automatenbetreiber, Hersteller (Rezeptur v1) und SUPERPUBLIC, Creator-Briefing |
 | 06_Referenzbilder | Deine Inspirationsbilder (Blister, Metalldosen, Neuro, Focus Gum) |
+| 08_Gespraeche | Notizen und Transkripte von Team-Gesprächen (z. B. 10.10.2026) |
 | 07_Ideen-Verlauf.md | Alle Ideen von Anfang an und warum sie raus- oder reingekommen sind |
 
 ## Wo was hingehört
@@ -46,6 +47,15 @@ Die Online-Versionen sind aktueller, wenn du dort weiter änderst. Dieser Ordner
 
 ## Was du als Nächstes tun musst
 
+Stand Team-Gespräch 10.10.2026 (Notizen: 08_Gespraeche/2026-10-10_Team-Gespraech.md):
+
+1. Antworten von Delica (Schweiz), dem Hersteller aus Tschechien und dem aus dem Allgäu sammeln: Mindestmenge, Verpackungsoptionen (Stick-Pack?), Preis, Muster. Delica will 50 kg pro Sorte, das sind rund 4.170 Packs. Mit einer Sorte starten und nach Testmengen fragen.
+2. Für jede realistische Verpackung ein Design machen und Prototypen schicken lassen.
+3. Zielgruppe festlegen: nach Alter (bunt) oder nach Haltung (Business, Builder, clean). Danach Farben und Ton final machen.
+4. Erste Testmenge klein halten (ca. 100 Packs), dann Content, Influencer, Shops.
+
+Ältere Liste:
+
 1. Blindtest: Guming-Sorten mit 10 Leuten probieren lassen (Probier-Set bei Guming bestellen, ca. 20 €).
 2. Mail an Guming, Version 2 (05_Vorlagen/Mail_Guming.md): schriftliche Erlaubnis, Spezifikation mit Süßungsmitteln, NEM-Status, Boden, Charge, Rückruf. Ohne das kein eigenes Design bestellen. Details: 02_Recherche/24_White-Label_Recht_und_Hindernisse.md
 3. Drei Coworkings fragen: 6 Wochen Thekendisplay auf Kommission, Probier-Nachmittag um 14 Uhr.
@@ -57,7 +67,7 @@ Die Online-Versionen sind aktueller, wenn du dort weiter änderst. Dieser Ordner
 
 ## Offen
 
-- Wachmeister (30 mg, Schweiz): Vertrieb in Deutschland? Händlerpreis? Mail in 05_Vorlagen. Pflichten als Weiterverkäufer: 02_Recherche/19
+- Wachmeister (30 mg, Schweiz): Vertrieb in Deutschland? Händlerpreis? Mail in 05_Vorlagen. Pflichten als Weiterverkäufer: 02_Recherche/27
 - Ob Guming White Label erlaubt
 - Geklärt: Guming hat kein Xylit (Sorbit, Isomalt, Maltit, Sucralose). Xylit im Pilot nicht erwähnen
 - Preis: Guming kostet bei EDEKA 0,25 € pro Stück, unsere Dose 0,62 €. Preis über Ort und Marke begründen

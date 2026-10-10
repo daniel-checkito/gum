@@ -7,7 +7,7 @@ import math
 
 FLAVORS = [
     {"id": "minze", "name": "Mint Condition", "taste": "Minze", "mg": 60,
-     "color": "#19B6E8", "deep": "#0A5CFF", "light": "#9EE7FF", "art": "arcs",
+     "color": "#2BD47D", "deep": "#0B7A45", "light": "#B8F5D3", "art": "arcs",
      "line": "Eiskalt. Klar. Wie ein frisches Terminal."},
     {"id": "kirsche", "name": "Cherry Pick", "taste": "Kirsche", "mg": 52,
      "color": "#F0364A", "deep": "#9E0F2B", "light": "#FFB1BA", "art": "rays",

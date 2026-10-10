@@ -7,7 +7,7 @@
   var tins = function (n) { return n + (n === 1 ? " Pack" : " Packs"); };
 
   var flavors = [
-    { id: "minze", name: "Mint Condition", taste: "Minze", mg: 60, color: "#19B6E8" },
+    { id: "minze", name: "Mint Condition", taste: "Minze", mg: 60, color: "#2BD47D" },
     { id: "kirsche", name: "Cherry Pick", taste: "Kirsche", mg: 52, color: "#F0364A" },
     { id: "beere", name: "Berry Important", taste: "Beere", mg: 52, color: "#8B5CFF" }
   ];
@@ -27,22 +27,6 @@
   $$("[data-mail]").forEach(function (a) {
     if (cfg.contactEmail) { a.href = "mailto:" + cfg.contactEmail; a.textContent = cfg.contactEmail; }
   });
-
-  // ---------- Hintergrund-Videos: erst laden, wenn sichtbar ----------
-  var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var vids = $$("video[data-src]");
-  if (!still && vids.length && "IntersectionObserver" in window) {
-    var vio = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        var v = e.target;
-        if (e.isIntersecting) {
-          if (!v.src) v.src = v.dataset.src;
-          var pr = v.play(); if (pr && pr.catch) pr.catch(function () {});
-        } else if (v.src) v.pause();
-      });
-    }, { rootMargin: "200px" });
-    vids.forEach(function (v) { vio.observe(v); });
-  }
 
   // ---------- Produktseite ----------
   var sel = { flavor: flavors[0], pack: packs[0], view: "front" };
@@ -139,16 +123,16 @@
     var perPiece = best.price / best.tins / 8;
     var single = packs[0].price / 8;
     var rows = drinks.map(function (d) { return { name: d.name, label: eur(d.price), mg: d.mg, sugar: d.sugar, est: d.est, per100: d.price / d.mg * 100 }; });
-    rows.push({ name: "GUMMIT 60 mg, 1 Pack", label: eur(single) + " / Stück", mg: 60, sugar: "0 g", per100: single / 60 * 100, own: true });
-    rows.push({ name: "GUMMIT 60 mg, " + tins(best.tins), label: eur(perPiece) + " / Stück", mg: 60, sugar: "0 g", per100: perPiece / 60 * 100, own: true });
+    rows.push({ name: "GUMMIT 60 mg, 1 Pack", label: eur(single) + " pro Stick", mg: 60, sugar: "0 g", per100: single / 60 * 100, own: true });
+    rows.push({ name: "GUMMIT 60 mg, " + tins(best.tins), label: eur(perPiece) + " pro Stick", mg: 60, sugar: "0 g", per100: perPiece / 60 * 100, own: true });
     rows.sort(function (a, b) { return b.per100 - a.per100; });
     var max = rows[0].per100;
-    $("cmp").innerHTML = rows.map(function (r) {
+    $("cmp").innerHTML = "<div class=\"cmp-head\"><span>Produkt · Ladenpreis</span><span></span><span>pro 100 mg</span></div>" + rows.map(function (r) {
       return "<div class=\"cmp-row" + (r.own ? " own" : "") + "\" title=\"" + r.name + ": " + eur(r.per100) + " pro 100 mg Koffein\">" +
-        "<span class=\"cmp-name\">" + r.name + (r.est ? " *" : "") + "</span>" +
+        "<span class=\"cmp-name\">" + r.name + (r.est ? " *" : "") + "<small>" + r.label + (r.own ? "" : " im Laden") + "</small></span>" +
         "<span class=\"cmp-track\"><i style=\"width:" + Math.max(3, r.per100 / max * 100).toFixed(1) + "%\"></i></span>" +
         "<span class=\"cmp-val\">" + eur(r.per100) + "</span></div>";
-    }).join("") + "<p class=\"fine\">Preis pro 100 mg Koffein. * Schätzung.</p>";
+    }).join("") + "<p class=\"fine\">Balken und Zahl rechts: was 100 mg Koffein kosten, nicht der Ladenpreis. * Schätzung.</p>";
     $("cmp-rows").innerHTML = rows.map(function (r) {
       return "<tr><td>" + r.name + (r.est ? " *" : "") + "</td><td>" + r.label + "</td><td>" + r.mg + " mg</td><td>" + r.sugar + "</td><td>" + eur(r.per100) + "</td></tr>";
     }).join("");
@@ -165,7 +149,7 @@
       var costGum = perMonth * (d.mg / 60) * perPiece;
       var diff = costDrink - costGum;
       $("calc-save").textContent = diff > 0 ? "ca. " + eur(diff) + " gespart" : "kein Preisvorteil";
-      $("calc-detail").textContent = "Pro Monat " + eur(costDrink) + " für " + d.name + " statt " + eur(costGum) + " mit GUMMIT (" + tins(best.tins) + "-Paket), gleiche Koffeinmenge.";
+      $("calc-detail").textContent = "Pro Monat " + eur(costDrink) + " für " + d.name + " statt " + eur(costGum) + " mit GUMMIT (" + best.tins + "er-Pack), gleiche Koffeinmenge.";
     };
     $("calc-n").addEventListener("input", calc);
     what.addEventListener("change", calc);
@@ -207,9 +191,9 @@
       var line = pts.map(function (p, i) { return (i ? "L" : "M") + x(p[0]).toFixed(1) + " " + y(p[1]).toFixed(1); }).join("");
       var area = line + "L" + x(t1) + " " + y(0) + "L" + x(t0) + " " + y(0) + "Z";
       var marks = doses.filter(function (d) { return d.on; }).map(function (d) {
-        return "<circle cx=\"" + x(d.h) + "\" cy=\"" + y(0) + "\" r=\"5\" fill=\"" + (d.kind === "stick" ? "#0A5CFF" : "#1D1D1F") + "\"/>";
+        return "<circle cx=\"" + x(d.h) + "\" cy=\"" + y(0) + "\" r=\"5\" fill=\"" + (d.kind === "stick" ? "#14A85F" : "#1D1D1F") + "\"/>";
       }).join("");
-      $("tl-chart").innerHTML = "<defs><linearGradient id=\"tlg\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#0A5CFF\"/><stop offset=\".5\" stop-color=\"#8B5CFF\"/><stop offset=\"1\" stop-color=\"#F0364A\"/></linearGradient>" +
+      $("tl-chart").innerHTML = "<defs><linearGradient id=\"tlg\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#14A85F\"/><stop offset=\".5\" stop-color=\"#8B5CFF\"/><stop offset=\"1\" stop-color=\"#F0364A\"/></linearGradient>" +
         "<linearGradient id=\"tla\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#8B5CFF\" stop-opacity=\".22\"/><stop offset=\"1\" stop-color=\"#8B5CFF\" stop-opacity=\"0\"/></linearGradient></defs>" +
         grid + "<path d=\"" + area + "\" fill=\"url(#tla)\"/><path d=\"" + line + "\" fill=\"none\" stroke=\"url(#tlg)\" stroke-width=\"3\" stroke-linejoin=\"round\"/>" + marks +
         "<text x=\"" + (L + 4) + "\" y=\"" + (T + 10) + "\" font-size=\"11\" fill=\"#6E6E73\">mg im Körper</text>";

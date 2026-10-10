@@ -222,7 +222,7 @@ BENTO = f'''<div class="bento">
 
 TIMELINE = '''<section class="band" id="timeline">
   <div class="wrap">
-    <p class="sec-label"><span>04</span>Für Datenfans</p>
+    <p class="sec-label"><span>05</span>Für Datenfans</p>
     <h2>Dein Koffein-Tag. <em>Als Kurve.</em></h2>
     <p class="lead">Wähle, wann du Kaffee trinkst und wann du einen Stick kaust. Die Kurve zeigt grob, wie viel Koffein über den Tag im Körper ist.</p>
     <div class="tl card">
@@ -243,23 +243,33 @@ TIMELINE = '''<section class="band" id="timeline">
 </section>
 '''
 
-MANIFEST_PANELS = [
-    ("14734", "poster-library", "22:41 · Bibliothek", "Seite 212 von 480.", "Der Automat im Erdgeschoss hat nur Cola."),
-    ("1746", "poster-cafe", "15:12 · Café", "Schlange bis zur Tür.", "Das Pack ist schon in der Jackentasche."),
-    ("1749", "poster-code", "01:07 · Zuhause", "Build läuft. Kaffee ist kalt.", "Ein Stick liegt neben dem Ladekabel."),
-]
-MANIFEST = '<section class="manifest" id="manifest">' + "".join(
-    f'<div class="panel"><video class="bg-video" muted loop playsinline preload="none" poster="/img/slots/{poster}.jpg" data-src="https://assets.mixkit.co/videos/{vid}/{vid}-720.mp4"></video><div class="shade"></div>'
-    f'<div class="wrap"><p class="eyebrow">{when}</p><h2 class="shout">{title}</h2><p class="lede">{sub}</p></div></div>'
-    for vid, poster, when, title, sub in MANIFEST_PANELS) + '</section>'
 
 PDP_VIEWS = "".join(
     f'<div class="pack-view" data-f="{f["id"]}" data-v="{v}"{"" if (f["id"], v) == ("minze", "front") else " hidden"}>{pack(f, v, "pdp-" + f["id"] + "-" + v)}</div>'
     for f in FLAVORS for v in ("front", "open", "back"))
 
+WRAPPER_LINES = ["Heute nur ein Tab offen.", "Die Mail kann warten.", "Speichern nicht vergessen.", "Der Bug ist im Cache.", "Pausen zählen auch.", "Erst lesen, dann mergen."]
+
+PACK_SECTION = f'''<section class="band" id="pack">
+  <div class="wrap split2 pack-split">
+    <div class="stage" style="--stage:{FLAVORS[0]["color"]}"><div class="pack-static">{pack(FLAVORS[0], "open", "pack-open")}</div></div>
+    <div>
+      <p class="sec-label"><span>04</span>Das Pack</p>
+      <h2>Flach. Leise. <em>Mit Satz.</em></h2>
+      <p class="lead">Ein Faltpack statt Dose: 8 einzeln eingewickelte Sticks. Vorne nur Name und Zahl, hinten alle Angaben.</p>
+      <div class="pack-points">
+        <div class="tile"><h3>Passt in die Gesäßtasche</h3><p>Flach wie ein Kartenetui. Nichts klappert, nichts beult aus.</p></div>
+        <div class="tile"><h3>Papierhülle, vorne clean</h3><p>Außen eine Hülle mit Sorte und Zahl. Die Pflichtangaben stehen hinten.</p></div>
+        <div class="tile"><h3>Ein Satz auf jedem Stick</h3><p>Klein gedruckt auf dem Papier um jeden Stick, zum Beispiel:</p><div class="lines">{"".join(f"<span>{l}</span>" for l in WRAPPER_LINES)}</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+'''
+
 MISSION_BAND = f'''<section class="mission-band" id="mission">
   <div class="wrap">
-    <p class="sec-label light"><span>06</span>Mission</p>
+    <p class="sec-label light"><span>07</span>Mission</p>
     <h2>Projekt <em>Erster Commit</em></h2>
     <p class="lead">Mit jedem Pack bringst du GUMMIT zu Berliner Buildern, die gerade erst anfangen. Gratis für Lerngruppen, Einsteiger-Meetups und Community-Events ohne Budget.</p>
     <div class="hero-cta"><a class="btn ghost" href="/mission">Mehr erfahren</a><a class="btn white-ghost" href="/teams#anfrage">Event vorschlagen</a></div>
@@ -311,21 +321,20 @@ def faq_html(groups=None, limit=None):
 # ---------- Seiten ----------
 def home():
     body = f'''
-<section class="hero hero-video" id="kaufen">
-  <video class="bg-video" muted loop playsinline poster="/img/slots/poster-hero.jpg" data-src="https://assets.mixkit.co/videos/48503/48503-720.mp4"></video>
-  <div class="shade"></div>
+<section class="hero" id="kaufen">
   <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <p class="eyebrow">GUMMIT · Koffein-Kaugummi</p>
-      <h1 class="shout">60 mg.<br>Kein Becher.</h1>
-      <p class="lede">Zuckerfreier Kaugummi mit Koffein. Die Menge steht vorne drauf, der Rest passt in die Hosentasche.</p>
-      <div class="hero-cta"><a class="btn white" href="/produkt">Alle Produktinfos</a></div>
-    </div>
-    <div class="buybox card">
-      <div class="stage mini" id="stage" style="--stage:{FLAVORS[0]["color"]}">
+    <div class="hero-media">
+      <div class="stage" id="stage" style="--stage:{FLAVORS[0]["color"]}">
         {HERO_PACKS}
         <span class="stack-badge" id="shop-stack" hidden>×1</span>
       </div>
+      <p class="render-note">Entwurf des Packs. Die echte Verpackung kann abweichen.</p>
+    </div>
+    <div class="hero-copy">
+      <p class="eyebrow">GUMMIT · Koffein-Kaugummi</p>
+      <h1>60 mg.<br><em>Kein Becher.</em></h1>
+      <p class="lede">Zuckerfreier Kaugummi mit Koffein. Die Menge steht vorne drauf, der Rest passt in die Hosentasche.</p>
+      <div class="buybox card">
       <fieldset class="opt"><legend>Sorte</legend><div class="chips" id="shop-flavors" role="radiogroup"></div></fieldset>
       <fieldset class="opt"><legend>Menge</legend><div class="packs" id="shop-packs" role="radiogroup"></div></fieldset>
       <div class="price-row"><span class="price" id="shop-price">4,99 €</span><span class="save" id="shop-save" hidden></span></div>
@@ -333,6 +342,7 @@ def home():
       <button class="btn buy" type="button" id="shop-buy">Unverbindlich reservieren</button>
       <p class="buy-note" id="shop-note">Unverbindlich, kein Kaufvertrag. Zahlung erst nach separater Bestellung.</p>
       <p class="warn small">Enthält Koffein (<span id="shop-mg100">–</span> mg/100 g). Für Kinder und schwangere Frauen nicht empfohlen.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -359,8 +369,6 @@ def home():
   </div>
 </section>
 
-{MANIFEST}
-
 <section class="band" id="warum">
   <div class="wrap">
     {section_label("02", "Warum GUMMIT")}
@@ -381,16 +389,18 @@ def home():
   </div>
 </section>
 
+{PACK_SECTION}
+
 {TIMELINE}
 
-{COMPARE.format(label=section_label("05", "Rechnen wir mal"))}
+{COMPARE.format(label=section_label("06", "Rechnen wir mal"))}
 
 {MISSION_BAND}
 
 <section class="band paper-2" id="so-gehts">
   <div class="wrap split2">
     <div>
-      {section_label("07", "So geht's")}
+      {section_label("08", "So geht's")}
       <h2>Pop. Kau. <em>Ship.</em></h2>
       <ol class="steps">
         <li><b>Einen Stick nehmen,</b> wenn der nächste Arbeitsblock startet.</li>
@@ -399,7 +409,7 @@ def home():
       </ol>
     </div>
     <div>
-      {section_label("08", "Community")}
+      {section_label("09", "Community")}
       <h2>Bald hier: <em>ihr</em></h2>
       <p class="lead">Die erste Charge geht auf Berliner Events. Danach kommen hier eure Fotos hin.</p>
       {PHOTOS}
@@ -411,7 +421,7 @@ def home():
 <section class="band blue-soft" id="teams-teaser">
   <div class="wrap teams-teaser">
     <div>
-      {section_label("09", "Für Teams")}
+      {section_label("10", "Für Teams")}
       <h2>Für Teams, Hosts <em>&amp;</em> Coworkings</h2>
       <p class="lead">Team-Boxen mit Rechnung, Host-Boxen für Meetups und ein Display für eure Theke.</p>
     </div>
@@ -421,7 +431,7 @@ def home():
 
 <section class="band" id="faq-teaser">
   <div class="wrap">
-    {section_label("10", "FAQ")}
+    {section_label("11", "FAQ")}
     <h2>Kurz gefragt</h2>
     {faq_html(["Produkt", "Koffein und Sicherheit"], limit=2)}
     <p class="more-link"><a href="/faq">Alle Fragen ansehen →</a></p>
